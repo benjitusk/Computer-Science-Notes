@@ -29,7 +29,7 @@ A set $V$ is called a <u>vector space</u> (and its elements are called vectors) 
 > 	- If $\vec u,\vec v\in V\text{ then }\vec u\oplus\vec v\in V$
 > 4) There exists in $V$ a <u>zero vector</u> denoted $\vec{0}$ such that $\forall\vec v\in V: \vec v + \vec0=\vec v$
 > 5) $\forall\vec v\in V\;\exists\vec v^\prime\text{ such that } \vec v\oplus\vec v^\prime=\vec0$
-> 	- e.g. in $\Bbb R^2$, if $\vec v=(5, -3)$ then $\vec v^\prime=(-5,3$)
+> 	- e.g. in $\Bbb R^2$, if $\vec v=(5, -3)$ then $\vec v^\prime=(-5,3)$
 > 6) V is closed under scalar mult.
 > 	- i.e., if $\vec v \in V,c\in\Bbb R$ then $c\odot\vec v\in V$
 > 7) For all $\vec v\in V$ and $c_1,c_2\in\Bbb R$ we have: $(c_1\cdot c_2)\odot\vec v=c_1\odot(c_2\odot\vec v)$
@@ -182,10 +182,11 @@ There are two possibilities for a homogeneous system:
 \end{bmatrix}\\
 \Rightarrow&\text {Infinite number of solutions}\\
 \Rightarrow&S\text { is linearly dependent}
-\end{align}
-$$
+\end{align}$$
 
-$$$$
+
+
+
 #### Basis and Dimension
 **Definition:**
 	A <u>basis</u> of a vector space $V$ is a linearly independent set $S$ which *spans* $V$. (i.e. Span($S$) $=V$)
