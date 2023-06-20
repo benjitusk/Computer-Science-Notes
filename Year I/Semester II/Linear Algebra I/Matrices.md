@@ -435,3 +435,4 @@ We therefore define <u>rank</u> as the row rank and the column rank, which are a
 Ex. $A=\begin{bmatrix}1&1&2\\-1&0&1\\0&-1&1\end{bmatrix}$
 **Definition:**
 	Let $A$ be an $n\times n$ matrix.
+	
