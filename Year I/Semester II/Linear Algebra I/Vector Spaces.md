@@ -185,6 +185,7 @@ There are two possibilities for a homogeneous system:
 \end{align}
 $$
 
+$$$$
 #### Basis and Dimension
 **Definition:**
 	A <u>basis</u> of a vector space $V$ is a linearly independent set $S$ which *spans* $V$. (i.e. Span($S$) $=V$)

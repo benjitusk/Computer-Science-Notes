@@ -431,7 +431,7 @@ We therefore define <u>rank</u> as the row rank and the column rank, which are a
 - $\left|\begin{matrix}1&-3\\-4&12\end{matrix}\right|=0$
 	- Note, since the determinant is zero, the matrix is not invertible.
 	- Also note, $R_2=-3R_1$
-##### Computing $|A|$ for $n>2$:
+##### Computing $|A|$  for $n > 2$:
 Ex. $A=\begin{bmatrix}1&1&2\\-1&0&1\\0&-1&1\end{bmatrix}$
 **Definition:**
 	Let $A$ be an $n\times n$ matrix.
