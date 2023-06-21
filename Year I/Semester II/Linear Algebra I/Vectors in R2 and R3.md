@@ -31,7 +31,7 @@ Proof is at [23:04](https://drive.google.com/drive/u/0/folders/1k8NTjOs7p11dktSp
 What if $\theta$ is 0°? well, $cos\theta = 1$ , so there ya go. If $\theta$ is 180°, $cos\theta=-1$, and there ya go too.
 **Conclusion:** vectors are ⟂ $\iff$ their dot product is *zero*. These are called **orthogonal vectors**.
 
-### Cross Product
+### Cross Produdfct
 - Only defined in $\Bbb R^3$
 - Output is a <u>vector</u>, not a scalar
 - Definition:
@@ -43,6 +43,7 @@ What if $\theta$ is 0°? well, $cos\theta = 1$ , so there ya go. If $\theta$ is 
 	  x_1 & y_1 & z_1 \\
 	  x_2 & y_2 & z_2
 	  \end{bmatrix}$$
+	  
 	2) (for k = 1, 2, 3): Calculate the determinant of 2x2 matrix remaining by ignoring $k^{th}$ column, this becomes the $k^{th}$ component of the cross product
 	3) The *middle* component $(k=2)$ of $\vec u \times \vec v$ is the *negative* of determinant calculated in step 2. (No changes for $k=1, k=3$)
 - Corollaries:

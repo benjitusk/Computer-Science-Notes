@@ -23,7 +23,7 @@ $f(x)\text{ is continuous at }x=a\text{ if }f(a)=\lim_{x\to a}{f(x)}$.
 ###### Polynomials:
 - $f(x)=\frac{x^2+3x}{x^2+x-6}$
 	- Candidates for discontinuity:
-		- $$\begin{align}x^2+x-6 &= 0\\(x+3)(x-2)&=0\\\Rightarrow x&=-3,2\end{align}$$
+		- $$\begin{aligned}x^2+x-6 &= 0\\(x+3)(x-2)&=0\\\Rightarrow x&=-3,2\end{aligned}$$
 			- $\text{At }x=2: \lim_{x\to 2}{f(x)}=\lim_{x\to 2}{\frac{x}{x-2}=\pm\infty}\Rightarrow\text{ Type II discontinuity @ }x=2.$
 			- $\text{At }x=-3: \lim_{x\to -3}{f(x)}=\lim_{x\to -3}{\frac{x}{x-2}=\frac35}$
 			  BUT, $f(-3)$ is undefined $\Rightarrow\text{ Removable discontinuity}$
@@ -53,8 +53,8 @@ $f(x)\text{ is continuous at }x=a\text{ if }f(a)=\lim_{x\to a}{f(x)}$.
 	- $x=5$
 		- $\lim_{x\to5}{f(x)}$
 			- The denominator of the exponent is going to zero, which means the exponent will be either $\pm\infty$. Because of this, we need to check separately.
-		- $\begin{align}\\\lim_{x\to5^+}{f(x)}&=\lim_{x\to5^+}{\frac6{2+3^{(\frac4{5-x})}}}\\&=\frac6{2+3^{(\lim_{x\to5^+}{\frac4{5-x}})}}\\&=\frac6{2+3^{-\infty}}\\&=3\end{align}$
-		- $\begin{align}\\\lim_{x\to5^-}{f(x)}&=\lim_{x\to5^-}{\frac6{2+3^{(\frac4{5-x})}}}\\&=\frac6{2+3^{(\lim_{x\to5^-}{\frac4{5-x}})}}\\&=\frac6{2+3^{+\infty}}\\&=\frac6\infty\\&=0\end{align}$
+		- $\begin{aligned}\\\lim_{x\to5^+}{f(x)}&=\lim_{x\to5^+}{\frac6{2+3^{(\frac4{5-x})}}}\\&=\frac6{2+3^{(\lim_{x\to5^+}{\frac4{5-x}})}}\\&=\frac6{2+3^{-\infty}}\\&=3\end{aligned}$
+		- $\begin{aligned}\\\lim_{x\to5^-}{f(x)}&=\lim_{x\to5^-}{\frac6{2+3^{(\frac4{5-x})}}}\\&=\frac6{2+3^{(\lim_{x\to5^-}{\frac4{5-x}})}}\\&=\frac6{2+3^{+\infty}}\\&=\frac6\infty\\&=0\end{aligned}$
 			- Jump Discontinuity
 	- $f$ has a Type I discontinuity at $x=5$.
 ---
@@ -76,6 +76,7 @@ $f(x)\text{ is continuous at }x=a\text{ if }f(a)=\lim_{x\to a}{f(x)}$.
 - $\sqrt[n]{x}$
 - constants
 - All the functions we've seen except abs. value function, whole number function, Dirichlet function
+
 > [!quote] #### Theorem #26:
 > Every elementary function is continuous at every point in it's domain
 

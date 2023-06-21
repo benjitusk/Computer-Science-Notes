@@ -72,10 +72,10 @@ Examples of subspaces of $\Bbb R^2$:
 2) All of $\Bbb R^2$
 3) Any line through the origin ($y=kx$ or $y$-axis)
 	- Closure under addition:
-		- $\begin{align}(x_1,kx_1)+(x_2,kx_2)&=(x_1+x_2,kx_1+kx_2)\\&=(x_1+x_2, k(x_1+x_2))\\&\in\text{ line }y=kx\end{align}$
+		- $\begin{aligned}(x_1,kx_1)+(x_2,kx_2)&=(x_1+x_2,kx_1+kx_2)\\&=(x_1+x_2, k(x_1+x_2))\\&\in\text{ line }y=kx\end{aligned}$
 		- $(0,y_1)+(0,y_2)=(0,y_1+y_2) \in y$-axis
 	- Closure under scalar multiplication:
-		- $\begin{align}c\cdot(x, kx)&=\\(cx,ckx)&=\\(cx, k(cx))&\in\text{ line }y=xk\end{align}$
+		- $\begin{aligned}c\cdot(x, kx)&=\\(cx,ckx)&=\\(cx, k(cx))&\in\text{ line }y=xk\end{aligned}$
 		- $c\cdot(0, y)=(0,cy)\in y$-axis
 ###### What are subspaces of $\Bbb R^3$?
 1) $\{(0,0,0)\}$
@@ -120,18 +120,18 @@ For any finite set $S\subseteq V$, $\text{Span }S\le V$.
 	**Example:**
 		$S=\{(1, 2, 3,), (0,-1,4)\}$
 		Suppose: $c_1\cdot(1,2,3)+c_2\cdot(0,-1,4)=(0,0,0)$
-		That means that: $$\begin{align}
+		That means that: $$\begin{aligned}
 		c_1\cdot1&+c_2\cdot0&=0\\
 		c_1\cdot2&+c_2\cdot-1&=0\\
 		c_1\cdot3&+c_2\cdot4&=0
-		\end{align}$$
+		\end{aligned}$$
 		Solving for $c_1, c_2, c_3$, we will see that they all equal *zero*.
 		This is proof of linear independence.
 	**Example:**
 		$S=\{(1, 2, 3), (-4,-8,-12)\}$
 		Suppose: $c_1\cdot(1,2,3)+c_2\cdot(-4,-8,-12)=(0,0,0)$
 		Extracting equations for c_1, c_2, c_3 will yield the following:
-		$\begin{align}&c_1-4c_2&=0\\2&c_1-8c_2&=0\\3&c_1-12c_2&=0\end{align}$
+		$\begin{aligned}&c_1-4c_2&=0\\2&c_1-8c_2&=0\\3&c_1-12c_2&=0\end{aligned}$
 		The second and third equations are both multiples of the first equation, so we can ignore them. we are left with $c_1=4c_2$, which has an infinite number of solutions. This means that $S$ is linearly *dependent*.
 	In other words, $S$ is linearly independent if the *only* linear combination of $S$ equal to $\vec 0$ is the *trivial linear combination* (i.e., all scalars are 0).
 By this definition, $S=\vec 0$ is *not* independent, because if $c\cdot(0, 0, 0)=(0, 0, 0)$, then $c$ need not be $0$, can be *any* scalar.
@@ -149,14 +149,14 @@ $S_1=\{(1,3,5),(2,4,6),(-1,1,3)\}$
 To check if $S_1$ is independent:
 Suppose $c_1\begin{pmatrix}1\\3\\5\end{pmatrix}+c_2\begin{pmatrix}2\\4\\6\end{pmatrix}+c_3\begin{pmatrix}-1\\1\\3\end{pmatrix}=\begin{pmatrix}0\\0\\0\end{pmatrix}$ (We wish to show: $c_1=c_2=c_3=0$)
 Extract equations for $c_1, c_2, c_3$:
-$\begin{align}&c_1+2c_2-c_3&=0\\3&c_1-4c_2+c_3&=0\\5&c_1+6c_2+3c_3&=0\end{align}$
+$\begin{aligned}&c_1+2c_2-c_3&=0\\3&c_1-4c_2+c_3&=0\\5&c_1+6c_2+3c_3&=0\end{aligned}$
 Solve system using coefficient matrix:
 $\begin{bmatrix}1&2&-1\\3&4&1\\5&6&3\end{bmatrix}$
 There are two possibilities for a homogeneous system:
 > - There is a unique solution $(0,0,0)$, which means $c_1=c_2=c_3=0$, which proves $S$ to be *independent*.
 > - There are infinitely many solutions, which means $c_1=c_2=c_3=0$ is **not true**, which proves $S$ to be *dependent*.
 > Solving the matrix as such...
-> $$\begin{align}
+> $$\begin{aligned}
 \begin{bmatrix}
 1\ &2\ & -1\\\
 3\ &4\ &\ 1\\\
@@ -182,7 +182,7 @@ There are two possibilities for a homogeneous system:
 \end{bmatrix}\\
 \Rightarrow&\text {Infinite number of solutions}\\
 \Rightarrow&S\text { is linearly dependent}
-\end{align}$$
+\end{aligned}$$
 
 
 
@@ -233,10 +233,10 @@ There are two possibilities for a homogeneous system:
 >
 > **Method:**
 > 1. Assign vectors. In this case,
->    $\begin{align}\vec u&=-x^2 + 3x +11\\\vec v_1&=x^2-x+6\\\vec v_2&=2x^2-3x\\\vec v_3&=x-3\end{align}$
+>    $\begin{aligned}\vec u&=-x^2 + 3x +11\\\vec v_1&=x^2-x+6\\\vec v_2&=2x^2-3x\\\vec v_3&=x-3\end{aligned}$
 > 2. We seek $c_1, c_2, c_3$ such that:
 >    $c_1(x^2-x+6)+c_2(2x^2-3x)+c_3(x-3)=\vec u$
-> 3. Rewrite the equation like so: $\begin{align}(c_1+2c_2)x^2&+&(-c_1-3c_2+c_3)x&+&(6c_1-3c_3)&=\\-x^2&+&3x&+&11&\end{align}$
+> 3. Rewrite the equation like so: $\begin{aligned}(c_1+2c_2)x^2&+&(-c_1-3c_2+c_3)x&+&(6c_1-3c_3)&=\\-x^2&+&3x&+&11&\end{aligned}$
 > 4. Solve for $c_1, c_2, c_3$
 > 5. Write answer as $c_1(x^2-x+6)+c_2(2x^2-3x)+c_3(x-3)$
 > 	   Of course, substituting $c_1, c_2, c_3$ with the values from step 4.

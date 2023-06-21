@@ -69,7 +69,7 @@ If column $j$ of $B$ is all zeros, the corresponding column in $C$ will be zeros
 *Note, col's of 0s in $A$ or rows of 0s in $B$ does not tell us anything.*
 
 #### Systems of Equations
-A system of equations $$\begin{align}3x+4x-2z&=1\\-1x+1y+1z&=3\\2x-1y+3z&=-5\end{align}$$can be written as follows: $$\begin{bmatrix}3&4&2\\-1&1&1\\2&-1&3\end{bmatrix}\begin{bmatrix}x\\y\\z\end{bmatrix}=\begin{bmatrix}1\\3\\-5\end{bmatrix}$$
+A system of equations $$\begin{aligned}3x+4x-2z&=1\\-1x+1y+1z&=3\\2x-1y+3z&=-5\end{aligned}$$can be written as follows: $$\begin{bmatrix}3&4&2\\-1&1&1\\2&-1&3\end{bmatrix}\begin{bmatrix}x\\y\\z\end{bmatrix}=\begin{bmatrix}1\\3\\-5\end{bmatrix}$$
 General notation for system: $A\cdot\vec x=\vec b$
 	where $A$ is the restricted coefficient matrix,
 	$\vec x$ is the *vector of unknowns* (so spooky 👻),
@@ -219,7 +219,7 @@ Stay tuned for the answers...
 	- Since you have $[\text{series of elementary matrices}]\cdot A=I$, $A$ *is* invertible.
 	- $A^{-1}=[\text{series of elementary matrices}]$
 Example:
-	$$\begin{align}
+	$$\begin{aligned}
 	A=
 	&\begin{bmatrix}
 		0 & 1 & 1 \\
@@ -263,7 +263,7 @@ Example:
 		0 & 1 & 0 \\
 		0 & 0 &\ \ 1 \ \\
 	\end{bmatrix}
-\end{align}$$
+\end{aligned}$$
 	$$\underset{E_{13}(-2)}
 	{\begin{bmatrix}
 		1 & 0 & -2 \\
@@ -322,7 +322,7 @@ To find the inverse of $A$, we will make a double window matrix, like this: $\le
 Perform each row operation on *both* windows.
 At the end of the reduction, the left window will be $I$, and the right window will be $A^{-1}$.
 Example:
-	$$\begin{align}
+	$$\begin{aligned}
 	&\left[\begin{array}{ccc|ccc}
 	0&1&1&1&0&0\\
 	1&0&2&0&1&0\\
@@ -369,7 +369,7 @@ Example:
 	2&-1&1\\
 	1&1&-1
 	\end{bmatrix}
-\end{align}$$
+\end{aligned}$$
 
 
 > [!info] In summary: Matrix Inversion

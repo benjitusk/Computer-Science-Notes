@@ -33,7 +33,7 @@ If $x_0$ satisfies either of these conditions, then $x_0$ is a <u>critical point
 > 	- $f$ is decreasing $\iff f^\prime(x)<0$
 > 4. Linear Approximation:
 > 	For h small, $f(x_0+h)\approx f(x_0)+h\cdot f^\prime (x_0)$
-> 	See: [[Differentiability and Derivatives 1#Linear Approximation using derivatives|Explanation]]
+> 	See: [[Differentiability and Derivatives#Linear Approximation using derivatives|Explanation]]
 
 
 ##### Sketching graph using information about $f^\prime$
@@ -74,4 +74,4 @@ We wish to find extreme points where $f$ is increasing and where $f$ is decreasi
 
 ---
 
-**\[Incomplete until End of Unit Lecture May 3]**
+**\[Incomplete until End of Unit Lecture June 5]**

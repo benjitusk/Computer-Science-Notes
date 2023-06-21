@@ -1,3 +1,6 @@
+---
+title: Differentiability and Derivatives
+---
 *May 8 Lecture. Links to the [board](https://drive.google.com/file/d/1BwMi6pAdCWz0UrAnsMBeoXTBa8z6roiN/view?usp=sharing) and the [recording](https://drive.google.com/file/d/1zN1ep3dD9x7Rmo8kGeQKTHNNBCH0p6RK/view?usp=sharing).*
 What does this stuff do?
 	If you have a function $y=f(x)$, we want to be able to calculate the slope of a line that is tangent to a point on the graph.
@@ -15,6 +18,7 @@ Background:
 		If $f(2)=1$, $f(3)=4$, then my speed over time interval $[2,3]$ is $\frac{f(3)-f(2)}{3-2}$.
 			I.E. $\frac{\Delta y}{\Delta x} = 3 \Rightarrow \text{ slope of line connecting } (2, f(2) \text{ and } 3, f(3)).$ 
 		Slope represents the rate of change as in this example.
+
 ---
 What would the speedometer show at $x=3$?
 Idea: let's take shorter and shorter intervals around $x=3$ and see what the slope for that line is. Each slope is a rate of change (ROC) of $f$ over a smaller and smaller interval $[x,3]$. Define the Instantaneous Rate of Change (IRoC) at $x=3$ to be the limit of these slopes. $$\lim_{x\to x_0}{\frac{\Delta y}{\Delta x} = \lim_{x\to x_0}{\frac{f(x_0)-f(x)}{x_0 - x}}}$$ Or, if we express $x=x_0 + h$, IRoC at $x_0 = \lim_{h\to 0}{\frac{f(h_0+h)-f(x_0)}{h}}$
@@ -45,8 +49,9 @@ $f\prime(x)=\lim_{h\to 0}{\frac{f(x+h)-f(x)}{h}}$. I.e., for small $h$:
 $f\prime (x) \approx \frac{f(x+h)-f(x)}{h}$
 For smaller h, the approximation is more exact.
 $f(x+h)\approx f(x)+h\cdot f\prime (x)$.![[Pasted image 20230508154358.png|600]]
-$$\begin{align}\text{In our example: }(1.0123)^2 \approx 1^2 + (0.0123)\cdot 2 &= 1.0246\\\text{Real Answer: }(1.0123)^2 &= 1.02457\end{align}$$
-(We multiply by 2, because that's $f\prime$)
+$$\begin{aligned}\text{In our example: }(1.0123)^2 \approx 1^2 + (0.0123)\cdot 2 &= 1.0246\\\text{Real Answer: }(1.0123)^2 &= 1.02457\end{aligned}$$
+
+(We multiply by 2, because that's $f^\prime$)
 
 ##### Differentiation Rules
 1) Derivative of a constant function $f(x)=c$ is zero.
