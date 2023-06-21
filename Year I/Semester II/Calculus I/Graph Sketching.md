@@ -3,9 +3,9 @@
 $x_0$ is an <u>extreme point</u> of $f$ if there exists a neighborhood  of $x_0$, $I=(x_0-\epsilon, x_0+\epsilon)$ such that either $f(x_0) > f(x)\;\forall x\in I$ or $f(x_0) < f(x)\;\forall x\in I$ $[x\not=x_0]$
 In the first case, $x_0$ is a <u>local maximum</u>; in the second case, $x_0$ is a <u>local minimum</u>.
 
-##### Fermat's Theorem (#36)
+> [!quote] ##### Fermat's Theorem (#36)
 > If $f$ is differentiable at $x_0$, and $x_0$ is an extreme point of $f$, then $f\prime(x_0)=0$
-###### Caveats:
+> ###### Caveats:
 > 1. Note the condition $f$ is differentiable at $x_0$:
 >	- $f$ can have an extreme point where f is not differentiable.
 >	  Ex.: $f(x)=|x|$
@@ -17,14 +17,14 @@ By Fermat's Theorem, the only *candidates* for extreme points of $f$ are points 
 2. $f$ is not differentiable at $x_0$
 If $x_0$ satisfies either of these conditions, then $x_0$ is a <u>critical point</u> of $f$.
 
-##### Rolle's Theorem:
+> [!quote] ##### Rolle's Theorem:
 > Suppose $f$ is continuous in $[a,b]$ and differentiable in $(a,b)$, with $f(a)=f(b)$. Then $\exists c\in(a,b)\mid f^\prime(c)=0$
 
-##### Mean Value Theorem (MVT):
+> [!quote] ##### Mean Value Theorem (MVT):
 > Suppose $f$ is continuous in $[a,b]$ and differentiable in $(a,b)$. Then, $\exists c\in(a,b)\mid f^\prime(c)=\frac{f(b)-f(a)}{b-a}$
 > Practically speaking, there exists at least one point on $f$ between $(a,b)$ where the slope of the tangent is exactly equal to the slope of the line between $a$ and $b$.
 > You can think of this as a "sideways" version of Rolle's Theorem.
-##### Corollaries of MVT:
+> ##### Corollaries of MVT:
 > 1. If $f^\prime(x)=0$ for all $x\in(a,b)$, then $f$ is constant.
 > 2. Let $f,g$ be continuous on $[a,b]$, and differentiable on $(a, b)$. If $f^\prime(x)=g^\prime(x)\mid\forall x\in(a,b)$, then they differ by a constant (i.e. $g(x)=f(x)+k$ for some constant k on all of $(a,b)$)
 > 3. If $f$ is differentiable on $(a,b)$ and $f^\prime(x)>0\mid\forall x\in(a,b)$ then f is increasing on $(a,b)$.

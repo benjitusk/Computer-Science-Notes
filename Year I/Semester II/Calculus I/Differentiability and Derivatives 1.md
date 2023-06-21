@@ -16,7 +16,7 @@ Background:
 			I.E. $\frac{\Delta y}{\Delta x} = 3 \Rightarrow \text{ slope of line connecting } (2, f(2) \text{ and } 3, f(3)).$ 
 		Slope represents the rate of change as in this example.
 ---
-What would the spedometer show at $x=3$?
+What would the speedometer show at $x=3$?
 Idea: let's take shorter and shorter intervals around $x=3$ and see what the slope for that line is. Each slope is a rate of change (ROC) of $f$ over a smaller and smaller interval $[x,3]$. Define the Instantaneous Rate of Change (IRoC) at $x=3$ to be the limit of these slopes. $$\lim_{x\to x_0}{\frac{\Delta y}{\Delta x} = \lim_{x\to x_0}{\frac{f(x_0)-f(x)}{x_0 - x}}}$$ Or, if we express $x=x_0 + h$, IRoC at $x_0 = \lim_{h\to 0}{\frac{f(h_0+h)-f(x_0)}{h}}$
 The tangent line to $y=f(x)$ at $x=x_0$ is <u>defined</u> as the line through $(x_0, f(x_0))$ with this slope.
 
@@ -35,7 +35,7 @@ The tangent line to $y=f(x)$ at $x=x_0$ is <u>defined</u> as the line through $(
 	One sided derivatives are defined similarly to definitions 2&3.
 The derivative function $f^\prime$ is defined for each $x_0$ in this manner: $$f^\prime(x)=\lim_{h\to 0}{\frac{f(x+h)-f(x)}{h}}$$
 
-##### Theorem 31:
+> [!quote] ##### Theorem 31:
 > If x is differentiable at $x_0$, then x is continuous at $x_0$. The reverse is *not true*.
 > Intuitively, $f\prime (x)=\frac{\Delta y}{\Delta x}$ as $\Delta x \to 0$ Since denominator is going to zero, this fraction has a limit only if $\Delta y\to 0$ too, i.e. $f$ is cts at $x_0$.
 
@@ -95,10 +95,10 @@ E.g. $f(x) = x^5\Rightarrow f\prime(x)=5x^4$
 ##### Chain Rule
 Used to differentiate composed function $f(g(x))$
 	**Definition:** $${(f\circ g)}^\prime=f^\prime(g(x))\cdot g^\prime(x)$$
-**Examples:**
-	${(\sqrt{\sin x})}^\prime=\frac{1}{2\sqrt{\sin x}}\cdot\cos x=\frac{\cos x}{2\sqrt{\sin x}}$
-	
-	${({(5x^2-3x+2)}^5)}^\prime=5{(5x^2-3x+2)}^4\cdot(10x-3)$
+> [!example] Examples
+> ${(\sqrt{\sin x})}^\prime=\frac{1}{2\sqrt{\sin x}}\cdot\cos x=\frac{\cos x}{2\sqrt{\sin x}}$
+> 
+> ${({(5x^2-3x+2)}^5)}^\prime=5{(5x^2-3x+2)}^4\cdot(10x-3)$
 
 ###### Applications of the Chain Rule:
 1. ${(x^{\frac pq})}^\prime=\frac pq x^{\frac pq -1}$
@@ -140,10 +140,11 @@ $f(x)=\ln(g(x))$
 ##### Second Derivative
 **Definition:** The <u>second derivative</u> of $f$ at $x=a$ is the derivative of $f^\prime(a)$, evaluated at $x=a$.
 *We'll learn later the graphical significance of $f^{\prime\prime}(x)$.*
-**Example:**
-	$f(x)=5x^3$. Find $f^{\prime\prime}(x),f^{\prime\prime}(3)$
-	$f^{\prime}(x)=15x^2$
-	$f^{\prime\prime}(x)=30x\Rightarrow f^{\prime\prime}(3)=90$
+
+> [!Example]
+> $f(x)=5x^3$. Find $f^{\prime\prime}(x),f^{\prime\prime}(3)$
+> $f^{\prime}(x)=15x^2$
+> $f^{\prime\prime}(x)=30x\Rightarrow f^{\prime\prime}(3)=90$
 In "physical" terms, if $f(x)$ denotes distance, then $f^\prime(x)$ denotes velocity (change of distance over time), and $f^{\prime\prime}(x)$ denotes acceleration (change of velocity over time)
 
 ---

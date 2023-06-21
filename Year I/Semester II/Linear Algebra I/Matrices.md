@@ -134,22 +134,22 @@ All nonzero entries are *on* the main diagonal.
 	If $A$ is any $m\times n$ matrix, then: 
 	$cI_m\cdot A=cA$ 
 	$A\cdot cI_n=cA$ 
-	**Example:**
-	$$\begin{bmatrix}
-		2&0&0\\
-		0&2&0\\
-		0&0&2\\
-	\end{bmatrix}
-	\begin{bmatrix}
-		-1&3&0\\
-		1&-1&2\\
-		3&1&4\\
-	\end{bmatrix}=
-	\begin{bmatrix}
-		-2&6&0\\
-		2&-2&4\\
-		6&2&8\\
-	\end{bmatrix}$$
+> [!example]
+> $$\begin{bmatrix}
+>		2&0&0\\
+>		0&2&0\\
+>		0&0&2\\
+>	\end{bmatrix}
+>	\begin{bmatrix}
+>		-1&3&0\\
+>		1&-1&2\\
+>		3&1&4\\
+>	\end{bmatrix}=
+>	\begin{bmatrix}
+>		-2&6&0\\
+>		2&-2&4\\
+>		6&2&8\\
+>	\end{bmatrix}$$
 
 #### Inverse Matrices
 **Definition:**
@@ -161,9 +161,10 @@ All nonzero entries are *on* the main diagonal.
 > 
 > With matrices, the same concept applies. The inverse of a matrix $A$ is the matrix you multiply $A$ with to get the Identity Matrix - that is, $I$.
 
-**Example:**
-	$\begin{bmatrix}2&1\\5&3\\\end{bmatrix}\begin{bmatrix}3&-1\\-5&2\\\end{bmatrix}=\begin{bmatrix}1&0\\0&1\\\end{bmatrix}=I$
-	If $A=\begin{bmatrix}2&1\\5&3\\\end{bmatrix}$, then $A^{-1}=\begin{bmatrix}3&-1\\-5&2\\\end{bmatrix}$.
+> [!example]
+> $\begin{bmatrix}2&1\\5&3\\\end{bmatrix}\begin{bmatrix}3&-1\\-5&2\\\end{bmatrix}=\begin{bmatrix}1&0\\0&1\\\end{bmatrix}=I$
+> 
+> If $A=\begin{bmatrix}2&1\\5&3\\\end{bmatrix}$, then $A^{-1}=\begin{bmatrix}3&-1\\-5&2\\\end{bmatrix}$.
 
 > [!warning] Not every matrix is invertible.
 > Any matrix $A$ with a row *or* column of zeros is not invertible, because $AB$ will always have a row of zeros, hence $AB\not=I$.
@@ -376,14 +377,14 @@ Example:
 > If $A$ can't be reduced to $I$, then $A$ is not invertible. 
 > If $A$ can be reduced to $I$, then the right window will contain $A^{-1}$ at the end of the reduction.
 
-##### Summary Theorem
-A $n\times n$ matrix $A$ which satisfies one of the below satisfies all of the below:
-1. $A$ is invertible
-2. $A$ can be written as a product of Elementary Matrices
-3. $A$ can be reduced to $I$
-4. The system $A\vec x=\vec b\implies\vec x=A^{-1}\vec b$
-5. $\text{rank}(A)=n$ (See [[#Rank]])
-6. $|A|\not=0$ (See [[#Determinants]])
+> [!quote] ##### Summary Theorem
+> A $n\times n$ matrix $A$ which satisfies one of the below satisfies all of the below:
+> 1. $A$ is invertible
+> 2. $A$ can be written as a product of Elementary Matrices
+> 3. $A$ can be reduced to $I$
+> 4. The system $A\vec x=\vec b\implies\vec x=A^{-1}\vec b$
+> 5. $\text{rank}(A)=n$ (See [[#Rank]])
+> 6. $|A|\not=0$ (See [[#Determinants]])
 
 ---
 *June 8 Tirgul. Links to the [board](https://drive.google.com/file/d/1hH0QaUec9ubBSNG2wn1EQoG-HmxX59zq/view?usp=sharing) and the [recording](https://drive.google.com/file/d/1Xppz8DQMudf7ko32Q96wCEohI-crBqtc/view?usp=sharing).*
