@@ -10,6 +10,7 @@ $f(x)\text{ is continuous at }x=a\text{ if }f(a)=\lim_{x\to a}{f(x)}$.
 	- This is called a Type II discontinuity.
 	- This does not include extended limits, so by this definition, $\lim_{x\to0}{\frac1x}$ doesn't have a limit, meaning it's discontinuos at $x=0$ with a Type II discontinuity.
 	- Ususally in this case, $f$ has a vertical asymptote $x=a$, but not always.
+
 > [!example] Examples of discontinuities
 > 1) $f(x) = {1\over x+3} \text{ at } x=-3$
 > 2) $f(x)=\ln(x) \text{ at }x=0$
