@@ -32,7 +32,7 @@ $f(x)\text{ is continuous at }x=a\text{ if }f(a)=\lim_{x\to a}{f(x)}$.
 	- Candidates for discontinuity:
 		- x=2, ~~x=0~~
 			- *Vanishing denominators*
-			- But, x=0 is not a candidate, because the expression(s) which is discontinuous at x=0 ($8-\frac8x$) is not the definition of $f$ when $x=0$, only for $x\ge4$.
+			- But, $x=0$ is not a candidate, because the expression(s) which is discontinuous at $x=0$ ($8-\frac8x$) is not the definition of $f$ when $x=0$, only for $x\ge4$.
 		- x=4
 			- Because there's a potential for a mismatch of the functions
 	- $x=2$
@@ -59,14 +59,14 @@ $f(x)\text{ is continuous at }x=a\text{ if }f(a)=\lim_{x\to a}{f(x)}$.
 	- $f$ has a Type I discontinuity at $x=5$.
 ---
 *May 1 Tirgul. Links to the [board](https://drive.google.com/file/d/1FSqMNuyA5rjcVlTJHJJ7DJgYFUyxDiUd/view?usp=sharing) and the [recording](https://drive.google.com/file/d/1qXaY82pm0l_fU_0Benl9S-MytRLqPwRX/view?usp=sharing)*
-### Forming a cts. functin using known continuous functions
+### Forming a continuous functin using known continuous functions
 > [!quote] #### Theorem #25
-> 1. If $f$ and $g$ are cts at $x=a$, then the following functions are also cts. at $x=a$:
+> 1. If $f$ and $g$ are continuous at $x=a$, then the following functions are also continuous at $x=a$:
 > 	- $f+g$
 > 	- $f-g$
 > 	- $f\cdot g$
 > 	- $\frac fg\mid g(a)\not=0$
-> 2. If $g$ is cts at $x=a$ and $f$ is cts at $g(a)$, then $(f\bullet g)(x)$ is cts at a.
+> 2. If $g$ is continuous at $x=a$ and $f$ is continuous at $g(a)$, then $(f\circ g)(x)$ is continuous at $a$.
 
 **Definition:** An <u>elementary</u> function is one obtained by adding / subtracting / multiplying / dividing / composing any of the following functions of x:
 - $a^x$
@@ -77,23 +77,23 @@ $f(x)\text{ is continuous at }x=a\text{ if }f(a)=\lim_{x\to a}{f(x)}$.
 - constants
 - All the functions we've seen except abs. value function, whole number function, Dirichlet function
 > [!quote] #### Theorem #26:
-> Every elementary function is cts. at every point in it's domain
+> Every elementary function is continuous at every point in it's domain
 
 > [!quote] #### Theorem #27:
-> - If f is cts at x=a and $f(a) > 0$, then there exista a neighborhood of a in which $f(x)>0 \mid\forall x$
-> - If f is cts at x=a and $f(a) < 0$, then there exista a neighborhood of a in which $f(x)<0 \mid\forall x$
+> - If f is continuous at x=a and $f(a) > 0$, then there exista a neighborhood of a in which $f(x)>0 \mid\forall x$
+> - If f is continuous at x=a and $f(a) < 0$, then there exista a neighborhood of a in which $f(x)<0 \mid\forall x$
 
-**Definition:** $f$ is cts. in the <u>closed</u> interval $[a,b]$ if $f$ is cts. at every point in $(a, b)$, cts from the right at $x=a$, and cts. from the left at $x=b$.
+**Definition:** $f$ is continuous in the <u>closed</u> interval $[a,b]$ if $f$ is continuous at every point in $(a, b)$, continuous from the right at $x=a$, and continuous from the left at $x=b$.
 
 > [!quote] #### Weirstrass Theorem (#28-29):
-> 1) If $f$ is cts. in $[a,b]$ then $f$ is bounded there
+> 1) If $f$ is continuous in $[a,b]$ then $f$ is bounded there
 > 	- i.e. $\exists m,M \text{ such that } m \le f(x) \le M \mid\forall x\in[a,b]$
-> 2) If $f$ is cts. in $[a,b]$ then $f$ attains it's maximum and minimum there
+> 2) If $f$ is continuous in $[a,b]$ then $f$ attains it's maximum and minimum there
 > 	- i.e. $\exists c,d\in[a,b] \text{ such that } f(c) \le f(x) \le f(d) \mid\forall x\in[a,b]$
 > 	- This means that there is a defined upper and lower value of $f$
 
 > [!quote] #### Intermediate Value Theorem (IVT):
-> If $f$ is cts. on a closed interval $[a,b]$ and $f(a)\not=f(b)$ then for every $\alpha$ between $f(a)$ and $f(b)$ there exists $c\in[a,b]$ such that $f(c)=\alpha$.
+> If $f$ is continuous on a closed interval $[a,b]$ and $f(a)\not=f(b)$ then for every $\alpha$ between $f(a)$ and $f(b)$ there exists $c\in[a,b]$ such that $f(c)=\alpha$.
 > 	Specifically: If $f(a)>0\text{ and }f(b) < 0 \text { then }\exists c\in(a,b) \text{ such that } f(c)=0$
 
 ---

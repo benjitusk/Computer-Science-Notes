@@ -31,19 +31,19 @@ The tangent line to $y=f(x)$ at $x=x_0$ is <u>defined</u> as the line through $(
 	  From the right: $\lim_{h\to 0^+}{\frac{f(h)-f(0)}{h}}=1$
 	  Hence, $f(x)=|x|$ is differentiable from each side at $x_0=0$, but is not differentiable there.
 4) f is differentiable in open interval $(a,b)$ if f is differentiable at each pt. in that interval
-5) if $f$ is differentiable in (a,b) then the derivative of $f$ on $(a,b)$ is defined as (for $x_0\in(a,b)$): $f\prime(x_0)=\lim_{h\to 0}{\frac{f(x_0+h)-f(x_0)}{h}}$
+5) if $f$ is differentiable in $(a,b)$ then the derivative of $f$ on $(a,b)$ is defined as (for $x_0\in(a,b)$): $f\prime(x_0)=\lim_{h\to 0}{\frac{f(x_0+h)-f(x_0)}{h}}$
 	One sided derivatives are defined similarly to definitions 2&3.
 The derivative function $f^\prime$ is defined for each $x_0$ in this manner: $$f^\prime(x)=\lim_{h\to 0}{\frac{f(x+h)-f(x)}{h}}$$
 
 > [!quote] ##### Theorem 31:
 > If x is differentiable at $x_0$, then x is continuous at $x_0$. The reverse is *not true*.
-> Intuitively, $f\prime (x)=\frac{\Delta y}{\Delta x}$ as $\Delta x \to 0$ Since denominator is going to zero, this fraction has a limit only if $\Delta y\to 0$ too, i.e. $f$ is cts at $x_0$.
+> Intuitively, $f\prime (x)=\frac{\Delta y}{\Delta x}$ as $\Delta x \to 0$ Since denominator is going to zero, this fraction has a limit only if $\Delta y\to 0$ too, i.e. $f$ is continuous at $x_0$.
 
 ##### Linear Approximation using derivatives:
 $(1.0123)^2$
 $f\prime(x)=\lim_{h\to 0}{\frac{f(x+h)-f(x)}{h}}$. I.e., for small $h$:
 $f\prime (x) \approx \frac{f(x+h)-f(x)}{h}$
-For smaller h, the approxamation is more exact.
+For smaller h, the approximation is more exact.
 $f(x+h)\approx f(x)+h\cdot f\prime (x)$.![[Pasted image 20230508154358.png|600]]
 $$\begin{align}\text{In our example: }(1.0123)^2 \approx 1^2 + (0.0123)\cdot 2 &= 1.0246\\\text{Real Answer: }(1.0123)^2 &= 1.02457\end{align}$$
 (We multiply by 2, because that's $f\prime$)
@@ -87,7 +87,7 @@ E.g. $f(x) = x^5\Rightarrow f\prime(x)=5x^4$
 1. $f(x)=c\Rightarrow f^\prime(x)=0$
 2. ${(c\cdot f)}^\prime(x)=c\cdot f^\prime(x)$
 3. ${(f\pm g)}^\prime(x)=f^\prime(x)\pm g^\prime(x)$
-4. ${(f\cdot g)}^\prime(x)=f(x)\cdot g^\prime(x)+f^\prime(x)\cdot g(x)$
+4. ${(f\circ g)}^\prime(x)=f(x)\cdot g^\prime(x)+f^\prime(x)\cdot g(x)$
 	Product Rule
 5. ${(\frac fg)}^\prime(x)=\frac{f^\prime(x)\cdot g(x)-f(x)\cdot g^\prime(x)}{{\left[g(x)\right]}^2}$
 	Quotient Rule
