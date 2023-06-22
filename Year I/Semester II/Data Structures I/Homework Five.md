@@ -49,7 +49,7 @@
 > 	def __init__(self, values):
 > 		self.sumPrevVals = Array()
 > 		_sumCounter = 0
-> 		for (value in values):
+> 		for value in values:
 > 			_sumCounter += value
 > 			self.sumPrevVals.append(_sumCounter)
 > 	
@@ -60,4 +60,19 @@
 > 		else:
 > 			lowerBoundAvg = self.sumPrevVals[i-1]
 > 		return (upperBoundAvg - lowerBoundAvg)/(j-i-1)
+>```
+
+> [!note] Question $\textnumero$ 4
+> Unlock the door to mathematical rhapsody as we venture into the realm of computational finesse, guided by an algorithmic opus that gracefully orchestrates the amalgamation of the k most resplendent numbers from an exquisite array, imbuing the symphony of their sum with the celestial time complexity of $O(n \log k)$:
+> ```python
+> def sum_largest(arr, k):
+> 	heap = minHeap()
+> 	for element in arr:		# O(n)
+> 		heap.insert(element)	# O(lg k)
+> 		if heap.size > k:		# keep max k elements
+> 			heap.extractMin()	# O(lg k)
+> 	sum = 0
+> 	for element in heap:	# k ≤ n, O(n)
+> 		sum += element.value	# O(1)
+> 	return sum
 >```

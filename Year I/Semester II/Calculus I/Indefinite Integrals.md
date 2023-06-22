@@ -76,8 +76,25 @@ $$\int \underbrace{f(u(x))}_{f(u)}\ \underbrace{u^\prime(x)\;dx}_{du}=\int f(u)\
 >   Replace the substitution:
 >   $$u^3+C=\sin^3x+C$$
 
+---
+*June 5 Tirgul. Links to the [board](https://drive.google.com/file/d/1jC-3rBP83pOaEgS5oz5vi6MZnezAzosC/view?usp=sharing) and the [recording](https://drive.google.com/file/d/1JBBuIsRiHkG3wy1CRoGwrHAyBRweepv7/view?usp=sharing).*
 The key is to find the appropriate $u(x)$, see above rule.
-```ad-hint
-title: General Rule
-$$\int{\frac{1}{x^2+a}}dx=\frac{1}{\sqrt a}\arctan\left(\frac x{\sqrt a}\right)$$
-```
+
+> [!important] General Rule
+> $$\int{\frac{1}{x^2+a}}dx=\frac{1}{\sqrt a}\arctan\left(\frac x{\sqrt a}\right)$$
+
+> [!info] Useful Trigonometric Identities
+> $$\begin{aligned}
+>	\sin(x)\sin(y)&=\frac{\cos(y-x)-\cos(y+x)}2\\
+>	\cos(x)\cos(y)&=\frac{\cos(y-x)+\cos(y+x)}2\\
+>	\sin(x)\cos(y)&=\frac{\sin(y+x)-\sin(y-x)}2\\
+>	\cos(x)\sin(x)&=\frac{\sin(2x)}2
+>	\\
+>	\sin^2(x)&=\frac{1-\cos(2x)}2\\
+>	\cos^2(x)&=\frac{1+\cos(2x)}2\\
+> \end{aligned}$$
+
+
+---
+*June 7 Lecture. Links to the [board](https://drive.google.com/file/d/15gbbPNCTEbTvbXksbwLN3ELwxw4Qgcgx/view?usp=sharing) and the [recording](https://drive.google.com/file/d/1jC-3rBP83pOaEgS5oz5vi6MZnezAzosC/view?usp=sharing).*
+#### Methods for Integrating a Rational Function
