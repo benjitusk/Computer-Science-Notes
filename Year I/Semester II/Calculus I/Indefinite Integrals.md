@@ -43,7 +43,21 @@
 \end{array}$$
 
 
-### Integration by Substitution
+#### Integration by Substitution
 *Reversing the [[Differentiability and Derivatives#Chain Rule|Chain Rule]].*
 **Rule:**
-	Suppose $F^\prime=f$. Then by the chain rule, ${[F(u(x))]}^\prime=f(u(x))\cdot u^\prime(x)$. When we reverse the process, $\int{f(u(x))\cdot u^\prime(x)}\;dx=F(u(x))+C$  
+	Suppose $F^\prime=f$. Then by the chain rule, ${[F(u(x))]}^\prime=f(u(x))\cdot u^\prime(x)$. When we reverse the process, $\int{f(u(x))\cdot u^\prime(x)}\;dx=F(u(x))+C$ 
+	Therefore, we deduce the following rule: $$\int{\Big[f\big(u(x)\big)\cdot u^\prime(x)\Big]}\;dx=F\big(u(x)\big)+C$$
+	The key is to identify one factor of the integrand as the derivative of another part of the integrand; this other part will be your $u^\prime(x)$.
+	Another way to say that is to find a composed function $(f\circ g)(x)$ within the integrand such that $g^\prime(x)$ is being multiplied by the composed function
+> [!example] Example of Reversing the Chain Rule
+> $$\int{\color{blue}\underbrace{\color{black}3\sin^2x}_{f\big(\color{orange}u(x)\color{blue}\big)}\ \color{green}\underbrace{\color{black}\cos x}_{\color{green}u^\prime(x)}}\;dx=\color{red}\underbrace{\color{black}\sin^3x}_{\color{red}F\big(\color{orange}u(x)\color{red}\big)}$$
+> Where,
+> - The composed function is $\color{blue}3\color{orange}\sin\color{blue}^2\color{orange}x$
+> - $\color{red}F(x)\color{black}=x^3$
+> - $\color{blue}f(x)\color{black}=F^\prime(x)=3x^2$
+> - $\color{orange}u(x)\color{black}=\sin x$
+
+We use substitution to make this method technically easier:
+
+##### Substitution
