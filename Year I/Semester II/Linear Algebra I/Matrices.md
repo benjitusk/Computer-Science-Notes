@@ -1,6 +1,5 @@
 *May 21 Lecture. Links to the [board](https://drive.google.com/file/d/1JwyIGB5w1rQLwx8FWlZQuaTDbF4Up73R/view?usp=sharing) and the [recording](https://drive.google.com/file/d/1K2gwAllw17zKIm0WxmK-MKqts6XyIMVw/view?usp=sharing).*
 
----
 #### Notation:
 A single capital letter denotes a matrix. ($A, B, C, S, T\dots$)
 $$A_{m\times n}=\begin{bmatrix}

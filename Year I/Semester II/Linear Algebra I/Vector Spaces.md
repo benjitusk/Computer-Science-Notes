@@ -1,6 +1,6 @@
 *April 23 Lecture. Links to the [board](https://drive.google.com/file/d/1MP3Y2-6eU7uNBp85LiG48GBC8RXF00LA/view?usp=sharing) and the [recording](https://drive.google.com/file/d/1GtaH6vGsTdTt5vmUIqJOfPcf2tzEOQRV/view?usp=sharing).*
 #### Examples of Vector Spaces
-Vectors in $\Bbb R^n$ are objects on which we define operations of addition (to eachother) and multiplication by a [scalar](<https://en.wikipedia.org/wiki/Scalar_(mathematics)>).
+Vectors in $\Bbb R^n$ are objects on which we define operations of addition (to each other) and multiplication by a [scalar](<https://en.wikipedia.org/wiki/Scalar_(mathematics)>).
 Other "objects" on which we can define the same operations:
 - Matrices: $\begin{bmatrix}a&b&c\\d&e&f\end{bmatrix}$
 	- Denoted as $M_{m\times n}$ with an order of $m$ rows by $n$ columns
@@ -12,9 +12,10 @@ Other "objects" on which we can define the same operations:
 	- <u>Degree</u> of polynomial is the highest power of $x$
 	- Addition and scalar multiplication works as expected
 - Functions:
-	- let $f(x)=\sin x$ and let $g(x)=4e^x$.
+	- Let $f(x)=\sin x$ and let $g(x)=4e^x$.
 	- Addition $(f+g)(x)=\sin x+4e^x$
 	- Multiplication $(c\cdot f)(x)=c\cdot f(x) = c\cdot \sin x$
+
 All of these are examples of abstract vector spaces.
 #### Definition of Vector Space
 A set $V$ is called a <u>vector space</u> (and its elements are called vectors) if we can define on $V$ operations of addition ($\oplus$) and scalar multiplication ($\odot$) satisfying the following ten axioms:
