@@ -51,7 +51,7 @@
 	The key is to identify one factor of the integrand as the derivative of another part of the integrand; this other part will be your $u^\prime(x)$.
 	Another way to say that is to find a composed function $(f\circ g)(x)$ within the integrand such that $g^\prime(x)$ is being multiplied by the composed function
 > [!example] Example of Reversing the Chain Rule
-> $$\int{\color{blue}\underbrace{\color{black}3\sin^2x}_{f\big(\color{orange}u(x)\color{blue}\big)}\ \color{green}\underbrace{\color{black}\cos x}_{\color{green}u^\prime(x)}}\;dx=\color{red}\underbrace{\color{black}\sin^3x}_{\color{red}F\big(\color{orange}u(x)\color{red}\big)}$$
+> $$\int{\color{blue}\underbrace{\color{black}3\sin^2x}_{f\big(\color{orange}u(x)\color{blue}\big)}\ \color{green}\underbrace{\color{black}\cos x}_{\color{green}u^\prime(x)}}\;dx=\color{red}\underbrace{\color{black}\sin^3x}_{\color{red}F\big(\color{orange}u(x)\color{red}\big)}\color{black}+C$$
 > Where,
 > - The composed function is $\color{blue}3\color{orange}\sin\color{blue}^2\color{orange}x$
 > - $\color{red}F(x)\color{black}=x^3$
@@ -61,3 +61,18 @@
 We use substitution to make this method technically easier:
 
 ##### Substitution
+Denote $u^\prime(x)dx$ as $du$, and write $f\big(u(x)\big)$ as $f(u)$.
+	I.e., remove $x$ from the integral entirely, rewrite it as an integral in the variable $u$.
+$$\int \underbrace{f(u(x))}_{f(u)}\ \underbrace{u^\prime(x)\;dx}_{du}=\int f(u)\;du=F(u)+C=F\big(u(x)\big)+C$$
+> [!example] Example of Using Substitution
+> $$\int{3\sin^2x\cos x}\;dx=\int{3u^2}\;du$$
+> Where,
+> - We substitute $u(x)=\sin x$,
+>   which gives us $u^\prime(x)\;dx=\cos x\;dx$
+>   
+>   Solve the simplified integral:
+>   $$\int{3u^2}\;du=u^3+C$$
+>   
+>   Replace the substitution:
+>   $$u^3+C=\sin^3x+C$$
+
