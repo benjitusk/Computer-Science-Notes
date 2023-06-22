@@ -76,3 +76,8 @@ $$\int \underbrace{f(u(x))}_{f(u)}\ \underbrace{u^\prime(x)\;dx}_{du}=\int f(u)\
 >   Replace the substitution:
 >   $$u^3+C=\sin^3x+C$$
 
+The key is to find the appropriate $u(x)$, see above rule.
+```ad-hint
+title: General Rule
+$$\int{\frac{1}{x^2+a}}dx=\frac{1}{\sqrt a}\arctan\left(\frac x{\sqrt a}\right)$$
+```
