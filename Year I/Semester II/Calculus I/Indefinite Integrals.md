@@ -66,7 +66,7 @@ We use substitution to make this method technically easier:
 Denote $u^\prime(x)dx$ as $du$, and write $f\big(u(x)\big)$ as $f(u)$.
 	I.e., remove $x$ from the integral entirely, rewrite it as an integral in the variable $u$.
 $$\int \underbrace{f(u(x))}_{f(u)}\ \underbrace{u^\prime(x)\;dx}_{du}=\int f(u)\;du=F(u)+C=F\big(u(x)\big)+C$$
-> [!example]- Example of Using Substitution $\int{3\sin^2x\cos x}\;dx$
+> [!example] Example of Using Substitution $\int{3\sin^2x\cos x}\;dx$
 > $$\int{3\sin^2x\cos x}\;dx=\int{3u^2}\;du$$
 > Where,
 > - We substitute $u(x)=\sin x$,
@@ -85,7 +85,7 @@ The key is to find the appropriate $u(x)$, see above rule.
 > [!important] General Rule
 > $$\int{\frac{1}{x^2+a}}dx=\frac{1}{\sqrt a}\arctan\left(\frac x{\sqrt a}\right)$$
 
-> [!info]+ Useful Trigonometric Identities
+> [!info] Useful Trigonometric Identities
 > $$\begin{aligned}
 >	\sin(x)\sin(y)&=\frac{\cos(y-x)-\cos(y+x)}2\\
 >	\cos(x)\cos(y)&=\frac{\cos(y-x)+\cos(y+x)}2\\
@@ -105,13 +105,13 @@ Recall the Product Rule:
 #### Algebraic Methods for Integrating a Rational Function
 $$\int\frac{P(x)}{Q(x)}\;dx$$
 First, let’s look at simple rationals that don’t need any special methods:
-> [!example]- Simple example: $\int{\frac{x+4}{x^2+7}}\;dx$
+> [!example] Simple example: $\int{\frac{x+4}{x^2+7}}\;dx$
 > Break up $\frac{x+4}{x^2+7}$:
 > $$\frac{x+4}{x^2+7}=\frac{x}{x^2+7}+\frac{4}{x^2+7}$$
 > Therefore,
 > $$\int{\frac{x+4}{x^2+7}}\;dx=\int{\frac{x}{x^2+7}}\;dx+\int{\frac{4}{x^2+7}}\;dx$$
 
-> [!example]- Simple example: $\int{\frac{x+x^3}{x^4+2x^2}}\;dx$
+> [!example] Simple example: $\int{\frac{x+x^3}{x^4+2x^2}}\;dx$
 > Notice that the derivative of the denominator is $4x^3+4x=4(x+x^3)$, which is $4$ times the numerator.
 > 
 > $$\int{\frac{x+x^3}{x^4+2x^2}}\;dx=\frac14\int{\frac{4(x+x^3)}{x^4+2x^2}}\;dx$$
@@ -121,7 +121,7 @@ First, let’s look at simple rationals that don’t need any special methods:
 > $$\frac14\ln|u|+C=\frac14\ln|x^4+2x^2|+C=\frac14\ln(x^4+2x^2)+C$$
 > 
 
-> [!summary]+ Simple: When it works, just do it.
+> [!summary] Simple: When it works, just do it.
 > The last two examples are “easy” methods when they work:
 > - Split the integrand into the sum of two ‘easier’ ones
 > - Notice that the numerator is a derivative (or multiple thereof) of the denominator
@@ -134,13 +134,13 @@ Cases where it’s not so simple:
 
 **deg P ≥ deg Q**
 When the numerator has a higher or equal degree than the denominator, first actually do the division:
-> [!example]- Not-So-Simple Example $\int\frac{x^4}{x^2+4}$
+> [!example] Not-So-Simple Example $\int\frac{x^4}{x^2+4}$
 > First divide: $\frac{x^4}{x^2+4}=x^2-4+\frac{16}{x^2+4}$
 >Then integrate:
 >$$\int{x^2-4+\frac{16}{x^2+4}}\;dx=\int{x^2}\;dx-\int4\;dx+16\int{\frac{1}{x^2+4}}\;dx$$
 >These are now simple integrals that we know how to solve.
 
-> [!example]- Not-So-Simple Example $\int{\frac{3x-4}{x^2+2x+5}}\;dx$
+> [!example] Not-So-Simple Example $\int{\frac{3x-4}{x^2+2x+5}}\;dx$
 > We “complete the square” in the denominator, so we get the form $\int\frac{3x+4}{(x+a)^2+b}$
 > $x^2+2x+5=(x^2+2x+1)+4=(x+1)^2+4$
 > Substitute $u=x+1\;du=1dx$
@@ -154,7 +154,7 @@ When the numerator has a higher or equal degree than the denominator, first actu
 ##### Decomposition into Partial Fractions
 A rational function of the form $\frac{Ax+B}{(Cx+D)(Mx+N)}$ can be broken down as $\frac P{Cx+D}+\frac Q{Mx+N}$, where the degrees of the numerators are less than that of the denominators.
 If the numerator has a degree of 0 or 1, the denominator has a degree of 2.
-> [!example]+
+> [!example]
 > $$\frac{20}{(2x+1)(x-2)}=\frac{P(x-2)}{2x+1}+\frac{Q(2x-1)}{(x-2)}=\frac{(P+2Q)x+(-2P+Q)}{(2x+1)(x-2)}$$
 > Therefore, $(P+2Q)x+(-2P+Q)=20$
 > Comparing coefficients across numerators, we get:
