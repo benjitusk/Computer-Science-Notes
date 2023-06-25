@@ -92,7 +92,7 @@ E.g. $f(x) = x^5\Rightarrow f\prime(x)=5x^4$
 1. $f(x)=c\Rightarrow f^\prime(x)=0$
 2. ${(c\cdot f)}^\prime(x)=c\cdot f^\prime(x)$
 3. ${(f\pm g)}^\prime(x)=f^\prime(x)\pm g^\prime(x)$
-4. ${(f\circ g)}^\prime(x)=f(x)\cdot g^\prime(x)+f^\prime(x)\cdot g(x)$
+4. ${(f\cdot g)}^\prime(x)=f(x)\cdot g^\prime(x)+f^\prime(x)\cdot g(x)$
 	Product Rule
 5. ${(\frac fg)}^\prime(x)=\frac{f^\prime(x)\cdot g(x)-f(x)\cdot g^\prime(x)}{{\left[g(x)\right]}^2}$
 	Quotient Rule

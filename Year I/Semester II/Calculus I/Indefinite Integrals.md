@@ -12,12 +12,13 @@
 	$f(x)$ is called the <u>integrand</u>
 
 
-> [!info] Basic Integrals -- Very Important
+> [!info] Basic Integrals — Very Important
 > - $\int{\cos x}\;dx=\sin x+C$
 > - $\int{\sin x}\;dx=-\cos x+C$
+> - $\int{\tan x};dx=-\ln|\cos(x)|+C$
 > - $\int{e^x}\;dx=e^x+C$
 > - $\int{x^n}\;dx=\frac{x^{n+1}}{n+1}+C$
-> 	- *For $n\not=1$*
+> 	- *For $n\not=-1$*
 > - $\int{x^{-1}}\;dx=\int{\frac1x}\;dx=\ln{|x|}+C$
 > - $\int{\frac1{1+x^2}}\;dx=\arctan x+C$
 > - $\int{\frac1{\cos^2x}}\;dx=\tan x+C$
@@ -32,8 +33,9 @@
 	   $\int{(kf)(x)}\;dx=k\cdot\int{f(x)}\;dx=kF(x)+C$
 	   The integral of a product of a constant and a function is the product of a constant and the integral of the function. Basically, this means you can pull constant coefficients outside of the integrand.
 	   E.g, $\int{5x^3}\;dx=5\cdot\int{x^3}\;dx=5\cdot\frac{x^4}{4}+C=\frac{5x^4}{4}+C$
-3. Combining properties 1 & 2, we get "linearity of the integral":
-	   $$\int[af(x)+bg(x)]\;dx=aF(x)+bG(x)$$
+3. Combining properties 1 & 2, we get “linearity of the integral”:
+	   $$\int\big[af(x)+bg(x)\big]\;dx=aF(x)+bG(x)$$
+
 > [!example] Example: Exercise 6, Q1/1
 > $$\begin{array}{l}\int{\left(2x^3+\frac3x\right)}\;dx
 &=\int{2x^3}\;dx\;&+\;\int{\frac3x}\;dx\\
@@ -64,7 +66,7 @@ We use substitution to make this method technically easier:
 Denote $u^\prime(x)dx$ as $du$, and write $f\big(u(x)\big)$ as $f(u)$.
 	I.e., remove $x$ from the integral entirely, rewrite it as an integral in the variable $u$.
 $$\int \underbrace{f(u(x))}_{f(u)}\ \underbrace{u^\prime(x)\;dx}_{du}=\int f(u)\;du=F(u)+C=F\big(u(x)\big)+C$$
-> [!example] Example of Using Substitution
+> [!example]- Example of Using Substitution $\int{3\sin^2x\cos x}\;dx$
 > $$\int{3\sin^2x\cos x}\;dx=\int{3u^2}\;du$$
 > Where,
 > - We substitute $u(x)=\sin x$,
@@ -83,18 +85,85 @@ The key is to find the appropriate $u(x)$, see above rule.
 > [!important] General Rule
 > $$\int{\frac{1}{x^2+a}}dx=\frac{1}{\sqrt a}\arctan\left(\frac x{\sqrt a}\right)$$
 
-> [!info] Useful Trigonometric Identities
+> [!info]+ Useful Trigonometric Identities
 > $$\begin{aligned}
 >	\sin(x)\sin(y)&=\frac{\cos(y-x)-\cos(y+x)}2\\
 >	\cos(x)\cos(y)&=\frac{\cos(y-x)+\cos(y+x)}2\\
 >	\sin(x)\cos(y)&=\frac{\sin(y+x)-\sin(y-x)}2\\
 >	\cos(x)\sin(x)&=\frac{\sin(2x)}2
 >	\\
->	\sin^2(x)&=\frac{1-\cos(2x)}2\\
->	\cos^2(x)&=\frac{1+\cos(2x)}2\\
+>	\sin^2(x)&=\frac{1-\cos(2x)}2=1-\cos^2x\\
+>	\cos^2(x)&=\frac{1+\cos(2x)}2=1-\sin^2x\\
 > \end{aligned}$$
 
+#### Integration by Parts
+*Reversing the [[Differentiability and Derivatives#Rules of Differentiation|Product Rule]]*
+Recall the Product Rule: 
 
 ---
-*June 7 Lecture. Links to the [board](https://drive.google.com/file/d/15gbbPNCTEbTvbXksbwLN3ELwxw4Qgcgx/view?usp=sharing) and the [recording](https://drive.google.com/file/d/1jC-3rBP83pOaEgS5oz5vi6MZnezAzosC/view?usp=sharing).*
-#### Methods for Integrating a Rational Function
+*June 7 Lecture. Links to the [board](https://drive.google.com/file/d/15gbbPNCTEbTvbXksbwLN3ELwxw4Qgcgx/view?usp=sharing) and the [recording](https://drive.google.com/file/d/1de2CqRi_kW-lfg4d7KYnV5lTyedULo3c/view?usp=sharing).*
+#### Algebraic Methods for Integrating a Rational Function
+$$\int\frac{P(x)}{Q(x)}\;dx$$
+First, let’s look at simple rationals that don’t need any special methods:
+> [!example]- Simple example: $\int{\frac{x+4}{x^2+7}}\;dx$
+> Break up $\frac{x+4}{x^2+7}$:
+> $$\frac{x+4}{x^2+7}=\frac{x}{x^2+7}+\frac{4}{x^2+7}$$
+> Therefore,
+> $$\int{\frac{x+4}{x^2+7}}\;dx=\int{\frac{x}{x^2+7}}\;dx+\int{\frac{4}{x^2+7}}\;dx$$
+
+> [!example]- Simple example: $\int{\frac{x+x^3}{x^4+2x^2}}\;dx$
+> Notice that the derivative of the denominator is $4x^3+4x=4(x+x^3)$, which is $4$ times the numerator.
+> 
+> $$\int{\frac{x+x^3}{x^4+2x^2}}\;dx=\frac14\int{\frac{4(x+x^3)}{x^4+2x^2}}\;dx$$
+> Substitute $u=x^4+2x^2,\; du=4(x+x^3)dx$
+> $$\frac14\int{\frac{du}{u}}=\frac14\ln|u|+C$$
+> Un-substitute
+> $$\frac14\ln|u|+C=\frac14\ln|x^4+2x^2|+C=\frac14\ln(x^4+2x^2)+C$$
+> 
+
+> [!summary]+ Simple: When it works, just do it.
+> The last two examples are “easy” methods when they work:
+> - Split the integrand into the sum of two ‘easier’ ones
+> - Notice that the numerator is a derivative (or multiple thereof) of the denominator
+> 
+> However, it won’t always be so easy.
+
+Cases where it’s not so simple:
+- The degree of the numerator is equal to or larger than the degree of the denominator
+- The denominator is a quadratic equation
+
+**deg P ≥ deg Q**
+When the numerator has a higher or equal degree than the denominator, first actually do the division:
+> [!example]- Not-So-Simple Example $\int\frac{x^4}{x^2+4}$
+> First divide: $\frac{x^4}{x^2+4}=x^2-4+\frac{16}{x^2+4}$
+>Then integrate:
+>$$\int{x^2-4+\frac{16}{x^2+4}}\;dx=\int{x^2}\;dx-\int4\;dx+16\int{\frac{1}{x^2+4}}\;dx$$
+>These are now simple integrals that we know how to solve.
+
+> [!example]- Not-So-Simple Example $\int{\frac{3x-4}{x^2+2x+5}}\;dx$
+> We “complete the square” in the denominator, so we get the form $\int\frac{3x+4}{(x+a)^2+b}$
+> $x^2+2x+5=(x^2+2x+1)+4=(x+1)^2+4$
+> Substitute $u=x+1\;du=1dx$
+> $x=u-1\implies3x-4=3(u-1)-4=3u-7$
+> $$\int{\frac{3x-4}{x^2+2x+5}}\;dx=\int{\frac{3u-7}{u^2+4}}\;du$$
+> 
+> Summary of method:
+> > Complete the square in the denominator to change it from $x^2+ax+b$ to $u^2+c$
+> > This **only** works if the denominator $Q(x)>0$ for all $x$ — i.e., it doesn’t break down into factors. When this condition is not met, we use Decomposition (see below).
+
+##### Decomposition into Partial Fractions
+A rational function of the form $\frac{Ax+B}{(Cx+D)(Mx+N)}$ can be broken down as $\frac P{Cx+D}+\frac Q{Mx+N}$, where the degrees of the numerators are less than that of the denominators.
+If the numerator has a degree of 0 or 1, the denominator has a degree of 2.
+> [!example]+
+> $$\frac{20}{(2x+1)(x-2)}=\frac{P(x-2)}{2x+1}+\frac{Q(2x-1)}{(x-2)}=\frac{(P+2Q)x+(-2P+Q)}{(2x+1)(x-2)}$$
+> Therefore, $(P+2Q)x+(-2P+Q)=20$
+> Comparing coefficients across numerators, we get:
+> $$\begin{aligned}P+2Q&=0\\-2P+Q&=20\end{aligned}$$
+> Solving for $P$ and $Q$, we get $Q=4,\;P=-8$. Plugging them into our desired form:
+> $$\frac{20}{(2x+1)(x-2)}=\frac{-8}{2x+1}+\frac{4}{x-2}$$
+> The integrals of the summands are much easier to calculate.
+
+If the denominator has more than two factors:
+>  $\frac{Ax+B}{(Cx+D)(Mx+N)(Sx+T)}=\frac P{Cx+D}+\frac Q{Mx+N}+\frac R{Sx+T}$ 
+
+In each summand, the numerator can be of degree *up to* one less than that of the denominator. ${(\text{deg}(numerator)≤\text{deg}(denominator)-1)}$. If the denominator is an irreducible polynomial of degree 2, set the numerator as degree 1. ($Ax+B$)

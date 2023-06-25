@@ -154,7 +154,7 @@ All nonzero entries are *on* the main diagonal.
 **Definition:**
 	If $A$ is an $n\times n$ matrix, and $AB=I$, then $A$ is called <u>invertable</u>, and $B$ is the <u>inverse matrix</u> of $A$, denoted $B=A^{-1}$.
 	
-> [!info] Inverse Matrices - In English
+> [!info] Inverse Matrices — In English
 > Every scalar number has its inverse. The inverse of $2$ is $1\over2$. The inverse of $\frac14$ is $4$. The inverse of $\frac85$ is $\frac58$.
 > The common ground is that multiplying a scalar by its inverse gives you the "Identity Scalar" - that is, $1$.
 > 
@@ -314,6 +314,10 @@ Example:
 
 > [!caution] $A^{-1}$ as a product of Elementary Matrices
 > $A^{-1}$ is the product of the Elementary Matrices obtained by reducing $A$ to $I$, in the **reverse** of the order in which you obtained them.
+> > [!danger] Exam Candidate
+> > This will likely be one of the test questions, or part of it.
+> 
+
 
 
 #### Finding $A^{-1}$
@@ -431,8 +435,43 @@ We therefore define <u>rank</u> as the row rank and the column rank, which are a
 - $\left|\begin{matrix}1&-3\\-4&12\end{matrix}\right|=0$
 	- Note, since the determinant is zero, the matrix is not invertible.
 	- Also note, $R_2=-3R_1$
-##### Computing $|A|$  for $n > 2$:
+##### Computing $|A_n|$  for $n > 2$:
 Ex. $A=\begin{bmatrix}1&1&2\\-1&0&1\\0&-1&1\end{bmatrix}$
 **Definition:**
-	Let $A$ be an $n\times n$ matrix.
-	
+> Let $A$ be an $n\times n$ matrix. The $(i, j)$-minor of $A$, denoted as $M_{ij}$, is the $(n-1)\times(n-1)$ matrix obtained by “deleting” the $i^{th}$ row and the $j^{th}$ column of $A$.
+> > [!example] Example of matrix minors
+> > Using the above matrix $A$:
+> > $M_{13}=\begin{bmatrix}-1&0\\0&-1\end{bmatrix} \qquad\begin{pmatrix}\color{red}1&\color{red}1&\color{red}2\\-1&0&\color{red}1\\0&-1&\color{red}1\end{pmatrix}$
+> > $M_{21}=\begin{bmatrix}1&2\\-1&1\end{bmatrix}\qquad\begin{pmatrix}\color{red}1&1&2\\\color{red}-1&\color{red}0&\color{red}1\\\color{red}0&-1&1\end{pmatrix}$
+> 
+> >[!info] Formula for $|A_n|$
+> > For any $i\in [1, n]$
+> >$$\sum_{j=1}^n-1^{j+i}\cdot a_{ij}\cdot|M_{ij}|$$
+> 
+> > [!example] Example of $|A_3|$
+> > Using the above matrix $A$:
+> > $$\begin{aligned}A&=\begin{bmatrix}1&1&2\\-1&0&1\\0&-1&1\end{bmatrix}\\|A|&=+\underbrace{(+1)}_{a_{11}}\cdot\underbrace{\begin{vmatrix}0&1\\-1&1\end{vmatrix}}_{M_{11}}-\underbrace{(+1)}_{a_{12}}\cdot \underbrace{\begin{vmatrix}0&1\\-1&1\end{vmatrix}}_{M_{12}}+\underbrace{(+2)}_{a_{13}}\cdot\underbrace{\begin{vmatrix}0&1\\-1&1\end{vmatrix}}_{M_{13}}\\&=1(1)-1(-1)+2(1)\\&=4\end{aligned}$$
+
+> [!cite] Theorem: There is nothing special about the first row.
+> $|A|$ can be computed along *any* row or *any* column, using the formula:
+> Along row $i$:
+> $$|A|=\sum_{j=1}^n-1^{j+i}\cdot a_{ij}\cdot|M_{ij}|$$
+> Along column $j$:
+> $$|A|=\sum_{i=1}^n-1^{j+i}\cdot a_{ij}\cdot|M_{ij}|$$
+> 
+> It is therefore advantageous to take the determinant along a row or column with lots of zeros, to reduce the number of minor determinants you have to calculate.
+
+---
+*June 15 Tirgul. Links to the [board](https://drive.google.com/file/d/1LJCintsONoA57_VsMnKsOt8KoYYvPuAl/view?usp=sharing) and the recording.*
+
+##### Properties of Determinants
+1. If $A$ has a row or column of zeros, then $|A|=0$
+2. $|A^T|=|A|$
+3. If $A$ is a triangular matrix (upper, lower, or diagonal), then
+   $|A|=$ the product of the entries on the main diagonal.
+
+> [!danger] Important Proofs Omitted!
+> The proofs for these properties are likely important to know for the exam. Make sure you are familiar with these.
+
+---
+*June 18 Lecture. Links to the board and the recording.*
