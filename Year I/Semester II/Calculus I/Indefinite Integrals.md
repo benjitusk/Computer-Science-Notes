@@ -15,15 +15,16 @@
 > [!info] Basic Integrals — Very Important
 > - $\int{\cos x}\;dx=\sin x+C$
 > - $\int{\sin x}\;dx=-\cos x+C$
-> - $\int{\tan x};dx=-\ln|\cos(x)|+C$
+> - $\int{\tan x}\;dx=-\ln|\cos(x)|+C$
 > - $\int{e^x}\;dx=e^x+C$
 > - $\int{x^n}\;dx=\frac{x^{n+1}}{n+1}+C$
 > 	- *For $n\not=-1$*
 > - $\int{x^{-1}}\;dx=\int{\frac1x}\;dx=\ln{|x|}+C$
 > - $\int{\frac1{1+x^2}}\;dx=\arctan x+C$
 > - $\int{\frac1{\cos^2x}}\;dx=\tan x+C$
-> - $\int{-\frac{1}{\sin^2x}}\;dx=\cot x+C$
+> - $\int{\frac{1}{\sin^2x}}\;dx=-\cot x+C$
 > - $\int{k}\;dx=kx+C$
+> - $\int{\ln x}\;dx=x\ln(x)-x$
 
 #### Basic Properties
 1. Suppose $\int f = F, \int g = G$.
@@ -99,6 +100,29 @@ The key is to find the appropriate $u(x)$, see above rule.
 #### Integration by Parts
 *Reversing the [[Differentiability and Derivatives#Rules of Differentiation|Product Rule]]*
 Recall the Product Rule: 
+${(f\cdot g)}^\prime=f\cdot g^\prime+f^\prime\cdot g$
+Moving things around, we get this:
+$f\cdot g^\prime={(f\cdot g)}^\prime-f^\prime\cdot g$
+Integrating both sides gives us this rule:
+$$\int{u\cdot v^\prime}\;dx=uv-\int{u^\prime\cdot v}\;dx$$
+This is helpful when the integrand can be expressed as $u\cdot v^\prime$, where $u^\prime\cdot v$ is easier to integrate.
+**Picking an appropriate  $u$ and $v^\prime$:**
+$u$ should become simpler - or at least, not more complicated when differentiating.
+$v^\prime$ should become simpler - or at least, not more complicated when integrating.
+Generally, but not always, you usually want to avoid having an exponential function as $v^\prime$.
+Specifically: $x^n$ should be $u$, not $v^\prime$.
+> [!example] Example of Integration by Parts: $\int{xe^x}\;dx$
+> Given $\int{xe^x}\;dx$.
+> We want to express $xe^x$ as $u\cdot v^\prime$, so we choose $u=x$, and $v^\prime=e^x$.
+> 
+> 
+> $u=x$|$v=e^x$
+> -|-
+> $u^\prime=1$|$v^\prime=e^x$
+> 
+> Applying the above formula, we get:
+> $$xe^x-\int{e^x}\;dx=xe^x=e^x+C$$
+
 
 ---
 *June 7 Lecture. Links to the [board](https://drive.google.com/file/d/15gbbPNCTEbTvbXksbwLN3ELwxw4Qgcgx/view?usp=sharing) and the [recording](https://drive.google.com/file/d/1de2CqRi_kW-lfg4d7KYnV5lTyedULo3c/view?usp=sharing).*
