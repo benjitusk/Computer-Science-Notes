@@ -2,10 +2,10 @@ Below are the types of questions asked on exams. **This is not a comprehensive l
 > [!attention] Exam Questions
 > - [x] What is the domain of…
 > - [x] Find all asymptotes of…
-> - [ ] Compute the integral of…
+> - [x] Compute the integral of…
 > - [x] Where is $f$ differentiable, cts, etc
 > - [x] What value for a piecewise function makes it cts
-> - [ ] Verbatim memorization of theorems
+> - [ ] Verbatim memorization of theorems (I know, crazy.)
 > - [ ] Proofs of theorems and corollaries
 > - [ ] Find the bounded area
 > - [ ] Limit calculation
@@ -26,17 +26,18 @@ At any point where a component of the function is undefined, the entire function
 - **Exponents** are defined everywhere except where the exponent in simplified form has an even denominator
 - The **Logarithm** function is defined for $x>0$
 
-#### Identifying Asymptotes of a Rational Function
-##### Horizontal Asymptotes
+#### Identifying Asymptotes of a Function
+##### Shortcut for Simple Rational Functions
+###### Horizontal Asymptotes
 - If the numerator and denominator have an equal degree
 	- The equation for the asymptote is $\frac{\text{leading coefficient of the numerator}}{\text{leading coefficient of the denominator}}$
 - If the degree of the numerator is *less* than the denominator
 	- The asymptote is $y=0$
 - If the degree of the numerator is *greater* than the denominator
 	- There is no horizontal asymptote
-##### Diagonal (Slant) Asymptotes
+###### Diagonal (Slant) Asymptotes
 A rational function has a slant asymptote only if the degree of the numerator is exactly one more than that of the denominator. The equation is obtained by dividing the numerator by the denominator and discarding the remainder.
-##### Vertical Asymptotes
+###### Vertical Asymptotes
 Vertical asymptotes occur where factors in the denominator *that are not canceled out by the numerator* equal zero. You can identify these asymptotes by factoring the numerator and denominator. Any matching terms in the top and bottom are removable discontinuities. Any unmatched term in the denominator will cause a vertical asymptote when that term is equal to zero. The equation for that asymptote is: $x=\text{the value that makes the term zero}$.
 
 ##### Identifying Asymptotes of Any Function:
