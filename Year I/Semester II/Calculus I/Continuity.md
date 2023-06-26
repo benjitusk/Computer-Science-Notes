@@ -3,13 +3,13 @@
 $f(x)\text{ is continuous at }x=a\text{ if }f(a)=\lim_{x\to a}{f(x)}$.
 #### 3 Types of discontinuities:
 1) $\lim_{x\to a}{f(x)}$ exists, but $\not=f(a)$. Either $f(a)$ is undefined, or some other number.
-	- This is called a removable discontinuity, becuase it's an issue at just that point.
+	- This is called a removable discontinuity, because it's an issue at just that point.
 2) $\lim_{x\to a}{f(x)}$ doesn't exist because $\lim_{x\to a^-}{f(x)} \not=\lim_{x\to a^+}{f(x)}$
 	- This is called a jump discontinuity, or a Type I discontinuity.
 3) $\lim_{x\to a}{f(x)}$ doesn't exist, even one-sided (from at least one side).
 	- This is called a Type II discontinuity.
-	- This does not include extended limits, so by this definition, $\lim_{x\to0}{\frac1x}$ doesn't have a limit, meaning it's discontinuos at $x=0$ with a Type II discontinuity.
-	- Ususally in this case, $f$ has a vertical asymptote $x=a$, but not always.
+	- This does not include extended limits, so by this definition, $\lim_{x\to0}{\frac1x}$ doesn't have a limit, meaning it's discontinuous at $x=0$ with a Type II discontinuity.
+	- Usually in this case, $f$ has a vertical asymptote $x=a$, but not always.
 
 > [!example] Examples of discontinuities
 > 1) $f(x) = {1\over x+3} \text{ at } x=-3$

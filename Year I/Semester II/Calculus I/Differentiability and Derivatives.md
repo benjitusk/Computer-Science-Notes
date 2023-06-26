@@ -1,11 +1,8 @@
----
-title: Differentiability and Derivatives
----
 *May 8 Lecture. Links to the [board](https://drive.google.com/file/d/1BwMi6pAdCWz0UrAnsMBeoXTBa8z6roiN/view?usp=sharing) and the [recording](https://drive.google.com/file/d/1zN1ep3dD9x7Rmo8kGeQKTHNNBCH0p6RK/view?usp=sharing).*
 What does this stuff do?
 	If you have a function $y=f(x)$, we want to be able to calculate the slope of a line that is tangent to a point on the graph.
-	We seek a <u>derivative function</u> $f\prime(x)$ such that
-		$f\prime(x_0)=\text{ slope of line tangent to graph }y=f(x)\text{ at point }(x_0,f(x_0))$.
+	We seek a <u>derivative function</u> $f^\prime(x)$ such that
+		$f^\prime(x_0)=\text{ slope of line tangent to graph }y=f(x)\text{ at point }(x_0,f(x_0))$.
 
 Why are we interested, and how do we find this?
 Background:
@@ -34,45 +31,45 @@ The tangent line to $y=f(x)$ at $x=x_0$ is <u>defined</u> as the line through $(
 	  From the left: $\lim_{h\to 0^-}{\frac{f(h)-f(0)}{h}}$ = $\lim_{h\to 0}{\frac{-h}{h}}=-1$. Note, $h<0$, so $|h|=-h$
 	  From the right: $\lim_{h\to 0^+}{\frac{f(h)-f(0)}{h}}=1$
 	  Hence, $f(x)=|x|$ is differentiable from each side at $x_0=0$, but is not differentiable there.
-4) f is differentiable in open interval $(a,b)$ if f is differentiable at each pt. in that interval
-5) if $f$ is differentiable in $(a,b)$ then the derivative of $f$ on $(a,b)$ is defined as (for $x_0\in(a,b)$): $f\prime(x_0)=\lim_{h\to 0}{\frac{f(x_0+h)-f(x_0)}{h}}$
-	One sided derivatives are defined similarly to definitions 2&3.
+4) $f$ is differentiable in open interval $(a,b)$ if f is differentiable at each pt. in that interval
+5) If $f$ is differentiable in $(a,b)$ then the derivative of $f$ on $(a,b)$ is defined as (for $x_0\in(a,b)$): $f^\prime(x_0)=\lim_{h\to 0}{\frac{f(x_0+h)-f(x_0)}{h}}$
+	One sided derivatives are defined similarly to definitions 2 & 3.
 The derivative function $f^\prime$ is defined for each $x_0$ in this manner: $$f^\prime(x)=\lim_{h\to 0}{\frac{f(x+h)-f(x)}{h}}$$
 
 > [!quote] ##### Theorem 31:
 > If x is differentiable at $x_0$, then x is continuous at $x_0$. The reverse is *not true*.
-> Intuitively, $f\prime (x)=\frac{\Delta y}{\Delta x}$ as $\Delta x \to 0$ Since denominator is going to zero, this fraction has a limit only if $\Delta y\to 0$ too, i.e. $f$ is continuous at $x_0$.
+> Intuitively, $f^\prime (x)=\frac{\Delta y}{\Delta x}$ as $\Delta x \to 0$ Since denominator is going to zero, this fraction has a limit only if $\Delta y\to 0$ too, i.e. $f$ is continuous at $x_0$.
 
 ##### Linear Approximation using derivatives:
 $(1.0123)^2$
-$f\prime(x)=\lim_{h\to 0}{\frac{f(x+h)-f(x)}{h}}$. I.e., for small $h$:
-$f\prime (x) \approx \frac{f(x+h)-f(x)}{h}$
+$f^\prime(x)=\lim_{h\to 0}{\frac{f(x+h)-f(x)}{h}}$. I.e., for small $h$:
+$f^\prime (x) \approx \frac{f(x+h)-f(x)}{h}$
 For smaller h, the approximation is more exact.
-$f(x+h)\approx f(x)+h\cdot f\prime (x)$.![[Pasted image 20230508154358.png|600]]
+$f(x+h)\approx f(x)+h\cdot f^\prime (x)$.![[Pasted image 20230508154358.png|600]]
 $$\begin{aligned}\text{In our example: }(1.0123)^2 \approx 1^2 + (0.0123)\cdot 2 &= 1.0246\\\text{Real Answer: }(1.0123)^2 &= 1.02457\end{aligned}$$
 
 (We multiply by 2, because that's $f^\prime$)
 
 ##### Differentiation Rules
 1) Derivative of a constant function $f(x)=c$ is zero.
-	- $f(x)=c$ is differentiable everywhere, and $f\prime(x)=0$
-2) If $f$ and $g$ are differentiable at $x_0$, so is the function $f+g$, and $(f+g)\prime(x_0)$ = $f\prime(x_0) + g\prime(x_0)$.
+	- $f(x)=c$ is differentiable everywhere, and $f^\prime(x)=0$
+2) If $f$ and $g$ are differentiable at $x_0$, so is the function $f+g$, and $(f+g)\prime(x_0)$ = $f^\prime(x_0) + g\prime(x_0)$.
 	- The derivative of a sum of functions at a point is the sum of the derivatives of functions at a point.
-3) if f is diffrerentable at $x=x_0$ and c is any real number, then cf is diff. at $x_0$, and $(c\cdot f)\prime = c\cdot f\prime$.
+3) if f is diffrerentable at $x=x_0$ and c is any real number, then cf is diff. at $x_0$, and $(c\cdot f)\prime = c\cdot f^\prime$.
 ---
 *May 8 Tirgul. Links to the [board](https://drive.google.com/file/d/1S_NZEhPPuh-J7UZWxVKXWi7kgmO_z-7Q/view?usp=sharing) and the [recording](https://drive.google.com/file/d/1zN1ep3dD9x7Rmo8kGeQKTHNNBCH0p6RK/view?usp=sharing).*
 ##### Some Derivative Functions
 $f(x)=x^3$ (in general, $f(x) = x^n$ for $n\in\Bbb N$)
-$f\prime(x)=\lim_{h\to0}{\frac{{(x+h)}^3-x^3}{h}}$
+$f^\prime(x)=\lim_{h\to0}{\frac{{(x+h)}^3-x^3}{h}}$
 $=\lim_{h\to0}{\frac{x^3+3x^2h+3xh^2+h^3-x^3}{h}}$
 $=\lim_{h\to0}{\frac{3x^2h+3xh^2+h^3}{h}}$
 $=\lim_{h\to0}{\frac{h\cdot(3x^2+3xh+h^2)}{h}}$
 $=\lim_{h\to0}{3x^2+3xh+h^2}$
-$=3x^2 \Rightarrow f\prime(x)=3x^2$
+$=3x^2 \Rightarrow f^\prime(x)=3x^2$
 **In general**
 if $f(x) = x^n$ for $n\in\Bbb N$,
 $$\begin{align}
-	f\prime(x)&=\lim_{h\to0}{\frac{{(x+h)}^n-x^n}{h}}
+	f^\prime(x)&=\lim_{h\to0}{\frac{{(x+h)}^n-x^n}{h}}
 	
 	\\&=\lim_{h\to0}{\frac{nx^{n-1} + \text{terms where power of h ≥ 2}}{h}}
 	
@@ -84,7 +81,7 @@ $$\begin{align}
 	
 	\\&=nx^{n-1}
 \end{align}$$
-E.g. $f(x) = x^5\Rightarrow f\prime(x)=5x^4$
+E.g. $f(x) = x^5\Rightarrow f^\prime(x)=5x^4$
 
 ---
 *May 10 Lecture. Links to the [board](https://drive.google.com/file/d/1z4C-JCqc7vx1cP1Z-UaKlwRk_358B4eq/view?usp=sharing) and the [recording](https://drive.google.com/file/d/10TehH0JSiymOF9wxWyi-5U3tamo7EgTT/view?usp=sharing).*
