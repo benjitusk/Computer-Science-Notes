@@ -31,7 +31,7 @@ Proof is at [23:04](https://drive.google.com/drive/u/0/folders/1k8NTjOs7p11dktSp
 What if $\theta$ is 0°? well, $cos\theta = 1$ , so there ya go. If $\theta$ is 180°, $cos\theta=-1$, and there ya go too.
 **Conclusion:** vectors are ⟂ $\iff$ their dot product is *zero*. These are called **orthogonal vectors**.
 
-### Cross Produdfct
+### Cross Product
 - Only defined in $\Bbb R^3$
 - Output is a <u>vector</u>, not a scalar
 - Definition:

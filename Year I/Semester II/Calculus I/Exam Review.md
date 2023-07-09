@@ -1,10 +1,10 @@
 Below are the types of questions asked on exams. **This is not a comprehensive list!**
 > [!attention] Exam Questions
-> - [x] What is the domain of…
-> - [x] Find all asymptotes of…
-> - [x] Compute the integral of…
-> - [x] Where is $f$ differentiable, cts, etc
-> - [x] What value for a piecewise function makes it cts
+> - [ ] What is the domain of…
+> - [ ] Find all asymptotes of…
+> - [ ] Compute the integral of…
+> - [ ] Where is $f$ differentiable, cts, etc
+> - [ ] What value for a piecewise function makes it cts
 > - [ ] Verbatim memorization of theorems (I know, crazy.)
 > - [ ] Proofs of theorems and corollaries
 > - [ ] Find the bounded area
@@ -18,6 +18,7 @@ Below are the types of questions asked on exams. **This is not a comprehensive l
 > - [ ] Find where a function is convex/concave
 > - [ ] Find local extreme points
 
+$$\newcommand{\bm}[1]{\boldsymbol{#1}}$$
 #### Finding the domain of a function
 The domain of a function is the set of values for which the function is defined.
 At any point where a component of the function is undefined, the entire function is undefined as well.
@@ -94,4 +95,43 @@ This is a relatively easy question to solve. You take the limit of $f$ from both
 	  Hence, $f(x)=|x|$ is differentiable from each side at $x_0=0$, but is not differentiable there.
 4) $f$ is differentiable in open interval $(a,b)$ if f is differentiable at each pt. in that interval
 
-#### Limit Calculation
+#### Limit Calculation by Definition
+Quick refresher on symbols:
+In the limit: $\lim_{x\to a}{f(x)}=L$:
+> $\bm{\delta}$**:** Delta is the value that represents the small difference between $x$ and $a$ ${(|x-a|)}$
+> $\bm{\varepsilon}$**:** Epsilon is the value that represents the small difference between $f(x)$ and $L$ ${(|f(x)-L|)}$
+
+The formal definition is: $$\lim_{x\to a}{f(x)}=L\text{ if, for any }\varepsilon>0,\text{ there exists a }\delta>0\text{ so that } |f(x)-L|<\varepsilon\text{ when }0<|x-a|<\delta$$
+If this is gibberish to you, check out [this website](https://www.mathsisfun.com/calculus/limits-formal.html) for clarification.
+
+Now, on to actually using it:
+We want to get from $0<|x-a|<\delta$ to $|f(x)-L|<\varepsilon$.
+We start with $|f(x)-L|$. Put in the values for $f(x)$ and $L$. Simplify and rearrange whatever you can to get to the form $|x-a|<\text{ some expression involving }\varepsilon$.
+
+That expression involving $\varepsilon$ is your $\delta$, and by showing that such a delta exists, you complete the proof.
+
+> [!example] Example: Prove that $\lim_{x\to4}{}3x+5=17$
+> Let $\varepsilon>0$. We seek $\delta>0$ such that if $|x-4|<\delta$, then $|(3x+5)-17|<\varepsilon$.
+> We work “backwards:”
+> $$\begin{aligned}&|(3x+5)-17|<\varepsilon\\
+ \implies&|3x-12|<\varepsilon\\
+ \implies&3|x-4|<\varepsilon\\
+ \implies&|x-4|<\frac\varepsilon3
+ \end{aligned}$$
+$$\delta=\frac\varepsilon3$$
+$$Q.E.D.$$
+
+##### Extended Limits
+When there’s a $\infty$ in the limit, we have to tweak the definition we are proving with.
+- $\lim_{x\to\pm\infty}{f(x)}=L$
+	- If $x\to+\infty$: $\forall\varepsilon>0,\;\exists N\text{ such that if }x\bm>N,\;|f(x)-L|<\varepsilon$
+	- If $x\to-\infty$: $\forall\varepsilon>0,\;\exists N\text{ such that if }x\bm<N,\;|f(x)-L|\bm<\varepsilon$ 
+- $\lim_{x\to a}{f(x)}=\pm\infty$
+	- If $\lim=+\infty$: $\forall M,\;\exists\delta>0\text{ such that if }|x-a|<\delta,f(x)>M$
+	- If $\lim=-\infty$: $\forall M,\;\exists\delta>0\text{ such that if }|x-a|<\delta,f(x)<M$
+
+> [!missing] Example Coming Soon to a Exam Review Near You
+> 
+
+#### Verbatim Memorization of Theorems
+You **must** know the [[Graph Sketching#Critical points|Mean Value Theorem]] and it’s corollaries. It is often referred to as Lagrange’s Theorem. This theorem states that if $f$ is continuous in $[a,b]$ and differentiable in $(a,b)$, there exists at least one point on $f$ between $(a,b)$ where the slope of the tangent is exactly equal to the slope of the line between $a$ and $b$.

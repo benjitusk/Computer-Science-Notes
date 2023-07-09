@@ -73,6 +73,7 @@ General notation for system: $A\cdot\vec x=\vec b$
 	where $A$ is the restricted coefficient matrix,
 	$\vec x$ is the *vector of unknowns* (so spooky 👻),
 	and $\vec b$ is the vector of free coefficients.
+
 ---
 *May 28 Lecture. Links to the [board](https://drive.google.com/file/d/1td0KrVDYjSOmyW0ZemqU5o4OORA8lHHB/view?usp=sharing) and the [recording](https://drive.google.com/file/d/1Lso77pVw194-6B9o2TC-tJ3-rMY4PHEB/view?usp=sharing).*
 #### Square Matrices ($n\times n$)
@@ -133,6 +134,7 @@ All nonzero entries are *on* the main diagonal.
 	If $A$ is any $m\times n$ matrix, then: 
 	$cI_m\cdot A=cA$ 
 	$A\cdot cI_n=cA$ 
+
 > [!example]
 > $$\begin{bmatrix}
 >		2&0&0\\
@@ -153,7 +155,7 @@ All nonzero entries are *on* the main diagonal.
 #### Inverse Matrices
 **Definition:**
 	If $A$ is an $n\times n$ matrix, and $AB=I$, then $A$ is called <u>invertable</u>, and $B$ is the <u>inverse matrix</u> of $A$, denoted $B=A^{-1}$.
-	
+
 > [!info] Inverse Matrices — In English
 > Every scalar number has its inverse. The inverse of $2$ is $1\over2$. The inverse of $\frac14$ is $4$. The inverse of $\frac85$ is $\frac58$.
 > The common ground is that multiplying a scalar by its inverse gives you the "Identity Scalar" - that is, $1$.
@@ -202,6 +204,7 @@ Stay tuned for the answers...
 	$E_{12}=\begin{bmatrix}0&1&0\\1&0&0\\0&0&1\end{bmatrix}$ (The matrix obtained from $I$ by $R_1\leftrightarrow R_2$)
 	$E_2(3)=\begin{bmatrix}1&0&0\\0&3&0\\0&0&1\end{bmatrix}$ (The matrix obtained from $I$ by $R_2\to 3R_2$)
 	$E_{21}(1)=\begin{bmatrix}1&0&0\\1&1&0\\0&0&1\end{bmatrix}$ (The matrix obtained from $I$ by $R_2\to R_2+1R_1$)
+
 ---
 *June 4 Lecture. Links to the [board](https://drive.google.com/file/d/1F7jcb8fr88jbMU5JVsS5fHSJ5MvaYtMk/view?usp=sharing) and the [recording](https://drive.google.com/file/d/1vA28zmMLZG6GnBbLT_lCBrv7Hyq9Z6ID/view?usp=sharing).*
 ##### The Big Claims™:
@@ -385,7 +388,7 @@ Example:
 > 1. $A$ is invertible
 > 2. $A$ can be written as a product of Elementary Matrices
 > 3. $A$ can be reduced to $I$
-> 4. The system $A\vec x=\vec b\implies\vec x=A^{-1}\vec b$
+> 4. The system $A\vec x=\vec b\implies\vec x=A^{-1}\vec b$ has a unique solution
 > 5. $\text{rank}(A)=n$ (See [[#Rank]])
 > 6. $|A|\not=0$ (See [[#Determinants]])
 
@@ -441,8 +444,8 @@ Ex. $A=\begin{bmatrix}1&1&2\\-1&0&1\\0&-1&1\end{bmatrix}$
 > Let $A$ be an $n\times n$ matrix. The $(i, j)$-minor of $A$, denoted as $M_{ij}$, is the $(n-1)\times(n-1)$ matrix obtained by “deleting” the $i^{th}$ row and the $j^{th}$ column of $A$.
 > > [!example] Example of matrix minors
 > > Using the above matrix $A$:
-> > $M_{13}=\begin{bmatrix}-1&0\\0&-1\end{bmatrix} \qquad\begin{pmatrix}\color{red}1&\color{red}1&\color{red}2\\-1&0&\color{red}1\\0&-1&\color{red}1\end{pmatrix}$
-> > $M_{21}=\begin{bmatrix}1&2\\-1&1\end{bmatrix}\qquad\begin{pmatrix}\color{red}1&1&2\\\color{red}-1&\color{red}0&\color{red}1\\\color{red}0&-1&1\end{pmatrix}$
+> > $M_{13}=\begin{bmatrix}-1&0\\0&-1\end{bmatrix} \qquad\begin{pmatrix}\color{red}1&\color{red}1&\color{red}\bf{2}\\-1&0&\color{red}1\\0&-1&\color{red}1\end{pmatrix}$
+> > $M_{21}=\begin{bmatrix}1&2\\-1&1\end{bmatrix}\qquad\begin{pmatrix}\color{red}1&1&2\\\color{red}\bf{-1}&\color{red}0&\color{red}1\\\color{red}0&-1&1\end{pmatrix}$
 > 
 > >[!info] Formula for $|A_n|$
 > > For any $i\in [1, n]$

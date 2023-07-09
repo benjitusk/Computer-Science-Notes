@@ -1,6 +1,6 @@
 *May 8 Lecture. Links to the [board](https://drive.google.com/file/d/1BwMi6pAdCWz0UrAnsMBeoXTBa8z6roiN/view?usp=sharing) and the [recording](https://drive.google.com/file/d/1zN1ep3dD9x7Rmo8kGeQKTHNNBCH0p6RK/view?usp=sharing).*
 What does this stuff do?
-	If you have a function $y=f(x)$, we want to be able to calculate the slope of a line that is tangent to a point on the graph.
+	If you have a function $y=f(x)$, we wantj to be able to calculate the slope of a line that is tangent to a point on the graph.
 	We seek a <u>derivative function</u> $f^\prime(x)$ such that
 		$f^\prime(x_0)=\text{ slope of line tangent to graph }y=f(x)\text{ at point }(x_0,f(x_0))$.
 
@@ -55,7 +55,7 @@ $$\begin{aligned}\text{In our example: }(1.0123)^2 \approx 1^2 + (0.0123)\cdot 2
 	- $f(x)=c$ is differentiable everywhere, and $f^\prime(x)=0$
 2) If $f$ and $g$ are differentiable at $x_0$, so is the function $f+g$, and $(f+g)\prime(x_0)$ = $f^\prime(x_0) + g\prime(x_0)$.
 	- The derivative of a sum of functions at a point is the sum of the derivatives of functions at a point.
-3) if f is diffrerentable at $x=x_0$ and c is any real number, then cf is diff. at $x_0$, and $(c\cdot f)\prime = c\cdot f^\prime$.
+3) if f is differentiable at $x=x_0$ and c is any real number, then cf is diff. at $x_0$, and $(c\cdot f)\prime = c\cdot f^\prime$.
 ---
 *May 8 Tirgul. Links to the [board](https://drive.google.com/file/d/1S_NZEhPPuh-J7UZWxVKXWi7kgmO_z-7Q/view?usp=sharing) and the [recording](https://drive.google.com/file/d/1zN1ep3dD9x7Rmo8kGeQKTHNNBCH0p6RK/view?usp=sharing).*
 ##### Some Derivative Functions

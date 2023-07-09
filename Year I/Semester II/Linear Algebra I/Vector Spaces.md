@@ -242,3 +242,29 @@ There are two possibilities for a homogeneous system:
 > 5. Write answer as $c_1(x^2-x+6)+c_2(2x^2-3x)+c_3(x-3)$
 > 	   Of course, substituting $c_1, c_2, c_3$ with the values from step 4.
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+**5782 Moed A**
+*Question 5/c*
+$U=\{(x,y,z)\in\Bbb R^3|x^2+y^2+z^2=0\}$
+True or false: $U$ is a vector space.
+First test: Is the set empty? No, it contains $(0,0,0)$
+Second test: Is it closed under addition?
+	Let $\vec v_1=(a,b,c),\vec v_2=(d,e,f)\in U$
+	$\vec v_1+\vec v_2=(a+d,b+e,c+f)$
+	Now check, does this new vector match the condition $x^2+y^2+z^2=0$?
+	${(a+d)}^2+{(b+e)}^2+{(c+f)}^2=\underbrace{a^2+b^2+c^2+d^2+e^2+f^2}_{\text{we know this is 0}}+\underbrace{2ad+2bc+2ef}_{\text{it might not be zero}}\overset?=0$ Does this mean that it’s not closed, or do we need to reach a definitive conclusion that it does or does not equal zero?
+
+
+

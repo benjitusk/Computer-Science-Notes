@@ -118,4 +118,4 @@ Sincerely, **Benji Tusk: 650282680** and **Eyal Schachter: 209792266**
 > 		return False
 >  ```
 >  Part E
->  > R.T.C. is *O(n)* because it's three linear functions executed sequentially, and according to Chaim Schendow, 3\cdot n = n
+>  > R.T.C. is *O(n)* because it's three linear functions executed sequentially, and according to Chaim Schendo, $3\cdot n = n$
