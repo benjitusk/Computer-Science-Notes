@@ -1,3 +1,5 @@
+*Note: It seems like the sketches don’t adapt to dark mode in the exported version. If you want to see the epic sketches, get your sunglasses and SPF-100 and turn on light mode.*
+
 ## I-Type
 
 ![[Notes 2023-07-09 15.27.48.excalidraw|600]]
