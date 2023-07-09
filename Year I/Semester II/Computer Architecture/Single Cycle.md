@@ -37,3 +37,8 @@ For a Branch command, the sign extended `offset` is multiplied by 4 with a dedic
 The results of the instruction are stored in a register. Store, Jump, and Branch commands don’t write to registers, because they don’t have anything to write.
 
 For a Branch Command, if the zero flag from the ALU is 1, the address calculated in stage 4 is written to the PC. If the flag is 0, `PC+4` is written to the PC instead.
+
+
+---
+
+## The ALU and R-Type Commands
