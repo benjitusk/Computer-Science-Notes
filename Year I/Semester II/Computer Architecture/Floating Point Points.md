@@ -107,3 +107,24 @@ Putting it all together gives us: 01000010001101011100110011001100. Putting it i
 > 
 > In both cases, the mantissa does not matter.
 
+
+### Converting Binary → Decimal
+
+First, look at the sign bit: if it’s `0`, the number is positive, if it’s `1`, it’s negative.
+Next, take the exponent. That will be the following eight bits. Convert it to an *unsigned* (as in, positive) decimal number, and subtract 127 from it to un-bias the value.
+Then, convert the mantissa to decimal using the following formula: $$\{B_1B_2B_3B_4\dots B_{23}\}_2\to \text{Base 10}=\sum_{n=1}^{23}{(B_n\cdot2^{-n})}$$
+What this means is you multiply each bit value (either `0` or `1`) by (2 to the power of it’s position relative to the ‘decimal point’), and add them all up.
+
+The final result is $-1^\text{sign bit}\cdot(1+\text{mantissa})\cdot2^{\text{unbiased exponent}}$
+
+
+Let’s look at the following example:
+A register has the following data: `1000 1000 1000 1000 1000 000 0000 0000`.
+![[Floating Point Points 2023-07-10 15.43.18.excalidraw|5000]]
+Looking at the sign bit, we can see it’ll be negative, since it’s `1`.
+The exponent is `00010001`, which is 17 in decimal. Subtracting 127 to un-bias it gives us -110 as our exponent.
+The mantissa is equal to $2^{-4}+2^{-8}$ since only bits $4$ and $8$ are `1`. This is equal to $0.06640625_{10}$.
+Using our formula from earlier, plugging in the mantissa, un-biased exponent, and the sign bit:
+$$-1^1\cdot(1+0.06640625)\cdot2^{-110}=-1.06640625\times2^{-110}=-8.2152949\times10^{-34}$$
+… and we’re done! Nice.
+
