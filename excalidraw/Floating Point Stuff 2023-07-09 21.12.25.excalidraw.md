@@ -262,7 +262,7 @@ Mantissa
 		}
 	],
 	"appState": {
-		"theme": "dark",
+		"theme": "light",
 		"viewBackgroundColor": "#ffffff",
 		"currentItemStrokeColor": "#1e1e1e",
 		"currentItemBackgroundColor": "transparent",
@@ -276,10 +276,10 @@ Mantissa
 		"currentItemTextAlign": "left",
 		"currentItemStartArrowhead": null,
 		"currentItemEndArrowhead": "arrow",
-		"scrollX": 442.46727413496,
-		"scrollY": 335.30210390175955,
+		"scrollX": 433.03966470735054,
+		"scrollY": 402.7400247771804,
 		"zoom": {
-			"value": 1.6500000000000001
+			"value": 1.35
 		},
 		"currentItemRoundness": "round",
 		"gridSize": null,

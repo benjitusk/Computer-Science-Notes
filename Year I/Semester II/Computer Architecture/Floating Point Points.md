@@ -11,9 +11,6 @@ Below follows a detailed example of how to do this, but here’s the TL;DR:
 > To convert decimal numbers to binary IEEE FP Representation, convert the whole number portion and the fractional portion to binary, and mash them together. Then shift the ‘decimal point’ so it’s immediately to the right of the first `1`, and drop the leading one. That’s your mantissa. The amount of times you shifted left (negative, if you shifted right), **plus 127**, is your exponent, and the sign bit is 0 if positive, 1 if negative. For zero, set the exponent to 127, for infinity, set the exponent to 255.
 
 
-
-
-
 #### Whole Numbers
 1. Divide the decimal number by 2 and take note of the result and the remainder
 2. Repeat step one with the result of the previous division, keeping track of the remainders, until the quotient becomes zero
