@@ -595,9 +595,9 @@ Let <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax=
 <li data-line="1"><div class="list-bullet"></div>Calculate -B in two’s compliment form</li>
 </ul>
 </li>
-<li data-line="2">Set up the table. Keep track of your iteration number, your ‘step’, the Product field, and the rightover bit field. Set the 2nd half of the product field to A, and the first half to <code>0</code>.</li>
+<li data-line="2">Set up the table. Keep track of your iteration number, your ‘step’, the Product field, and the leftover bit field. Set the 2nd half of the product field to A, and the first half to <code>0</code>.</li>
 <li data-line="3">Increment the iteration counter. If it’s greater than the number of bits in A or B, stop, go to step 7.</li>
-<li data-line="4"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>The last bit of the product joined with the rightover bit tell you what to do:
+<li data-line="4"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>The last bit of the product joined with the leftover bit tell you what to do:
 <ol>
 <li data-line="5">If they’re the same (<code>00</code> or <code>11</code>), do nothing. Proceed to the next part.</li>
 <li data-line="6">If it’s <code>01</code>, <em>add</em> B to the <strong>first half</strong> of the product field, discarding carry-over on the leading bit.</li>
@@ -606,9 +606,9 @@ Let <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax=
 </li>
 <li data-line="8">Shift right one bit</li>
 <li data-line="9">Repeat steps 3-5</li>
-<li data-line="10"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>The result is the <strong>Product</strong> field. <strong><mark>Do not include the rightover bit in your result!</mark></strong>
+<li data-line="10"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>The result is the <strong>Product</strong> field. <strong><mark>Do not include the leftover bit in your result!</mark></strong>
 <ol>
-<li data-line="11">If you do, you’re dumb. More importantly, you’ll get the wrong answer. If you want to avoid either one of those two terrible fates, <strong>Don’t include the rightover bit!</strong></li>
+<li data-line="11">If you do, you’re dumb. More importantly, you’ll get the wrong answer. If you want to avoid either one of those two terrible fates, <strong>Don’t include the leftover bit!</strong></li>
 </ol>
 </li>
 </ol></div><div class="mod-footer"></div></div></div></div><div class="sidebar-right sidebar"><div class="sidebar-content" style="display: none;"></div></div></div></body></html>
