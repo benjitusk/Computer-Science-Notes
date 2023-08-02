@@ -24,6 +24,19 @@ $\newcommand{\der}[1]{{#1}^\prime}$
 > So, $|a_nb_n|<\varepsilon$.
 > $$Q.E.D.$$
 
+### Sum of Derivatives
+**Claim:** 
+> $\der{(f+g)}(x)=\der f(x)+\der g(x)$
+
+**Proof:**
+> $$\begin{align}
+\der{(f+g)}(x)&=\lim_{h\to0}{\frac{(f+g)(x+h)-(f+h)(x)}h}\\
+&=\lim_{h\to0}{\frac{[f(x+h)+g(x+h)]-[f(x)+g(x)]}h}\\
+&=\lim_{h\to0}{\frac{f(x+h)-f(x)+g(x+h)-g(x)}h}\\
+&=\lim_{h\to0}{\frac{f(x+h)-f(x)}{h}}+\lim_{h\to0}{\frac{+g(x+h)-g(x)}h}\\
+&=\der f(x)+\der g(x)\\
+\end{align}$$
+> $$Q.E.D$$
 
 ### Fermat’s Theorem
 **Claim:**
