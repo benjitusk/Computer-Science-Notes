@@ -1,4 +1,30 @@
 $\newcommand{\der}[1]{{#1}^\prime}$
+### Linearity of Limits of a Sequence
+**Claim:**
+> If $a_n$ and $b_n$ are infinite sequences, and $\lim_{n\to \infty}{a_n}=A$ and $\lim_{n\to \infty}{b_n}=B$, then $\lim_{n\to \infty}{(a_n+b_n)}=A+B$
+
+**Proof:**
+> By laws of limits, $\forall\varepsilon>0,\;\exists N_a,N_b$ such that $\forall n> \text{max}(N_a,N_b)$, we have:
+> $|a_n-A|<\varepsilon/2$ and $|b_n-B|<\varepsilon/2$.
+> By the [Triangle inequality](https://en.wikipedia.org/wiki/Triangle_inequality) we have:
+> $|a_n+b_n-(A+B)|\le|a_n-A|+|b_n-B|<\varepsilon$
+> Therefore, $\lim_{n\to \infty}{(a_n+b_n)}=A+B$.
+> $$Q.E.D.$$
+
+### Product of Vanishing and Bounded Sequences
+**Claim:**
+> If $a_n$ is a vanishing sequence, and $b_n$ is a bounded sequence, then $\lim_{n\to \infty}{(a_nb_n)}=0$
+
+**Proof:**
+> Let $\varepsilon>0$. We seek $N$ such that if $n>N$, $|a_nb_n-0|<\varepsilon$.
+> Because $b_n$ is bounded, there exists $M>0$ such that $|b_n|<M\mid\forall n\in\Bbb N$
+> Thus, we have $0\le|a_nb_n|\le M|a_n|$.
+> $\lim_{n\to\infty}{a_n}=0$, so $\exists N$ such that for $n>N, |a_n-0|<\frac\varepsilon M$
+> $|a_nb_n|<|a_n|\cdot|b_n|<\frac\varepsilon M<\varepsilon$
+> So, $|a_nb_n|<\varepsilon$.
+> $$Q.E.D.$$
+
+
 ### Fermat’s Theorem
 **Claim:**
 > If $f$ is a function that is differentiable at $x_0$, and $x_0$ is an extreme point on $f$, then $\der f(x_0)=0$.
