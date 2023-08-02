@@ -30,14 +30,28 @@ $\newcommand{\der}[1]{{#1}^\prime}$
 
 **Proof:**
 > $$\begin{align}
-\der{(f+g)}(x)&=\lim_{h\to0}{\frac{(f+g)(x+h)-(f+h)(x)}h}\\
+\der{(f+g)}(x)&=\lim_{h\to0}{\frac{(f+g)(x+h)-(f+g)(x)}h}\\
 &=\lim_{h\to0}{\frac{[f(x+h)+g(x+h)]-[f(x)+g(x)]}h}\\
 &=\lim_{h\to0}{\frac{f(x+h)-f(x)+g(x+h)-g(x)}h}\\
-&=\lim_{h\to0}{\frac{f(x+h)-f(x)}{h}}+\lim_{h\to0}{\frac{+g(x+h)-g(x)}h}\\
+&=\lim_{h\to0}{\frac{f(x+h)-f(x)}{h}}+\lim_{h\to0}{\frac{g(x+h)-g(x)}h}\\
 &=\der f(x)+\der g(x)\\
 \end{align}$$
 > $$Q.E.D$$
 
+### Product of Derivatives
+**Claim:**
+> $\der{(f\cdot g)}(x)=(f\der g)(x)+(\der fg)(x)$
+
+**Proof:**
+> $$\begin{align}
+\der{(fg)}(x)&=\lim_{h\to0}{\frac{(f\cdot g)(x+h)-(f\cdot g)(x)}h}\\
+&=\lim_{h\to0}{\frac{[f(x+h)\cdot g(x+h)]-[f(x)\cdot g(x)]}h}\\
+&=\lim_{h\to0}{\frac{[f(x+h)\cdot g(x+h)]-f(x+h)\cdot g(x)+f(x+h)\cdot g(x) -[f(x)\cdot g(x)]}h}\\
+&=\lim_{h\to0}{\frac{f(x+h)\cdot g(x+h)-f(x+h)\cdot g(x)}h}+\lim_{h\to0}{\frac{f(x+h)\cdot g(x) -f(x)\cdot g(x)}h}\\
+&=\lim_{h\to0}{f(x+h)\cdot\frac{g(x+h)-g(x)}{h}}+\lim_{h\to0}{g(x)\cdot\frac{g(x+h)-g(x)}h}\\
+&=f(x)\der g(x)+\der f(x)g(x)\\
+&=(f\der g)(x)+(\der fg)(x)
+\end{align}$$> $$Q.E.D.$$
 ### Fermat’s Theorem
 **Claim:**
 > If $f$ is a function that is differentiable at $x_0$, and $x_0$ is an extreme point on $f$, then $\der f(x_0)=0$.
@@ -93,4 +107,19 @@ $$Q.E.D.$$
 
 **Proof:**
 > Define $h(x)=f(x)-g(x)$. Then, $h^\prime(x)=f^\prime(x)-g^\prime(x)=0$. By **Corollary I**, we know that if the derivative of a function is zero, that function is a constant. Therefore, $h(x)=f(x)-g(x)=C$, which is the same thing as saying $f(x)=g(x)+C\mid\forall x\in(a,b),C\in\Bbb R$
+> $$Q.E.D.$$
+
+### Fundamental Theorem of Calculus
+**Claim:**
+> If $f$ is continuous on $[a,b]$, and $F(x)=\int_a^xf(t)dt$ for $a\le x\le b$, then $F$ is continuous on $[a,b]$ and differentiable on $(a,b)$, and $\der F(x)=f(x)$.
+
+**Proof:**
+> $$\begin{align}
+> \der F(x)&=\lim_{h\to0}{\frac{F(x+h)-F(x)}h}\\
+> &=\lim_{h\to0}{\frac1h\left[\int_a^{a+h}f(t)dt-\int_a^xf(t)dt\right]}\\
+> &=\lim_{h\to0}{\frac1{(x+h)-x}\int_x^{x+h}f(t)dt}\\
+> \text{Via MVT for Integrals: }&=f(c)\mid c\in(x,x+h)
+> \end{align}$$
+> Since $x\le c\le x+h$, and $h\to0$, $c=x$.
+> Therefore, $\der F(x)=f(x)$.
 > $$Q.E.D.$$
