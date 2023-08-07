@@ -1,6 +1,6 @@
 *May 8 Lecture. Links to the [board](https://drive.google.com/file/d/1BwMi6pAdCWz0UrAnsMBeoXTBa8z6roiN/view?usp=sharing) and the [recording](https://drive.google.com/file/d/1zN1ep3dD9x7Rmo8kGeQKTHNNBCH0p6RK/view?usp=sharing).*
 What does this stuff do?
-	If you have a function $y=f(x)$, we wantj to be able to calculate the slope of a line that is tangent to a point on the graph.
+	If you have a function $y=f(x)$, we want to be able to calculate the slope of a line that is tangent to a point on the graph.
 	We seek a <u>derivative function</u> $f^\prime(x)$ such that
 		$f^\prime(x_0)=\text{ slope of line tangent to graph }y=f(x)\text{ at point }(x_0,f(x_0))$.
 

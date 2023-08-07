@@ -51,7 +51,8 @@ $\newcommand{\der}[1]{{#1}^\prime}$
 &=\lim_{h\to0}{f(x+h)\cdot\frac{g(x+h)-g(x)}{h}}+\lim_{h\to0}{g(x)\cdot\frac{g(x+h)-g(x)}h}\\
 &=f(x)\der g(x)+\der f(x)g(x)\\
 &=(f\der g)(x)+(\der fg)(x)
-\end{align}$$> $$Q.E.D.$$
+\end{align}$$
+> $$Q.E.D.$$
 ### Fermat’s Theorem
 **Claim:**
 > If $f$ is a function that is differentiable at $x_0$, and $x_0$ is an extreme point on $f$, then $\der f(x_0)=0$.

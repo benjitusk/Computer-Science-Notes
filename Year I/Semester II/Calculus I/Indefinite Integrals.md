@@ -17,6 +17,7 @@
 > - $\int{\sin x}\;dx=-\cos x+C$
 > - $\int{\tan x}\;dx=-\ln|\cos(x)|+C$
 > - $\int{e^x}\;dx=e^x+C$
+> - $\int{a^x}\;dx=\frac{a^x}{ln(a)}+C$
 > - $\int{x^n}\;dx=\frac{x^{n+1}}{n+1}+C$
 > 	- *For $n\not=-1$*
 > - $\int{x^{-1}}\;dx=\int{\frac1x}\;dx=\ln{|x|}+C$
