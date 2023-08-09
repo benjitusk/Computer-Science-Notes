@@ -81,7 +81,7 @@ $$Q.E.D.$$
 > If $f$ is a function that is continuous in $[a,b]$, and differentiable in $(a,b)$, then $\exists c\in(a,b)$ such that $f^\prime(c)=\frac{f(b)-f(a)}{b-a}$.
 
 **Proof:**
-> Let $g(x)=f(x)-\frac{(f(b)-f(a))\cdot(x-a)}{b-a}$. Note that $g(a)=f(a)$, and $g(b)=f(a)$. Furthermore, $g(x)$ has the same continuity and differentiability properties as $f(x)$, since $g^\prime(x)=f^\prime(x)-\frac{f(b)-f(a)}{b-a}$.
+> Let $g(x)=f(x)-\frac{(f(b)-f(a))\cdot(x-a)}{b-a}$. Note that $g(a)=g(b)=f(a)$. Furthermore, $g(x)$ has the same continuity and differentiability properties as $f(x)$, since $g^\prime(x)=f^\prime(x)-\frac{f(b)-f(a)}{b-a}$.
 > Therefore, we can apply Rolle’s Theorem that $\exists c\in(a,b)\mid g^\prime(c)=0$.
 > Thus, we can immediately conclude by the definition of $g^\prime$ that $f^\prime(c)=\frac{(f(b)-f(a))}{b-a}$.
 > $$Q.E.D.$$
