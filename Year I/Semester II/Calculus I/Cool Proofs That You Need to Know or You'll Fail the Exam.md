@@ -83,7 +83,7 @@ $$Q.E.D.$$
 **Proof:**
 > Let $g(x)=f(x)-\frac{(f(b)-f(a))\cdot(x-a)}{b-a}$. Note that $g(a)=g(b)=f(a)$. Furthermore, $g(x)$ has the same continuity and differentiability properties as $f(x)$, since $g^\prime(x)=f^\prime(x)-\frac{f(b)-f(a)}{b-a}$.
 > Therefore, we can apply Rolle’s Theorem that $\exists c\in(a,b)\mid g^\prime(c)=0$.
-> Thus, we can immediately conclude by the definition of $g^\prime$ that $f^\prime(c)=\frac{(f(b)-f(a))}{b-a}$.
+> Thus, we can immediately conclude by the definition of $g^\prime$ that $f^\prime(c)=\frac{f(b)-f(a)}{b-a}$.
 > $$Q.E.D.$$
 ##### MVT Corollary I (Constant Corollary)
 **Claim:**
@@ -116,11 +116,11 @@ $$Q.E.D.$$
 
 **Proof:**
 > $$\begin{align}
-> \der F(x)&=\lim_{h\to0}{\frac{F(x+h)-F(x)}h}\\
-> &=\lim_{h\to0}{\frac1h\left[\int_a^{a+h}f(t)dt-\int_a^xf(t)dt\right]}\\
-> &=\lim_{h\to0}{\frac1{(x+h)-x}\int_x^{x+h}f(t)dt}\\
-> \text{Via MVT for Integrals: }&=f(c)\mid c\in(x,x+h)
-> \end{align}$$
+\der F(x)&=\lim_{h\to0}{\frac{F(x+h)-F(x)}h}\\
+&=\lim_{h\to0}{\frac1h\left[\int_a^{a+h}f(t)dt-\int_a^xf(t)dt\right]}\\
+&=\lim_{h\to0}{\frac1{(x+h)-x}\int_x^{x+h}f(t)dt}\\
+\text{Via MVT for Integrals: }&=f(c)\mid c\in(x,x+h)
+\end{align}$$
 > Since $x\le c\le x+h$, and $h\to0$, $c=x$.
 > Therefore, $\der F(x)=f(x)$.
 > $$Q.E.D.$$
