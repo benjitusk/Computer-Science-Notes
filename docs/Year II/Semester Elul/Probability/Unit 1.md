@@ -1,0 +1,21 @@
+### General Concepts
+- What is probability?
+	- It’s a measure of how likely *something* is to happen
+- Terminology
+	- An <u>experiment</u> is some occurance which can turn out in multiple ways
+		- Rolling dice
+		- flipping coins
+		- anything in a random manner
+		- weather
+	- An <u>outcome</u> is a discrete result of a given experiment.
+	- The set of all possible outcomes is called the <u>sample space</u>, denoted as $\Omega$
+		- Eg., Rolling a die, $\Omega = \{1,2,3,4,5,6\}$
+		- Eg., Flipping a coin, $\Omega=\{H,T\}$
+		- Rolling 2 dice — more complicated, it depends what you want.
+			- Sum of rolls: $\Omega=\{2,3,4,\dots,12\}$
+			- Distinct results: 
+	- An <u>event</u> is a subset of $\Omega$
+		- It’s a set of possible outcomes.
+			- Eg, rolling a single die < 6
+				- $S=\{1,2,3,4,5\}$
+				- 

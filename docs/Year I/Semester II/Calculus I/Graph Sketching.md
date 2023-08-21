@@ -1,0 +1,77 @@
+*May 22 Lecture. Links to the [board](https://drive.google.com/file/d/18Gei28efsmehhrlU6AyxSVhZDawgHxDy/view?usp=share_link) and the [recording](https://drive.google.com/file/d/1Mn6HSNlsvv1LCn2ud87IZK2dZ1PPpaQY/view?usp=share_link).*
+##### Definition:
+$x_0$ is an <u>extreme point</u> of $f$ if there exists a neighborhood  of $x_0$, $I=(x_0-\epsilon, x_0+\epsilon)$ such that either $f(x_0) > f(x)\;\forall x\in I$ or $f(x_0) < f(x)\;\forall x\in I$ $[x\not=x_0]$
+In the first case, $x_0$ is a <u>local maximum</u>; in the second case, $x_0$ is a <u>local minimum</u>.
+
+> [!quote] ##### Fermat's Theorem (#36)
+> If $f$ is differentiable at $x_0$, and $x_0$ is an extreme point of $f$, then $f\prime(x_0)=0$
+> ###### Caveats:
+> 1. Note the condition $f$ is differentiable at $x_0$:
+>	- $f$ can have an extreme point where f is not differentiable.
+>	  Ex.: $f(x)=|x|$
+> 2. Not every point where $f^\prime=0$ is an extreme point. (i.e., the converse of Fermat's theorem is not true.)
+
+##### Critical points 
+By Fermat's Theorem, the only *candidates* for extreme points of $f$ are points where
+1. $f^\prime(x)=0$
+2. $f$ is not differentiable at $x_0$
+If $x_0$ satisfies either of these conditions, then $x_0$ is a <u>critical point</u> of $f$.
+
+> [!quote] ##### Rolle's Theorem:
+> Suppose $f$ is continuous in $[a,b]$ and differentiable in $(a,b)$, with $f(a)=f(b)$. Then $\exists c\in(a,b)\mid f^\prime(c)=0$
+
+> [!quote] ##### Mean Value Theorem (MVT):
+> Suppose $f$ is continuous in $[a,b]$ and differentiable in $(a,b)$. Then, $\exists c\in(a,b)\mid f^\prime(c)=\frac{f(b)-f(a)}{b-a}$
+> Practically speaking, there exists at least one point on $f$ between $(a,b)$ where the slope of the tangent is exactly equal to the slope of the line between $a$ and $b$.
+> You can think of this as a "sideways" version of Rolle's Theorem.
+> ##### Corollaries of MVT:
+> 1. If $f^\prime(x)=0$ for all $x\in(a,b)$, then $f$ is constant.
+> 2. Let $f,g$ be continuous on $[a,b]$, and differentiable on $(a, b)$. If $f^\prime(x)=g^\prime(x)\mid\forall x\in(a,b)$, then they differ by a constant (i.e. $g(x)=f(x)+k$ for some constant k on all of $(a,b)$)
+> 3. If $f$ is differentiable on $(a,b)$ and $f^\prime(x)>0\mid\forall x\in(a,b)$ then f is increasing on $(a,b)$.
+> 	- If $f$ is differentiable on $(a,b)$ and $f^\prime(x)<0\mid\forall x\in(a,b)$ then f is decreasing on $(a,b)$.
+> 	- $f$ is increasing $\iff f^\prime(x)>0$
+> 	- $f$ is decreasing $\iff f^\prime(x)<0$
+> 4. Linear Approximation:
+> 	For h small, $f(x_0+h)\approx f(x_0)+h\cdot f^\prime (x_0)$
+> 	See: [[Differentiability and Derivatives#Linear Approximation using derivatives|Explanation]]
+
+
+##### Sketching graph using information about $f^\prime$
+Ex.: $f(x)=x^3-6x^2+9x$
+We wish to find extreme points where $f$ is increasing and where $f$ is decreasing.
+1. Find critical points (where $f^\prime=0$ **or** $f$ is not differentiable)
+	- $f$ is a polynomial, so it's differentiable for all $x$
+	- $f^\prime(x)=3x^2-12x+9=0$ (set it to be zero to find extreme points)
+		- $f^\prime(x)=3(x^2-4x+3)=0$
+		- $f^\prime(x)=3(x^2-4x+3)=0$
+		- $f^\prime(x)=3(x-1)(x-3)=0$
+	- Critical points are $1, 3$
+2. Examine critical points
+	1. First derivative test:
+		1. For local maximum, $f^\prime(x<x_0)<0<f^\prime(x>x_0)$
+		   For local minimum, $f^\prime(x<x_0)>0>f^\prime(x>x_0)$
+		2.  Check the signs of the derivative function using the snake method
+			- ![[Graph Sketching 2023-06-13 14.34.57.excalidraw]]
+		3. $f^\prime>0\mid x<1,x>3$
+		    $f^\prime<0\mid1<x<3$
+		4. $x_0=1$ is a local max
+		    $x_0=3$ is a local min
+	2. $2^{nd}$ method to locate extreme  points (from the critical points):
+		1. Look at the second derivative $f^{\prime\prime}(x_0)$ where $x_0$ is a critical point
+		2. If $f^{\prime\prime}(x_0) > 0$ then $x_0$ is a local min
+		3. If $f^{\prime\prime}(x_0)<0$ then $x_0$ is a local max
+		4. If $f^{\prime\prime}(x_0)<0$ then this test gives no information
+		- In our example, $f^{\prime\prime}(x)=6x-12$, so we check:
+			- $f^{\prime\prime}(1)=-6$, so it's a local maximum
+			- $f^{\prime\prime}(3)=6$, so it's a local minimum
+3. Sketch the graph
+	1. Plot the points where the graph intersect the X-axis
+	2. Plot the maxima and minima
+	3. connect them using information gleaned from examination of critical points.
+---
+*May 22 Tirgul. Links to the [board](https://drive.google.com/file/d/1OBdQoeyD1b94sDxSXdHeoKOmEI9F89Hl/view?usp=sharing) and [recording](https://drive.google.com/file/d/1YJAZyRAB2vPY4l0kWb6wWKlttu1Pyy0o/view?usp=sharing).*
+**\[Incomplete]**
+
+---
+
+**\[Incomplete until End of Unit Lecture June 5]**

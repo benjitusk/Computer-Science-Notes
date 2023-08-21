@@ -1,6 +1,10 @@
 site_name: Benji Tusk's CS Notes # Change this to your site name
 site_description: A cool description of your site
 site_url: https://change_me.io/ # Change this to your site URL
+site_author: Benji Tusk
+copyright: Copyright Benji Tusk 2023. All rights reserved.
+repo_url: https://github.com/benjitusk/Computer-Science-Notes
+edit_uri: edit/master/docs/
 
 theme:
     name: 'material'
@@ -11,6 +15,7 @@ theme:
         text: Ubuntu
         code: Ubuntu Mono
     language: en
+    locale: en_US
     palette:
         # Light mode
         - media: '(prefers-color-scheme: light)'
@@ -30,6 +35,7 @@ theme:
               icon: material/toggle-switch
               name: Switch to light mode
     features:
+        - content.action.edit
         - navigation.indexes
         - navigation.top
         - navigation.tabs
@@ -82,7 +88,7 @@ plugins:
     - git-revision-date-localized:
           type: date
           fallback_to_build_date: true
-          locale: fr
+          locale: en
           custom_format: '%A %d %B %Y'
           enable_creation_date: true
     - ezlinks:

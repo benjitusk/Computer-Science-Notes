@@ -1,7 +1,7 @@
-.obsidian/
+**/.obsidian/
 **/.DS_Store
 .vscode/settings.json
 desktop.ini
 Pipfile
 Pipfile.lock
-venv/
+**/venv/
