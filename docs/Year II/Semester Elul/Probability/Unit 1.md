@@ -13,9 +13,8 @@
 		- Eg., Flipping a coin, $\Omega=\{H,T\}$
 		- Rolling 2 dice — more complicated, it depends what you want.
 			- Sum of rolls: $\Omega=\{2,3,4,\dots,12\}$
-			- Distinct results: 
+			- Distinct results:
 	- An <u>event</u> is a subset of $\Omega$
 		- It’s a set of possible outcomes.
 			- Eg, rolling a single die < 6
 				- $S=\{1,2,3,4,5\}$
-				- 

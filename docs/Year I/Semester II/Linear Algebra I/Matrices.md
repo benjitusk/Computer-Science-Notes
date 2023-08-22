@@ -12,7 +12,7 @@ $m$ rows by $n$ columns
 $a_{ij}=$ entry in i<sup>th</sup> row and j<sup>th</sup> column ($1≤i≤m, 1≤j≤n$)
 
 #### Transpose operation
-if $A$ is an $m \times n$ matrix, then $A^T$ is the $n\times m$ matrix defined by $A^T=[b_{ij}]$ with $b_{ij}=a_{ji}$ for $1≤ i ≤ m, 1≤ j≤n$ 
+if $A$ is an $m \times n$ matrix, then $A^T$ is the $n\times m$ matrix defined by $A^T=[b_{ij}]$ with $b_{ij}=a_{ji}$ for $1≤ i ≤ m, 1≤ j≤n$
 Example: $$A=\begin{bmatrix}1&3&-2\\0&-1&4\end{bmatrix}\quad A^T=\begin{bmatrix}1&0\\3&-1\\-2&4\end{bmatrix}$$
 A symmetric matrix $A$ is one with the property $A=A^T$.
 > [!info] Symmetric Matrices - In English
@@ -33,7 +33,7 @@ General definition: If A is a $m\times n$ matrix and B is a $n\times p$ matrix, 
 > To multiply a matrix, you must ensure that the dimensions work out. The *columns* of $A$ must equal the *rows* of $B$. This is required so we can take the dot product, as the operands of a dot product operation must be of equal dimension.
 > The dimension of the product will inversely be the *rows* of $A$ by the *columns* of $B$.
 > For the resulting matrix $C$, the value in $C_{ij}$ is the dot product of $A_{\text{row }i}$ and  $B_{\text{col }j}$
-> 
+>
 > The code for matrix multiplication in TypeScript is as follows:
 > ```typescript
 > function matrixMultiplication(A: Matrix, B: Matrix){
@@ -131,9 +131,9 @@ All nonzero entries are *on* the main diagonal.
 **Example:**
 	$c\cdot I_3=\begin{bmatrix}c&0&0\\0&c&0\\0&0&c\end{bmatrix}$
 **Claim:**
-	If $A$ is any $m\times n$ matrix, then: 
-	$cI_m\cdot A=cA$ 
-	$A\cdot cI_n=cA$ 
+	If $A$ is any $m\times n$ matrix, then:
+	$cI_m\cdot A=cA$
+	$A\cdot cI_n=cA$
 
 > [!example]
 > $$\begin{bmatrix}
@@ -159,12 +159,12 @@ All nonzero entries are *on* the main diagonal.
 > [!info] Inverse Matrices — In English
 > Every scalar number has its inverse. The inverse of $2$ is $1\over2$. The inverse of $\frac14$ is $4$. The inverse of $\frac85$ is $\frac58$.
 > The common ground is that multiplying a scalar by its inverse gives you the "Identity Scalar" - that is, $1$.
-> 
+>
 > With matrices, the same concept applies. The inverse of a matrix $A$ is the matrix you multiply $A$ with to get the Identity Matrix - that is, $I$.
 
 > [!example]
 > $\begin{bmatrix}2&1\\5&3\\\end{bmatrix}\begin{bmatrix}3&-1\\-5&2\\\end{bmatrix}=\begin{bmatrix}1&0\\0&1\\\end{bmatrix}=I$
-> 
+>
 > If $A=\begin{bmatrix}2&1\\5&3\\\end{bmatrix}$, then $A^{-1}=\begin{bmatrix}3&-1\\-5&2\\\end{bmatrix}$.
 
 > [!warning] Not every matrix is invertible.
@@ -221,105 +221,16 @@ Stay tuned for the answers...
 	- Since you have $[\text{series of elementary matrices}]\cdot A=I$, $A$ *is* invertible.
 	- $A^{-1}=[\text{series of elementary matrices}]$
 Example:
-	$$\begin{aligned}
-	A=
-	&\begin{bmatrix}
-		0 & 1 & 1 \\
-		1 & 0 & 2 \\
-		1 & 1 &\ 0 \ \ \\
-	\end{bmatrix}
-	\xrightarrow[E_{21}]{R_2\leftrightarrow R_1}
-	\begin{bmatrix}
-		1 & 0 & 2 \\
-		0 & 1 & 1 \\
-		1 & 1 & 0 \\
-	\end{bmatrix}
-	\xrightarrow[E_{31}(-1)]{R_3\rightarrow R_3-R_1}
-	\begin{bmatrix}
-		1 & 0 & 2 \\
-		0 & 1 & 1 \\
-		0 & 1 &-2 \\
-	\end{bmatrix}
-	\xrightarrow[E_{32}(-1)]{R_3\rightarrow R_3-R_2}\\
-	
-	&\begin{bmatrix}
-		1 & 0 & 2 \\
-		0 & 1 & 1 \\
-		0 & 0 &-3 \\
-	\end{bmatrix}
-	\xrightarrow[E_{3}(-\frac13)]{R_2\leftrightarrow R_1}
-	\begin{bmatrix}
-		1 & 0 & 2 \\
-		0 & 1 & 1 \\
-		0 & 0 & 1 \\
-	\end{bmatrix}
-	\xrightarrow[E_{23}(-1)]{R_2\rightarrow R_2-R_3}
-	\begin{bmatrix}
-		1 & 0 & 2 \\
-		0 & 1 & 0 \\
-		0 & 0 & 1 \\
-	\end{bmatrix}
-	\xrightarrow[E_{13}(-2)]{R_1\rightarrow R_1-2R_3}\\
-	&\begin{bmatrix}
-		1 & 0 & 0 \\
-		0 & 1 & 0 \\
-		0 & 0 &\ \ 1 \ \\
-	\end{bmatrix}
-\end{aligned}$$
-	$$\underset{E_{13}(-2)}
-	{\begin{bmatrix}
-		1 & 0 & -2 \\
-		0 & 1 & 0 \\
-		0 & 0 & 1 \\
-	\end{bmatrix}}
-	\cdot\left(
-	\underset{E_{23}(-1)}
-	{\begin{bmatrix}
-		1 & 0 & 0 \\
-		0 & 1 & -1 \\
-		0 & 0 & 1 \\
-	\end{bmatrix}}
-	\cdot\left(
-	\underset{E_{3}(-\frac13)}
-	{\begin{bmatrix}
-		1 & 0 & 0 \\
-		0 & 1 & 0 \\
-		0 & 0 & -\frac13 \\
-	\end{bmatrix}}
-	\cdot\left(
-	\underset{E_{32}(-1)}
-	{\begin{bmatrix}
-		1 & 0 & 0 \\
-		0 & 1 & 0 \\
-		0 & -1 & 1 \\
-	\end{bmatrix}}
-	\cdot\left(
-	\underset{E_{31}(-1)}
-	{\begin{bmatrix}
-		1 & 0 & 0 \\
-		0 & 1 & 0 \\
-		-1 & 0 & 1 \\
-	\end{bmatrix}}
-	\cdot\left(
-	\underset{E_{12}}
-	{\begin{bmatrix}
-		0 & 1 & 0 \\
-		1 & 0 & 0 \\
-		0 & 0 & 1 \\
-	\end{bmatrix}}\cdot A
-	\right)
-	\right)
-	\right)
-	\right)
-	\right)=I$$
+$$\begin{aligned}A=&\begin{bmatrix}0 & 1 & 1 \\1 & 0 & 2 \\1 & 1 &\ 0 \ \ \\	\end{bmatrix}	\xrightarrow[E_{21}]{R_2\leftrightarrow R_1}	\begin{bmatrix}1 & 0 & 2 \\0 & 1 & 1 \\1 & 1 & 0 \\	\end{bmatrix}	\xrightarrow[E_{31}(-1)]{R_3\rightarrow R_3-R_1}	\begin{bmatrix}1 & 0 & 2 \\0 & 1 & 1 \\0 & 1 &-2 \\	\end{bmatrix}	\xrightarrow[E_{32}(-1)]{R_3\rightarrow R_3-R_2}\\	&\begin{bmatrix}1 & 0 & 2 \\0 & 1 & 1 \\0 & 0 &-3 \\	\end{bmatrix}	\xrightarrow[E_{3}(-\frac13)]{R_2\leftrightarrow R_1}	\begin{bmatrix}1 & 0 & 2 \\0 & 1 & 1 \\0 & 0 & 1 \\	\end{bmatrix}	\xrightarrow[E_{23}(-1)]{R_2\rightarrow R_2-R_3}	\begin{bmatrix}1 & 0 & 2 \\0 & 1 & 0 \\0 & 0 & 1 \\	\end{bmatrix}	\xrightarrow[E_{13}(-2)]{R_1\rightarrow R_1-2R_3}\\	&\begin{bmatrix}1 & 0 & 0 \\0 & 1 & 0 \\0 & 0 &\ \ 1 \ \\\end{bmatrix}\end{aligned}$$
+$$\underset{E_{13}(-2)}{\begin{bmatrix}1 & 0 & -2 \\0 & 1 & 0 \\0 & 0 & 1 \\\end{bmatrix}}\cdot\left(\underset{E_{23}(-1)}{\begin{bmatrix}1 & 0 & 0 \\0 & 1 & -1 \\0 & 0 & 1 \\\end{bmatrix}}\cdot\left(\underset{E_{3}(-\frac13)}{\begin{bmatrix}1 & 0 & 0 \\0 & 1 & 0 \\0 & 0 & -\frac13 \\\end{bmatrix}}\cdot\left(\underset{E_{32}(-1)}{\begin{bmatrix}1 & 0 & 0 \\0 & 1 & 0 \\0 & -1 & 1 \\\end{bmatrix}}\cdot\left(\underset{E_{31}(-1)}{\begin{bmatrix}1 & 0 & 0 \\0 & 1 & 0 \\-1 & 0 & 1 \\\end{bmatrix}}\cdot\left(\underset{E_{12}}{\begin{bmatrix}0 & 1 & 0 \\1 & 0 & 0 \\0 & 0 & 1 \\\end{bmatrix}}\cdot A\right)\right)\right)\right)\right)=I$$
 	By associativity of matrix multiplication, $[\text{Product of EM's}]\cdot A=I$
 	Therefore, $A$ is invertible, and $A^{-1}=[\text{Product of EM's}]$
 
 > [!caution] $A^{-1}$ as a product of Elementary Matrices
 > $A^{-1}$ is the product of the Elementary Matrices obtained by reducing $A$ to $I$, in the **reverse** of the order in which you obtained them.
-> > [!danger] Exam Candidate
-> > This will likely be one of the test questions, or part of it.
 > 
+> This is frequently an exam question. Be prepared.
+
 
 
 
@@ -335,35 +246,35 @@ Example:
 	1&1&0&0&0&1
 	\end{array}\right]
 	\xrightarrow[E_{21}]{R_2\leftrightarrow R_1}
-	
+
 	\left[\begin{array}{ccc|ccc}
 	1&0&2&0&1&0\\
 	0&1&1&1&0&0\\
 	1&1&0&0&0&1
 	\end{array}\right]
 	\xrightarrow[E_{31}(-1)]{R_3\rightarrow R_3 - R_1}
-	
+
 	\left[\begin{array}{ccc|ccc}
 	1&0&2&0&1&0\\
 	0&1&1&1&0&0\\
 	0&1&-2&0&-1&1
 	\end{array}\right]
 	\xrightarrow[E_{32}(-1)]{R_3\rightarrow R_3 - R_2}\\\\
-	
+
 	&\left[\begin{array}{ccc|ccc}
 	1&0&2&0&1&0\\
 	0&1&1&1&0&0\\
 	0&0&-3&-1&-1&1
 	\end{array}\right]
 	\xrightarrow[E_{3}(-\frac13)]{R_3\rightarrow -\frac13 R_3}
-	
+
 	\left[\begin{array}{ccc|ccc}
 	1&0&2&0&1&0\\
 	0&1&1&1&0&0\\
 	0&0&1&\frac13&\frac13&-\frac13
 	\end{array}\right]
 	\xrightarrow[E_{23}(-1)\ \&\ E_{13}(-2)]{R_2\rightarrow R_2-R_3\ \&\ R_1\rightarrow R_1-2R_3}\\\\
-	
+
 	&\underset{[I|A^{-1}]}{\left[\begin{array}{ccc|ccc}
 	1&0&0&-\frac23&\frac13&\frac23\\
 	0&1&0&\frac23&-\frac13&\frac13\\
@@ -380,7 +291,7 @@ Example:
 
 > [!info] In summary: Matrix Inversion
 > To check if $A$ is invertible, set up a "double window" $\left[\begin{array}{c|c}A&I\end{array}\right]$ and reduce $A$, performing the same operations on both sides at every step.
-> If $A$ can't be reduced to $I$, then $A$ is not invertible. 
+> If $A$ can't be reduced to $I$, then $A$ is not invertible.
 > If $A$ can be reduced to $I$, then the right window will contain $A^{-1}$ at the end of the reduction.
 
 > [!quote] ##### Summary Theorem
@@ -446,11 +357,11 @@ Ex. $A=\begin{bmatrix}1&1&2\\-1&0&1\\0&-1&1\end{bmatrix}$
 > > Using the above matrix $A$:
 > > $M_{13}=\begin{bmatrix}-1&0\\0&-1\end{bmatrix} \qquad\begin{pmatrix}\color{red}1&\color{red}1&\color{red}\bf{2}\\-1&0&\color{red}1\\0&-1&\color{red}1\end{pmatrix}$
 > > $M_{21}=\begin{bmatrix}1&2\\-1&1\end{bmatrix}\qquad\begin{pmatrix}\color{red}1&1&2\\\color{red}\bf{-1}&\color{red}0&\color{red}1\\\color{red}0&-1&1\end{pmatrix}$
-> 
+>
 > >[!info] Formula for $|A_n|$
 > > For any $i\in [1, n]$
 > >$$\sum_{j=1}^n-1^{j+i}\cdot a_{ij}\cdot|M_{ij}|$$
-> 
+>
 > > [!example] Example of $|A_3|$
 > > Using the above matrix $A$:
 > > $$\begin{aligned}A&=\begin{bmatrix}1&1&2\\-1&0&1\\0&-1&1\end{bmatrix}\\|A|&=+\underbrace{(+1)}_{a_{11}}\cdot\underbrace{\begin{vmatrix}0&1\\-1&1\end{vmatrix}}_{M_{11}}-\underbrace{(+1)}_{a_{12}}\cdot \underbrace{\begin{vmatrix}0&1\\-1&1\end{vmatrix}}_{M_{12}}+\underbrace{(+2)}_{a_{13}}\cdot\underbrace{\begin{vmatrix}0&1\\-1&1\end{vmatrix}}_{M_{13}}\\&=1(1)-1(-1)+2(1)\\&=4\end{aligned}$$
@@ -461,7 +372,7 @@ Ex. $A=\begin{bmatrix}1&1&2\\-1&0&1\\0&-1&1\end{bmatrix}$
 > $$|A|=\sum_{j=1}^n-1^{j+i}\cdot a_{ij}\cdot|M_{ij}|$$
 > Along column $j$:
 > $$|A|=\sum_{i=1}^n-1^{j+i}\cdot a_{ij}\cdot|M_{ij}|$$
-> 
+>
 > It is therefore advantageous to take the determinant along a row or column with lots of zeros, to reduce the number of minor determinants you have to calculate.
 
 ---

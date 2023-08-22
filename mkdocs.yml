@@ -2,9 +2,9 @@ site_name: Benji Tusk's CS Notes # Change this to your site name
 site_description: A cool description of your site
 site_url: https://change_me.io/ # Change this to your site URL
 site_author: Benji Tusk
-copyright: Copyright Benji Tusk 2023. All rights reserved.
+copyright: © Benji Tusk 2023. All rights reserved.
 repo_url: https://github.com/benjitusk/Computer-Science-Notes
-edit_uri: edit/master/docs/
+edit_uri: edit/main/docs/
 
 theme:
     name: 'material'
@@ -20,19 +20,19 @@ theme:
         # Light mode
         - media: '(prefers-color-scheme: light)'
           scheme: default
-          primary: teal
-          accent: light blue
+          primary: blue
+          accent: purple
           toggle:
-              icon: material/toggle-switch-off-outline
+              icon: material/brightness-7
               name: Switch to dark mode
 
         # Dark mode
         - media: '(prefers-color-scheme: dark)'
           scheme: slate
-          primary: blue
-          accent: indigo
+          primary: deep purple
+          accent: light blue
           toggle:
-              icon: material/toggle-switch
+              icon: material/brightness-4
               name: Switch to light mode
     features:
         - content.action.edit
@@ -99,8 +99,8 @@ plugins:
           custom-attributes: 'assets/css/custom_attributes.css'
     - custom-attributes:
           file: 'assets/css/custom_attributes.css'
-    - tags:
-          tags_file: tags.md
+    #     - tags:
+    #           tags_file: tags.md
     - encryptcontent:
           title_prefix: '🔐'
           summary: 'Private page'

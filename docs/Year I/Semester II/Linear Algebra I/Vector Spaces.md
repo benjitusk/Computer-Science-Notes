@@ -1,6 +1,6 @@
 *April 23 Lecture. Links to the [board](https://drive.google.com/file/d/1MP3Y2-6eU7uNBp85LiG48GBC8RXF00LA/view?usp=sharing) and the [recording](https://drive.google.com/file/d/1GtaH6vGsTdTt5vmUIqJOfPcf2tzEOQRV/view?usp=sharing).*
 #### Examples of Vector Spaces
-Vectors in $\Bbb R^n$ are objects on which we define operations of addition (to each other) and multiplication by a [scalar](<https://en.wikipedia.org/wiki/Scalar_(mathematics)>).
+Vectors in $\Bbb R^n$ are objects on which we define operations of addition (to each other) and multiplication by a [scalar](https://en.wikipedia.org/wiki/Scalar_(mathematics)).
 Other "objects" on which we can define the same operations:
 - Matrices: $\begin{bmatrix}a&b&c\\d&e&f\end{bmatrix}$
 	- Denoted as $M_{m\times n}$ with an order of $m$ rows by $n$ columns
@@ -103,7 +103,7 @@ Suppose $U_1,U_2\le V$.
 *May 4 Tirgul. Links to the [board](https://drive.google.com/file/d/1KmP5T95HjlRSZkbcz-TqaNAVRyVewgO-/view?usp=sharing) and the [recording](https://drive.google.com/file/d/1RJyagAxhJDoF1xmEePC6mLX5giXoGH34/view?usp=sharing).*
 ##### Linear Combination
 **Definition:**
-	Given a finite set $S=\{\vec v_1,\dots,\vec v_k\}$ in any vector space V, a <u>linear combination</u> of $S$ is any vector of form $\vec u=c_1\vec v_1+\dots+c_k\vec v_k$.	
+	Given a finite set $S=\{\vec v_1,\dots,\vec v_k\}$ in any vector space V, a <u>linear combination</u> of $S$ is any vector of form $\vec u=c_1\vec v_1+\dots+c_k\vec v_k$.
 ##### Span
 **Definition:**
 	The <u>span</u> of a finite set of vectors $S=\{\vec v_1,\dots,\vec v_k\}$ is the set of *all* linear combinations of $S$.
@@ -143,8 +143,8 @@ Any other set of *one* vector is independent.
 > 1. Write vectors of $S$ as columns in a matrix $A$
 > 2. Consider $A$ as a coefficient matrix of a homogeneous system, and solve
 > 3. If the solution is unique, $S$ is independent. If there are infinitely many solutions, $S$ is dependent. If there are zero solutions, you messed something up.
->    
->    
+>
+>
 > Example with $\Bbb R^n$:
 $S_1=\{(1,3,5),(2,4,6),(-1,1,3)\}$
 To check if $S_1$ is independent:
@@ -194,11 +194,11 @@ There are two possibilities for a homogeneous system:
 	**Examples:**
 		In $\Bbb R^2$, $S_1=\{(1,0),(0,1)\}$
 			This set is independent (easy to check)
-			This set spans $\Bbb R^2$: $\forall (a,b)\in\Bbb R^2:(a,b)=a(1,0)+b(0,1)$ 
+			This set spans $\Bbb R^2$: $\forall (a,b)\in\Bbb R^2:(a,b)=a(1,0)+b(0,1)$
 			Therefore, $S_1$ is a basis of $\Bbb R^2$
 		In $\Bbb R^2$, $S_1=\{(1,1),(-3,5)\}$
 			Independent? Neither is a multiple of the other, so yes.
-			Spanning? $\forall (a,b)\in\Bbb R^2\stackrel?\exists c_1,c_2\in\Bbb R\mid(a,b)=c_1(1,1)+c_2(-3,5))$ 
+			Spanning? $\forall (a,b)\in\Bbb R^2\stackrel?\exists c_1,c_2\in\Bbb R\mid(a,b)=c_1(1,1)+c_2(-3,5))$
 				Yes (We'll come back to this later.)
 			Therefore, $S_2$ is a basis of $\Bbb R^2$
 		In $\Bbb R^2$, $S_3=\{(1,0),(0,1), (2,3)\}\rightarrow$ spans, but isn't independent
@@ -213,7 +213,7 @@ There are two possibilities for a homogeneous system:
 *May 11 Tirgul. Links to the [board](https://drive.google.com/file/d/1MW0fTj6_mZwE8yRTR9vGKjtByk1Oop9u/view?usp=share_link) and the [recording](https://drive.google.com/file/d/1jS7wu0YYq-5uyx41i-sNfVwgvtCdKSyc/view?usp=share_link).*
 > [!note] Question 3/b
 > Prove or disprove 1. The set $\{(−1,2,1,1), (0, −1,1,1), (0,2,1,1), (1,2, −1,1)\}$ is linearly independent in $\Bbb R^4$
-> 
+>
 > **Method:**
 > 1. Write vectors as columns in coefficient matrix
 > 2. Solve the matrix (Row Echelon Form)
@@ -222,7 +222,7 @@ There are two possibilities for a homogeneous system:
 
 > [!note] Question 4/c
 > Find $k$ such that the set ${\vec v_1 = (−1,2,3,2), \vec v_2 = (2,2,2,2), \vec v_3 = (−2, −5, −6, −4), \vec v_4 = (2,6,𝑘, 5)}$ is linearly dependent, or prove that there is no such $k$.
-> 
+>
 > **Method:**
 > 1. Steps 1 and 2 as above
 > 2. Find the values for $k$ that will achieve Row Echelon Form.
@@ -241,30 +241,3 @@ There are two possibilities for a homogeneous system:
 > 4. Solve for $c_1, c_2, c_3$
 > 5. Write answer as $c_1(x^2-x+6)+c_2(2x^2-3x)+c_3(x-3)$
 > 	   Of course, substituting $c_1, c_2, c_3$ with the values from step 4.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-**5782 Moed A**
-*Question 5/c*
-$U=\{(x,y,z)\in\Bbb R^3|x^2+y^2+z^2=0\}$
-True or false: $U$ is a vector space.
-First test: Is the set empty? No, it contains $(0,0,0)$
-Second test: Is it closed under addition?
-	Let $\vec v_1=(a,b,c),\vec v_2=(d,e,f)\in U$
-	$\vec v_1+\vec v_2=(a+d,b+e,c+f)$
-	Now check, does this new vector match the condition $x^2+y^2+z^2=0$?
-	${(a+d)}^2+{(b+e)}^2+{(c+f)}^2=\underbrace{a^2+b^2+c^2+d^2+e^2+f^2}_{\text{we know this is 0}}+\underbrace{2ad+2bc+2ef}_{\text{it might not be zero}}\overset?=0$ Does this mean that it’s not closed, or do we need to reach a definitive conclusion that it does or does not equal zero?
-
-
-

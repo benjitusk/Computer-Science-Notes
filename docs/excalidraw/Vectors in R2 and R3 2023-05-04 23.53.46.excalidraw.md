@@ -30,7 +30,7 @@ ed1b30d91e83bff4aae35ff20e6283f95ee2bcb3: $$(3,-2,4)=\vec v$$
 {
 	"type": "excalidraw",
 	"version": 2,
-	"source": "https://github.com/zsviczian/obsidian-excalidraw-plugin/releases/tag/1.8.26",
+	"source": "https://github.com/zsviczian/obsidian-excalidraw-plugin/releases/tag/1.9.17",
 	"elements": [
 		{
 			"type": "line",
@@ -52,6 +52,7 @@ ed1b30d91e83bff4aae35ff20e6283f95ee2bcb3: $$(3,-2,4)=\vec v$$
 			"height": 358.9782409667969,
 			"seed": 433410992,
 			"groupIds": [],
+			"frameId": null,
 			"roundness": {
 				"type": 2
 			},
@@ -95,6 +96,7 @@ ed1b30d91e83bff4aae35ff20e6283f95ee2bcb3: $$(3,-2,4)=\vec v$$
 			"height": 0.495697021484375,
 			"seed": 1968135600,
 			"groupIds": [],
+			"frameId": null,
 			"roundness": {
 				"type": 2
 			},
@@ -138,6 +140,7 @@ ed1b30d91e83bff4aae35ff20e6283f95ee2bcb3: $$(3,-2,4)=\vec v$$
 			"height": 301.088623046875,
 			"seed": 687351728,
 			"groupIds": [],
+			"frameId": null,
 			"roundness": {
 				"type": 2
 			},
@@ -181,6 +184,7 @@ ed1b30d91e83bff4aae35ff20e6283f95ee2bcb3: $$(3,-2,4)=\vec v$$
 			"height": 25,
 			"seed": 1089974704,
 			"groupIds": [],
+			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
 			"updated": 1683233861144,
@@ -217,6 +221,7 @@ ed1b30d91e83bff4aae35ff20e6283f95ee2bcb3: $$(3,-2,4)=\vec v$$
 			"height": 25,
 			"seed": 74841008,
 			"groupIds": [],
+			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
 			"updated": 1683233861144,
@@ -253,6 +258,7 @@ ed1b30d91e83bff4aae35ff20e6283f95ee2bcb3: $$(3,-2,4)=\vec v$$
 			"height": 25,
 			"seed": 362481072,
 			"groupIds": [],
+			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
 			"updated": 1683233861144,
@@ -289,6 +295,7 @@ ed1b30d91e83bff4aae35ff20e6283f95ee2bcb3: $$(3,-2,4)=\vec v$$
 			"height": 388.6803894042969,
 			"seed": 294571952,
 			"groupIds": [],
+			"frameId": null,
 			"roundness": {
 				"type": 2
 			},
@@ -332,6 +339,7 @@ ed1b30d91e83bff4aae35ff20e6283f95ee2bcb3: $$(3,-2,4)=\vec v$$
 			"height": 10.95794677734375,
 			"seed": 591606608,
 			"groupIds": [],
+			"frameId": null,
 			"roundness": {
 				"type": 2
 			},
@@ -360,6 +368,7 @@ ed1b30d91e83bff4aae35ff20e6283f95ee2bcb3: $$(3,-2,4)=\vec v$$
 			"height": 25,
 			"seed": 1400220592,
 			"groupIds": [],
+			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
 			"updated": 1683233861144,
@@ -396,6 +405,7 @@ ed1b30d91e83bff4aae35ff20e6283f95ee2bcb3: $$(3,-2,4)=\vec v$$
 			"height": 19.95740144258329,
 			"seed": 32381,
 			"groupIds": [],
+			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
 			"updated": 1683233861144,
@@ -428,6 +438,7 @@ ed1b30d91e83bff4aae35ff20e6283f95ee2bcb3: $$(3,-2,4)=\vec v$$
 			"height": 12.724853515625,
 			"seed": 1043560272,
 			"groupIds": [],
+			"frameId": null,
 			"roundness": {
 				"type": 2
 			},
@@ -456,6 +467,7 @@ ed1b30d91e83bff4aae35ff20e6283f95ee2bcb3: $$(3,-2,4)=\vec v$$
 			"height": 25,
 			"seed": 629783888,
 			"groupIds": [],
+			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
 			"updated": 1683233890330,
@@ -492,6 +504,7 @@ ed1b30d91e83bff4aae35ff20e6283f95ee2bcb3: $$(3,-2,4)=\vec v$$
 			"height": 11.499755859375,
 			"seed": 156289872,
 			"groupIds": [],
+			"frameId": null,
 			"roundness": {
 				"type": 2
 			},
@@ -520,6 +533,7 @@ ed1b30d91e83bff4aae35ff20e6283f95ee2bcb3: $$(3,-2,4)=\vec v$$
 			"height": 14.600949581690884,
 			"seed": 1296010064,
 			"groupIds": [],
+			"frameId": null,
 			"roundness": {
 				"type": 2
 			},
@@ -548,6 +562,7 @@ ed1b30d91e83bff4aae35ff20e6283f95ee2bcb3: $$(3,-2,4)=\vec v$$
 			"height": 25,
 			"seed": 148816720,
 			"groupIds": [],
+			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
 			"updated": 1683233965984,
@@ -566,7 +581,7 @@ ed1b30d91e83bff4aae35ff20e6283f95ee2bcb3: $$(3,-2,4)=\vec v$$
 		}
 	],
 	"appState": {
-		"theme": "light",
+		"theme": "dark",
 		"viewBackgroundColor": "#ffffff",
 		"currentItemStrokeColor": "#364fc7",
 		"currentItemBackgroundColor": "#4c6ef5",
@@ -580,16 +595,22 @@ ed1b30d91e83bff4aae35ff20e6283f95ee2bcb3: $$(3,-2,4)=\vec v$$
 		"currentItemTextAlign": "left",
 		"currentItemStartArrowhead": null,
 		"currentItemEndArrowhead": "arrow",
-		"scrollX": 376.82579040527344,
-		"scrollY": 238.76980590820312,
+		"scrollX": 285.7067427862258,
+		"scrollY": 325.8823431105841,
 		"zoom": {
-			"value": 2
+			"value": 1.05
 		},
 		"currentItemRoundness": "round",
 		"gridSize": null,
 		"colorPalette": {},
 		"currentStrokeOptions": null,
-		"previousGridSize": null
+		"previousGridSize": null,
+		"frameRendering": {
+			"enabled": true,
+			"clip": true,
+			"name": true,
+			"outline": true
+		}
 	},
 	"files": {}
 }

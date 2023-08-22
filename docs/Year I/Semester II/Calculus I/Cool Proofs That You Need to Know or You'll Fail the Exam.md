@@ -1,4 +1,3 @@
-$\newcommand{\der}[1]{{#1}^\prime}$
 ### Linearity of Limits of a Sequence
 **Claim:**
 > If $a_n$ and $b_n$ are infinite sequences, and $\lim_{n\to \infty}{a_n}=A$ and $\lim_{n\to \infty}{b_n}=B$, then $\lim_{n\to \infty}{(a_n+b_n)}=A+B$
@@ -25,46 +24,46 @@ $\newcommand{\der}[1]{{#1}^\prime}$
 > $$Q.E.D.$$
 
 ### Sum of Derivatives
-**Claim:** 
-> $\der{(f+g)}(x)=\der f(x)+\der g(x)$
+**Claim:**
+> ${(f+g)}^\prime (x)=f^\prime (x)+g^\prime (x)$
 
 **Proof:**
 > $$\begin{align}
-\der{(f+g)}(x)&=\lim_{h\to0}{\frac{(f+g)(x+h)-(f+g)(x)}h}\\
+{(f+g)}^\prime (x)&=\lim_{h\to0}{\frac{(f+g)(x+h)-(f+g)(x)}h}\\
 &=\lim_{h\to0}{\frac{[f(x+h)+g(x+h)]-[f(x)+g(x)]}h}\\
 &=\lim_{h\to0}{\frac{f(x+h)-f(x)+g(x+h)-g(x)}h}\\
 &=\lim_{h\to0}{\frac{f(x+h)-f(x)}{h}}+\lim_{h\to0}{\frac{g(x+h)-g(x)}h}\\
-&=\der f(x)+\der g(x)\\
+&=f^\prime (x)+g^\prime (x)\\
 \end{align}$$
 > $$Q.E.D$$
 
 ### Product of Derivatives
 **Claim:**
-> $\der{(f\cdot g)}(x)=(f\der g)(x)+(\der fg)(x)$
+> ${(f\cdot g)}^\prime (x)=(fg^\prime )(x)+(f^\prime g)(x)$
 
 **Proof:**
 > $$\begin{align}
-\der{(fg)}(x)&=\lim_{h\to0}{\frac{(f\cdot g)(x+h)-(f\cdot g)(x)}h}\\
+{(fg)}^\prime (x)&=\lim_{h\to0}{\frac{(f\cdot g)(x+h)-(f\cdot g)(x)}h}\\
 &=\lim_{h\to0}{\frac{[f(x+h)\cdot g(x+h)]-[f(x)\cdot g(x)]}h}\\
 &=\lim_{h\to0}{\frac{[f(x+h)\cdot g(x+h)]-f(x+h)\cdot g(x)+f(x+h)\cdot g(x) -[f(x)\cdot g(x)]}h}\\
 &=\lim_{h\to0}{\frac{f(x+h)\cdot g(x+h)-f(x+h)\cdot g(x)}h}+\lim_{h\to0}{\frac{f(x+h)\cdot g(x) -f(x)\cdot g(x)}h}\\
 &=\lim_{h\to0}{f(x+h)\cdot\frac{g(x+h)-g(x)}{h}}+\lim_{h\to0}{g(x)\cdot\frac{g(x+h)-g(x)}h}\\
-&=f(x)\der g(x)+\der f(x)g(x)\\
-&=(f\der g)(x)+(\der fg)(x)
+&=f(x)g^\prime (x)+f^\prime (x)g(x)\\
+&=(fg^\prime )(x)+(f^\prime g)(x)
 \end{align}$$
 > $$Q.E.D.$$
 ### Fermat’s Theorem
 **Claim:**
-> If $f$ is a function that is differentiable at $x_0$, and $x_0$ is an extreme point on $f$, then $\der f(x_0)=0$.
+> If $f$ is a function that is differentiable at $x_0$, and $x_0$ is an extreme point on $f$, then $f^\prime (x_0)=0$.
 
 **Proof:**
 > *[W.L.O.G.](https://en.wikipedia.org/wiki/Without_loss_of_generality) maximum/minimum, assuming maximum.*
-> In order for $f$ to be differentiable at $x_0$, $\der f_-(x_0)=\der f_+(x_0)$, and $\der f(x_0)$ must exist.
-> $\der f_-(x_0)=\lim_{h\to0^-}{\frac{f(x_0+h)-f(x_0)}{h}}$. Since $f(x_0+h)-f(x_0)<0$, and $h<0$, 
-> $\der f_-(x_0)$ is the limit of positive numbers, which we know is $\ge0$.
-> $\der f_+(x_0)=\lim_{h\to0^+}{\frac{f(x_0+h)-f(x_0)}{h}}$. Since $f(x_0+h)-f(x_0)<0$, and $h>0$, 
-> $\der f_-(x_0)$ is the limit of negative numbers, which we know is $\le0$.
-> Since $\der f_-(x_0)=\der f_+(x_0)$, $\der f(x_0)$ *must* be zero.
+> In order for $f$ to be differentiable at $x_0$, $f^\prime _-(x_0)=f^\prime _+(x_0)$, and $f^\prime (x_0)$ must exist.
+> $f^\prime _-(x_0)=\lim_{h\to0^-}{\frac{f(x_0+h)-f(x_0)}{h}}$. Since $f(x_0+h)-f(x_0)<0$, and $h<0$,
+> $f^\prime _-(x_0)$ is the limit of positive numbers, which we know is $\ge0$.
+> $f^\prime _+(x_0)=\lim_{h\to0^+}{\frac{f(x_0+h)-f(x_0)}{h}}$. Since $f(x_0+h)-f(x_0)<0$, and $h>0$,
+> $f^\prime _-(x_0)$ is the limit of negative numbers, which we know is $\le0$.
+> Since $f^\prime _-(x_0)=f^\prime _+(x_0)$, $f^\prime (x_0)$ *must* be zero.
 $$Q.E.D.$$
 ### Rolle’s Theorem
 **Claim:**
@@ -72,8 +71,8 @@ $$Q.E.D.$$
 
 **Proof:**
 >There are two possibilities:
-> 1. $f$ is constant in $(a,b)$. Therefore, $\der f(x)=0\mid\forall x\in(a,b)$.
-> 2. $f$ is not constant in $(a,b)$. By the Weirstrass Theorem, we know that $\exists c\in(a,b)$ such that $c$ is an extreme point on $f$. By Fermat’s Theorem, $\der f(c)=0$.
+> 1. $f$ is constant in $(a,b)$. Therefore, $f^\prime (x)=0\mid\forall x\in(a,b)$.
+> 2. $f$ is not constant in $(a,b)$. By the Weirstrass Theorem, we know that $\exists c\in(a,b)$ such that $c$ is an extreme point on $f$. By Fermat’s Theorem, $f^\prime (c)=0$.
 >$$Q.E.D.$$
 
 ### Mean Value Theorem
@@ -112,15 +111,15 @@ $$Q.E.D.$$
 
 ### Fundamental Theorem of Calculus
 **Claim:**
-> If $f$ is continuous on $[a,b]$, and $F(x)=\int_a^xf(t)dt$ for $a\le x\le b$, then $F$ is continuous on $[a,b]$ and differentiable on $(a,b)$, and $\der F(x)=f(x)$.
+> If $f$ is continuous on $[a,b]$, and $F(x)=\int_a^xf(t)dt$ for $a\le x\le b$, then $F$ is continuous on $[a,b]$ and differentiable on $(a,b)$, and $f^\prime (x)=f(x)$.
 
 **Proof:**
 > $$\begin{align}
-\der F(x)&=\lim_{h\to0}{\frac{F(x+h)-F(x)}h}\\
+f^\prime (x)&=\lim_{h\to0}{\frac{F(x+h)-F(x)}h}\\
 &=\lim_{h\to0}{\frac1h\left[\int_a^{a+h}f(t)dt-\int_a^xf(t)dt\right]}\\
 &=\lim_{h\to0}{\frac1{(x+h)-x}\int_x^{x+h}f(t)dt}\\
 \text{Via MVT for Integrals: }&=f(c)\mid c\in(x,x+h)
 \end{align}$$
 > Since $x\le c\le x+h$, and $h\to0$, $c=x$.
-> Therefore, $\der F(x)=f(x)$.
+> Therefore, $f^\prime (x)=f(x)$.
 > $$Q.E.D.$$
