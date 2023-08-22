@@ -28,7 +28,7 @@ f'(0) = 3(-1)(-3) > 0 ^WTtrG6QD
 {
 	"type": "excalidraw",
 	"version": 2,
-	"source": "https://github.com/zsviczian/obsidian-excalidraw-plugin/releases/tag/1.8.26",
+	"source": "https://github.com/zsviczian/obsidian-excalidraw-plugin/releases/tag/1.9.17",
 	"elements": [
 		{
 			"type": "line",
@@ -50,6 +50,7 @@ f'(0) = 3(-1)(-3) > 0 ^WTtrG6QD
 			"height": 0.653839111328125,
 			"seed": 1770026544,
 			"groupIds": [],
+			"frameId": null,
 			"roundness": {
 				"type": 2
 			},
@@ -93,6 +94,7 @@ f'(0) = 3(-1)(-3) > 0 ^WTtrG6QD
 			"height": 25,
 			"seed": 102336560,
 			"groupIds": [],
+			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
 			"updated": 1686656277978,
@@ -129,6 +131,7 @@ f'(0) = 3(-1)(-3) > 0 ^WTtrG6QD
 			"height": 25,
 			"seed": 1471170096,
 			"groupIds": [],
+			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
 			"updated": 1686656277978,
@@ -167,6 +170,7 @@ f'(0) = 3(-1)(-3) > 0 ^WTtrG6QD
 			"groupIds": [
 				"50hrj-DPYcO_bFIUIn5P6"
 			],
+			"frameId": null,
 			"roundness": {
 				"type": 2
 			},
@@ -212,6 +216,7 @@ f'(0) = 3(-1)(-3) > 0 ^WTtrG6QD
 			"groupIds": [
 				"50hrj-DPYcO_bFIUIn5P6"
 			],
+			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
 			"updated": 1686656287576,
@@ -250,6 +255,7 @@ f'(0) = 3(-1)(-3) > 0 ^WTtrG6QD
 			"groupIds": [
 				"50hrj-DPYcO_bFIUIn5P6"
 			],
+			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
 			"updated": 1686656287576,
@@ -288,6 +294,7 @@ f'(0) = 3(-1)(-3) > 0 ^WTtrG6QD
 			"groupIds": [
 				"56AKECgn3VMIh7Sv23J_V"
 			],
+			"frameId": null,
 			"roundness": {
 				"type": 2
 			},
@@ -333,6 +340,7 @@ f'(0) = 3(-1)(-3) > 0 ^WTtrG6QD
 			"groupIds": [
 				"56AKECgn3VMIh7Sv23J_V"
 			],
+			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
 			"updated": 1686656282636,
@@ -371,6 +379,7 @@ f'(0) = 3(-1)(-3) > 0 ^WTtrG6QD
 			"groupIds": [
 				"56AKECgn3VMIh7Sv23J_V"
 			],
+			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
 			"updated": 1686656282636,
@@ -407,6 +416,7 @@ f'(0) = 3(-1)(-3) > 0 ^WTtrG6QD
 			"height": 25,
 			"seed": 1350109904,
 			"groupIds": [],
+			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
 			"updated": 1686656277978,
@@ -443,6 +453,7 @@ f'(0) = 3(-1)(-3) > 0 ^WTtrG6QD
 			"height": 81.54666137695312,
 			"seed": 1626337328,
 			"groupIds": [],
+			"frameId": null,
 			"roundness": {
 				"type": 2
 			},
@@ -472,7 +483,7 @@ f'(0) = 3(-1)(-3) > 0 ^WTtrG6QD
 		}
 	],
 	"appState": {
-		"theme": "light",
+		"theme": "dark",
 		"viewBackgroundColor": "#ffffff",
 		"currentItemStrokeColor": "#862e9c",
 		"currentItemBackgroundColor": "transparent",
@@ -486,8 +497,8 @@ f'(0) = 3(-1)(-3) > 0 ^WTtrG6QD
 		"currentItemTextAlign": "left",
 		"currentItemStartArrowhead": null,
 		"currentItemEndArrowhead": "arrow",
-		"scrollX": 428.51097476780416,
-		"scrollY": 339.06031799316406,
+		"scrollX": 256.26097476780416,
+		"scrollY": 290.39430236816406,
 		"zoom": {
 			"value": 2
 		},
@@ -495,7 +506,13 @@ f'(0) = 3(-1)(-3) > 0 ^WTtrG6QD
 		"gridSize": null,
 		"colorPalette": {},
 		"currentStrokeOptions": null,
-		"previousGridSize": null
+		"previousGridSize": null,
+		"frameRendering": {
+			"enabled": true,
+			"clip": true,
+			"name": true,
+			"outline": true
+		}
 	},
 	"files": {}
 }

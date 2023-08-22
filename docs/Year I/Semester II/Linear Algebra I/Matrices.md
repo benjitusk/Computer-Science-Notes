@@ -52,15 +52,15 @@ General definition: If A is a $m\times n$ matrix and B is a $n\times p$ matrix, 
 
 
 ##### Properties of Multiplication:
-Not commutative ($A\cdot B\not=B\cdot A$)
-Is Associative ($(A\cdot B)\cdot C=A\cdot (B\cdot C)$)
-For any matrix $A,B$ and any scalar $c\in\Bbb R$:
-	$(c\cdot A)\cdot B=A\cdot (c\cdot B)=c\cdot (A\cdot B)$
-If row $i$ is all 0 in A, then the $i^{th}$ row of ($A\cdot B$) is all zeros
-If col $j$ is all 0 in $B$, then the $j^{th}$ col of ($A\cdot B$) is all zeros
-${(A\cdot B)}^T=B^T\cdot A^T$
-For any matrix $A$, $A\cdot A^T$ is a symmetric matrix
-${(A\cdot A^T)}^T={(A^T)}^T\cdot A^T=(A\cdot A^T)$
+- Not commutative ($A\cdot B\not=B\cdot A$)
+- Is Associative ($(A\cdot B)\cdot C=A\cdot (B\cdot C)$)
+- For any matrix $A,B$ and any scalar $c\in\Bbb R$:
+	- $(c\cdot A)\cdot B=A\cdot (c\cdot B)=c\cdot (A\cdot B)$
+- If row $i$ is all 0 in A, then the $i^{th}$ row of ($A\cdot B$) is all zeros
+- If col $j$ is all 0 in $B$, then the $j^{th}$ col of ($A\cdot B$) is all zeros
+- ${(A\cdot B)}^T=B^T\cdot A^T$
+- For any matrix $A$, $A\cdot A^T$ is a symmetric matrix
+- ${(A\cdot A^T)}^T={(A^T)}^T\cdot A^T=(A\cdot A^T)$
 
 ##### Tips and Tricks
 If row $i$ of $A$ is all zeros, the corresponding row in $C$ will be zeros too.
@@ -68,7 +68,10 @@ If column $j$ of $B$ is all zeros, the corresponding column in $C$ will be zeros
 *Note, col's of 0s in $A$ or rows of 0s in $B$ does not tell us anything.*
 
 #### Systems of Equations
-A system of equations $$\begin{aligned}3x+4x-2z&=1\\-1x+1y+1z&=3\\2x-1y+3z&=-5\end{aligned}$$can be written as follows: $$\begin{bmatrix}3&4&2\\-1&1&1\\2&-1&3\end{bmatrix}\begin{bmatrix}x\\y\\z\end{bmatrix}=\begin{bmatrix}1\\3\\-5\end{bmatrix}$$
+A system of equations $\begin{aligned}3x+4x-2z&=1\\-1x+1y+1z&=3\\2x-1y+3z&=-5\end{aligned}$ can be written as follows:
+
+$\begin{bmatrix}3&4&2\\-1&1&1\\2&-1&3\end{bmatrix}\begin{bmatrix}x\\y\\z\end{bmatrix}=\begin{bmatrix}1\\3\\-5\end{bmatrix}$
+
 General notation for system: $A\cdot\vec x=\vec b$
 	where $A$ is the restricted coefficient matrix,
 	$\vec x$ is the *vector of unknowns* (so spooky 👻),
@@ -78,6 +81,7 @@ General notation for system: $A\cdot\vec x=\vec b$
 *May 28 Lecture. Links to the [board](https://drive.google.com/file/d/1td0KrVDYjSOmyW0ZemqU5o4OORA8lHHB/view?usp=sharing) and the [recording](https://drive.google.com/file/d/1Lso77pVw194-6B9o2TC-tJ3-rMY4PHEB/view?usp=sharing).*
 #### Square Matrices ($n\times n$)
 A square matrix is the only type which can be multiplied by itself ($A\cdot A=A^2$)
+
 $$A=\begin{bmatrix}
 	1&-1\\
 	3&2
@@ -97,8 +101,7 @@ A^2=
 \begin{bmatrix}
 	-2&-3\\
 	9&1
-\end{bmatrix}
-$$
+\end{bmatrix}$$
 ##### Some Important Square Matrices:
 ###### Upper Triangular
 All nonzero entries are *on or above* the main diagonal.
@@ -113,7 +116,7 @@ All nonzero entries are *on* the main diagonal.
 **Formal Definition:**
 > If $i\not=j$ then $A_{ij}=0$
 
-> [!info] Neat facts $\textnumero 1$
+> [!info] Neat facts
 > The product of Upper Triangles is an Upper Triangle.
 > The product of Lower Triangles is a Lower Triangle.
 > The product of Diagonal Matrices is a Diagonal Matrix
@@ -182,12 +185,15 @@ Let $A$ be an invertible matrix.
 
 ##### Using Inverse Matrices to Solve Systems of Equations
 **Example:**
-	$\begin{cases}2x+y&=1\\5x+3y&=-1\end{cases}\implies\begin{bmatrix}2&1\\5&3\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix}=\begin{bmatrix}1\\-1\end{bmatrix}\qquad(A\cdot\vec x=\vec b)$
-	Note that $A$ is invertible, see above example, $A^{-1}=\begin{bmatrix}3&-1\\-5&2\\\end{bmatrix}$
-	Since we want to isolate $\vec x$, let's cancel out $A$. We do this by multiplying both sides by $A^{-1}$ on the left like so:
-	$\textcolor{Emerald}{A^{-1}}(A\vec x)=\textcolor{Emerald}{A^{-1}}\vec b\implies\textcolor{Emerald}{\begin{bmatrix}3&-1\\-5&2\\\end{bmatrix}}\begin{bmatrix}2&1\\5&3\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix}=\textcolor{Emerald}{\begin{bmatrix}3&-1\\-5&2\\\end{bmatrix}}\cdot\begin{bmatrix}1\\-1\end{bmatrix}$
-	$(A^{-1}A)\vec x=A^{-1}\vec b\implies I\cdot\begin{bmatrix}x\\y\end{bmatrix}=\begin{bmatrix}3&-1\\-5&2\\\end{bmatrix}\cdot\begin{bmatrix}1\\-1\end{bmatrix}$
-	$\vec x=A^{-1}\vec b\implies\begin{bmatrix}x\\y\end{bmatrix}=\begin{bmatrix}4\\-7\end{bmatrix}\implies\begin{cases}x&=4\\y&=-7\end{cases}$
+$\begin{cases}2x+y&=1\\5x+3y&=-1\end{cases}\implies\begin{bmatrix}2&1\\5&3\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix}=\begin{bmatrix}1\\-1\end{bmatrix}\qquad(A\cdot\vec x=\vec b)$
+Note that $A$ is invertible, see above example, $A^{-1}=\begin{bmatrix}3&-1\\-5&2\\\end{bmatrix}$
+Since we want to isolate $\vec x$, let's cancel out $A$. We do this by multiplying both sides by $A^{-1}$ on the left like so:
+$$\textcolor{Emerald}{A^{-1}}(A\vec x)=\textcolor{Emerald}{A^{-1}}\vec b\implies\textcolor{Emerald}{\begin{bmatrix}3&-1\\-5&2\\\end{bmatrix}}\begin{bmatrix}2&1\\5&3\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix}=\textcolor{Emerald}{\begin{bmatrix}3&-1\\-5&2\\\end{bmatrix}}\cdot\begin{bmatrix}1\\-1\end{bmatrix}$$
+$(A^{-1}A)\vec x=A^{-1}\vec b\implies I\cdot\begin{bmatrix}x\\y\end{bmatrix}=\begin{bmatrix}3&-1\\-5&2\\\end{bmatrix}\cdot\begin{bmatrix}1\\-1\end{bmatrix}$
+$\vec x=A^{-1}\vec b\implies\begin{bmatrix}x\\y\end{bmatrix}=\begin{bmatrix}4\\-7\end{bmatrix}\implies\begin{cases}x&=4\\y&=-7\end{cases}$
+
+$$\color{Emerald}{A^{-1}}(A\vec x)=\color{Emerald}{A^{-1}}\vec b\implies\color{Emerald}{\begin{bmatrix}3&-1\\-5&2\\\end{bmatrix}}\begin{bmatrix}2&1\\5&3\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix}=\color{Emerald}{\begin{bmatrix}3&-1\\-5&2\\\end{bmatrix}}\cdot\begin{bmatrix}1\\-1\end{bmatrix}$$
+
 ##### Big Questions:
 1. How can we tell if $A$ is invertible?
 2. If it is, how do we find $A^{-1}$?
@@ -220,15 +226,20 @@ Stay tuned for the answers...
 2. Rewrite this reduction as a sequence of multiplications on the left by elementary matrices.
 	- Since you have $[\text{series of elementary matrices}]\cdot A=I$, $A$ *is* invertible.
 	- $A^{-1}=[\text{series of elementary matrices}]$
+
 Example:
+
 $$\begin{aligned}A=&\begin{bmatrix}0 & 1 & 1 \\1 & 0 & 2 \\1 & 1 &\ 0 \ \ \\	\end{bmatrix}	\xrightarrow[E_{21}]{R_2\leftrightarrow R_1}	\begin{bmatrix}1 & 0 & 2 \\0 & 1 & 1 \\1 & 1 & 0 \\	\end{bmatrix}	\xrightarrow[E_{31}(-1)]{R_3\rightarrow R_3-R_1}	\begin{bmatrix}1 & 0 & 2 \\0 & 1 & 1 \\0 & 1 &-2 \\	\end{bmatrix}	\xrightarrow[E_{32}(-1)]{R_3\rightarrow R_3-R_2}\\	&\begin{bmatrix}1 & 0 & 2 \\0 & 1 & 1 \\0 & 0 &-3 \\	\end{bmatrix}	\xrightarrow[E_{3}(-\frac13)]{R_2\leftrightarrow R_1}	\begin{bmatrix}1 & 0 & 2 \\0 & 1 & 1 \\0 & 0 & 1 \\	\end{bmatrix}	\xrightarrow[E_{23}(-1)]{R_2\rightarrow R_2-R_3}	\begin{bmatrix}1 & 0 & 2 \\0 & 1 & 0 \\0 & 0 & 1 \\	\end{bmatrix}	\xrightarrow[E_{13}(-2)]{R_1\rightarrow R_1-2R_3}\\	&\begin{bmatrix}1 & 0 & 0 \\0 & 1 & 0 \\0 & 0 &\ \ 1 \ \\\end{bmatrix}\end{aligned}$$
+
 $$\underset{E_{13}(-2)}{\begin{bmatrix}1 & 0 & -2 \\0 & 1 & 0 \\0 & 0 & 1 \\\end{bmatrix}}\cdot\left(\underset{E_{23}(-1)}{\begin{bmatrix}1 & 0 & 0 \\0 & 1 & -1 \\0 & 0 & 1 \\\end{bmatrix}}\cdot\left(\underset{E_{3}(-\frac13)}{\begin{bmatrix}1 & 0 & 0 \\0 & 1 & 0 \\0 & 0 & -\frac13 \\\end{bmatrix}}\cdot\left(\underset{E_{32}(-1)}{\begin{bmatrix}1 & 0 & 0 \\0 & 1 & 0 \\0 & -1 & 1 \\\end{bmatrix}}\cdot\left(\underset{E_{31}(-1)}{\begin{bmatrix}1 & 0 & 0 \\0 & 1 & 0 \\-1 & 0 & 1 \\\end{bmatrix}}\cdot\left(\underset{E_{12}}{\begin{bmatrix}0 & 1 & 0 \\1 & 0 & 0 \\0 & 0 & 1 \\\end{bmatrix}}\cdot A\right)\right)\right)\right)\right)=I$$
-	By associativity of matrix multiplication, $[\text{Product of EM's}]\cdot A=I$
-	Therefore, $A$ is invertible, and $A^{-1}=[\text{Product of EM's}]$
+
+By associativity of matrix multiplication, $[\text{Product of EM's}]\cdot A=I$
+
+Therefore, $A$ is invertible, and $A^{-1}=[\text{Product of EM's}]$
 
 > [!caution] $A^{-1}$ as a product of Elementary Matrices
 > $A^{-1}$ is the product of the Elementary Matrices obtained by reducing $A$ to $I$, in the **reverse** of the order in which you obtained them.
-> 
+>
 > This is frequently an exam question. Be prepared.
 
 
@@ -238,43 +249,40 @@ $$\underset{E_{13}(-2)}{\begin{bmatrix}1 & 0 & -2 \\0 & 1 & 0 \\0 & 0 & 1 \\\end
 To find the inverse of $A$, we will make a double window matrix, like this: $\left[\begin{array}{c|c}A&I\end{array}\right]$.
 Perform each row operation on *both* windows.
 At the end of the reduction, the left window will be $I$, and the right window will be $A^{-1}$.
+
 Example:
-	$$\begin{aligned}
+
+$$\begin{aligned}
 	&\left[\begin{array}{ccc|ccc}
 	0&1&1&1&0&0\\
 	1&0&2&0&1&0\\
 	1&1&0&0&0&1
 	\end{array}\right]
 	\xrightarrow[E_{21}]{R_2\leftrightarrow R_1}
-
 	\left[\begin{array}{ccc|ccc}
 	1&0&2&0&1&0\\
 	0&1&1&1&0&0\\
 	1&1&0&0&0&1
 	\end{array}\right]
 	\xrightarrow[E_{31}(-1)]{R_3\rightarrow R_3 - R_1}
-
 	\left[\begin{array}{ccc|ccc}
 	1&0&2&0&1&0\\
 	0&1&1&1&0&0\\
 	0&1&-2&0&-1&1
 	\end{array}\right]
 	\xrightarrow[E_{32}(-1)]{R_3\rightarrow R_3 - R_2}\\\\
-
 	&\left[\begin{array}{ccc|ccc}
 	1&0&2&0&1&0\\
 	0&1&1&1&0&0\\
 	0&0&-3&-1&-1&1
 	\end{array}\right]
 	\xrightarrow[E_{3}(-\frac13)]{R_3\rightarrow -\frac13 R_3}
-
 	\left[\begin{array}{ccc|ccc}
 	1&0&2&0&1&0\\
 	0&1&1&1&0&0\\
 	0&0&1&\frac13&\frac13&-\frac13
 	\end{array}\right]
 	\xrightarrow[E_{23}(-1)\ \&\ E_{13}(-2)]{R_2\rightarrow R_2-R_3\ \&\ R_1\rightarrow R_1-2R_3}\\\\
-
 	&\underset{[I|A^{-1}]}{\left[\begin{array}{ccc|ccc}
 	1&0&0&-\frac23&\frac13&\frac23\\
 	0&1&0&\frac23&-\frac13&\frac13\\

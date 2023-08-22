@@ -20,7 +20,7 @@ tags: [excalidraw]
 {
 	"type": "excalidraw",
 	"version": 2,
-	"source": "https://github.com/zsviczian/obsidian-excalidraw-plugin/releases/tag/1.9.3",
+	"source": "https://github.com/zsviczian/obsidian-excalidraw-plugin/releases/tag/1.9.17",
 	"elements": [
 		{
 			"type": "rectangle",
@@ -42,6 +42,7 @@ tags: [excalidraw]
 			"height": 66.94886821852275,
 			"seed": 370473780,
 			"groupIds": [],
+			"frameId": null,
 			"roundness": {
 				"type": 3
 			},
@@ -70,6 +71,7 @@ tags: [excalidraw]
 			"height": 66,
 			"seed": 1438086324,
 			"groupIds": [],
+			"frameId": null,
 			"roundness": {
 				"type": 3
 			},
@@ -103,6 +105,7 @@ tags: [excalidraw]
 			"height": 24,
 			"seed": 1036959284,
 			"groupIds": [],
+			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
 			"updated": 1688926995716,
@@ -117,7 +120,7 @@ tags: [excalidraw]
 			"containerId": "PfMueAgBWzGAZveC2vQwK",
 			"originalText": "0",
 			"lineHeight": 1.2,
-			"baseline": 19
+			"baseline": 20
 		},
 		{
 			"type": "rectangle",
@@ -139,6 +142,7 @@ tags: [excalidraw]
 			"height": 68,
 			"seed": 121690036,
 			"groupIds": [],
+			"frameId": null,
 			"roundness": {
 				"type": 3
 			},
@@ -172,6 +176,7 @@ tags: [excalidraw]
 			"height": 24,
 			"seed": 1580450100,
 			"groupIds": [],
+			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
 			"updated": 1688926995716,
@@ -186,7 +191,7 @@ tags: [excalidraw]
 			"containerId": "0xM6pqois31YN63Z2wVXq",
 			"originalText": "1000 0100",
 			"lineHeight": 1.2,
-			"baseline": 19
+			"baseline": 20
 		},
 		{
 			"type": "rectangle",
@@ -208,6 +213,7 @@ tags: [excalidraw]
 			"height": 68,
 			"seed": 2047703732,
 			"groupIds": [],
+			"frameId": null,
 			"roundness": {
 				"type": 3
 			},
@@ -241,6 +247,7 @@ tags: [excalidraw]
 			"height": 24,
 			"seed": 896795700,
 			"groupIds": [],
+			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
 			"updated": 1688930220860,
@@ -255,11 +262,11 @@ tags: [excalidraw]
 			"containerId": "k7O4WQAdIqgfO2F3zrKYG",
 			"originalText": "011 0101 1100 1100 1100 1100",
 			"lineHeight": 1.2,
-			"baseline": 19
+			"baseline": 20
 		}
 	],
 	"appState": {
-		"theme": "dark",
+		"theme": "light",
 		"viewBackgroundColor": "#ffffff",
 		"currentItemStrokeColor": "#1e1e1e",
 		"currentItemBackgroundColor": "transparent",
@@ -273,15 +280,21 @@ tags: [excalidraw]
 		"currentItemTextAlign": "left",
 		"currentItemStartArrowhead": null,
 		"currentItemEndArrowhead": "arrow",
-		"scrollX": 290.14814814814815,
-		"scrollY": 392.8968460648148,
+		"scrollX": 311.4444444444445,
+		"scrollY": 454.7114438657407,
 		"zoom": {
-			"value": 1.35
+			"value": 0.9
 		},
 		"currentItemRoundness": "round",
 		"gridSize": null,
 		"currentStrokeOptions": null,
-		"previousGridSize": null
+		"previousGridSize": null,
+		"frameRendering": {
+			"enabled": true,
+			"clip": true,
+			"name": true,
+			"outline": true
+		}
 	},
 	"files": {}
 }

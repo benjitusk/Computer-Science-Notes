@@ -22,7 +22,7 @@ c4179e0489dab92a1c97d0efe5affb75d1a174bf: $$(x,y)$$
 {
 	"type": "excalidraw",
 	"version": 2,
-	"source": "https://github.com/zsviczian/obsidian-excalidraw-plugin/releases/tag/1.8.26",
+	"source": "https://github.com/zsviczian/obsidian-excalidraw-plugin/releases/tag/1.9.17",
 	"elements": [
 		{
 			"type": "line",
@@ -44,6 +44,7 @@ c4179e0489dab92a1c97d0efe5affb75d1a174bf: $$(x,y)$$
 			"height": 284.5882263183594,
 			"seed": 1508309384,
 			"groupIds": [],
+			"frameId": null,
 			"roundness": {
 				"type": 2
 			},
@@ -87,6 +88,7 @@ c4179e0489dab92a1c97d0efe5affb75d1a174bf: $$(x,y)$$
 			"height": 0.067718505859375,
 			"seed": 484345992,
 			"groupIds": [],
+			"frameId": null,
 			"roundness": {
 				"type": 2
 			},
@@ -130,6 +132,7 @@ c4179e0489dab92a1c97d0efe5affb75d1a174bf: $$(x,y)$$
 			"height": 319.88787841796875,
 			"seed": 720126968,
 			"groupIds": [],
+			"frameId": null,
 			"roundness": {
 				"type": 2
 			},
@@ -173,6 +176,7 @@ c4179e0489dab92a1c97d0efe5affb75d1a174bf: $$(x,y)$$
 			"height": 6.319610595703125,
 			"seed": 586851320,
 			"groupIds": [],
+			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
 			"updated": 1687358188448,
@@ -460,6 +464,7 @@ c4179e0489dab92a1c97d0efe5affb75d1a174bf: $$(x,y)$$
 			"height": 8.363037109375,
 			"seed": 741804024,
 			"groupIds": [],
+			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
 			"updated": 1687358188448,
@@ -687,6 +692,7 @@ c4179e0489dab92a1c97d0efe5affb75d1a174bf: $$(x,y)$$
 			"height": 7.27423095703125,
 			"seed": 1672530568,
 			"groupIds": [],
+			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
 			"updated": 1687358188448,
@@ -822,6 +828,7 @@ c4179e0489dab92a1c97d0efe5affb75d1a174bf: $$(x,y)$$
 			"height": 96.97528076171875,
 			"seed": 568710436,
 			"groupIds": [],
+			"frameId": null,
 			"roundness": {
 				"type": 2
 			},
@@ -873,6 +880,7 @@ c4179e0489dab92a1c97d0efe5affb75d1a174bf: $$(x,y)$$
 			"height": 2.70263671875,
 			"seed": 1431076380,
 			"groupIds": [],
+			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
 			"updated": 1687358188448,
@@ -1448,6 +1456,7 @@ c4179e0489dab92a1c97d0efe5affb75d1a174bf: $$(x,y)$$
 			"height": 114.7772216796875,
 			"seed": 40062108,
 			"groupIds": [],
+			"frameId": null,
 			"roundness": {
 				"type": 2
 			},
@@ -1499,6 +1508,7 @@ c4179e0489dab92a1c97d0efe5affb75d1a174bf: $$(x,y)$$
 			"height": 18.50630242279855,
 			"seed": 40794,
 			"groupIds": [],
+			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
 			"updated": 1687358188449,
@@ -1531,6 +1541,7 @@ c4179e0489dab92a1c97d0efe5affb75d1a174bf: $$(x,y)$$
 			"height": 16,
 			"seed": 12257,
 			"groupIds": [],
+			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
 			"updated": 1687358188449,
@@ -1563,6 +1574,7 @@ c4179e0489dab92a1c97d0efe5affb75d1a174bf: $$(x,y)$$
 			"height": 16,
 			"seed": 16783,
 			"groupIds": [],
+			"frameId": null,
 			"roundness": null,
 			"boundElements": [
 				{
@@ -1600,6 +1612,7 @@ c4179e0489dab92a1c97d0efe5affb75d1a174bf: $$(x,y)$$
 			"height": 16,
 			"seed": 77118,
 			"groupIds": [],
+			"frameId": null,
 			"roundness": null,
 			"boundElements": [
 				{
@@ -1637,6 +1650,7 @@ c4179e0489dab92a1c97d0efe5affb75d1a174bf: $$(x,y)$$
 			"height": 11,
 			"seed": 6273,
 			"groupIds": [],
+			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
 			"updated": 1687358188449,
@@ -1651,7 +1665,7 @@ c4179e0489dab92a1c97d0efe5affb75d1a174bf: $$(x,y)$$
 		}
 	],
 	"appState": {
-		"theme": "light",
+		"theme": "dark",
 		"viewBackgroundColor": "#ffffff",
 		"currentItemStrokeColor": "#c92a2a",
 		"currentItemBackgroundColor": "transparent",
@@ -1665,16 +1679,22 @@ c4179e0489dab92a1c97d0efe5affb75d1a174bf: $$(x,y)$$
 		"currentItemTextAlign": "left",
 		"currentItemStartArrowhead": null,
 		"currentItemEndArrowhead": "arrow",
-		"scrollX": 367.3832664489746,
-		"scrollY": 281.0326385498047,
+		"scrollX": 194.58437348291048,
+		"scrollY": 290.64635270641696,
 		"zoom": {
-			"value": 2
+			"value": 1.55
 		},
 		"currentItemRoundness": "round",
 		"gridSize": null,
 		"colorPalette": {},
 		"currentStrokeOptions": null,
-		"previousGridSize": null
+		"previousGridSize": null,
+		"frameRendering": {
+			"enabled": true,
+			"clip": true,
+			"name": true,
+			"outline": true
+		}
 	},
 	"files": {}
 }

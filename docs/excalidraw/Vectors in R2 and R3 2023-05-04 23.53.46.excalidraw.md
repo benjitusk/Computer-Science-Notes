@@ -595,10 +595,10 @@ ed1b30d91e83bff4aae35ff20e6283f95ee2bcb3: $$(3,-2,4)=\vec v$$
 		"currentItemTextAlign": "left",
 		"currentItemStartArrowhead": null,
 		"currentItemEndArrowhead": "arrow",
-		"scrollX": 285.7067427862258,
-		"scrollY": 325.8823431105841,
+		"scrollX": 284.705100750101,
+		"scrollY": 263.95744060647894,
 		"zoom": {
-			"value": 1.05
+			"value": 1.4500000000000002
 		},
 		"currentItemRoundness": "round",
 		"gridSize": null,

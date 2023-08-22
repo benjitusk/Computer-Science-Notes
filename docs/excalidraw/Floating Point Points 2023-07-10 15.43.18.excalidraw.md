@@ -20,7 +20,7 @@ tags: [excalidraw]
 {
 	"type": "excalidraw",
 	"version": 2,
-	"source": "https://github.com/zsviczian/obsidian-excalidraw-plugin/releases/tag/1.9.8",
+	"source": "https://github.com/zsviczian/obsidian-excalidraw-plugin/releases/tag/1.9.17",
 	"elements": [
 		{
 			"type": "rectangle",
@@ -120,7 +120,7 @@ tags: [excalidraw]
 			"containerId": "TRUQQw8W449i4846XieXl",
 			"originalText": "1",
 			"lineHeight": 1.2,
-			"baseline": 19
+			"baseline": 20
 		},
 		{
 			"type": "rectangle",
@@ -191,7 +191,7 @@ tags: [excalidraw]
 			"containerId": "gw2SW1_m6aUcEt5Dt-2iJ",
 			"originalText": "000 1000 1",
 			"lineHeight": 1.2,
-			"baseline": 19
+			"baseline": 20
 		},
 		{
 			"type": "rectangle",
@@ -262,7 +262,7 @@ tags: [excalidraw]
 			"containerId": "tnGhmiKW6TQ7M5TjBjvkH",
 			"originalText": "000 1000 1000 0000 0000 0000",
 			"lineHeight": 1.2,
-			"baseline": 19
+			"baseline": 20
 		}
 	],
 	"appState": {
@@ -280,15 +280,21 @@ tags: [excalidraw]
 		"currentItemTextAlign": "left",
 		"currentItemStartArrowhead": null,
 		"currentItemEndArrowhead": "arrow",
-		"scrollX": 399.5454545454545,
-		"scrollY": 421.4534801136363,
+		"scrollX": 404.44444444444446,
+		"scrollY": 538.6662326388889,
 		"zoom": {
-			"value": 1.1
+			"value": 0.9
 		},
 		"currentItemRoundness": "round",
 		"gridSize": null,
 		"currentStrokeOptions": null,
-		"previousGridSize": null
+		"previousGridSize": null,
+		"frameRendering": {
+			"enabled": true,
+			"clip": true,
+			"name": true,
+			"outline": true
+		}
 	},
 	"files": {}
 }

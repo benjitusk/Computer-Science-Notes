@@ -18,7 +18,7 @@ tags: [excalidraw]
 {
 	"type": "excalidraw",
 	"version": 2,
-	"source": "https://github.com/zsviczian/obsidian-excalidraw-plugin/releases/tag/1.8.26",
+	"source": "https://github.com/zsviczian/obsidian-excalidraw-plugin/releases/tag/1.9.17",
 	"elements": [
 		{
 			"type": "image",
@@ -40,6 +40,7 @@ tags: [excalidraw]
 			"height": 347,
 			"seed": 1259516465,
 			"groupIds": [],
+			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
 			"updated": 1683236806377,
@@ -72,6 +73,7 @@ tags: [excalidraw]
 			"height": 35.299896240234375,
 			"seed": 666802673,
 			"groupIds": [],
+			"frameId": null,
 			"roundness": {
 				"type": 3
 			},
@@ -100,6 +102,7 @@ tags: [excalidraw]
 			"height": 21.21826171875,
 			"seed": 1917198929,
 			"groupIds": [],
+			"frameId": null,
 			"roundness": {
 				"type": 3
 			},
@@ -128,6 +131,7 @@ tags: [excalidraw]
 			"height": 12.465850830078125,
 			"seed": 1671871071,
 			"groupIds": [],
+			"frameId": null,
 			"roundness": {
 				"type": 3
 			},
@@ -138,7 +142,7 @@ tags: [excalidraw]
 		}
 	],
 	"appState": {
-		"theme": "light",
+		"theme": "dark",
 		"viewBackgroundColor": "#ffffff",
 		"currentItemStrokeColor": "#fff",
 		"currentItemBackgroundColor": "#fff",
@@ -152,16 +156,22 @@ tags: [excalidraw]
 		"currentItemTextAlign": "left",
 		"currentItemStartArrowhead": null,
 		"currentItemEndArrowhead": "arrow",
-		"scrollX": 428.5,
-		"scrollY": 296.4276885986328,
+		"scrollX": 317.5806451612903,
+		"scrollY": 304.28895371960056,
 		"zoom": {
-			"value": 2
+			"value": 1.55
 		},
 		"currentItemRoundness": "round",
 		"gridSize": null,
 		"colorPalette": {},
 		"currentStrokeOptions": null,
-		"previousGridSize": null
+		"previousGridSize": null,
+		"frameRendering": {
+			"enabled": true,
+			"clip": true,
+			"name": true,
+			"outline": true
+		}
 	},
 	"files": {}
 }

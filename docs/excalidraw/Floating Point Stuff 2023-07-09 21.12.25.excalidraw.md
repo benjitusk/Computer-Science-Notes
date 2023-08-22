@@ -23,7 +23,7 @@ Mantissa
 {
 	"type": "excalidraw",
 	"version": 2,
-	"source": "https://github.com/zsviczian/obsidian-excalidraw-plugin/releases/tag/1.9.3",
+	"source": "https://github.com/zsviczian/obsidian-excalidraw-plugin/releases/tag/1.9.17",
 	"elements": [
 		{
 			"type": "rectangle",
@@ -45,6 +45,7 @@ Mantissa
 			"height": 66.94886821852275,
 			"seed": 837817612,
 			"groupIds": [],
+			"frameId": null,
 			"roundness": {
 				"type": 3
 			},
@@ -73,6 +74,7 @@ Mantissa
 			"height": 66,
 			"seed": 130126732,
 			"groupIds": [],
+			"frameId": null,
 			"roundness": {
 				"type": 3
 			},
@@ -106,6 +108,7 @@ Mantissa
 			"height": 50,
 			"seed": 1407140364,
 			"groupIds": [],
+			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
 			"updated": 1688926390222,
@@ -142,6 +145,7 @@ Mantissa
 			"height": 68,
 			"seed": 1564680332,
 			"groupIds": [],
+			"frameId": null,
 			"roundness": {
 				"type": 3
 			},
@@ -175,6 +179,7 @@ Mantissa
 			"height": 50,
 			"seed": 2074554124,
 			"groupIds": [],
+			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
 			"updated": 1688926597345,
@@ -211,6 +216,7 @@ Mantissa
 			"height": 68,
 			"seed": 2139450764,
 			"groupIds": [],
+			"frameId": null,
 			"roundness": {
 				"type": 3
 			},
@@ -244,6 +250,7 @@ Mantissa
 			"height": 50,
 			"seed": 437771276,
 			"groupIds": [],
+			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
 			"updated": 1688926594132,
@@ -276,15 +283,21 @@ Mantissa
 		"currentItemTextAlign": "left",
 		"currentItemStartArrowhead": null,
 		"currentItemEndArrowhead": "arrow",
-		"scrollX": 433.03966470735054,
-		"scrollY": 402.7400247771804,
+		"scrollX": 454.33596100364684,
+		"scrollY": 464.50941135125447,
 		"zoom": {
-			"value": 1.35
+			"value": 0.9
 		},
 		"currentItemRoundness": "round",
 		"gridSize": null,
 		"currentStrokeOptions": null,
-		"previousGridSize": null
+		"previousGridSize": null,
+		"frameRendering": {
+			"enabled": true,
+			"clip": true,
+			"name": true,
+			"outline": true
+		}
 	},
 	"files": {}
 }

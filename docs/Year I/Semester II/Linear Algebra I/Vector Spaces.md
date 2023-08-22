@@ -60,8 +60,8 @@ Examples of subspaces of $\Bbb R^2$:
 	$U_2=y$-axis
 	$U_3=xy$ line
 "Trivial" subspaces of $\Bbb R^2$:
-1) ${(0,0)}$
-2) All of $\Bbb R^2$
+ 1. ${(0,0)}$
+ 2. All of $\Bbb R^2$
 
 > [!NOTE] What axioms need to be checked to determine if $U\subseteq V$ is a subspace?
 > 1) $U\not=\emptyset$
@@ -69,9 +69,9 @@ Examples of subspaces of $\Bbb R^2$:
 > 3) $U$ is closed under $\odot$
 
 ###### What are subspaces of $\Bbb R^2$?
-1) $\{(0,0)\}$
-2) All of $\Bbb R^2$
-3) Any line through the origin ($y=kx$ or $y$-axis)
+ 1. $\{(0,0)\}$
+ 2. All of $\Bbb R^2$
+ 3. Any line through the origin ($y=kx$ or $y$-axis)
 	- Closure under addition:
 		- $\begin{aligned}(x_1,kx_1)+(x_2,kx_2)&=(x_1+x_2,kx_1+kx_2)\\&=(x_1+x_2, k(x_1+x_2))\\&\in\text{ line }y=kx\end{aligned}$
 		- $(0,y_1)+(0,y_2)=(0,y_1+y_2) \in y$-axis
@@ -79,10 +79,10 @@ Examples of subspaces of $\Bbb R^2$:
 		- $\begin{aligned}c\cdot(x, kx)&=\\(cx,ckx)&=\\(cx, k(cx))&\in\text{ line }y=xk\end{aligned}$
 		- $c\cdot(0, y)=(0,cy)\in y$-axis
 ###### What are subspaces of $\Bbb R^3$?
-1) $\{(0,0,0)\}$
-2) Any line through origin
-3) Any *plane* going through origin
-4) All of $\Bbb R^3$
+ 1. $\{(0,0,0)\}$
+ 2. Any line through origin
+ 3. Any *plane* going through origin
+ 4. All of $\Bbb R^3$
 
 ---
 *April 30 Lecture. Links to the [board](https://drive.google.com/file/d/1V9exsi9mhkEeTPs09PAc2za_Y0Wy5eGh/view?usp=sharing) and the [recording](https://drive.google.com/file/d/1qGvSZ5UZosOl9Z28OS2KvOOqQdGG3W-z/view?usp=share_link).*

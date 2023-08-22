@@ -27,7 +27,7 @@ $\|\vec v\|=\sqrt{\vec v\cdot\vec v}$
 The angle $\theta$ between u and v is defined as the angle ≤ 180° formed by u and v when their tails coincide.
 The angle is calculated as follows: $$cos(\theta) = \frac{\vec u\cdot\vec v}{\|\vec u\|\cdot\|\vec v\|}$$
 Example: ![[Pasted image 20230504170652.png]]
-Proof is at [23:04](https://drive.google.com/drive/u/0/folders/1k8NTjOs7p11dktSpfPpFCD2F7PuHZDev) 
+Proof is at [23:04](https://drive.google.com/drive/u/0/folders/1k8NTjOs7p11dktSpfPpFCD2F7PuHZDev)
 What if $\theta$ is 0°? well, $cos\theta = 1$ , so there ya go. If $\theta$ is 180°, $cos\theta=-1$, and there ya go too.
 **Conclusion:** vectors are ⟂ $\iff$ their dot product is *zero*. These are called **orthogonal vectors**.
 
@@ -43,12 +43,12 @@ What if $\theta$ is 0°? well, $cos\theta = 1$ , so there ya go. If $\theta$ is 
 	  x_1 & y_1 & z_1 \\
 	  x_2 & y_2 & z_2
 	  \end{bmatrix}$$
-	  
+
 	2) (for k = 1, 2, 3): Calculate the determinant of 2x2 matrix remaining by ignoring $k^{th}$ column, this becomes the $k^{th}$ component of the cross product
 	3) The *middle* component $(k=2)$ of $\vec u \times \vec v$ is the *negative* of determinant calculated in step 2. (No changes for $k=1, k=3$)
 - Corollaries:
 	1) If u, v have same or opposite directions (i.e., $\vec v = c\cdot\vec u\mid c \in \Bbb R$ , then parallelogram they form is degenerate with area of 0, hence: If the length of the crossproduct is 0, the crossproduct *is* the zero vector)
-	2) Area of Triangle ABC is half area of parallelogram formed by u and v, hence, $area = \frac12\|\vec u\times\vec v\|$ 
+	2) Area of Triangle ABC is half area of parallelogram formed by u and v, hence, $area = \frac12\|\vec u\times\vec v\|$
 
 ### Representing Lines and Planes
 - Lines in $\Bbb R^2$:
@@ -59,7 +59,7 @@ What if $\theta$ is 0°? well, $cos\theta = 1$ , so there ya go. If $\theta$ is 
 		- Using considerations of slope, the vector $(-2, 1)$ is **orthogonal** to any vector in direction of $\ell$.
 			- We call $(-2, 1)$ a *normal* vector to $\ell$.
 		- Hence, $(-2, 1)\cdot(x, y) = 0 \implies -2x+y=0$ (see diagram)
-			- Meaning, $\vec n\cdot(x, y) = 0 \space | \space \forall (x, y) \in \ell$ 
+			- Meaning, $\vec n\cdot(x, y) = 0 \space | \space \forall (x, y) \in \ell$
 		- > [!info] How to represent a line in $\Bbb R^2$.
 		  > 1) Get *direction vector* $\vec v$ of *l* by subtracting 2 points on $\ell$ (because *l* might not go through the origin).
 		  > 2) If slope of line = m, Normal vector $\vec n$ = $(1, -\frac1m)$ or any multiple of this.
@@ -69,7 +69,7 @@ What if $\theta$ is 0°? well, $cos\theta = 1$ , so there ya go. If $\theta$ is 
 		- Ex. If $(a, b, c) = (0, 0, 1)$ \[z-axis], then "perpendicular directions" are $(x, y)$ - plane: $(x, y, 0)$
 		- $\lbrace (0, 0, 1)\cdot(x,y,0)\mid x,y\in\Bbb R\rbrace$
 	- Conclusion: *ax + by + cz = 0* describes a *plane* through origin, to which \<a, b, c> is a *normal vector*.
-		- For any vector $(x, y, z)$ in this plane, $(a,b,c)\cdot(x,y,z) = 0$ 
+		- For any vector $(x, y, z)$ in this plane, $(a,b,c)\cdot(x,y,z) = 0$
 	- General planes in $\Bbb R^3$:
 		- Let plane $P_1$ be a plane through the origin with a *normal vector* of *(2, 1, 3)*.
 		- Equation of $P_1$ is $2x+y+3z = 0$.
@@ -78,7 +78,7 @@ What if $\theta$ is 0°? well, $cos\theta = 1$ , so there ya go. If $\theta$ is 
 			- Let $\vec v$ be one direction vector on $P_2$.
 			- Let $(x, y, z)$ be any point in $P_2$.
 			- $\vec v = (x-6, y-1, z+3)$. (just because it's a direction)
-			- $\text{The normal vector to } P_1 = \text{the normal vector to }P_2$ 
+			- $\text{The normal vector to } P_1 = \text{the normal vector to }P_2$
 			- This is because $P_2$ is *parallel* to $P_1$.
 			- Equation is: $(x-6, y-1, z+3)\cdot\vec n = 0 \implies \dots \implies 2x+y+3z=4$
 			- > [!info] Note the similarities between equations of parallel planes
