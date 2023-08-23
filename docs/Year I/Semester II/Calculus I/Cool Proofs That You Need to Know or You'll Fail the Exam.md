@@ -88,6 +88,7 @@
 > [!info] If $f$ is continuous on $[a,b]$, and $F(x)=\int_a^xf(t)dt$ for $a\le x\le b$, then $F$ is continuous on $[a,b]$ and differentiable on $(a,b)$, and $f^\prime (x)=f(x)$.
 >
 > $$\begin{align} f^\prime (x)&=\lim_{h\to0}{\frac{F(x+h)-F(x)}h}\\  &=\lim_{h\to0}{\frac1h\left[\int_a^{a+h}f(t)dt-\int_a^xf(t)dt\right]}\\ &=\lim_{h\to0}{\frac1{(x+h)-x}\int_x^{x+h}f(t)dt}\\  \text{Via MVT for Integrals: }&=f(c)\mid c\in(x,x+h)  \end{align}$$
+>
 > Since $x\le c\le x+h$, and $h\to0$, $c=x$.
 > Therefore, $f^\prime (x)=f(x)$.
 >
