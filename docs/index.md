@@ -5,7 +5,7 @@ Hi! Thanks for checking out my notes. This is a project that I’ve poured many 
 
 If there are any mistakes in my notes, please [let me know](https://github.com/benjitusk/Computer-Science-Notes/issues/new/choose), or click the edit button next to the header on the relevant page, and fix it yourself. (Of course, I would _much_ prefer you do this.)
 
-> [!warning] Formatting Issues
-> I am in middle of migrating my notes to a new publishing software, and I'm still trying to get the hang of new formatting rules and such. Please be patient while I sort this issue out. Thanks!
+> [!info] Formatting Stuff
+> I recently switched the way I publish my notes, from a really janky system to a not-as-janky system. During the switch, it's likely that I may have missed some formatting issues. If you find any, (including broken image links or sketches not switching between light and dark mode), please let me know by opening an issue or submitting a pull request. Thanks!
 
-Thanks, and good luck!
+Best of luck with your studies!

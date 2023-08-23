@@ -4,8 +4,8 @@
 2. Subtraction
 3. Scalar Multiplication
 ### Length of $\vec v$:
-> $\vec v = (x, y,\dots)\Rightarrow \|\vec v\|=\sqrt{x^2+y^2+\dots}$
-> $\|c\cdot\vec v\|=|c|\cdot\|\vec v\|$
+$\vec v = (x, y,\dots)\Rightarrow \|\vec v\|=\sqrt{x^2+y^2+\dots}$
+$\|c\cdot\vec v\|=|c|\cdot\|\vec v\|$
 
 ### Dot Product
 In $\Bbb R^n$:
@@ -17,11 +17,11 @@ For any $\vec v$:  $\vec v\cdot \vec v=x^2+y^2=\|\vec v\|^2$
 $\|\vec v\|=\sqrt{\vec v\cdot\vec v}$
 
 ### Properties
-> If $\vec u, \vec v, \vec w$ are vectors in $\Bbb R^2$ or $\Bbb R^3$ and $k$ is a scalar, then:
-> - $\vec u\cdot\vec v=\vec v\cdot\vec u$
-> - $\vec u\cdot(\vec v+\vec w)=\vec u\cdot\vec v+\vec u\cdot\vec w$
-> - $k(\vec u\cdot\vec v)=(k\vec u)\cdot\vec v=\vec u\cdot(k\vec v)$
-> - $\vec v\cdot\vec v\gt0\text{ if }\vec v\not=\vec0\text{ and }\vec v\cdot\vec v=0\text{ if }\vec v=\vec0$
+If $\vec u, \vec v, \vec w$ are vectors in $\Bbb R^2$ or $\Bbb R^3$ and $k$ is a scalar, then:
+- $\vec u\cdot\vec v=\vec v\cdot\vec u$
+- $\vec u\cdot(\vec v+\vec w)=\vec u\cdot\vec v+\vec u\cdot\vec w$
+- $k(\vec u\cdot\vec v)=(k\vec u)\cdot\vec v=\vec u\cdot(k\vec v)$
+- $\vec v\cdot\vec v\gt0\text{ if }\vec v\not=\vec0\text{ and }\vec v\cdot\vec v=0\text{ if }\vec v=\vec0$
 
 ### Angle between vectors
 The angle $\theta$ between u and v is defined as the angle ≤ 180° formed by u and v when their tails coincide.
@@ -36,19 +36,19 @@ What if $\theta$ is 0°? well, $cos\theta = 1$ , so there ya go. If $\theta$ is 
 - Output is a <u>vector</u>, not a scalar
 - Definition:
 	  Let $\vec u$ = $<x_1, y_1, z_1>$, $\vec v$ = $<x_2, y_2, z_2>$. Then,
-	  $$\vec u\times\vec v = <(y_1\cdot z_2 - y_2\cdot z_1), (x_2\cdot z_1 - z_1,\cdot z_2), (x_1\cdot y_2-x_2\cdot y_1)>$$
-	  A faster way to calculate it, (and the "normal way") is as follows.
-	1) Write out $\vec u$ above $\vec v$ in a $2\times3$ matrix:
-	  $$\begin{bmatrix}
-	  x_1 & y_1 & z_1 \\
-	  x_2 & y_2 & z_2
-	  \end{bmatrix}$$
 
-	2) (for k = 1, 2, 3): Calculate the determinant of 2x2 matrix remaining by ignoring $k^{th}$ column, this becomes the $k^{th}$ component of the cross product
-	3) The *middle* component $(k=2)$ of $\vec u \times \vec v$ is the *negative* of determinant calculated in step 2. (No changes for $k=1, k=3$)
+	$$\vec u\times\vec v = <(y_1\cdot z_2 - y_2\cdot z_1), (x_2\cdot z_1 - z_1,\cdot z_2), (x_1\cdot y_2-x_2\cdot y_1)>$$
+
+	  A faster way to calculate it, (and the "normal way") is as follows.
+	1. Write out $\vec u$ above $\vec v$ in a $2\times3$ matrix:
+
+		$$\begin{bmatrix} x_1 & y_1 & z_1 \\ x_2 & y_2 & z_2 \end{bmatrix}$$
+
+	2. (for k = 1, 2, 3): Calculate the determinant of 2x2 matrix remaining by ignoring $k^{th}$ column, this becomes the $k^{th}$ component of the cross product
+	3. The *middle* component $(k=2)$ of $\vec u \times \vec v$ is the *negative* of determinant calculated in step 2. (No changes for $k=1, k=3$)
 - Corollaries:
-	1) If u, v have same or opposite directions (i.e., $\vec v = c\cdot\vec u\mid c \in \Bbb R$ , then parallelogram they form is degenerate with area of 0, hence: If the length of the crossproduct is 0, the crossproduct *is* the zero vector)
-	2) Area of Triangle ABC is half area of parallelogram formed by u and v, hence, $area = \frac12\|\vec u\times\vec v\|$
+	1. If u, v have same or opposite directions (i.e., $\vec v = c\cdot\vec u\mid c \in \Bbb R$ , then parallelogram they form is degenerate with area of 0, hence: If the length of the crossproduct is 0, the crossproduct *is* the zero vector)
+	2. Area of Triangle ABC is half area of parallelogram formed by u and v, hence, $area = \frac12\|\vec u\times\vec v\|$
 
 ### Representing Lines and Planes
 - Lines in $\Bbb R^2$:
@@ -60,10 +60,11 @@ What if $\theta$ is 0°? well, $cos\theta = 1$ , so there ya go. If $\theta$ is 
 			- We call $(-2, 1)$ a *normal* vector to $\ell$.
 		- Hence, $(-2, 1)\cdot(x, y) = 0 \implies -2x+y=0$ (see diagram)
 			- Meaning, $\vec n\cdot(x, y) = 0 \space | \space \forall (x, y) \in \ell$
-		- > [!info] How to represent a line in $\Bbb R^2$.
-		  > 1) Get *direction vector* $\vec v$ of *l* by subtracting 2 points on $\ell$ (because *l* might not go through the origin).
-		  > 2) If slope of line = m, Normal vector $\vec n$ = $(1, -\frac1m)$ or any multiple of this.
-		  > 3) Line equation is: $\vec n\cdot(x,y) = 0$, and when unwrapped, looks like this: $$<n_x,n_y>\cdot<x, y> = 0 \implies (n_x\cdot x) + (n_y\cdot y) = 0$$
+> [!info] How to represent a line in $\Bbb R^2$.
+> 1. Get *direction vector* $\vec v$ of *l* by subtracting 2 points on $\ell$ (because *l* might not go through the origin).
+> 2. If slope of line = m, Normal vector $\vec n$ = $(1, -\frac1m)$ or any multiple of this.
+> 3. Line equation is: $\vec n\cdot(x,y) = 0$, and when unwrapped, looks like this: $$<n_x,n_y>\cdot<x, y> = 0 \implies (n_x\cdot x) + (n_y\cdot y) = 0$$
+
 - Planes in $\Bbb R^3$:
 	- The set of directions ⟂ to a given vector in $\Bbb R^3$ is a *plane*.
 		- Ex. If $(a, b, c) = (0, 0, 1)$ \[z-axis], then "perpendicular directions" are $(x, y)$ - plane: $(x, y, 0)$
@@ -81,7 +82,7 @@ What if $\theta$ is 0°? well, $cos\theta = 1$ , so there ya go. If $\theta$ is 
 			- $\text{The normal vector to } P_1 = \text{the normal vector to }P_2$
 			- This is because $P_2$ is *parallel* to $P_1$.
 			- Equation is: $(x-6, y-1, z+3)\cdot\vec n = 0 \implies \dots \implies 2x+y+3z=4$
-			- > [!info] Note the similarities between equations of parallel planes
+			- > **Note the similarities between equations of parallel planes**
 			  > $P_1$: $2x+y+3z = 0$
 			  > $P_2$: $2x+y+3z = 4$
 		- Conclusion: *Any* plane in $\Bbb R^3$ has equation of $ax+by+cz=d$, where $(a, b, c)$ is a normal vector to the plane.
@@ -104,9 +105,9 @@ What if $\theta$ is 0°? well, $cos\theta = 1$ , so there ya go. If $\theta$ is 
 		&=\{(2+5t,1-t,-4-5t)\mid t\in\Bbb R\}
 		\end{aligned}$$
 	- In summary
-		1) Line in $\Bbb R^3$ through origin:
+		1. Line in $\Bbb R^3$ through origin:
 			- $\ell=\{t\cdot\vec u\mid t\in\Bbb R\}$
-		2) Line in $\Bbb R^3$ <u>not</u> through origin:
+		2. Line in $\Bbb R^3$ <u>not</u> through origin:
 		- $\ell=\{\vec u+t\cdot\vec v\mid t\in\Bbb R\}$
 		- where $\vec u$ is *any* direction vector of $\ell$.
 		- Usually, $\vec u$ is found by subtracting 2 points on $\ell$

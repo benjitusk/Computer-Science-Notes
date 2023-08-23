@@ -2,18 +2,24 @@
 
 #### Notation:
 A single capital letter denotes a matrix. ($A, B, C, S, T\dots$)
+
 $$A_{m\times n}=\begin{bmatrix}
 a_{11}&a_{12}&a_{13}&\dots&a_{1n}\\
 a_{21}&\dots\\
 \vdots&\ddots\\
 a_{m1}
 \end{bmatrix}$$
+
 $m$ rows by $n$ columns
 $a_{ij}=$ entry in i<sup>th</sup> row and j<sup>th</sup> column ($1≤i≤m, 1≤j≤n$)
 
 #### Transpose operation
 if $A$ is an $m \times n$ matrix, then $A^T$ is the $n\times m$ matrix defined by $A^T=[b_{ij}]$ with $b_{ij}=a_{ji}$ for $1≤ i ≤ m, 1≤ j≤n$
-Example: $$A=\begin{bmatrix}1&3&-2\\0&-1&4\end{bmatrix}\quad A^T=\begin{bmatrix}1&0\\3&-1\\-2&4\end{bmatrix}$$
+Example:
+
+$$A=\begin{bmatrix}1&3&-2\\0&-1&4\end{bmatrix}\quad A^T=\begin{bmatrix}1&0\\3&-1\\-2&4\end{bmatrix}$$
+
+
 A symmetric matrix $A$ is one with the property $A=A^T$.
 > [!info] Symmetric Matrices - In English
 > This means that the matrix is perfectly reflected across the main diagonal.
@@ -26,9 +32,18 @@ A symmetric matrix $A$ is one with the property $A=A^T$.
 > Matrix $C$ refers to the product of $A\times B$
 
 The matrices A and B can be multiplied whenever the number of columns in A is the same number of row in B
-Example: $$A=\begin{bmatrix}1&3&-2\\0&-1&4\end{bmatrix}\qquad B=\begin{bmatrix}2&-1&0&3\\0&1&2&1\\-3&1&0&-2\end{bmatrix}$$The $C_{ij}$ is dot product of row $i$ of $A$ with col $j$ of $B$
+Example:
+
+$$A=\begin{bmatrix}1&3&-2\\0&-1&4\end{bmatrix}\qquad B=\begin{bmatrix}2&-1&0&3\\0&1&2&1\\-3&1&0&-2\end{bmatrix}$$
+
+The $C_{ij}$ is dot product of row $i$ of $A$ with col $j$ of $B$
+
 $$C=\begin{bmatrix}8&2&4&10\\-12&-1&2&-9\end{bmatrix}$$
-General definition: If A is a $m\times n$ matrix and B is a $n\times p$ matrix, then $C=A\cdot B$ is a $m\times p$ matrix defined by $C_{ij}=(i^{th}\text{ row of }A)\cdot (j^{th}\text{ row of }B)$![[Pasted image 20230521151732.png]]
+
+General definition: If A is a $m\times n$ matrix and B is a $n\times p$ matrix, then $C=A\cdot B$ is a $m\times p$ matrix defined by $C_{ij}=(i^{th}\text{ row of }A)\cdot (j^{th}\text{ row of }B)$
+
+$$C_{ij}=(\text{i}^{th}\text{ row of }A)\cdot(\text{j}^{th}\text{ column of }B)=\sum_{k=1}^na_{ik}b_{kj}$$
+
 > [!Info] Matrix Multiplication - In English (and TypeScript)
 > To multiply a matrix, you must ensure that the dimensions work out. The *columns* of $A$ must equal the *rows* of $B$. This is required so we can take the dot product, as the operands of a dot product operation must be of equal dimension.
 > The dimension of the product will inversely be the *rows* of $A$ by the *columns* of $B$.
@@ -302,7 +317,8 @@ $$\begin{aligned}
 > If $A$ can't be reduced to $I$, then $A$ is not invertible.
 > If $A$ can be reduced to $I$, then the right window will contain $A^{-1}$ at the end of the reduction.
 
-> [!quote] ##### Summary Theorem
+##### Summary Theorem
+> [!warning] Summary Theorem - This WILL be on the exam in some form
 > A $n\times n$ matrix $A$ which satisfies one of the below satisfies all of the below:
 > 1. $A$ is invertible
 > 2. $A$ can be written as a product of Elementary Matrices
@@ -360,25 +376,32 @@ We therefore define <u>rank</u> as the row rank and the column rank, which are a
 ##### Computing $|A_n|$  for $n > 2$:
 Ex. $A=\begin{bmatrix}1&1&2\\-1&0&1\\0&-1&1\end{bmatrix}$
 **Definition:**
+> [!note] Definition of Matrix Minors
 > Let $A$ be an $n\times n$ matrix. The $(i, j)$-minor of $A$, denoted as $M_{ij}$, is the $(n-1)\times(n-1)$ matrix obtained by “deleting” the $i^{th}$ row and the $j^{th}$ column of $A$.
-> > [!example] Example of matrix minors
-> > Using the above matrix $A$:
-> > $M_{13}=\begin{bmatrix}-1&0\\0&-1\end{bmatrix} \qquad\begin{pmatrix}\color{red}1&\color{red}1&\color{red}\bf{2}\\-1&0&\color{red}1\\0&-1&\color{red}1\end{pmatrix}$
-> > $M_{21}=\begin{bmatrix}1&2\\-1&1\end{bmatrix}\qquad\begin{pmatrix}\color{red}1&1&2\\\color{red}\bf{-1}&\color{red}0&\color{red}1\\\color{red}0&-1&1\end{pmatrix}$
+
+> [!example] Example of matrix minors
+> Using the above matrix $A$:
+> $M_{13}=\begin{bmatrix}-1&0\\0&-1\end{bmatrix} \qquad\begin{pmatrix}\color{red}1&\color{red}1&\color{red}\bf{2}\\-1&0&\color{red}1\\0&-1&\color{red}1\end{pmatrix}$
+> $M_{21}=\begin{bmatrix}1&2\\-1&1\end{bmatrix}\qquad\begin{pmatrix}\color{red}1&1&2\\\color{red}\bf{-1}&\color{red}0&\color{red}1\\\color{red}0&-1&1\end{pmatrix}$
+
+> [!info] Formula for $|A_n|$
+> For any $i\in [1, n]$
 >
-> >[!info] Formula for $|A_n|$
-> > For any $i\in [1, n]$
-> >$$\sum_{j=1}^n-1^{j+i}\cdot a_{ij}\cdot|M_{ij}|$$
+> $$\sum_{j=1}^n-1^{j+i}\cdot a_{ij}\cdot|M_{ij}|$$
+
+> [!example] Example of $|A_3|$
+> Using the above matrix $A$:
 >
-> > [!example] Example of $|A_3|$
-> > Using the above matrix $A$:
-> > $$\begin{aligned}A&=\begin{bmatrix}1&1&2\\-1&0&1\\0&-1&1\end{bmatrix}\\|A|&=+\underbrace{(+1)}_{a_{11}}\cdot\underbrace{\begin{vmatrix}0&1\\-1&1\end{vmatrix}}_{M_{11}}-\underbrace{(+1)}_{a_{12}}\cdot \underbrace{\begin{vmatrix}0&1\\-1&1\end{vmatrix}}_{M_{12}}+\underbrace{(+2)}_{a_{13}}\cdot\underbrace{\begin{vmatrix}0&1\\-1&1\end{vmatrix}}_{M_{13}}\\&=1(1)-1(-1)+2(1)\\&=4\end{aligned}$$
+> $$\begin{aligned}A&=\begin{bmatrix}1&1&2\\-1&0&1\\0&-1&1\end{bmatrix}\\|A|&=+\underbrace{(+1)}_{a_{11}}\cdot\underbrace{\begin{vmatrix}0&1\\-1&1\end{vmatrix}}_{M_{11}}-\underbrace{(+1)}_{a_{12}}\cdot \underbrace{\begin{vmatrix}0&1\\-1&1\end{vmatrix}}_{M_{12}}+\underbrace{(+2)}_{a_{13}}\cdot\underbrace{\begin{vmatrix}0&1\\-1&1\end{vmatrix}}_{M_{13}}\\&=1(1)-1(-1)+2(1)\\&=4\end{aligned}$$
 
 > [!cite] Theorem: There is nothing special about the first row.
 > $|A|$ can be computed along *any* row or *any* column, using the formula:
 > Along row $i$:
+>
 > $$|A|=\sum_{j=1}^n-1^{j+i}\cdot a_{ij}\cdot|M_{ij}|$$
+>
 > Along column $j$:
+>
 > $$|A|=\sum_{i=1}^n-1^{j+i}\cdot a_{ij}\cdot|M_{ij}|$$
 >
 > It is therefore advantageous to take the determinant along a row or column with lots of zeros, to reduce the number of minor determinants you have to calculate.

@@ -22,22 +22,22 @@ A set $V$ is called a <u>vector space</u> (and its elements are called vectors) 
 ##### Vector Space Axioms
 
 > [!NOTE] 10 All Important Axioms of Vector Spaces
-> 1) Addition $\oplus$ is commutative
+> 1. Addition $\oplus$ is commutative
 > 	- i.e. for $\vec u,\vec v\in V:\vec u\oplus\vec v=\vec v\oplus\vec u$
-> 2) Addition $\oplus$ is associative
+> 2. Addition $\oplus$ is associative
 > 	- i.e. for $\vec u,\vec v,\vec w\in V:(\vec u\oplus\vec v)\oplus\vec w=\vec u\oplus(\vec v\oplus\vec w)$
-> 3) $V$ is closed under addition
+> 3. $V$ is closed under addition
 > 	- If $\vec u,\vec v\in V\text{ then }\vec u\oplus\vec v\in V$
-> 4) There exists in $V$ a <u>zero vector</u> denoted $\vec{0}$ such that $\forall\vec v\in V: \vec v + \vec0=\vec v$
-> 5) $\forall\vec v\in V\;\exists\vec v^\prime\text{ such that } \vec v\oplus\vec v^\prime=\vec0$
+> 4. There exists in $V$ a <u>zero vector</u> denoted $\vec{0}$ such that $\forall\vec v\in V: \vec v + \vec0=\vec v$
+> 5. $\forall\vec v\in V\;\exists\vec v^\prime\text{ such that } \vec v\oplus\vec v^\prime=\vec0$
 > 	- e.g. in $\Bbb R^2$, if $\vec v=(5, -3)$ then $\vec v^\prime=(-5,3)$
-> 6) V is closed under scalar mult.
+> 6. V is closed under scalar mult.
 > 	- i.e., if $\vec v \in V,c\in\Bbb R$ then $c\odot\vec v\in V$
-> 7) For all $\vec v\in V$ and $c_1,c_2\in\Bbb R$ we have: $(c_1\cdot c_2)\odot\vec v=c_1\odot(c_2\odot\vec v)$
-> 8) $\forall \vec v\in V:\;1\odot\vec v=\vec v$
-> 9) Distributive Law 1:
+> 7. For all $\vec v\in V$ and $c_1,c_2\in\Bbb R$ we have: $(c_1\cdot c_2)\odot\vec v=c_1\odot(c_2\odot\vec v)$
+> 8. $\forall \vec v\in V:\;1\odot\vec v=\vec v$
+> 9. Distributive Law 1:
 > 	- For any $\vec v,\vec u\in V,c\in\Bbb R:\; c\odot(\vec v\oplus\vec u)=(c\odot\vec v)\oplus(c\odot\vec u)$
-> 10) Distributive Law 2:
+> 10. Distributive Law 2:
 > 	- For any $\vec v\in V,c_1,c_2\in\Bbb R:\; (c_1+c_2)\odot\vec v=(c_1\odot\vec v)\oplus(c_2\odot\vec v)$
 
 #### Common Vector Spaces:
@@ -87,7 +87,7 @@ Examples of subspaces of $\Bbb R^2$:
 ---
 *April 30 Lecture. Links to the [board](https://drive.google.com/file/d/1V9exsi9mhkEeTPs09PAc2za_Y0Wy5eGh/view?usp=sharing) and the [recording](https://drive.google.com/file/d/1qGvSZ5UZosOl9Z28OS2KvOOqQdGG3W-z/view?usp=share_link).*
 **\[Incomplete] Coming soon to a PDF near you...**
-##### Checking if a subset is a subspace ($U\subseteq V,U\stackrel{?}{\le}V$)
+##### Checking if a subset is a subspace
 $U\subseteq V$ is a subspace of V ($U\le V$) **iff**
 1. $U\not=\emptyset$
 2. $U$ is closed under addition
@@ -154,10 +154,11 @@ $\begin{aligned}&c_1+2c_2-c_3&=0\\3&c_1-4c_2+c_3&=0\\5&c_1+6c_2+3c_3&=0\end{alig
 Solve system using coefficient matrix:
 $\begin{bmatrix}1&2&-1\\3&4&1\\5&6&3\end{bmatrix}$
 There are two possibilities for a homogeneous system:
-> - There is a unique solution $(0,0,0)$, which means $c_1=c_2=c_3=0$, which proves $S$ to be *independent*.
-> - There are infinitely many solutions, which means $c_1=c_2=c_3=0$ is **not true**, which proves $S$ to be *dependent*.
-> Solving the matrix as such...
-> $$\begin{aligned}
+- There is a unique solution $(0,0,0)$, which means $c_1=c_2=c_3=0$, which proves $S$ to be *independent*.
+- There are infinitely many solutions, which means $c_1=c_2=c_3=0$ is **not true**, which proves $S$ to be *dependent*.
+Solving the matrix as such...
+
+$$\begin{aligned}
 \begin{bmatrix}
 1\ &2\ & -1\\\
 3\ &4\ &\ 1\\\
