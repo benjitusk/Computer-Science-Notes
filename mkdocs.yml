@@ -150,3 +150,6 @@ extra:
   hooks:
     strip_comments: true
     fix_heading: true
+  analytics:
+    provider: google
+    property: G-NJ2KHCYC7F
