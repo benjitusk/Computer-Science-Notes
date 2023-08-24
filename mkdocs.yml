@@ -2,7 +2,8 @@ site_name: Benji Tusk's CS Notes # Change this to your site name
 site_description: A cool description of your site
 site_url: https://benjitusk.github.io/Computer-Science-Notes/ # Change this to your site URL
 site_author: Benji Tusk
-copyright: © Benji Tusk 2023. All rights reserved.
+copyright: >-
+  © Benji Tusk 2023. All rights reserved -- <a href="#__consent">Change cookie settings</a>
 repo_url: https://github.com/benjitusk/Computer-Science-Notes
 edit_uri: edit/main/docs/
 
@@ -153,3 +154,12 @@ extra:
   analytics:
     provider: google
     property: G-NJ2KHCYC7F
+  consent:
+    title: Biscuit -- I mean, Cookie?
+    # Make sure the description is funny and explains that I only use it to see what part of my notes I should be extra careful to maintain
+    description: >-
+     Hey, I promise I don't sell your data or anything.
+     I use cookies to see what parts of my notes are more active,
+     so I can be extra careful to maintain those documents.
+     By clicking Accept, you are helping me, and many other students.
+     And, if it were up to me, I would give you a brownie instead of a cookie.
