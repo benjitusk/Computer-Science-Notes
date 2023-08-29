@@ -58,7 +58,7 @@ def fix_excalidraw_link(markdown, site_url):
         new_dark_link = new_dark_link.replace('../', '')
         new_light_link = new_light_link.replace('../', '')
         markdown = markdown.replace(
-            link.group(), new_dark_link + '\n' + new_light_link)
+            link.group(), new_dark_link + ' ' + new_light_link)
     return markdown
 
 

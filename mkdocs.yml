@@ -8,6 +8,9 @@ repo_url: https://github.com/benjitusk/Computer-Science-Notes
 edit_uri: edit/main/docs/
 
 theme:
+  analytics:
+    provider: google
+    gtag: G-NJ2KHCYC7F
   name: "material"
   logo: assets/meta/favicons.png
   favicon: assets/meta/favicons.png
@@ -153,7 +156,7 @@ extra:
     fix_heading: true
   analytics:
     provider: google
-    property: G-NJ2KHCYC7F
+    property: "G-404098104"
   consent:
     title: Biscuit -- I mean, Cookie?
     # Make sure the description is funny and explains that I only use it to see what part of my notes I should be extra careful to maintain
