@@ -197,17 +197,18 @@ Let $A$ be an invertible matrix.
 	- This applies to $n$ invertible matrices:
 	  ${(A_1\cdot A_2\cdot \dots\cdot A_n)}^{-1}=A_n^{-1}\cdot\dots\cdot A_2^{-1}\cdot A_1^{-1}$
 	- The inverse of products is the product of the inverses, *in reverse order.*
-
+zoom
 ##### Using Inverse Matrices to Solve Systems of Equations
 **Example:**
 $\begin{cases}2x+y&=1\\5x+3y&=-1\end{cases}\implies\begin{bmatrix}2&1\\5&3\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix}=\begin{bmatrix}1\\-1\end{bmatrix}\qquad(A\cdot\vec x=\vec b)$
 Note that $A$ is invertible, see above example, $A^{-1}=\begin{bmatrix}3&-1\\-5&2\\\end{bmatrix}$
 Since we want to isolate $\vec x$, let's cancel out $A$. We do this by multiplying both sides by $A^{-1}$ on the left like so:
-$$\textcolor{Emerald}{A^{-1}}(A\vec x)=\textcolor{Emerald}{A^{-1}}\vec b\implies\textcolor{Emerald}{\begin{bmatrix}3&-1\\-5&2\\\end{bmatrix}}\begin{bmatrix}2&1\\5&3\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix}=\textcolor{Emerald}{\begin{bmatrix}3&-1\\-5&2\\\end{bmatrix}}\cdot\begin{bmatrix}1\\-1\end{bmatrix}$$
+
+$$\textcolor{darkorange}{A^{-1}}(A\vec x)=\textcolor{darkorange}{A^{-1}}\vec b\implies\textcolor{darkorange}{\begin{bmatrix}3&-1\\-5&2\\\end{bmatrix}}\begin{bmatrix}2&1\\5&3\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix}=\textcolor{darkorange}{\begin{bmatrix}3&-1\\-5&2\\\end{bmatrix}}\cdot\begin{bmatrix}1\\-1\end{bmatrix}$$
+
 $(A^{-1}A)\vec x=A^{-1}\vec b\implies I\cdot\begin{bmatrix}x\\y\end{bmatrix}=\begin{bmatrix}3&-1\\-5&2\\\end{bmatrix}\cdot\begin{bmatrix}1\\-1\end{bmatrix}$
 $\vec x=A^{-1}\vec b\implies\begin{bmatrix}x\\y\end{bmatrix}=\begin{bmatrix}4\\-7\end{bmatrix}\implies\begin{cases}x&=4\\y&=-7\end{cases}$
 
-$$\color{Emerald}{A^{-1}}(A\vec x)=\color{Emerald}{A^{-1}}\vec b\implies\color{Emerald}{\begin{bmatrix}3&-1\\-5&2\\\end{bmatrix}}\begin{bmatrix}2&1\\5&3\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix}=\color{Emerald}{\begin{bmatrix}3&-1\\-5&2\\\end{bmatrix}}\cdot\begin{bmatrix}1\\-1\end{bmatrix}$$
 
 ##### Big Questions:
 1. How can we tell if $A$ is invertible?
@@ -237,7 +238,7 @@ Stay tuned for the answers...
 #### Determining if $A$ is invertible
 1. Use the standard row operations to reduce $A$ as much as possible, keeping note of the operations and the order.
 	1. If you are able to reach the Identity Matrix, it's invertible, congrats!
-	   Read on to find the inverse. Otherwise, you're SOL.
+	   Read on to find the inverse. Otherwise, $A$ is not invertable.
 2. Rewrite this reduction as a sequence of multiplications on the left by elementary matrices.
 	- Since you have $[\text{series of elementary matrices}]\cdot A=I$, $A$ *is* invertible.
 	- $A^{-1}=[\text{series of elementary matrices}]$
