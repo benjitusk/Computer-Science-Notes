@@ -49,14 +49,14 @@ With that all done, VSCode is now set up to handle Java projects. Here’s some 
 6. Choose where you want the **root folder** of your project to be. All project files will be contained **within** this folder.
 7. Open the folder in VSCode. Not sure why this isn’t automatic.
 
-If you did everything correctly, your project in VSCode will look like this:
-![[Pasted image 20231212123221.png]]
-Note the collapsed “Java Projects” and “Maven” panes at the bottom of the file explorer.
-
 > [!warning] Important
 > Move `Main.java` up two levels so it is a direct child of `java/`, and **delete the `src/main/java/com` folder**. If you do not do this, Maven will get confused with your imports.
 
 Almost all of the code you write will be in `src/main/java`.
+
+If you did everything correctly, your project in VSCode will look like this:
+![[Pasted image 20231212134855.png]]
+Note the collapsed “Java Projects” and “Maven” panes at the bottom of the file explorer.
 
 ## 4. Configuring Maven
 Open `pom.xml`. If you get errors, that’s somewhat expected. The default generated file needs a bit of modification so we can work with it. 
