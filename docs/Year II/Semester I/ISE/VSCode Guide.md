@@ -53,7 +53,9 @@ If you did everything correctly, your project in VSCode will look like this:
 ![[Pasted image 20231212123221.png]]
 Note the collapsed “Java Projects” and “Maven” panes at the bottom of the file explorer.
 
-**Important:** Move `Main.java` up two levels so it is a direct child of `java/`, and **delete the `com/lastname_lastname` folder**. If you do not do this, Maven will get confused with your imports.
+> [!warning] Important
+> Move `Main.java` up two levels so it is a direct child of `java/`, and **delete the `src/main/java/com` folder**. If you do not do this, Maven will get confused with your imports.
+
 Almost all of the code you write will be in `src/main/java`.
 
 ## 4. Configuring Maven
