@@ -45,7 +45,7 @@ With that all done, VSCode is now set up to handle Java projects. Here’s some 
 3. Select `No Archetype`.
 	- ![[Pasted image 20231212122406.png]]
 4. Set your “group ID”. I chose to format mine as `com.<myLastName>_<partnerLastName>`
-5. Set your artifact ID. Per the ISE MiniProject guidelines, this must be in the format `ISE5784_<lastFourDigitsOfYourID>_<lastFourDigitsOfPartnersID>`.
+5. Set your artifact ID. Per the ISE MiniProject guidelines, this must be in the format `ise5784_<lastFourDigitsOfYourID>_<lastFourDigitsOfPartnersID>`.
 6. Choose where you want the **root folder** of your project to be. All project files will be contained **within** this folder.
 7. Open the folder in VSCode. Not sure why this isn’t automatic.
 
