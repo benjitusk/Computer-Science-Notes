@@ -60,9 +60,29 @@ Open `pom.xml`. If you get errors, that’s somewhat expected. The default gener
 
 1. Replace all occurrences of `http://` with `https://`.
 2. Set your compiler source and target properties to your Java version.
+3. Add the proper dependencies for test frameworks:
+```xml
+<dependencies>
+	<dependency>
+		<groupId>org.junit.jupiter</groupId>
+		<artifactId>junit-jupiter-engine</artifactId>
+		<version>5.2.0</version>
+		<scope>test</scope>
+	</dependency>
+	<dependency>
+		<groupId>org.junit.platform</groupId>
+		<artifactId>junit-platform-runner</artifactId>
+		<version>1.2.0</version>
+		<scope>test</scope>
+	</dependency>
+</dependencies>
+```
 
 After these changes, my `pom.xml` looked like this:
-![[Pasted image 20231212124050.png]]
+![[Pasted image 20231212125948.png]]
+The last thing to do here is to actually *install* the dependencies we specified in `pom.xml`. Open the File Explorer tab, expand the Maven pane, and you’ll see this:
+![[Pasted image 20231212130233.png]]
+Run the `install` action, and that’s it, you’re done.
 
 ## 5. Run and Debug
 At this point, you are technically done, but I recommend setting this up so that you and your partner are using the exact same VSCode configuration.
@@ -70,3 +90,4 @@ At this point, you are technically done, but I recommend setting this up so that
 Open the Run and Debug tab, and choose `Create a launch.json file`.
 I highly recommend to **delete** the first generated launch configuration, and only leave the “Main” configuration. I renamed the Main configuration to “Run Project”. This was the end result:
 ![[Pasted image 20231212124648.png]]
+
