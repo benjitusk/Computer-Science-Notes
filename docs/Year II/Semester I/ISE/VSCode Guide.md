@@ -53,7 +53,8 @@ If you did everything correctly, your project in VSCode will look like this:
 ![[Pasted image 20231212123221.png]]
 Note the collapsed “Java Projects” and “Maven” panes at the bottom of the file explorer.
 
-Almost all of the code you write will be in `src/main/java/com/lastname_lastname`.
+**Important:** Move `Main.java` up two levels so it is a direct child of `java/`, and **delete the `com/lastname_lastname` folder**. If you do not do this, Maven will get confused with your imports.
+Almost all of the code you write will be in `src/main/java`.
 
 ## 4. Configuring Maven
 Open `pom.xml`. If you get errors, that’s somewhat expected. The default generated file needs a bit of modification so we can work with it. 
@@ -82,7 +83,7 @@ After these changes, my `pom.xml` looked like this:
 ![[Pasted image 20231212125948.png]]
 The last thing to do here is to actually *install* the dependencies we specified in `pom.xml`. Open the File Explorer tab, expand the Maven pane, and you’ll see this:
 ![[Pasted image 20231212130233.png]]
-Run the `install` action, and that’s it, you’re done.
+Run the `install` action to install the dependencies.
 
 ## 5. Run and Debug
 At this point, you are technically done, but I recommend setting this up so that you and your partner are using the exact same VSCode configuration.
