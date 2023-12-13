@@ -94,3 +94,13 @@ Open the Run and Debug tab, and choose `Create a launch.json file`.
 I highly recommend to **delete** the first generated launch configuration, and only leave the “Main” configuration. I renamed the Main configuration to “Run Project”. This was the end result:
 ![[Pasted image 20231212124648.png]]
 
+## 6. Troubleshooting
+These are the mistakes I have made so far in setting up VSCode for me and my partner. If you’re running into issues, check this list.
+
+- Make sure you *and* your partner have **Java** installed. And no, being able to run Minecraft isn’t enough, you have to be able to run `java --version` in the terminal.
+- Make sure you *and* your partner have **Maven** installed. You need to be able to run `mvn -v` in the terminal. On Windows, things are a bit complicated, you either have to add the Maven binary to your `PATH`, or specify where your Maven binary is in VSCode Settings.
+- Make sure you don’t have any illegal characters in your directory name, this seems to be incompatible with **Maven**.
+- If you are having weird import problems, make sure your folder structure is correct. 
+	- After completing Homework 2, your file tree should look like this:
+	- ![[Pasted image 20231213173435.png]]
+	- 
