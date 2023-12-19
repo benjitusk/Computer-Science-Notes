@@ -21,7 +21,7 @@ You can download VSCode from [here](https://code.visualstudio.com/download).
 I’m not going to go into so much detail for this one, I’m assuming that if you want to stick it out with VSCode, you already have it installed or know how to get it up and running.
 
 ## 2. Setting up Java support in VSCode
-I’m assuming you have java already installed on your computer. To check, run this in a terminal / command prompt: `java --version`. You should see an output like this:
+You may have Java already installed on your computer. To check, run this in a terminal or command prompt: `java --version`. You should see an output like this:
 ```
 java 17.0.5 2022-10-18 LTS
 Java(TM) SE Runtime Environment (build 17.0.5+9-LTS-191)
@@ -30,7 +30,7 @@ Java HotSpot(TM) 64-Bit Server VM (build 17.0.5+9-LTS-191, mixed mode, sharing)
 As you can tell, I’m running Java at version 17. I think you should be good with anything as early as Java 12, but I haven’t tested that.
 If you get a “command not found” error, you’ll have to figure out how to install Java on your computer. There are lots of resources online for that, so I’m not going to go through that here.
 
-I’m using the Extension Pack for Java by Microsoft (Extension ID: `vscjava.vscode-java-pack`).
+I’m using the “Extension Pack for Java” by Microsoft (Extension ID: `vscjava.vscode-java-pack`).
 This comes with a bunch of things including IntelliSense, Java Project Management, Test Running, language support, etc.
 
 I’m also using Maven to manage the project builds. The extension pack has built in integration with Maven, but you may need to install Maven on your computer before you can use it. On MacOS, you can use `brew install maven`, and confirm the installation with `mvn -v`.
@@ -95,11 +95,11 @@ I highly recommend to **delete** the first generated launch configuration, and o
 ![[Pasted image 20231212124648.png]]
 
 ## 6. Troubleshooting
-These are the mistakes I have made so far in setting up VSCode for me and my partner. If you’re running into issues, check this list.
+These are the mistakes I have made so far in setting up VSCode for my partner and myself. If you’re running into issues, check this list.
 
 - Make sure you *and* your partner have **Java** installed. And no, being able to run Minecraft isn’t enough, you have to be able to run `java --version` in the terminal.
 - Make sure you *and* your partner have **Maven** installed. You need to be able to run `mvn -v` in the terminal. On Windows, things are a bit complicated, you either have to add the Maven binary to your `PATH`, or specify where your Maven binary is in VSCode Settings.
-- Make sure you don’t have any illegal characters in your directory name, this seems to be incompatible with **Maven**.
+- Make sure you don’t have any illegal characters in your directory name, this seems to be incompatible with **VSCode**.
 - If you are having weird import problems, make sure your folder structure is correct. 
 	- After completing Homework 2, your file tree should look like this:
 	- ![[Pasted image 20231213173435.png]]
