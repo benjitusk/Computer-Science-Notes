@@ -1,6 +1,6 @@
 *April 23 Lecture. Links to the [board](https://drive.google.com/file/d/1MP3Y2-6eU7uNBp85LiG48GBC8RXF00LA/view?usp=sharing) and the [recording](https://drive.google.com/file/d/1GtaH6vGsTdTt5vmUIqJOfPcf2tzEOQRV/view?usp=sharing).*
 #### Examples of Vector Spaces
-Vectors in $\Bbb R^n$ are objects on which we define operations of addition (to each other) and multiplication by a [scalar](https://en.wikipedia.org/wiki/Scalar_(mathematics)).
+Vectors in $\R^n$ are objects on which we define operations of addition (to each other) and multiplication by a [scalar](https://en.wikipedia.org/wiki/Scalar_(mathematics)).
 Other "objects" on which we can define the same operations:
 - Matrices: $\begin{bmatrix}a&b&c\\d&e&f\end{bmatrix}$
 	- Denoted as $M_{m\times n}$ with an order of $m$ rows by $n$ columns
@@ -30,20 +30,20 @@ A set $V$ is called a <u>vector space</u> (and its elements are called vectors) 
 > 	- If $\vec u,\vec v\in V\text{ then }\vec u\oplus\vec v\in V$
 > 4. There exists in $V$ a <u>zero vector</u> denoted $\vec{0}$ such that $\forall\vec v\in V: \vec v + \vec0=\vec v$
 > 5. $\forall\vec v\in V\;\exists\vec v^\prime\text{ such that } \vec v\oplus\vec v^\prime=\vec0$
-> 	- e.g. in $\Bbb R^2$, if $\vec v=(5, -3)$ then $\vec v^\prime=(-5,3)$
+> 	- e.g. in $\R^2$, if $\vec v=(5, -3)$ then $\vec v^\prime=(-5,3)$
 > 6. V is closed under scalar mult.
-> 	- i.e., if $\vec v \in V,c\in\Bbb R$ then $c\odot\vec v\in V$
-> 7. For all $\vec v\in V$ and $c_1,c_2\in\Bbb R$ we have: $(c_1\cdot c_2)\odot\vec v=c_1\odot(c_2\odot\vec v)$
+> 	- i.e., if $\vec v \in V,c\in\R$ then $c\odot\vec v\in V$
+> 7. For all $\vec v\in V$ and $c_1,c_2\in\R$ we have: $(c_1\cdot c_2)\odot\vec v=c_1\odot(c_2\odot\vec v)$
 > 8. $\forall \vec v\in V:\;1\odot\vec v=\vec v$
 > 9. Distributive Law 1:
-> 	- For any $\vec v,\vec u\in V,c\in\Bbb R:\; c\odot(\vec v\oplus\vec u)=(c\odot\vec v)\oplus(c\odot\vec u)$
+> 	- For any $\vec v,\vec u\in V,c\in\R:\; c\odot(\vec v\oplus\vec u)=(c\odot\vec v)\oplus(c\odot\vec u)$
 > 10. Distributive Law 2:
-> 	- For any $\vec v\in V,c_1,c_2\in\Bbb R:\; (c_1+c_2)\odot\vec v=(c_1\odot\vec v)\oplus(c_2\odot\vec v)$
+> 	- For any $\vec v\in V,c_1,c_2\in\R:\; (c_1+c_2)\odot\vec v=(c_1\odot\vec v)\oplus(c_2\odot\vec v)$
 
 #### Common Vector Spaces:
-- $\Bbb R^n$
-- $M_{m\times n}(\Bbb R)$ = all matrices of order $m\times n$ $(m,n\in\Bbb N)$ with entries in $\Bbb R$
-- $\Bbb R_n\left[x\right]$ = set of all polynomials in variable $x$ with real coefficients and of degree $\le n$.
+- $\R^n$
+- $M_{m\times n}(\R)$ = all matrices of order $m\times n$ $(m,n\in\N)$ with entries in $\R$
+- $\R_n\left[x\right]$ = set of all polynomials in variable $x$ with real coefficients and of degree $\le n$.
 	- Note: Not degree = $n$, because that wouldn't be a vector space
 #### But why are we doing this?
 We can prove properties and define concepts just based on the axioms, and these properties/concepts will automatically apply ot all the examples of vector spaces.
@@ -55,22 +55,22 @@ We can prove properties and define concepts just based on the axioms, and these 
 *April 27 Tirgul. Links to the [board](https://drive.google.com/file/d/1x3qbMERvwJW70NZXIYhgd2nXBD5Yuap6/view?usp=sharing) and the [recording](https://drive.google.com/file/d/1vtVrwK_YHheSLH7nAftqKlJGZlbMN0xt/view?usp=sharing).*
 #### Subspaces
 **Definition:** Let V be a vector space. A subset $U\subseteq V$ is a <u>subspace</u> of $V$ (denoted $U \le V$) if $U$ is itself a vector space under same operations $\oplus,\odot$ as defined in $V$.
-Examples of subspaces of $\Bbb R^2$:
+Examples of subspaces of $\R^2$:
 	$U_1=x$-axis
 	$U_2=y$-axis
 	$U_3=xy$ line
-"Trivial" subspaces of $\Bbb R^2$:
+"Trivial" subspaces of $\R^2$:
  1. ${(0,0)}$
- 2. All of $\Bbb R^2$
+ 2. All of $\R^2$
 
 > [!NOTE] What axioms need to be checked to determine if $U\subseteq V$ is a subspace?
 > 1) $U\not=\emptyset$
 > 2) $U$ is closed under $\oplus$
 > 3) $U$ is closed under $\odot$
 
-###### What are subspaces of $\Bbb R^2$?
+###### What are subspaces of $\R^2$?
  1. $\{(0,0)\}$
- 2. All of $\Bbb R^2$
+ 2. All of $\R^2$
  3. Any line through the origin ($y=kx$ or $y$-axis)
 	- Closure under addition:
 		- $\begin{aligned}(x_1,kx_1)+(x_2,kx_2)&=(x_1+x_2,kx_1+kx_2)\\&=(x_1+x_2, k(x_1+x_2))\\&\in\text{ line }y=kx\end{aligned}$
@@ -78,11 +78,11 @@ Examples of subspaces of $\Bbb R^2$:
 	- Closure under scalar multiplication:
 		- $\begin{aligned}c\cdot(x, kx)&=\\(cx,ckx)&=\\(cx, k(cx))&\in\text{ line }y=xk\end{aligned}$
 		- $c\cdot(0, y)=(0,cy)\in y$-axis
-###### What are subspaces of $\Bbb R^3$?
+###### What are subspaces of $\R^3$?
  1. $\{(0,0,0)\}$
  2. Any line through origin
  3. Any *plane* going through origin
- 4. All of $\Bbb R^3$
+ 4. All of $\R^3$
 
 ---
 *April 30 Lecture. Links to the [board](https://drive.google.com/file/d/1V9exsi9mhkEeTPs09PAc2za_Y0Wy5eGh/view?usp=sharing) and the [recording](https://drive.google.com/file/d/1qGvSZ5UZosOl9Z28OS2KvOOqQdGG3W-z/view?usp=share_link).*
@@ -139,13 +139,13 @@ By this definition, $S=\vec 0$ is *not* independent, because if $c\cdot(0, 0, 0)
 Any other set of *one* vector is independent.
 
 ##### How to check if a set of vectors is Linearly Independent
-> [!info] Method to tell if $S\subseteq\Bbb R^n$ is independent:
+> [!info] Method to tell if $S\subseteq\R^n$ is independent:
 > 1. Write vectors of $S$ as columns in a matrix $A$
 > 2. Consider $A$ as a coefficient matrix of a homogeneous system, and solve
 > 3. If the solution is unique, $S$ is independent. If there are infinitely many solutions, $S$ is dependent. If there are zero solutions, you messed something up.
 >
 >
-> Example with $\Bbb R^n$:
+> Example with $\R^n$:
 $S_1=\{(1,3,5),(2,4,6),(-1,1,3)\}$
 To check if $S_1$ is independent:
 Suppose $c_1\begin{pmatrix}1\\3\\5\end{pmatrix}+c_2\begin{pmatrix}2\\4\\6\end{pmatrix}+c_3\begin{pmatrix}-1\\1\\3\end{pmatrix}=\begin{pmatrix}0\\0\\0\end{pmatrix}$ (We wish to show: $c_1=c_2=c_3=0$)
@@ -193,27 +193,27 @@ $$\begin{aligned}
 **Definition:**
 	A <u>basis</u> of a vector space $V$ is a linearly independent set $S$ which *spans* $V$. (i.e. Span($S$) $=V$)
 	**Examples:**
-		In $\Bbb R^2$, $S_1=\{(1,0),(0,1)\}$
+		In $\R^2$, $S_1=\{(1,0),(0,1)\}$
 			This set is independent (easy to check)
-			This set spans $\Bbb R^2$: $\forall (a,b)\in\Bbb R^2:(a,b)=a(1,0)+b(0,1)$
-			Therefore, $S_1$ is a basis of $\Bbb R^2$
-		In $\Bbb R^2$, $S_1=\{(1,1),(-3,5)\}$
+			This set spans $\R^2$: $\forall (a,b)\in\R^2:(a,b)=a(1,0)+b(0,1)$
+			Therefore, $S_1$ is a basis of $\R^2$
+		In $\R^2$, $S_1=\{(1,1),(-3,5)\}$
 			Independent? Neither is a multiple of the other, so yes.
-			Spanning? $\forall (a,b)\in\Bbb R^2\stackrel?\exists c_1,c_2\in\Bbb R\mid(a,b)=c_1(1,1)+c_2(-3,5))$
+			Spanning? $\forall (a,b)\in\R^2\stackrel?\exists c_1,c_2\in\R\mid(a,b)=c_1(1,1)+c_2(-3,5))$
 				Yes (We'll come back to this later.)
-			Therefore, $S_2$ is a basis of $\Bbb R^2$
-		In $\Bbb R^2$, $S_3=\{(1,0),(0,1), (2,3)\}\rightarrow$ spans, but isn't independent
-		In $\Bbb R^2$, $S_4=\{(1,3)\}\rightarrow$ independent, but doesn't span
-		In $\Bbb R^2$, $S_5=\{(1,-1),(-3,3)\}\rightarrow$ doesn't span *and* isn't independent
+			Therefore, $S_2$ is a basis of $\R^2$
+		In $\R^2$, $S_3=\{(1,0),(0,1), (2,3)\}\rightarrow$ spans, but isn't independent
+		In $\R^2$, $S_4=\{(1,3)\}\rightarrow$ independent, but doesn't span
+		In $\R^2$, $S_5=\{(1,-1),(-3,3)\}\rightarrow$ doesn't span *and* isn't independent
 **Claims:**
 *Proofs omitted. [See pp. 12, 13](https://drive.google.com/file/d/1Bz48fKu7qAWIhsGLaKRUdPDkfb7Q6vJF/view?usp=sharing)*
 1. If $B=\{\vec v_1,\dots\vec v_n\}$ is a basis of $V$, then any $\vec v\in V$ has a *unique* representation as a linear combination of $B$
-2. If $S\subseteq\Bbb R^n, S=\{\vec v_1,\dots\vec v_n\}$ (i.e., $S$ is a set of $n$ vectors in $\Bbb R^n$) then $S$ spans $\Bbb R^n$ iff $S$ is independent.
+2. If $S\subseteq\R^n, S=\{\vec v_1,\dots\vec v_n\}$ (i.e., $S$ is a set of $n$ vectors in $\R^n$) then $S$ spans $\R^n$ iff $S$ is independent.
 	- Hence: **it is enough to check *one* condition** (independent or spanning) to determine if $S$ is a basis
 ---
 *May 11 Tirgul. Links to the [board](https://drive.google.com/file/d/1MW0fTj6_mZwE8yRTR9vGKjtByk1Oop9u/view?usp=share_link) and the [recording](https://drive.google.com/file/d/1jS7wu0YYq-5uyx41i-sNfVwgvtCdKSyc/view?usp=share_link).*
 > [!note] Question 3/b
-> Prove or disprove 1. The set $\{(−1,2,1,1), (0, −1,1,1), (0,2,1,1), (1,2, −1,1)\}$ is linearly independent in $\Bbb R^4$
+> Prove or disprove 1. The set $\{(−1,2,1,1), (0, −1,1,1), (0,2,1,1), (1,2, −1,1)\}$ is linearly independent in $\R^4$
 >
 > **Method:**
 > 1. Write vectors as columns in coefficient matrix

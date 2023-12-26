@@ -13,7 +13,7 @@
 > [!info] If $a_n$ is a vanishing sequence, and $b_n$ is a bounded sequence, then $\lim_{n\to \infty}{(a_nb_n)}=0$
 >
 > Let $\varepsilon>0$. We seek $N$ such that if $n>N$, $|a_nb_n-0|<\varepsilon$.
-> Because $b_n$ is bounded, there exists $M>0$ such that $|b_n|<M\mid\forall n\in\Bbb N$
+> Because $b_n$ is bounded, there exists $M>0$ such that $|b_n|<M\mid\forall n\in\N$
 > Thus, we have $0\le|a_nb_n|\le M|a_n|$.
 > $\lim_{n\to\infty}{a_n}=0$, so $\exists N$ such that for $n>N, |a_n-0|<\frac\varepsilon M$
 > $|a_nb_n|<|a_n|\cdot|b_n|<\frac\varepsilon M<\varepsilon$
@@ -78,9 +78,9 @@
 >
 > $$Q.E.D.$$
 ##### MVT Corollary III (Other Constant Corollary)
-> [!info] If the conditions for the MVT are met for functions $f$ and $g$, and $f^\prime(x)=g^\prime(x)\mid\forall x\in(a,b)$, then $f$ and $g$ differ by a constant—that is, $f(x)=g(x)+C\mid\forall x\in(a,b),C\in\Bbb R$.
+> [!info] If the conditions for the MVT are met for functions $f$ and $g$, and $f^\prime(x)=g^\prime(x)\mid\forall x\in(a,b)$, then $f$ and $g$ differ by a constant—that is, $f(x)=g(x)+C\mid\forall x\in(a,b),C\in\R$.
 >
-> Define $h(x)=f(x)-g(x)$. Then, $h^\prime(x)=f^\prime(x)-g^\prime(x)=0$. By **Corollary I**, we know that if the derivative of a function is zero, that function is a constant. Therefore, $h(x)=f(x)-g(x)=C$, which is the same thing as saying $f(x)=g(x)+C\mid\forall x\in(a,b),C\in\Bbb R$
+> Define $h(x)=f(x)-g(x)$. Then, $h^\prime(x)=f^\prime(x)-g^\prime(x)=0$. By **Corollary I**, we know that if the derivative of a function is zero, that function is a constant. Therefore, $h(x)=f(x)-g(x)=C$, which is the same thing as saying $f(x)=g(x)+C\mid\forall x\in(a,b),C\in\R$
 >
 > $$Q.E.D.$$
 

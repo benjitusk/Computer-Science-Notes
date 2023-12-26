@@ -8,7 +8,7 @@ $\vec v = (x, y,\dots)\Rightarrow \|\vec v\|=\sqrt{x^2+y^2+\dots}$
 $\|c\cdot\vec v\|=|c|\cdot\|\vec v\|$
 
 ### Dot Product
-In $\Bbb R^n$:
+In $\R^n$:
 	let $\vec v=(v_1,v_2,\dots,v_n)$
 	let $\vec u=(u_1,u_2,\dots,u_n)$
 	$\vec v\cdot\vec u = ((v_1\cdot u_1) + (v_2\cdot u_2)+\dots+(v_n\cdot u_n))$
@@ -17,7 +17,7 @@ For any $\vec v$:  $\vec v\cdot \vec v=x^2+y^2=\|\vec v\|^2$
 $\|\vec v\|=\sqrt{\vec v\cdot\vec v}$
 
 ### Properties
-If $\vec u, \vec v, \vec w$ are vectors in $\Bbb R^2$ or $\Bbb R^3$ and $k$ is a scalar, then:
+If $\vec u, \vec v, \vec w$ are vectors in $\R^2$ or $\R^3$ and $k$ is a scalar, then:
 - $\vec u\cdot\vec v=\vec v\cdot\vec u$
 - $\vec u\cdot(\vec v+\vec w)=\vec u\cdot\vec v+\vec u\cdot\vec w$
 - $k(\vec u\cdot\vec v)=(k\vec u)\cdot\vec v=\vec u\cdot(k\vec v)$
@@ -32,7 +32,7 @@ What if $\theta$ is 0°? well, $cos\theta = 1$ , so there ya go. If $\theta$ is 
 **Conclusion:** vectors are ⟂ $\iff$ their dot product is *zero*. These are called **orthogonal vectors**.
 
 ### Cross Product
-- Only defined in $\Bbb R^3$
+- Only defined in $\R^3$
 - Output is a <u>vector</u>, not a scalar
 - Definition:
 	  Let $\vec u$ = $<x_1, y_1, z_1>$, $\vec v$ = $<x_2, y_2, z_2>$. Then,
@@ -47,11 +47,11 @@ What if $\theta$ is 0°? well, $cos\theta = 1$ , so there ya go. If $\theta$ is 
 	2. (for k = 1, 2, 3): Calculate the determinant of 2x2 matrix remaining by ignoring $k^{th}$ column, this becomes the $k^{th}$ component of the cross product
 	3. The *middle* component $(k=2)$ of $\vec u \times \vec v$ is the *negative* of determinant calculated in step 2. (No changes for $k=1, k=3$)
 - Corollaries:
-	1. If u, v have same or opposite directions (i.e., $\vec v = c\cdot\vec u\mid c \in \Bbb R$ , then parallelogram they form is degenerate with area of 0, hence: If the length of the crossproduct is 0, the crossproduct *is* the zero vector)
+	1. If u, v have same or opposite directions (i.e., $\vec v = c\cdot\vec u\mid c \in \R$ , then parallelogram they form is degenerate with area of 0, hence: If the length of the crossproduct is 0, the crossproduct *is* the zero vector)
 	2. Area of Triangle ABC is half area of parallelogram formed by u and v, hence, $area = \frac12\|\vec u\times\vec v\|$
 
 ### Representing Lines and Planes
-- Lines in $\Bbb R^2$:
+- Lines in $\R^2$:
 	-  ![[Vectors in R2 and R3 2023-05-04 17.38.50.excalidraw]]
 		- A new way to obtain this equation:
 		  Let $(x, y)$ be any point on $\ell$. Since $\ell$ goes through origin, $(x, y)$ is also a *direction vector* of $\ell$.
@@ -60,18 +60,18 @@ What if $\theta$ is 0°? well, $cos\theta = 1$ , so there ya go. If $\theta$ is 
 			- We call $(-2, 1)$ a *normal* vector to $\ell$.
 		- Hence, $(-2, 1)\cdot(x, y) = 0 \implies -2x+y=0$ (see diagram)
 			- Meaning, $\vec n\cdot(x, y) = 0 \space | \space \forall (x, y) \in \ell$
-> [!info] How to represent a line in $\Bbb R^2$.
+> [!info] How to represent a line in $\R^2$.
 > 1. Get *direction vector* $\vec v$ of *l* by subtracting 2 points on $\ell$ (because *l* might not go through the origin).
 > 2. If slope of line = m, Normal vector $\vec n$ = $(1, -\frac1m)$ or any multiple of this.
 > 3. Line equation is: $\vec n\cdot(x,y) = 0$, and when unwrapped, looks like this: $$<n_x,n_y>\cdot<x, y> = 0 \implies (n_x\cdot x) + (n_y\cdot y) = 0$$
 
-- Planes in $\Bbb R^3$:
-	- The set of directions ⟂ to a given vector in $\Bbb R^3$ is a *plane*.
+- Planes in $\R^3$:
+	- The set of directions ⟂ to a given vector in $\R^3$ is a *plane*.
 		- Ex. If $(a, b, c) = (0, 0, 1)$ \[z-axis], then "perpendicular directions" are $(x, y)$ - plane: $(x, y, 0)$
-		- $\lbrace (0, 0, 1)\cdot(x,y,0)\mid x,y\in\Bbb R\rbrace$
+		- $\lbrace (0, 0, 1)\cdot(x,y,0)\mid x,y\in\R\rbrace$
 	- Conclusion: *ax + by + cz = 0* describes a *plane* through origin, to which \<a, b, c> is a *normal vector*.
 		- For any vector $(x, y, z)$ in this plane, $(a,b,c)\cdot(x,y,z) = 0$
-	- General planes in $\Bbb R^3$:
+	- General planes in $\R^3$:
 		- Let plane $P_1$ be a plane through the origin with a *normal vector* of *(2, 1, 3)*.
 		- Equation of $P_1$ is $2x+y+3z = 0$.
 		- Let plane $P_2$ be parallel to $P_1$, just shifted so it goes through $(6, 1, -3)$.
@@ -85,44 +85,44 @@ What if $\theta$ is 0°? well, $cos\theta = 1$ , so there ya go. If $\theta$ is 
 			- > **Note the similarities between equations of parallel planes**
 			  > $P_1$: $2x+y+3z = 0$
 			  > $P_2$: $2x+y+3z = 4$
-		- Conclusion: *Any* plane in $\Bbb R^3$ has equation of $ax+by+cz=d$, where $(a, b, c)$ is a normal vector to the plane.
+		- Conclusion: *Any* plane in $\R^3$ has equation of $ax+by+cz=d$, where $(a, b, c)$ is a normal vector to the plane.
 			- Ex: Find equation of plane with normal of $(-1, 4, 2)$ going through the point (0, 1, -3)
 				- Use the normal vector to get a general equation: $-x+4y+2z=d$
 				- Then, plug in our point $(0, 1, -3)$ to find *d*:
 					- $-1(0)+4(1)+2(-3) = -2$
 				- Putting it all together, we get: $-x+4y+2z=-2$
-- Lines in $\Bbb R^3$
-	- A line in $\Bbb R^3$ cannot be described using a single equation. Instead, we describe it **parametrically** - that is, we describe it as a set of points using a parameter (usually *t*).
+- Lines in $\R^3$
+	- A line in $\R^3$ cannot be described using a single equation. Instead, we describe it **parametrically** - that is, we describe it as a set of points using a parameter (usually *t*).
 	- ![[Vectors in R2 and R3 2023-05-04 23.53.46.excalidraw]]
-	- If $\ell$ goes through origin and $\vec v$ is any point on $\ell$ (in example, $\vec v=(3,-2,4)$), then $\ell$ consists exactly of all scalar multiples of $\vec v$. $\Rightarrow$ $\ell=\{t\cdot\vec v\mid t\in\Bbb R\}$. This is the *parametric form*.
+	- If $\ell$ goes through origin and $\vec v$ is any point on $\ell$ (in example, $\vec v=(3,-2,4)$), then $\ell$ consists exactly of all scalar multiples of $\vec v$. $\Rightarrow$ $\ell=\{t\cdot\vec v\mid t\in\R\}$. This is the *parametric form*.
 	- Cool, but what about lines not through the origin?
-		- If $\vec v$ is a direction vector of $\ell$, then every point on $\ell$ is of form $P+t\cdot\vec v$ for some $t\in\Bbb R$.
+		- If $\vec v$ is a direction vector of $\ell$, then every point on $\ell$ is of form $P+t\cdot\vec v$ for some $t\in\R$.
 		- ![[Vectors in R2 and R3 2023-05-05 00.07.40.excalidraw]]
-		- Hence, $\ell=\{(2,1,-4)+t\cdot\vec v\mid t\in\Bbb R\}$
+		- Hence, $\ell=\{(2,1,-4)+t\cdot\vec v\mid t\in\R\}$
 		- We find $\vec v$ by subtracting 2 points on line:$$\begin{aligned}
 		\vec v &= Q-P\\&= (5,-1,-5)\Rightarrow\\
-		\ell &=\{(2, 1, -4) + t\cdot(5,-1,-5)\mid t\in\Bbb R\}\\
-		&=\{(2+5t,1-t,-4-5t)\mid t\in\Bbb R\}
+		\ell &=\{(2, 1, -4) + t\cdot(5,-1,-5)\mid t\in\R\}\\
+		&=\{(2+5t,1-t,-4-5t)\mid t\in\R\}
 		\end{aligned}$$
 	- In summary
-		1. Line in $\Bbb R^3$ through origin:
-			- $\ell=\{t\cdot\vec u\mid t\in\Bbb R\}$
-		2. Line in $\Bbb R^3$ <u>not</u> through origin:
-		- $\ell=\{\vec u+t\cdot\vec v\mid t\in\Bbb R\}$
+		1. Line in $\R^3$ through origin:
+			- $\ell=\{t\cdot\vec u\mid t\in\R\}$
+		2. Line in $\R^3$ <u>not</u> through origin:
+		- $\ell=\{\vec u+t\cdot\vec v\mid t\in\R\}$
 		- where $\vec u$ is *any* direction vector of $\ell$.
 		- Usually, $\vec u$ is found by subtracting 2 points on $\ell$
 - Summary
 	- Cartesian Representation (equation):
-		- Line in $\Bbb R^2$: $ax + by = c$
-		- Plane in $\Bbb R^3$: $ax+by+c=d$
+		- Line in $\R^2$: $ax + by = c$
+		- Plane in $\R^3$: $ax+by+c=d$
 			- normal vector $\vec n$ is orthogonal to *all* direction vectors in plane
 	- Parametric representation (set of points):
-		- Line (in $\Bbb R^n\mid n\geqslant 2$): $\ell=\{\vec u+t\cdot\vec v\mid t\in\Bbb R\}$
+		- Line (in $\R^n\mid n\geqslant 2$): $\ell=\{\vec u+t\cdot\vec v\mid t\in\R\}$
 			- where $\vec u$ is any point on $\ell$ and $\vec v$ is a direction vector of $\ell$.
 			- Neither $\vec u\text{ or }\vec u$ is unique (because any scalar multiple of a direction vector is also a direction vector)
-			- If $\ell$ goes through the origin, then $\vec u=(0, 0, 0)$, and adding it has no effect. Therefore, it can be written as: $\ell=\{t\cdot\vec u\mid t\in\Bbb R\}$
-- Another way to represent a line in $\Bbb R^3$:
-	- Two non-parallel planes in $\Bbb R^3$ intersect at a *line*.
+			- If $\ell$ goes through the origin, then $\vec u=(0, 0, 0)$, and adding it has no effect. Therefore, it can be written as: $\ell=\{t\cdot\vec u\mid t\in\R\}$
+- Another way to represent a line in $\R^3$:
+	- Two non-parallel planes in $\R^3$ intersect at a *line*.
 	- Each point on this line must satisfy the equations of both planes.
 	- ![[Vectors in R2 and R3 2023-05-05 00.45.39.excalidraw]]
 	- In example in diagram, any (x, y, z) on $\ell$ must be a solution of the system $\left\{\begin{aligned}x+y+z&=2\\-x+2y-2z&=1\end{aligned}\right.$

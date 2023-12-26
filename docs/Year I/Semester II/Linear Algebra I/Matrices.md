@@ -69,7 +69,7 @@ $$C_{ij}=(\text{i}^{th}\text{ row of }A)\cdot(\text{j}^{th}\text{ column of }B)=
 ##### Properties of Multiplication:
 - Not commutative ($A\cdot B\not=B\cdot A$)
 - Is Associative ($(A\cdot B)\cdot C=A\cdot (B\cdot C)$)
-- For any matrix $A,B$ and any scalar $c\in\Bbb R$:
+- For any matrix $A,B$ and any scalar $c\in\R$:
 	- $(c\cdot A)\cdot B=A\cdot (c\cdot B)=c\cdot (A\cdot B)$
 - If row $i$ is all 0 in A, then the $i^{th}$ row of ($A\cdot B$) is all zeros
 - If col $j$ is all 0 in $B$, then the $j^{th}$ col of ($A\cdot B$) is all zeros
@@ -145,7 +145,7 @@ All nonzero entries are *on* the main diagonal.
 	$I\cdot A=A\cdot I=A$
 ##### Scalar matrix:
 **Definition:**
-	A <u>scalar matrix</u> is the $n\times n$ diagonal matrix in which every entry on the main diagonal is $c\mid\forall c\in \Bbb R$
+	A <u>scalar matrix</u> is the $n\times n$ diagonal matrix in which every entry on the main diagonal is $c\mid\forall c\in \R$
 **Example:**
 	$c\cdot I_3=\begin{bmatrix}c&0&0\\0&c&0\\0&0&c\end{bmatrix}$
 **Claim:**
@@ -337,16 +337,16 @@ $$\begin{aligned}
 Let $A$ be a $m\times n$ matrix, in these examples, $A=\begin{bmatrix}1&0&-2&3\\-1&1&4&-1\\1&1&0&5\end{bmatrix}$
 ##### Row Space
 **Definition:**
-	The <u>row space</u> of $A$ is $\text{Span}(\text{rows of } A)\leq\Bbb R^n$
+	The <u>row space</u> of $A$ is $\text{Span}(\text{rows of } A)\leq\R^n$
 	*(note that $\leq$ denotes subspace)*
 **Example:**
-	The row space of $A$ is $\text{Span}\{(1,0,-2,3),(-1,1,4,-1),(1,1,0,5)\}\leq\Bbb R^n$
+	The row space of $A$ is $\text{Span}\{(1,0,-2,3),(-1,1,4,-1),(1,1,0,5)\}\leq\R^n$
 
 ##### Column Space
 **Definition:**
-	The <u>column space</u> of $A$ is $\text{Span}(\text{columns of } A)\leq\Bbb R^m$
+	The <u>column space</u> of $A$ is $\text{Span}(\text{columns of } A)\leq\R^m$
 **Example:**
-	The column space of $A$ is $\text{Span}\{(1,-1,1),(0,1,1),(-2,4,0),(3,-1,5)\}\leq\Bbb R^m$
+	The column space of $A$ is $\text{Span}\{(1,-1,1),(0,1,1),(-2,4,0),(3,-1,5)\}\leq\R^m$
 
 ##### Rank
 **Definition:**
