@@ -24,7 +24,8 @@
 ### Sum of Derivatives
 > [!info] The derivative of sums is the sum of the derivatives: ${(f+g)}^\prime (x)=f^\prime (x)+g^\prime (x)$
 >
-> $$\begin{align}  {(f+g)}^\prime (x)&=\lim_{h\to0}{\frac{(f+g)(x+h)-(f+g)(x)}h}\\  &=\lim_{h\to0}{\frac{[f(x+h)+g(x+h)]-[f(x)+g(x)]}h}\\  &=\lim_{h\to0}{\frac{f(x+h)-f(x)+g(x+h)-g(x)}h}\\  &=\lim_{h\to0}{\frac{f(x+h)-f(x)}{h}}+\lim_{h\to0}{\frac{g(x+h)-g(x)}h}\\  &=f^\prime (x)+g^\prime (x)\\  \end{align}$$
+> $$\begin{align}   {(f+g)}^\prime (x)&=\lim_{h\to0}{\frac{(f+g)(x+h)-(f+g)(x)}h}\\  &=\lim_{h\to0}{\frac{[f(x+h)+g(x+h)]-[f(x)+g(x)]}h}\\  &=\lim_{h\to0}{\frac{f(x+h)-f(x)+g(x+h)-g(x)}h}\\  &=\lim_{h\to0}{\frac{f(x+h)-f(x)}{h}}+\lim_{h\to0}{\frac{g(x+h)-g(x)}h}\\  &=f^\prime (x)+g^\prime (x)\\  \end{align}$$
+>
 > $$Q.E.D$$
 
 ### Product of Derivatives

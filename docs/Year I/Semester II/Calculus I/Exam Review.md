@@ -21,7 +21,7 @@ Best of luck, I'm rooting for ya!
 > - [ ] Find where a function is convex/concave
 > - [ ] Find local extreme points
 
-$$\newcommand{\bm}[1]{\boldsymbol{#1}}$$
+$$\gdef \bm{\boldsymbol}$$
 #### Finding the domain of a function
 The domain of a function is the set of values for which the function is defined.
 At any point where a component of the function is undefined, the entire function is undefined as well.

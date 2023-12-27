@@ -99,7 +99,9 @@ What if $\theta$ is 0°? well, $cos\theta = 1$ , so there ya go. If $\theta$ is 
 		- If $\vec v$ is a direction vector of $\ell$, then every point on $\ell$ is of form $P+t\cdot\vec v$ for some $t\in\R$.
 		- ![[Vectors in R2 and R3 2023-05-05 00.07.40.excalidraw]]
 		- Hence, $\ell=\{(2,1,-4)+t\cdot\vec v\mid t\in\R\}$
-		- We find $\vec v$ by subtracting 2 points on line:$$\begin{aligned}
+		- We find $\vec v$ by subtracting 2 points on line:
+
+		$$\begin{aligned}
 		\vec v &= Q-P\\&= (5,-1,-5)\Rightarrow\\
 		\ell &=\{(2, 1, -4) + t\cdot(5,-1,-5)\mid t\in\R\}\\
 		&=\{(2+5t,1-t,-4-5t)\mid t\in\R\}

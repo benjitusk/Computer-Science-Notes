@@ -116,25 +116,28 @@ For any finite set $S\subseteq V$, $\text{Span }S\le V$.
 **Definition:**
 	A (finite, non-empty) set $S\subseteq V$ is <u>linearly independent</u> if no vector in $S$ is a [[#Linear Combination]] of other vectors in $S$.
 **Elaborated Definition:**
-	A (finite, non-empty) set $S\subseteq V$ is <u>linearly independent</u> if the following is true:
-		If $c_1\vec v_1+\dots +c_k\vec v_k=\vec 0$ then $c_1=\dots=c_k=0$.
-	**Example:**
-		$S=\{(1, 2, 3,), (0,-1,4)\}$
-		Suppose: $c_1\cdot(1,2,3)+c_2\cdot(0,-1,4)=(0,0,0)$
-		That means that: $$\begin{aligned}
-		c_1\cdot1&+c_2\cdot0&=0\\
-		c_1\cdot2&+c_2\cdot-1&=0\\
-		c_1\cdot3&+c_2\cdot4&=0
-		\end{aligned}$$
-		Solving for $c_1, c_2, c_3$, we will see that they all equal *zero*.
-		This is proof of linear independence.
-	**Example:**
-		$S=\{(1, 2, 3), (-4,-8,-12)\}$
-		Suppose: $c_1\cdot(1,2,3)+c_2\cdot(-4,-8,-12)=(0,0,0)$
-		Extracting equations for c_1, c_2, c_3 will yield the following:
-		$\begin{aligned}&c_1-4c_2&=0\\2&c_1-8c_2&=0\\3&c_1-12c_2&=0\end{aligned}$
-		The second and third equations are both multiples of the first equation, so we can ignore them. we are left with $c_1=4c_2$, which has an infinite number of solutions. This means that $S$ is linearly *dependent*.
-	In other words, $S$ is linearly independent if the *only* linear combination of $S$ equal to $\vec 0$ is the *trivial linear combination* (i.e., all scalars are 0).
+A (finite, non-empty) set $S\subseteq V$ is <u>linearly independent</u> if the following is true:
+	If $c_1\vec v_1+\dots +c_k\vec v_k=\vec 0$ then $c_1=\dots=c_k=0$.
+**Example:**
+ 	$S=\{(1, 2, 3,), (0,-1,4)\}$
+	Suppose: $c_1\cdot(1,2,3)+c_2\cdot(0,-1,4)=(0,0,0)$
+	That means that:
+
+$$\begin{aligned}
+	c_1\cdot1&+c_2\cdot0&=0\\
+	c_1\cdot2&+c_2\cdot-1&=0\\
+	c_1\cdot3&+c_2\cdot4&=0
+	\end{aligned}$$
+
+Solving for $c_1, c_2, c_3$, we will see that they all equal *zero*.
+This is proof of linear independence.
+**Example:**
+	$S=\{(1, 2, 3), (-4,-8,-12)\}$
+	Suppose: $c_1\cdot(1,2,3)+c_2\cdot(-4,-8,-12)=(0,0,0)$
+	Extracting equations for c_1, c_2, c_3 will yield the following:
+	$\begin{aligned}&c_1-4c_2&=0\\2&c_1-8c_2&=0\\3&c_1-12c_2&=0\end{aligned}$
+	The second and third equations are both multiples of the first equation, so we can ignore them. we are left with $c_1=4c_2$, which has an infinite number of solutions. This means that $S$ is linearly *dependent*.
+In other words, $S$ is linearly independent if the *only* linear combination of $S$ equal to $\vec 0$ is the *trivial linear combination* (i.e., all scalars are 0).
 By this definition, $S=\vec 0$ is *not* independent, because if $c\cdot(0, 0, 0)=(0, 0, 0)$, then $c$ need not be $0$, can be *any* scalar.
 Any other set of *one* vector is independent.
 
