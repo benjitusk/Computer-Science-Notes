@@ -8,9 +8,6 @@ repo_url: https://github.com/benjitusk/Computer-Science-Notes
 edit_uri: edit/main/docs/
 
 theme:
-  analytics:
-    provider: google
-    gtag: G-NJ2KHCYC7F
   name: 'material'
   logo: assets/meta/favicons.png
   favicon: assets/meta/favicons.png
@@ -150,6 +147,9 @@ extra:
   generate_graph: false #generate the graph of the site
   attachments: 'assets/img' #path to the folder where the attachments are stored
   no-auto-h1: false #disable the automatic generation of h1 if no h1 is found
+  analytics: #analytics settings
+    provider: google #google or simpleanalytics
+    property: 'G-NJ2KHCYC7F' #your google analytics property
   blog_list:
     pagination: true #enable pagination
     pagination_message: true #display the message "Showing x posts out of y"
@@ -158,9 +158,6 @@ extra:
   hooks:
     strip_comments: true
     fix_heading: true
-  analytics:
-    provider: google
-    property: 'G-404098104'
   consent:
     title: Brownie -- I mean, Cookie?
     # Make sure the description is funny and explains that I only use it to see what part of my notes I should be extra careful to maintain
