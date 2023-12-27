@@ -1,6 +1,9 @@
 import re
 # PREFIX = '/Computer-Science-Notes/'
 
+TEX_PREAMBLE = ""
+with open("preamble.tex", "r") as f:
+    TEX_PREAMBLE = f.read()
 
 def non_breaking_space(markdown):
     return re.sub('[\u00A0\u1680\u180E\u2000-\u200B\u202F\u205F\u3000\uFEFF]', '&emsp;', markdown)
@@ -22,6 +25,12 @@ def update_heading(markdown):
         markdown += line + '\n'
     return markdown
 
+def insert_preamble(markdown):
+    preamble = "<p style=\"display: none;\">"
+    preamble += "$" + " ".join(TEX_PREAMBLE.split('\n')) + "$\n"
+    preamble += "</p>\n"
+    markdown = preamble + markdown
+    return markdown
 
 def strip_comments(markdown):
     file_content = markdown.split('\n')
@@ -69,6 +78,10 @@ def on_page_markdown(markdown, files, page, config, **kwargs):
     # print(f"Files: {files}")
     if page.title.endswith('.excalidraw.md'):
         return None
+    if not page.title.endswith('.excalidraw'):
+        markdown = insert_preamble(markdown)
+        # print(f"Markdown: {markdown}")
+        # raise Exception("Test")
     markdown = fix_excalidraw_link(markdown, config["site_url"])
     config_hooks = config['extra'].get(
         'hooks', {'strip_comments': True, 'fix_heading': False})
