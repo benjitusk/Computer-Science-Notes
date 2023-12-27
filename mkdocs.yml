@@ -86,11 +86,11 @@ markdown_extensions:
       permalink: true
   - pymdownx.inlinehilite
   - pymdownx.snippets
-  - pymdownx.superfences:
-      custom_fences:
-        - name: mermaid
-          class: mermaid
-          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.superfences
+    # custom_fences:
+    #   - name: mermaid
+    #     class: mermaid
+    #     format: !!python/name:pymdownx.superfences.fence_code_format
 plugins:
   - search
   - git-revision-date-localized:
@@ -150,6 +150,21 @@ extra:
   analytics: #analytics settings
     provider: google #google or simpleanalytics
     property: 'G-NJ2KHCYC7F' #your google analytics property
+    # feedback:
+    #   title: Was the information on this page accurate?
+    #   ratings:
+    #     - icon: material/check-decagram
+    #       name: This page was accurate
+    #       data: 1
+    #       note: >-
+    #         Thanks for your feedback!
+    #     - icon: material/alert-octagon
+    #       name: This page was inaccurate
+    #       data: 0
+    #       note: >-
+    #         Thanks for letting me know, I'm sorry for the inconvenience.
+    #         Can you specify what was inaccurate <a href="https://github.com/benjitusk/Computer-Science-Notes/issues/new?title=Inaccurate%20information%20on%20{{ page.title }}" target="_blank">here</a>?
+
   blog_list:
     pagination: true #enable pagination
     pagination_message: true #display the message "Showing x posts out of y"

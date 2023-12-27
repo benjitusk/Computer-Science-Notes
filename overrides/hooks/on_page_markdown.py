@@ -1,5 +1,4 @@
 import re
-# PREFIX = '/Computer-Science-Notes/'
 
 TEX_PREAMBLE = ""
 with open("preamble.tex", "r") as f:
@@ -72,16 +71,10 @@ def fix_excalidraw_link(markdown, site_url):
 
 
 def on_page_markdown(markdown, files, page, config, **kwargs):
-    # print(f"Page: {page}")
-    # print(f"COnfig: {config}")
-    # print(f"kWARGS: {kwargs}")
-    # print(f"Files: {files}")
     if page.title.endswith('.excalidraw.md'):
         return None
     if not page.title.endswith('.excalidraw'):
         markdown = insert_preamble(markdown)
-        # print(f"Markdown: {markdown}")
-        # raise Exception("Test")
     markdown = fix_excalidraw_link(markdown, config["site_url"])
     config_hooks = config['extra'].get(
         'hooks', {'strip_comments': True, 'fix_heading': False})

@@ -14,6 +14,9 @@
 // document$.subscribe(() => {
 //   MathJax.typesetPromise();
 // });
+
+// Silence weird MathJax console error
+MathJax.typesetPromise = MathJax.typesetPromise || function () { Promise.resolve(); };
 document$.subscribe(({ body }) => {
   renderMathInElement(body, {
     delimiters: [
