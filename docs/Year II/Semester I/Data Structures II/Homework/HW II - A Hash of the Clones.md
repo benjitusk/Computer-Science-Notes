@@ -118,3 +118,111 @@ Since AVL-Search is $O(\log n)$, the worst case is $O(\log n)$.
 The worst case is where $|\text{tree}_{h(k)}|=n$.
 We need to delete from the AVL tree of size $n$ (height $\Theta(\log n)$).
 Since AVL-Delete is $O(\log n)$, the worst case is $O(\log n)$.
+
+
+### Question 4
+#### Part A
+```python
+def search(HT,k):
+	index=hash(k)
+	curr=HT[i]
+	while(concat(curr.l.bits, i.bits, curr.r.bits) != k*k):
+		curr = cur.next
+	return curr.val
+```
+
+The solution is to calculate the square of the key, instead of taking the square root of the concatenated bits. While the concatenated bits do not equal the square of the key, we have not yet found the value.
+
+#### Part B
+The size of the index is $p$ bits, because the hash table has $2^p$ entries.
+$b$ is the size of the key, therefore, $k^2$is $2b$ bits long.
+The following calculations are referring to the size (in bits), not the literal value.
+$2b=l+p+r$
+$l+r=2b-p$
+$2r=2b-p$ (because $l=r$)
+We save space when $2r<b$
+$2b-p<b$
+${b<p}$
+$\therefore$ We save memory space when $b<p$.
+
+### Question 5
+
+#### Linear Probing
+| Index | Content | Probes |
+| ---- | ---- | ---- |
+| 0 | 15 | 2 |
+| 1 | 1 | 1 |
+| 2 | 18 | 1 |
+| 3 | 34 | 2 |
+| 4 | 68 | 1 |
+| 5 | 51 | 3 |
+| 6 |  |  |
+| 7 | 39 | 1 |
+| 8 | 72 | 1 |
+| 9 |  |  |
+| 10 | 122 | 1 |
+| 11 | 43 | 1 |
+| 12 | 26 | 3 |
+| 13 | 13 | 1 |
+| 14 | 14 | 1 |
+| 15 | 31 | 1 |
+
+Average number of probes is $\frac{20}{14}=1.428$
+
+The expected runtime = $\Theta(1+\frac\alpha 2)$
+In our case, this is $1+\frac{14}{16\cdot2}=\frac{23}{16}=1.4375$
+The ratio is $\frac{20}{14}\div\frac{23}{16}=\frac{160}{161}=0.994$
+
+#### Quadratic Probing
+| Index | Content | Probes |
+| ---- | ---- | ---- |
+| 0 | 15 | 2 |
+| 1 | 1 | 1 |
+| 2 | 18 | 1 |
+| 3 | 34 | 2 |
+| 4 | 68 | 1 |
+| 5 |  |  |
+| 6 | 51 | 3 |
+| 7 | 39 | 1 |
+| 8 | 72 | 1 |
+| 9 | 26 | 6 |
+| 10 | 122 | 1 |
+| 11 | 43 | 1 |
+| 12 |  |  |
+| 13 | 13 | 1 |
+| 14 | 14 | 1 |
+| 15 | 31 | 1 |
+
+Average number of probes is $\frac{23}{14}=1.643$
+
+The expected runtime = $\Theta(1+\frac\alpha 2)$
+In our case, this is $1+\frac{14}{16\cdot2}=\frac{23}{16}=1.4375$
+The ratio is $\frac{23}{14}\div\frac{23}{16}=\frac{16}{14}=1.143$
+
+#### Double Hashing
+| Index | Content | Probes |
+| ---- | ---- | ---- |
+| 0 | 15 | 2 |
+| 1 | 1 | 1 |
+| 2 | 18 | 1 |
+| 3 | 51 | 1 |
+| 4 | 68 | 1 |
+| 5 |  |  |
+| 6 | 26 | 1 |
+| 7 | 34 | 2 |
+| 8 | 72 | 1 |
+| 9 | 43 | 2 |
+| 10 | 122 | 1 |
+| 11 | 39 | 3 |
+| 12 |  |  |
+| 13 | 13 | 1 |
+| 14 | 14 | 1 |
+| 15 | 31 | 1 |
+
+Average number of probes is $\frac{19}{14}=1.357$
+
+The expected runtime = $\Theta(1+\frac\alpha 2)$
+In our case, this is $1+\frac{14}{16\cdot2}=\frac{23}{16}=1.4375$
+The ratio is $\frac{19}{14}\div\frac{23}{16}=\frac{152}{161}=0.944$
+
+
