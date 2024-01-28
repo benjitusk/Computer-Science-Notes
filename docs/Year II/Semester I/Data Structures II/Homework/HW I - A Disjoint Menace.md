@@ -1,3 +1,27 @@
+> [!tip] Super Important Introduction
+> 
+> In the realm of math, a tale to weave,  
+> A disjoint menace, be ready to perceive. Sets, they dance, yet never entwine,  
+> A mathematical waltz, so sharp and fine.
+> 
+> HW I begins, a challenge takes shape, Disjoint sets arise, their paths can't escape. No common ground, no shared delight,  
+> In this world of math, they part ways at night.
+> 
+> A union they spurn, an intersection they flee, Disjoint sets, a mathematical decree.  
+> No overlap, no point to share,  
+> In this disjoint dance, they're a rare pair.
+> 
+> A menace, you say, a mathematical feat,  
+> A concept to conquer, no mean feat.  
+> With Eyal Schachter and Benji Tusk in tow, Into the world of sets, together we go.
+> 
+> Attribution awaits at the homework's end,  
+> A journey through math, a message to send.  
+> Eyal Schachter and Benji Tusk, our names declare, In the land of disjoint sets, we venture and dare!
+> 
+> ---
+> Eyal Schachter (209792266) and Benji Tusk (650282680)
+
 ### Question 1
 #### Answer 1
 ##### Lemma
