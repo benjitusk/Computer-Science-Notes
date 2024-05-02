@@ -1,3 +1,4 @@
+*By Benji Tusk*
 Miraculously-Created Meat
 
 1. תענית כה ע"א:

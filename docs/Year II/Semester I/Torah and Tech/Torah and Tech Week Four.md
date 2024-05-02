@@ -1,5 +1,4 @@
 *By Benji Tusk*
-
 **Prohibited Sources (i) – The Status of the Stem Cells**
 
 1. **Mere Water (מיא בעלמא):**

@@ -1,0 +1,74 @@
+# Rishon
+- Moshe assembles all of Bnei Yisroel
+	- Rashi - this was the day after Yom Kippur
+- He instructs B”Y about Shabbat
+	- The seventh day shall be holy
+	- Rashi - this was instructed immediately before telling B”Y about the Mishkan to indicate that this commandment supersedes building the Mishkan
+- He tells B”Y to bring what they want for building the Mishkan
+	- Gold
+	- Silver
+	- Copper
+	- Turquoise wool
+	- Purple wool
+	- Scarlet wool
+	- Linen
+	- Goat’s hair
+	- Red-dyed ram skins
+	- Tachash skins
+		- Unicorn??? We don’t really know what this animal is, but it seems to have only existed for the purposes of constructing the Mishkan, and was then ‘hidden’ from the world
+	- Shittim wood
+	- Oil (for lamps / Menorah)
+	- Spices (for anointing oil and Ketoret)
+	- Shoham stones and filling stones (for Eiphod and Choshen)
+- and continues with specifying what shall be built with the donations
+	- The ‘tent spread’ – panels of goat’s hair
+		- and its cover, made of ram hide and techashim
+	- The *Parochet* screen and its
+		- hooks
+		- beams
+		- bars
+		- pillars
+		- sockets
+	- The Aron
+		- and its staves (carrying poles)
+	- The Shulchan
+		- and its staves
+		- and its implements (spoons, cups, etc.)
+		- and the *Lechem haPanim*
+	- The Menorah
+		- and its implements (tongs and scoops, acc. to Rashi)
+		- its lamps (cups for the oil)
+		- its oil
+	- The Mizbe’ach (this is the inner gold one)
+		- and its incense
+		- and its staves
+	- The anointing oil
+	- The incense spices
+	- The main entrance ‘screen’/door?
+	- The Mizbe’ach (the outer copper one)
+		- and its copper lattice
+		- and its staves
+		- and its implements (not sure what this is, maybe stuff for fire maintenance, like ash scoops and cleaning stuff)
+	- The Kiyyor
+		- and its pedestal
+	- The curtains of the courtyard
+		- and its pillars
+		- and its sockets
+		- and its pegs
+		- and its coords
+	- The screen of the gate of the courtyard
+		- and its pegs
+		- and its coords
+	- The ‘travel bag’ garments for the keilim
+	- The clothing of the Kohanim
+
+# Sheini
+- All the men and all the women got super excited and ran to grab lots and lots of stuff. Here’s a sneak peek at what they brought in:
+	- Any gold, silver, or copper that they could find
+	- Turquoise, purple, and scarlet wool
+	- red dyed ram skins, goats hair, and tachash skins
+	- Shittim wood (even those who didn’t have any helped those who did to bring)
+	- Beautiful tapestries woven by the women out of the wool and linen and goats hair
+	- Shoham Stones (by the princes)
+		- they didn’t jump on the opportunity to donate, they were content to fill in whatever was missing. Therefore, all they could contribute were these stones
+		- This is a very important lesson to take! Don’t let the chance to do *mitzvot* pass by. Every opportunity to do a *mitzva* is invaluable and should not be taken for granted. There are only so many minutes we have left on this world, and we don’t even know how many we have. It’s incumbent upon us to maximize the time we have on this world and not let any circumstance to to a *mitzva* pass us by.

@@ -1,9 +1,5 @@
 *By Benji Tusk*
-
-Continuing with the notes:
-
 **Prohibited Sources (ii) – Severing Connection with the Source:**
-
 In the previous week, the discussion revolved around whether cultured meat, derived from stem cells, could potentially be considered kosher if the original source of those cells was kosher. However, it's noted that cultured meat isn't simply a mass of stem cells; they undergo several stages of differentiation, transforming into something different from their original state. The question then arises: Does this transformation sever the halachic connection to the original source, rendering the final product kosher?
 
 1. **That which Emerges from a Non-Kosher Source (היוצא מן הטמא):**
