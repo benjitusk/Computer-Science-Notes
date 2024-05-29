@@ -5,7 +5,7 @@ on:
   push:
     branches:
       - main
-    paths: 
+    paths:
       - 'README.md'
       - 'overrides/**'
       - 'docs/**'
@@ -19,6 +19,7 @@ permissions:
 
 jobs:
   deploy:
-    uses: ObsidianPublisher/actions/.github/workflows/deploy.yml@main
+    uses: ./.github/workflows/obsidian_deploy.yml
     secrets:
       GH_PAT: ${{ secrets.GITHUB_TOKEN }}
+
