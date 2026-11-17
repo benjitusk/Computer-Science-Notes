@@ -192,7 +192,7 @@ for (const note of notes) {
 /** Rough plain text of a Markdown heading, the way it renders. */
 function headingText(markdown) {
     return markdown
-        .replace(/\$([^$]*)\$/g, '$1') // math renders as KaTeX; its text is close enough
+        .replace(/\$([^$]*)\$/g, '') // the heading's id leaves math out entirely
         .replace(/[*_`~=]/g, '')
         .replace(/\[([^\]]*)\]\([^)]*\)/g, '$1')
         .replace(/<[^>]+>/g, '')

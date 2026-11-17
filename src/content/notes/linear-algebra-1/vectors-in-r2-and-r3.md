@@ -154,7 +154,7 @@ What if $\theta$ is 0°? well, $cos\theta = 1$ , so there ya go. If $\theta$ is 
 > $A=(2,-4,-3)$, $B=(7,2,7)$, $C=(4,5,9)$, $D=(-1,-1,-1)$
 > - To prove that a quad. ABCD is a parallelogram, show that one pair of opposite sides are both parallel and equal in length.
 > - $\text{Let }\vec v = \overline {AB}\text{ and let }\vec u = \overline{CD}$
-> - We need to show that $\vec v$ and $\vec u$ have the same direction and [Length](#length-of-vec-v)
+> - We need to show that $\vec v$ and $\vec u$ have the same direction and [Length](#length-of-)
 > - $\overline{ABCD}$ is a parallelogram iff $\vec v = \vec u$.
 
 > [!todo] Find a vector orthogonal to 2 given vectors

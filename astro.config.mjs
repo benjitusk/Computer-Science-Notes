@@ -1,5 +1,6 @@
 // @ts-check
 
+import mdx from '@astrojs/mdx';
 import { satteri } from '@astrojs/markdown-satteri';
 import sitemap from '@astrojs/sitemap';
 import { defineConfig, fontProviders } from 'astro/config';
@@ -21,7 +22,9 @@ const mdxEditor = existsSync(editorEntry) ? (await import(editorEntry.href)).def
 export default defineConfig({
     site: 'https://school.benjitusk.com',
     // astro-og: dev toolbar app that previews each page's social share card.
+    // mdx: notes are plain .md, but the editor needs it to preview the raw HTML in them (drawings, <u>, <mark>).
     integrations: [
+        mdx(),
         sitemap(),
         og(),
         mdxEditor?.({
