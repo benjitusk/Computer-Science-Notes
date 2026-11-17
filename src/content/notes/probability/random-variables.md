@@ -1,0 +1,100 @@
+---
+title: "Random Variables"
+order: 4
+---
+
+*August 27th*
+#### Definition
+A <u>random variable</u> (r.v.) is a probability space in which the outcomes are possible values of a variable (denoted by a capital letter: $X,Y,Z…$)
+
+> [!example] Example
+> $X=$ number of dots on a roll of a single die
+> $\Omega=\{1,2,3,4,5,6\}$
+> 
+> $Y=$ number of dots on a roll two dice
+> $\Omega=\{2,\dots,12\}$
+> 
+> $Z=$ number of times die is rolled until it lands on a 3
+> $\Omega=\N_+$
+> 
+> $W=$ weight of newborn baby in kg.
+> $\Omega=[1,4]$ <mark>note that this is an *interval*, not distinct values</mark>
+> 
+> $X,Y,Z$ are discrete random values — countable (finite or subset of $\N$)
+> $W$ is a continuous r.v., the possible values form a continuous interval
+
+The <u>probability function</u> $f_x(k)$ of a discrete rv $X$ gives the probability of $X$ assuming each of its possible values, ie $f_X(k)=P(X=k)$, meaning, the probability that $X$ will indeed be $k$.
+
+
+> [!example] Reiteration of previous example, now with NEW concept!
+> $X$= Roll of one die
+> $f_X(2)=P(X=2)=\frac16$
+> 
+> $Y=$ Roll two dice
+> $f_Y(2)=P(Y=2)=\frac1{36}$
+> $f_Y(3)=P(Y=3)=\frac2{36}$
+> $f_Y(4)=P(Y=4)=\frac3{36}$
+> $f_Y(5)=P(Y=5)=\frac4{36}$
+> $f_Y(6)=P(Y=6)=\frac5{36}$
+> $f_Y(7)=P(Y=7)=\frac6{36}$
+> $f_Y(8)=P(Y=8)=\frac5{36}$
+> $f_Y(9)=P(Y=9)=\frac4{36}$
+> $f_Y(10)=P(Y=10)=\frac3{36}$
+> $f_Y(11)=P(Y=11)=\frac2{36}$
+> $f_Y(12)=P(Y=12)=\frac1{36}$
+> 
+
+A probability function can be written as a list, or a table, or when possible, by a formula.
+
+Going back to r.v. $Z$, where $Z$ is the number of rolls until we get a 3:
+What is $f_Z(k)$?
+$\underbrace{\frac56\times\dots\times\frac56}_{k-1\text{ times}}\underbrace{\times\frac16}_{\text{rolling 3 on k-th try}}={(\frac56)}^{k-1}\cdot\frac16$
+
+
+> [!summary]
+> $f_X(k)=\frac16\mid k\in\{1, 2, 3, 4, 5, 6\}$
+> $f_Y(k)=$ \[list of values, see above example]
+> $f_Z(k)={(\frac56)}^{k-1}\cdot\frac16$
+
+
+Since all outcomes $X=k$ are disjoint and their union (over all possible values $k$) is $\Omega$,
+
+$$
+P(\Omega)=\sum_kP_X(k)=1
+$$
+> [!example] Exercise 4, Question 18
+> The number of flowers purchased by a customer in a certain flower store in a single purchase is a random variable $X$, with the probability function:
+> 
+> $$
+> P_X(x)=\begin{cases}\frac{k}{10}\cdot x^2&x=1,2,3,4\\0&\text{otherwise}\end{cases}
+> $$
+> 
+> Find the value of the constant $k$.
+> (Do not confuse $x$ with $X$)
+>
+> ---
+> Rewrite formula as table:
+>
+> | $x$ | $P_X(x)$                              |
+> | --- | ------------------------------------- |
+> | 1   | $\frac{k}{10}\cdot1^2=\frac{k}{10}$   |
+> | 2   | $\frac{k}{10}\cdot2^2=\frac{4k}{10}$  |
+> | 3   | $\frac{k}{10}\cdot3^2=\frac{9k}{10}$  |
+> | 4   | $\frac{k}{10}\cdot4^2=\frac{16k}{10}$ |
+> | 5   | 0                                     |
+> | $\vdots$   | 0                                      |
+>
+> We know that the $\sum_xP_X(x)=1$,  that is, the sum of all values for $P_X(x)$ must be one, so let’s add them up:
+> $\frac{k}{10}+\frac{4k}{10}+\frac{9k}{10}+\frac{16k}{10}=1$
+> 
+> $$
+> \frac{30k}{10}=1\Longrightarrow k=\frac13
+> $$
+
+
+> [!example] Exercise 4, Question 16
+> If $X$ is a random variable with the following probability function, find the value of $a$:
+> 
+> $$
+> P_X(x)=\begin{cases}a{\left(\frac13\right)}^x&x\in\N\\0&x\not\in\N\end{cases}
+> $$

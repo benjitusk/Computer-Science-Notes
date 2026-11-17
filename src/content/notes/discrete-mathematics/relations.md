@@ -1,0 +1,242 @@
+---
+title: "Relations"
+order: 2
+---
+
+*Jan 7*
+## Relations
+Intuitively, a relation is a way of "comparing" two elements
+1. $<$, $>$, $=$, $\leq$, $\geq$, among numbers
+2. $A=$ set of people, $B=$ set of cities
+	- We can define a relation to hold between person $a\in A$ and city $b\in B$ if $a$ lives in $b$.
+1. $A=$ set of people
+	- We can define a relation to hold between person $a_1\in A$ and person $a_2\in A$ if they share a family connection.
+
+**Formal Definition:**
+Let $A,B$ be sets. A **relation** $R$ from $A$ to $B$ is a subset of $A\times B$. 
+
+_Yeah, that's it. The relation doesn't have to be anything meaningful. It's just a subset of the Cartesian product of the two sets._
+
+> [!example] Examples of Relations
+>
+> $A=\set{1,2}$, $B=\set{1, 2, 3}$
+>
+> 1. "less than" relation: $R=\set{(1,2), (1,3), (2,3)}$
+> 2. "greater than" relation: $R=\set{(2,1), (3,1), (3,2)}$
+> 3. "arbitrary" relation: $R=\set{(1,1), (1,3), (2,1)}$
+
+A relation $R$ from $A$ to itself (i.e. $R\sseq A\times A$) is called a **relation on $A$**.
+
+For example, see the third example in the intuitive definition above.
+
+#### Simple Relations
+- Empty relation: $R=\phi$
+  - No pairs satisfy the relation
+  - E.g, $R\in\N\times\N,\ (a,b)\in R$ iff $a=-b$
+  - $R=\phi$ because there are no negative numbers in $\N$
+- Complete relation: $R=A\times B$
+  - Every pair satisfies the relation
+  - E.g, $A=\set{1,2,3}$, $B=\set{4,5,6}$, $R=$ "less than"
+  - $R=A\times B$ because every element of $A$ is less than every element of $B$
+
+The usual set operations can be applied to relations, e.g. union, intersection, complement, etc. since relations are just sets.
+
+### Inverse Relations
+**Definition:**
+Let $R$ be a relation from $A$ to $B$. The **inverse relation** of $R$ (denoted $R^{-1}$) is the relation from $B$ to $A$ defined by $R^{-1}=\set{(b,a)\mid(a,b)\in R}$. 
+
+> [!example] Examples of Inverse Relations
+>
+> $A=\set{1,2}$, $B=\set{1, 2, 3}$ $R=$ "less than" = $\set{(1,2), (1,3), (2,3)}$
+>
+> $R^{-1}=$ "greater than" = $\set{(2,1), (3,1), (3,2)}$
+>
+> Note that we just swapped the order of the elements in each pair.
+
+### Composition of Relations
+Suppose $R_1 \sseq A\times B$ and $R_2 \sseq B\times C$ are relations.
+
+**Definition:**
+The **composition** of $R_1$ and $R_2$ (denoted $R_1\of R_2$) is the relation from $A$ to $C$ defined by $R_1\of R_2=\set{(a,c)\mid\exists b\in B\text{ s.t. }(a,b)\in R_1\text{ and }(b,c)\in R_2}$.
+
+> [!tldr] Compositions explained in English
+>
+> A composition of relations $R_1$ and $R_2$ is a new relation $R_1\of R_2$ that contains all pairs $(a,c)$ where there exists some $b$ such that $(a,\boldsymbol{b})\in R_1$ and $(\boldsymbol{b},c)\in R_2$. 
+
+> [!example] Examples of common composed relations
+>
+> $A,B,C$ are sets of people
+> $R_1\sseq A\times B$ is relation "is a brother of" (i.e. $(a,b)\in R_1$ iff $a$ is a brother of $b$)
+> $R_2\sseq B\times C$ is relation "is a parent of" (i.e. $(b,c)\in R_2$ iff $b$ is a parent of $c$)
+>
+> $R_1\of R_2$ is relation "is an uncle of" (i.e. $(a,c)\in R_1\of R_2$ iff $a$ is an uncle of $c$)
+
+**Notation:** $R^2=R\of R$, $R^3=R\of R\of R$, etc.
+
+### Properties of Relations
+- **Associative:** $(R_1\of R_2)\of R_3=R_1\of(R_2\of R_3)$
+
+### Equivalence Relations
+#### Partitions
+**Definition:**
+Let $A$ be any set. A **partition** $P$ of $A$ is a set of subsets of $A$: 
+
+$$
+P=\set{A_1,A_2,\dots,A_i,\dots,A_n}
+$$
+such that two conditions are met: 
+1. For all $i\not=j:A_i\cap A_j=\phi$
+	- Subsets in $P$ are disjoint
+2. $\cup_i^nA_i=A$
+	- Every element of $A$ is in some subset of the partition
+
+>[!example] Example of a partition
+>
+> Let $A=\set{1,2,3,4,5,6,7}$
+> Let $A_1=\set{2,5}$
+> Let $A_2=\set{1,3,6}$
+> Let $A_3=\set{7}$
+> Let $A_4=\set{4}$
+>
+> Then the partition $P$ of $A$ looks like this:
+> 
+> <span class="drawing"><img class="drawing__light" src="/drawings/02-relations-2024-01-23-173817.light.svg" alt="" loading="lazy" decoding="async"><img class="drawing__dark" src="/drawings/02-relations-2024-01-23-173817.dark.svg" alt="" loading="lazy" decoding="async"></span>
+
+#### Equivalence Relations
+**Definition:**
+Given a partition $P$ of $A$, define a relation $R$ as follows:
+$(a,b)\in R$ whenever $a,b$ belong to the same subset in the partition $P$.
+
+In our *above* example, $(1,6)\in R$, $(1,2)\in R$, $(7,7)\in R$, $(7,6)\not\in R$.
+
+> [!example] Example of an Equivalence Relation
+> 
+> Let $A=\set{1,2,3,4}$
+> Let the partition be defined as specified in this diagram:
+> <span class="drawing"><img class="drawing__light" src="/drawings/02-relations-2024-01-23-174605.light.svg" alt="" loading="lazy" decoding="async"><img class="drawing__dark" src="/drawings/02-relations-2024-01-23-174605.dark.svg" alt="" loading="lazy" decoding="async"></span>
+> 
+> Then, $R=\set{(1,3),(3,1),(2,2),(4,4),(1,1),(3,3)}$
+
+$R$ is called an **equivalence relation**, and we say that $R$ is *induced* by the partition $P$. 
+
+Any relation $R$ on $A$ is:
+- Reflexive
+	- Every $a\in A$ belongs to the same “cell” as itself
+- Symmetric
+	- If $a$ is in $b$’s cell, then $b$ is in $a$’s cell
+- Transitive
+	- If $a$ is in $b$’s cell, and $b$ is in $c$’s cell, then $a$ is in $c$’s cell
+#### Equivalence Relation Theorem
+Any relation $R$ on $A$ which is reflexive, symmetric, and transitive is an equivalence relation (induced by some partition of $A$).
+
+I.e., we can “work backwards” from a relation satisfying these three properties to find the partition which induced it.
+ 
+
+> [!example] Example of the Equivalence Relation Theorem
+> 
+> $A=\Z$
+> $R\subseteq \Z\times\Z$
+> $R=\set{(a,b)\mid a-b \mod 5=0}$
+> $(3,-2)\in R, (5,0)\in R, (-7,3)\in R, (3,13)\in R$
+> $(1,2)\not\in R, (4,0)\not\in R, (2,-7)\not\in R, (8,8)\in R$
+> 
+> **Claim:** $R$ is reflexive, symmetric, and transitive.
+> 
+> **Proof:**
+> 1. $\forall n\in\Z,n-n=0=0\cdot5$; hence $(n,n)\in R$
+> 2. If $a-b=5k$ then $b-a=-5k=5\cdot(-k)$
+> 	- If $(a,b)\in R$ then $(b,a)\in R$
+> 3. If $a-b=5k$ and $b-c=5l$, then $a-c=(a-b)+(b-c)=5k+5l=5(k+l)\Rightarrow(a,c)\in R$
+>  
+> Therefore, $R$ is an equivalence relation.   
+
+#### Equivalence Classes
+**Definition:**
+The cells of a partition (which induces $R$) are called the **equivalence classes** of $R$. 
+
+For each $a\in A$, $[a]$ means the equivalence class of $a$.
+E.g., in the last example, $[3]=[-12]$ (because they are both two less than multiples of 5)
+
+The set of all equivalence classes of $A$ in the relation $R$ is denoted $A/R$ (“$A$ modulo $R$”) and is called the **quotient set** of $R$. 
+
+In the last example, $A/R=\set{[0],[1],[2],[3],[4],[5]}$
+
+> [!example] Example of Quotient Sets
+> $A=$ set of people
+> $R$ is a relation on $A$: $(a,b)\in R$ when $a,b$ share last names.
+> 
+> It’s easy to see that $R$ is reflexive, symmetric, and transitive, and hence is an equivalence relation.
+>
+>It’s also easy to see that each equivalence class corresponds to a family name.
+>
+>The quotient set $A/R$ is the set of all last names.
+
+
+*Jan 14*
+### Order Relations
+**Definition:**
+An order relation generalizes the familiar “orders” like ≤ or ≥ on sets of numbers. 
+
+Formally, a relation $R$ on a set $A$ is an **order relation** if it has three properties:
+#### Properties of Order Relations
+1. $R$ is reflexive
+2. $R$ is transitive
+3. $R$ is **antisymmetric** 
+	- i.e., if $(a,b)\in R$ and $(b,a)\in R$, then $a=b$
+	- $R$ cannot hold between different elements in both directions
+	- Note that this is **not** the same as being asymmetric
+	- Formally, $R$ is antisymmetric iff $R\cap R^{-1}\subseteq I_A$
+
+If $R$ is an order relation, then we use the notation
+
+$$
+a\leqslant_Rb
+$$
+in place of using $aRb$ or $(a,b)\in R$.
+
+> [!example] Examples of order relations
+> 
+> 1. $\leq,\geq$ on sets of numbers
+> 2. Lexicographic order of points on an $\R^n$ plane
+> 	- Order by first point, if those are equal, order by the next point, etc…
+> 3. Let $A$ be any set and define the relation $R$ on $\pset A$ by:
+>    $A_1\ R\ A_2$ iff $A_1\sseq A_2$.
+>  4.  Let $A=\N$.
+>     Define $R$ on $A$ as: $(a,b)\in R$ if $a|b$ ($a$ divides $b$).
+
+**Definition:**
+An order relation $R$ on a set $A$ is a **total order** if, for *every* $a_1,a_2\in A$, either $a_1\leq_Ra_2$ or $a_2\leq_Ra_1$ (or both, if $a=b$).
+Otherwise, $R$ is called a **partial order**. 
+
+Examples 1 and 2 above are examples of total orders, and examples 3 and 4 above are partial orders.
+
+##### Hasse Diagrams
+A partial order $R$ on a set $A$ can be illustrated using a **Hasse diagram**.
+
+For example, $A={n|1≤n≤20}$, and $R$ is the divisibility relation (example 3 from above)
+
+<span class="drawing"><img class="drawing__light" src="/drawings/02-relations-2024-01-23-203111.light.svg" alt="" loading="lazy" decoding="async"><img class="drawing__dark" src="/drawings/02-relations-2024-01-23-203111.dark.svg" alt="" loading="lazy" decoding="async"></span>
+
+###### Property of Hasse Diagrams
+We can get from $a_1$ to $a_2$ by moving up edges iff then $a_1\leq_Ra_2$
+###### Rules of HD
+1. All **minimal elements** go on the bottom.
+	- ($a_1 \in A$ is **minimal** if there does $\not\exists b\in A$ s.t. $b\leq_Ra$)
+	- If there is a single minimum element $a$, then $a$ is called a **minimum** in $R$. 
+	- In the above example, $1$ is a minimum.
+		- If we delete $1$ from $A$, then $2,3,5,7,11,13,17,19$ are all minimal elements, but there is no *minimum*.
+2. An edge exists from $a_1$ “goes up” to $a_2$ if:
+	1. $a_1 \not= a_2$
+	2. $a_1\leq_Ra_2$
+	3. $\not\exists b\in A$ s.t. $a_1\leq_Rb$ and $b\leq_Ra_2$
+	- Under these conditions, we call $a_2$ a **successor** element of $a_1$. 
+		- E.g., in our example, $4,6,10,14$ are successors of $2$.
+		- $a_1$ is called a **predecessor** of $a_2$. 
+		- An element can have multiple predecessors and/or successors.
+	- An element with no successors is called **maximal** 
+		- E.g., in our example, $16,12,18,15,20,14,11,13,17,19$ are maximal.
+		- If only one element is maximal, then it is called a **maximum** of $R$. 
+			- <span class="drawing"><img class="drawing__light" src="/drawings/02-relations-2024-01-24-132832.light.svg" alt="" loading="lazy" decoding="async"><img class="drawing__dark" src="/drawings/02-relations-2024-01-24-132832.dark.svg" alt="" loading="lazy" decoding="async"></span>
+
+The Hasse Diagram of a total order looks like a straight line:
+<span class="drawing"><img class="drawing__light" src="/drawings/02-relations-2024-01-24-133733.light.svg" alt="" loading="lazy" decoding="async"><img class="drawing__dark" src="/drawings/02-relations-2024-01-24-133733.dark.svg" alt="" loading="lazy" decoding="async"></span>

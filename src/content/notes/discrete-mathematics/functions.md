@@ -1,0 +1,164 @@
+---
+title: "Functions"
+order: 3
+---
+
+*Jan. 14*
+#### Definitions
+Let $R$ be a relation from $A$ to $B$ ($R\subseteq A\times B$)
+**Definitions:**
+The **domain** of $R$ is the set $\set{a\in A\mid\exists b\in B \ s.t. (a,b)\in R}$.
+The **image** of $R$ is the set $\set{b\in B\mid\exists a\in A \ s.t. (a,b)\in R}$.
+
+> [!example] Example of Domain and Image
+>
+> Let $A=\set{1,2,3}$
+> Let $B=\set{10,12,18,20}$
+> $R=\set{(\textcolor{red}{1},\textcolor{green}{12}),(\textcolor{red}{1},\textcolor{green}{20}),(\textcolor{red}{3},\textcolor{green}{10}),(\textcolor{red}{3},\textcolor{green}{12})}$
+>
+> The **domain** of $R$ is $\set{\textcolor{red}{1},\textcolor{red}{3}}$
+> The **image** of $R$ is $\set{\textcolor{green}{10},\textcolor{green}{12},\textcolor{green}{20}}$
+
+A relation $R$ is called **single valued** if the following is true:
+
+- If $(a,b)\in R$ and $(a,c)\in R$, then $b=c$.
+    - Alternatively, for every $a\in A$, there is at most one $b\in B$ such that $(a,b)\in R$.
+
+**Definition:**
+A relation $f\subseteq A\times B$ is called a **function** from $A$ to $B$ (denoted $f:A\to B$) if $f$ is single valued and the domain of $f$ is $A$.
+
+> [!example] Example of a Function
+>
+> Let $A=\set{1,2,3}$
+> Let $B=\set{10,12,18,20}$
+> Let $f_1:A\to B$. $f_1=\set{(1,10),(2,18),(3,10)}$
+> Let $f_2:A\to B$. $f_2=\set{(3,12),(2,10),(1,18)}$
+>
+> (We write $f_1(2)=18$, $f_2(3)=12$, etc.)
+
+Clearly every $f:A\to B$ consists of exactly 3 pairs.
+Intuitively: A function $f$ is a “machine” taking in input and yielding output.
+Another way of saying this is that it maps values of $A$ to values of $B$.
+
+*Jan. 21*
+
+<span class="drawing"><img class="drawing__light" src="/drawings/03-functions-2024-01-24-153555.light.svg" alt="" loading="lazy" decoding="async"><img class="drawing__dark" src="/drawings/03-functions-2024-01-24-153555.dark.svg" alt="" loading="lazy" decoding="async"></span>
+
+Two functions $f,g$ are equal only if they have the same domain, the same range, *and* $f(x)=g(x)$ for all $x$ in the domain.
+
+> [!error] Missing example here.
+> If you can see this, please let me know that I’m missing the example.
+
+##### One To One
+**Definition:**
+$f:A\to B$ is called **one-to-one** (or **injective**) if whenever $a_1\neq a_2$, then $f(a_1)\neq f(a_2)$.
+Alternatively, **If $f(a_1)=f(a_2)$, then $a_1=a_2$**.
+
+> [!example] Example of a One-to-One Function
+> In examples $f_{1,2,3}$ above, $f_3$ is one to one, but not $f_1$ or $f_2$.
+
+##### Onto
+**Definition:**
+$f:A\to B$ is called **onto** (or **surjective**) if for every $b\in B$, there is some $a\in A$ such that $f(a)=b$.
+
+> [!tip] One to One and Onto in plain English
+> - One to One: Every output has a unique input.
+> - Onto: Everything in the codomain has at least one source in the domain
+
+##### Bijection
+**Definition:**
+If $f:A\to B$ is both one-to-one and onto, then $f$ is called a **bijection** (or **one-to-one correspondence**).
+For example, $f_3$ is a bijection.
+
+The **identity function** on $A$ (where $f_{I_A}(a)=a$) is trivially a bijection.
+
+### Composition of Functions
+Let $f:A\to B,g:B\to C$.
+
+**Definition:**
+The **composed function** $(g\of f):A\to C$ is defined as follows:
+
+$$
+\forall a\in A: (g\of f)(a)=g\left(f(a)\right)
+$$
+
+<span class="drawing"><img class="drawing__light" src="/drawings/03-functions-2024-01-25-124712.light.svg" alt="" loading="lazy" decoding="async"><img class="drawing__dark" src="/drawings/03-functions-2024-01-25-124712.dark.svg" alt="" loading="lazy" decoding="async"></span>
+Note:
+1. This is exactly the same as [Composition of Relations](/discrete-mathematics/relations/#composition-of-relations), applied to functions.
+2. Note reverse notation: Though $f$ is applied to $g$, we write $g\of f$.
+	1. $(g\of f)(a)$ is G of F of a
+
+> [!example] Example of Composed Functions
+>
+> Let $f,g:\R\to\R$.
+> $f(x)=x^2+3$
+> $g(x)=2x-5$
+>
+> $(g\of f)(x) = g(f(x)) = g(x^2+3)=2(x^2+3)-5=2x^2+1$
+>
+> $(f\of g)(x)=f(g(x))=f(2x-5)={(2x-5)}^2+3=4x^2-20x+28$
+
+Note from this example, composition of functions is **not commutative.**
+$f\of g \not= g\of f$ in general.
+
+However, function composition is associative.
+E.g., let $f,g,h:\R\to\R$. $(h\of(g\of f))(x)=((h\of g)\of f)(x)$.
+
+If $f:A\to B,\ g:B\to C$ are both onto, then so is $g\of f$.
+> [!note] Proof (good to be familiar with)
+> To show $g\of f$ is onto, let $c\in C$. We wish to find a source of $c$ under $g\of f$.
+>
+> $\Rightarrow$ Since $g$ is onto, $\exists b\in B$ with $g(b)=c$.
+> $\Rightarrow$ Since $f$ is onto, $\exists a\in A$ with $f(a)=b$.
+>
+> $\therefore (g\of f)(a)=g(f(a))=g(b)=c\Rightarrow$ We found a source of $c$ under $g\of f$
+
+If $f:A\to B,\ g:B\to C$ are both one to one, then so is $g\of f$.
+> [!note] Proof (good to be familiar with)
+> Suppose $(g\of f)(a_1)=(g\of f)(a_2)$. We wish to show that $a_1=a_2$.
+>
+> $\Rightarrow g(f(a_1))=g(f(a_2))$
+> $\Rightarrow$ Since $g$ is one-to-one, we know that $f(a_1)=f(a_2)$
+> $\Rightarrow$ Since $f$ is one-to-one, we know that $a_1=a_2$
+
+### Invertibility
+**Definition:**
+$f:A\to B$ is **left invertible** if there is some $g:B\to A$ such that $g\of f = I_A$.
+
+<span class="drawing"><img class="drawing__light" src="/drawings/03-functions-2024-01-25-131736.light.svg" alt="" loading="lazy" decoding="async"><img class="drawing__dark" src="/drawings/03-functions-2024-01-25-131736.dark.svg" alt="" loading="lazy" decoding="async"></span>
+
+We call $g$ a **left inverse** of $f$.
+
+**Definition:**
+$f:A\to B$ is **right invertible** if there is some $g:B\to A$ such that $f\of g = I_B$.
+
+<span class="drawing"><img class="drawing__light" src="/drawings/03-functions-2024-01-25-132059.light.svg" alt="" loading="lazy" decoding="async"><img class="drawing__dark" src="/drawings/03-functions-2024-01-25-132059.dark.svg" alt="" loading="lazy" decoding="async"></span>
+
+We call $g$ a **right inverse** of $f$.
+
+
+> [!important] Function Invertibility [SUPER IMPORTANT]
+> $f:A\to B$ is left invertible if and only if $f$ is one-to-one.
+> $f:A\to B$ is right invertible if and only if $f$ is onto.
+> $f:A\to B$ is invertible if and only if $f$ is a bijection.
+
+if $f$ is invertible, there is a *unique* function $g:B\to A$ such that $g\of f = I_A$ and $f\of g = I_B$. (I.e., $g$ is both a left and right inverse of $f$.)
+
+We call $f$ an **invertible function** and $g$ the **inverse function** of $f$ (denoted $f^{-1}$).
+
+Note: if $f$ is invertible, then $f^{-1}$ is invertible, and ${(f^{-1})}^{-1}=f$.
+
+*Jan. 28*
+### Image and Inverse Image of Subsets
+Let $f:A\to B$ be any function, let $C\sseq A,\ D\sseq B$
+
+<span class="drawing"><img class="drawing__light" src="/drawings/03-functions-2024-02-12-130933.light.svg" alt="" loading="lazy" decoding="async"><img class="drawing__dark" src="/drawings/03-functions-2024-02-12-130933.dark.svg" alt="" loading="lazy" decoding="async"></span>
+
+Then define:
+1. $f(C)=\set{f(x)\mid x\in C}=$ the set of images of all elements of $C$
+2. $f^{-1}(D)=\set{x\in A\mid f(x)\in D}=$ the set of all sources of elements of $D$
+
+> [!warning] Don’t mix up these terms!
+> $f^{-1}$ should not be confused with “$f$ inverse”; $f^{-1}(D)$ is defined even when $f$ is not invertible.
+>
+> Even though the notation is the same in both cases, if the parameter of $f^{-1}$ is a set, we’re referring to the inverse image of a subset, not the whole function.

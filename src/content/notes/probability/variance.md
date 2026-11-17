@@ -1,0 +1,57 @@
+---
+title: "Variance"
+order: 6
+---
+
+##### Definition
+The <u>variance</u> of a random variable $X$ is a measure of how far $X$ can (and will) differ from its expected value.
+(i.e., $V(X)$ measures the “spread” of possible values of $X$.)
+
+###### Formula
+$$
+V(X)=E[X^2]-E[X]^2
+$$
+
+> [!example] 
+> Define $X_1, X_2$ using the following probability functions:
+> 
+> 
+> |$k_1$|$P_{X_1}(k_1)$|$\mid$|$k_2$|$P_{X_2}(k_2)$|
+> -:|:-|:-:|-:|:-
+> 5|$\frac13$|$\mid$|0|$\frac13$
+> 10|$\frac13$|$\mid$|10|$\frac13$
+> 15|$\frac13$|$\mid$|20|$\frac13$
+> 
+> $E[X_1]=\frac{5+10+15}{3} = 10$
+> $E[X_2]=\frac{0 + 10 +20}{3} = 10$
+> They both have the same expected value, but $V(X_2)$ should be greater than $V(X_1)$ because the values are more spread out from their Expected Values
+> $V(X_1)=\frac13(5^2+0^2+5^2)=\frac{50}3=16\frac23$
+> $V(X_2)=\frac13(10^2+0^2+10^2)=\frac{200}3=66\frac23$
+
+### Properties
+1. Formula: $V(X)=E[X^2]-E[X]^2$
+2. For any $c\in\R$: $V(cX)=c^2\cdot V(X)$
+3. For any $c\in\R$: $V(X+3)=V(X)$
+	- Intuition: the spread of a r.v. is unaffected when we merely “shift” all of it’s possible values by a constant $c$
+	- This is tightly related to [property 2 of Expected Values](/probability/expected-values/#properties-of-expected-values) $E[X+c]=E[X]+c$
+4. $V(X+Y)=V(X)+V(Y)$ *if* $X,Y$ are independent.
+	- **Proof: (This is likely on the #ProbabilityExam**
+		- $V(X+Y)=\textcolor{orange}{E[(X+Y)^2]}-\textcolor{purple}{(\mu^\prime)^2}$     Where $\mu^\prime=\begin{cases}&=E[X&+Y]\\&=E[X]&+E[Y]\\&=\mu_1&+\mu_2\end{cases}$
+		- $\begin{aligned}\textcolor{orange}{E[(X+Y)^2]}&=E[X^2+2XY+Y^2]\\&=E[X^2]+E[2XY]+E[Y^2]\\&=E[X^2]+2E[X]E[Y]+E[Y^2]\qquad \text{(Requires }X,Y\text{ to be independent)}\\&=\textcolor{orange}{E[X^2]+2\mu_1\mu_2+E[Y^2]}\end{aligned}$
+		- $\textcolor{purple}{(\mu^\prime)^2}=(\mu_1+\mu_2)^2=\textcolor{purple}{\mu_1^2+2\mu_1\mu_2+\mu_2^2}$
+		- $\begin{aligned}\textcolor{orange}{E[(X+Y)^2]}-\textcolor{purple}{(\mu^\prime)^2}&=(\textcolor{orange}{E[X^2]+\cancel{2\mu_1\mu_2}+E[Y^2]})-(\textcolor{purple}{\mu_1^2+\cancel{2\mu_1\mu_2}+\mu_2^2})\\&=(E[X^2]-\mu_1^2)+(E[Y^2]-\mu_2^2)\\&=V(X)+V(Y)\end{aligned}$
+		- $Q.E.D.$
+
+## Standard Deviation
+##### Definition
+$$
+\sigma(X)=\sqrt{V(X)}
+$$
+> [!tip] Intuition
+> Variance “magnifies” the difference $E[X^2]-E[X]^2$ by squaring it, so $\sigma(X)$ neutralizes this magnification
+
+Note: As a square root, $\sigma(X) \ge 0$ **always**.
+
+### Properties
+1. $\sigma(cX)=|c|\cdot\sigma(X)\mid\forall c\in\R$
+2. $\sigma(X+c)=\sigma(X)$

@@ -1,0 +1,131 @@
+---
+title: "Discrete Probability Distributions"
+order: 7
+---
+
+##### Definition
+A <u>distribution</u> is a generic type of probability function which depends on one or more parameters.
+
+*Note: $\sim$ means “has the distribution”*
+#### Uniform Distribution
+$X\sim U(n)$
+
+Possible values of $X$ are $\{1,…,n\}$ each with equal probability $\frac1n$
+E.g., roll of a single fair die, $n=6$, you would say $X\sim U(6)$
+
+
+$$
+\begin{align}P_X(k)&=\frac1n\\E[X]&=\frac{n+1}2\\V(X)&=\frac{n^2-1}{12}\end{align}
+$$
+(Derivations omitted, but easy to find online)
+
+**Use:**
+Use the Uniform Distribution when every outcome is equally likely within a specified range.
+E.g., Modeling the probability of rolling a fair, 6-sided die.
+
+> [!example] Fair die roll
+> Since it’s a fair die, we can say $X\sim U(6)$, and apply the above formula:
+> $E[X]=\frac{6+1}2=3.5$
+> $V[X]=\frac{6^2-1}{12}=\frac{35}{36}$
+> 
+
+### Binomial Distribution
+$X\sim B(n, p)$
+An experiment is repeated $n$ times, each time independent from the others. The probability of “success” each time is $p$.
+Let $X=$ number of successes.
+
+$$
+\begin{align}P_X(k)&={n\choose k}\cdot p^k\cdot(1-p)^{n-k}\\E[X]&=np\\V(X)&=np\cdot(1-p)\end{align}
+$$
+
+**Use:**
+Use Binomial Distribution when you have a fixed number of trials and you want to calculate the probability of a specific number of successes.
+E.g., Predicting the probability of getting exactly 3 heads in 5 coin tosses,.
+
+> [!example] A die is rolled 8 times
+> A success is rolling a 1 or 2.
+> $X=$ number of rolls 1, 2 among the 8 rolls
+> $X\in\{0,1,\dots,8\}$
+> $X\sim B(8, \frac13)$
+
+> [!example] Population is 20% left-handed
+> A sample of 10 people are selected.
+> X= number of lefties in the sample
+> $X\sim B(10,\frac15)$
+> <mark>Note</mark>: In this example, we don’t have to worry about non-replacement. (You might say, since we’re not replacing the person we just sampled, the remaining others have an adjusted probability.) This is because the population is so large in relation to the sample size, non-replacement has a negligible impact.
+
+
+### Geometric Distribution
+$X\sim G(p)$
+An experiment with probability $p\gt0$ of success is repeated (in independent trials) until the first success.
+
+$X=$ number of times experiment is performed, including first success.
+$X\in\N_+$
+
+$$
+\begin{align}P_X(k)&=\overbrace{(1-p)^{k-1}}^{k-1\text{ failures}}\cdot p\\P_X(\ge n)&=(1-p)^{n-1}\\P_X(\gt n)&=(1-p)^n\\E[X]&=\frac1p\\V(X)&=\frac{1-p}{p^2}\end{align}
+$$
+
+In general, for geometric random variable $X$:
+
+$$
+P_X(n+k\mid >k)=P_X(n)
+$$
+
+We say that X has “no memory”; past failures don’t affect the experiment's after them, so we can just “erase” those from the total count.
+
+**Use:**
+Use the Geometric Distribution when you want to find the probability of the first success occurring on the $k$-th trial in a sequence of *independent* trials.
+E.g., Finding the probability that you need to flip a coin 5 times before getting the first heads.
+
+### Negative Binomial Distribution
+$X\sim NB(p, r)$
+An experiment with probability $p>0$ is repeated (in independent trials) until and including $r$ successes.
+
+$X\in\N_{\ge r}$
+
+$$
+\begin{align}P_X(k)&= {k-1\choose r-1}p^r\cdot(1-p)^{k-r}\\E[X]&=\frac rp\\V(X)&=\frac{r(1-p)}{p^2}\end{align}
+$$
+
+**Use:**
+Use the Negative Binomial Distribution when you want to find the number of trials required until a specified number of successes is achieved in a series of independent trials.
+E.g., Predicting how many times you need to roll a die until you get 2 sixes
+
+### Hypergeometric Distribution
+$X\sim H(N,n,p)$
+
+<span class="drawing"><img class="drawing__light" src="/drawings/07-discrete-probability-distributions-2023-09-06-204706.light.svg" alt="" loading="lazy" decoding="async"><img class="drawing__dark" src="/drawings/07-discrete-probability-distributions-2023-09-06-204706.dark.svg" alt="" loading="lazy" decoding="async"></span>
+
+> [!example] In a class of 30 students
+> 12 students live in Jerusalem. I take a sample of 6 students from the class.
+> Let $X=$ number of students in the sample who live in Jerusalem. Then,
+> $N=30$ (population size)
+> $M=12$ (number of “special elements”)
+> $n=6$ (sample size)
+> $p=\frac{12}{30}=\frac2{5}$ (proportion of “special elements” in population)
+> $X\sim H(30,6,0.4)$
+> 
+> $$
+> P_X(3)=\frac{{12\choose3}{18\choose3}}{30\choose6}\approx0.3
+> $$
+
+$$
+\begin{align}P_X(k)&=\frac{{M\choose k}\cdot{N-M\choose n-k}}{N\choose n}\\E[X]&=np\\V(X)&=\frac{N-n}{N-1}\cdot np(1-p)\end{align}
+$$
+**Use:**
+Use the Hypergeometric Distribution when you have a finite population, and you want to calculate the probabilities of drawing specific items in that population *without replacement*.
+E.g., Calculating the probability of drawing a certain number of red balls from a bag of colored balls without replacement.
+
+
+### Poisson Distribution
+$X\sim P(\lambda)$
+Where $\lambda$ is the average number of occurrences within the given timeframe.
+
+$$
+\begin{aligned}P_X(k)&=\frac{e^{-\lambda}\cdot\lambda^k}{k!}\\E[X]&=\lambda\\V(X)&=\lambda\end{aligned}
+$$
+
+**Use:**
+Use the Poisson Distribution when you have an event that can occur at any moment with very low probability, and yet there is a known average of occurrences in some fixed time period.
+E.g., number of customers walking into a store in an hour
