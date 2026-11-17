@@ -8,7 +8,12 @@ const year = new Date().getFullYear();
     <div class='site-footer__inner'>
         <p class='site-footer__copy'>
             &copy; {year}{' '}
-            <a href={HOME_URL}>{AUTHOR_NAME}</a> · written mid-lecture, tidied before exams
+            <a class='site-footer__me' href={HOME_URL} aria-label={`${AUTHOR_NAME}: my homepage`}>
+                <span class='site-footer__wave' aria-hidden='true'>👋</span>
+                <span class='site-footer__name'>{AUTHOR_NAME}</span>
+                <span class='site-footer__arrow' aria-hidden='true'>↗</span>
+            </a>{' '}
+            · written mid-lecture, tidied before exams
         </p>
         <nav class='site-footer__links' aria-label='Footer'>
             <a href={THOUGHTS_URL}>Thoughts</a>
@@ -36,12 +41,52 @@ const year = new Date().getFullYear();
     .site-footer__copy {
         color: var(--text-subtle);
     }
-    .site-footer__copy a {
-        color: inherit;
+    /* The way to the rest of me: ink-coloured, underlined in the red margin
+       colour, and on hover the hand waves and the arrow heads off. */
+    .site-footer__me {
+        display: inline-flex;
+        align-items: baseline;
+        gap: 0.3em;
+        color: var(--accent);
+        font-weight: var(--weight-semibold);
         text-decoration: none;
     }
-    .site-footer__copy a:hover {
-        color: var(--accent);
+    .site-footer__me:hover {
+        color: var(--accent-hover);
+    }
+    .site-footer__name {
+        text-decoration: underline;
+        text-decoration-color: var(--margin);
+        text-decoration-thickness: 2px;
+        text-underline-offset: 0.25em;
+        transition: text-decoration-color var(--duration-fast) var(--ease);
+    }
+    .site-footer__me:hover .site-footer__name {
+        text-decoration-color: currentColor;
+    }
+    .site-footer__wave {
+        display: inline-block;
+        transform-origin: 70% 80%;
+    }
+    .site-footer__me:hover .site-footer__wave {
+        animation: wave 900ms var(--ease);
+    }
+    @keyframes wave {
+        20%,
+        60% {
+            transform: rotate(16deg);
+        }
+        40%,
+        80% {
+            transform: rotate(-8deg);
+        }
+    }
+    .site-footer__arrow {
+        font-size: 0.85em;
+        transition: transform var(--duration) var(--ease);
+    }
+    .site-footer__me:hover .site-footer__arrow {
+        transform: translate(2px, -2px);
     }
     .site-footer__links {
         display: flex;
