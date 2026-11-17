@@ -1,0 +1,44 @@
+# The old site lived on GitHub Pages at benjitusk.github.io/Computer-Science-Notes/.
+# This replaces it with redirects to school.benjitusk.com, one per old page
+# (scripts/github-pages-redirects.mjs), so saved and shared links keep working.
+
+name: Redirect the old GitHub Pages site
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - scripts/redirects.json
+      - scripts/github-pages-redirects.mjs
+      - .github/workflows/github-pages.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      # No dependencies: the script only uses Node's standard library.
+      - run: node scripts/github-pages-redirects.mjs
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: github-pages
+
+      - id: deployment
+        uses: actions/deploy-pages@v4

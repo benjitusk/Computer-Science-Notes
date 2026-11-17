@@ -31,3 +31,6 @@ firebase-debug.log
 
 # Obsidian, if the notes are opened as a vault
 **/.obsidian/
+
+# redirect-only site for the old GitHub Pages URLs (scripts/github-pages-redirects.mjs)
+github-pages/
