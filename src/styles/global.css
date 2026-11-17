@@ -1,0 +1,17 @@
+/*
+ * Global stylesheet, imported once in BaseHead.astro. Composes the layers in
+ * cascade order; it defines no values of its own.
+ *
+ *   katex     → math fonts and layout (formulas are rendered at build time)
+ *   callouts  → structure for `> [!type]` callouts (prose.css colours them)
+ *   tokens    → the design vocabulary (colours, type, spacing, layout)
+ *   reset     → box model + media/form normalisation
+ *   base      → on-brand defaults for raw elements
+ *   prose     → the rendered Markdown of notes
+ */
+@import 'katex/dist/katex.min.css';
+@import 'satteri-callouts/theme/obsidian';
+@import './tokens.css';
+@import './reset.css';
+@import './base.css';
+@import './prose.css';

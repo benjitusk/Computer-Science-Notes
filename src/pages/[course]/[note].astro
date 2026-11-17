@@ -1,0 +1,228 @@
+---
+import { getCollection, getEntry, render } from 'astro:content';
+import BaseLayout from '../../components/BaseLayout.astro';
+import CourseSidebar from '../../components/CourseSidebar.astro';
+import FormattedDate from '../../components/FormattedDate.astro';
+import Toc from '../../components/Toc.astro';
+import { EDIT_BASE_URL, ISSUES_URL } from '../../consts';
+import { courseOf, courseUrl, noteUrl, notesOf, termLabel } from '../../lib/courses';
+import { lastUpdated } from '../../lib/note-dates.js';
+
+export async function getStaticPaths() {
+    const notes = await getCollection('notes', (note) => !note.data.draft);
+    return notes.map((note) => {
+        const [course, slug] = note.id.split('/');
+        return { params: { course, note: slug }, props: { note } };
+    });
+}
+
+const { note } = Astro.props;
+const course = await getEntry('courses', courseOf(note));
+if (!course) throw new Error(`${note.id}: no course "${courseOf(note)}" in src/content/courses/`);
+
+const notes = await notesOf(course);
+const index = notes.findIndex((n) => n.id === note.id);
+const previous = notes[index - 1];
+const next = notes[index + 1];
+
+const { Content, headings } = await render(note);
+const updated = lastUpdated(note);
+const term = termLabel(course);
+const number = note.data.order !== undefined ? `Note ${String(note.data.order).padStart(2, '0')}` : note.data.section;
+const description =
+    note.data.description ?? `${note.data.title}: notes from ${course.data.title}${term ? `, ${term}` : ''}.`;
+const issueUrl = `${ISSUES_URL}?title=${encodeURIComponent(`Mistake in “${note.data.title}” (${course.data.title})`)}`;
+---
+
+<BaseLayout
+    title={`${note.data.title} · ${course.data.title}`}
+    description={description}
+    article={{ modifiedTime: updated }}
+    noindex={course.data.unlisted}
+    width='note'
+>
+    <div class='note-layout'>
+        <aside class='note-layout__sidebar'>
+            <CourseSidebar course={course} notes={notes} current={note} />
+        </aside>
+
+        <!-- Unlisted courses stay out of search, as they're off the home page. -->
+        <article class='note' data-pagefind-body={course.data.unlisted ? undefined : ''}>
+            <header class='note__header'>
+                <p class='eyebrow note__eyebrow'>
+                    <a href={courseUrl(course)} data-pagefind-meta='course'>{course.data.title}</a>
+                    {number && <span>· {number}</span>}
+                </p>
+                <h1 class='note__title' dir='auto'>{note.data.title}</h1>
+                <p class='note__meta' data-pagefind-ignore>
+                    {term && <span>{term}</span>}
+                    {
+                        updated && (
+                            <span>
+                                Last updated <FormattedDate date={updated} />
+                            </span>
+                        )
+                    }
+                </p>
+            </header>
+
+            <div class='prose note__body'>
+                <Content />
+            </div>
+
+            <footer class='note__footer' data-pagefind-ignore>
+                <p class='note__fix'>
+                    Spotted a mistake? <a href={`${EDIT_BASE_URL}${note.id}.md`}>Fix it on GitHub</a> or
+                    <a href={issueUrl}>tell me about it</a>.
+                </p>
+                <nav class='note__pager' aria-label='Previous and next note'>
+                    {
+                        previous ? (
+                            <a class='note__pager-link' href={noteUrl(previous)} rel='prev'>
+                                <span class='eyebrow'>← Previous</span>
+                                <span>{previous.data.title}</span>
+                            </a>
+                        ) : (
+                            <span />
+                        )
+                    }
+                    {
+                        next && (
+                            <a class='note__pager-link note__pager-link--next' href={noteUrl(next)} rel='next'>
+                                <span class='eyebrow'>Next →</span>
+                                <span>{next.data.title}</span>
+                            </a>
+                        )
+                    }
+                </nav>
+            </footer>
+        </article>
+
+        <aside class='note-layout__toc'>
+            <Toc headings={headings} />
+        </aside>
+    </div>
+</BaseLayout>
+
+<style>
+    .note-layout {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: var(--space-8);
+    }
+    .note-layout__toc {
+        display: none;
+    }
+    @media (min-width: 900px) {
+        .note-layout {
+            grid-template-columns: var(--measure-sidebar) minmax(0, var(--measure-prose));
+            gap: var(--space-10);
+        }
+    }
+    @media (min-width: 1240px) {
+        .note-layout {
+            grid-template-columns: var(--measure-sidebar) minmax(0, var(--measure-prose)) var(--measure-toc);
+            justify-content: space-between;
+        }
+        .note-layout__toc {
+            display: block;
+        }
+    }
+    @media (min-width: 900px) {
+        .note-layout__sidebar,
+        .note-layout__toc {
+            position: sticky;
+            top: calc(var(--header-height) + var(--space-8));
+            align-self: start;
+            max-height: calc(100vh - var(--header-height) - var(--space-12));
+            overflow-y: auto;
+            overscroll-behavior: contain;
+        }
+    }
+
+    /* The red margin line of ruled paper, between the course and the note. */
+    @media (min-width: 900px) {
+        .note {
+            padding-left: var(--space-10);
+            border-left: var(--margin-width) solid var(--margin);
+        }
+    }
+
+    .note__header {
+        margin-bottom: var(--space-8);
+        padding-bottom: var(--space-6);
+        border-bottom: var(--border-width) solid var(--border);
+    }
+    .note__eyebrow {
+        display: flex;
+        gap: var(--space-2);
+    }
+    .note__eyebrow a {
+        color: var(--accent);
+        text-decoration: none;
+    }
+    .note__eyebrow a:hover {
+        text-decoration: underline;
+    }
+    .note__title {
+        margin-top: var(--space-2);
+        font-size: var(--text-3xl);
+        line-height: var(--leading-tight);
+    }
+    .note__meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--space-1) var(--space-4);
+        margin-top: var(--space-3);
+        color: var(--text-subtle);
+        font-size: var(--text-sm);
+    }
+
+    .note__footer {
+        margin-top: var(--space-16);
+        padding-top: var(--space-6);
+        border-top: var(--border-width) solid var(--border);
+    }
+    .note__fix {
+        color: var(--text-muted);
+        font-size: var(--text-sm);
+    }
+    .note__pager {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-4);
+        margin-top: var(--space-6);
+    }
+    .note__pager-link {
+        display: grid;
+        gap: var(--space-1);
+        padding: var(--space-4) var(--space-5);
+        border: var(--border-width) solid var(--border);
+        border-radius: var(--radius-md);
+        background: var(--surface);
+        color: var(--text);
+        font-weight: var(--weight-medium);
+        line-height: var(--leading-snug);
+        text-decoration: none;
+        transition:
+            border-color var(--duration-fast) var(--ease),
+            transform var(--duration-fast) var(--ease);
+    }
+    .note__pager-link:hover {
+        border-color: var(--accent);
+        color: var(--text);
+        transform: translateY(-1px);
+    }
+    .note__pager-link--next {
+        grid-column: 2;
+        text-align: end;
+    }
+    @media (max-width: 520px) {
+        .note__pager {
+            grid-template-columns: 1fr;
+        }
+        .note__pager-link--next {
+            grid-column: auto;
+        }
+    }
+</style>

@@ -1,0 +1,232 @@
+/*
+ * Note typography: everything inside .prose, the rendered Markdown of a note
+ * or a course's intro. Global (not scoped) because the HTML comes from the
+ * Markdown pipeline, not from a component's template.
+ */
+
+.prose {
+    font-family: var(--font-serif);
+    font-size: var(--text-md);
+    line-height: var(--leading-relaxed);
+    color: var(--text);
+    overflow-wrap: break-word;
+}
+
+.prose > * + * {
+    margin-top: var(--space-4);
+}
+
+/* ---- Headings ---------------------------------------------------------- */
+/* The notes use every level (#### and ##### a lot), so each step stays
+   distinct: size down to h4, then small caps for h5 and h6. */
+.prose :is(h1, h2, h3, h4, h5, h6) {
+    font-family: var(--font-sans);
+    scroll-margin-top: calc(var(--header-height) + var(--space-4));
+}
+.prose :is(h1, h2) {
+    margin-top: var(--space-12);
+    font-size: var(--text-2xl);
+}
+.prose h3 {
+    margin-top: var(--space-10);
+    font-size: var(--text-xl);
+}
+.prose h4 {
+    margin-top: var(--space-8);
+    font-size: var(--text-lg);
+}
+.prose :is(h5, h6) {
+    margin-top: var(--space-8);
+    font-size: var(--text-sm);
+    letter-spacing: var(--tracking-wide);
+    text-transform: uppercase;
+    color: var(--text-muted);
+}
+.prose > :is(h1, h2, h3, h4, h5, h6):first-child {
+    margin-top: 0;
+}
+.prose :is(h1, h2, h3, h4, h5, h6) + * {
+    margin-top: var(--space-3);
+}
+
+/* ---- Text -------------------------------------------------------------- */
+.prose em {
+    font-style: italic;
+}
+.prose u {
+    text-decoration-color: var(--margin);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.18em;
+}
+
+.prose :is(ul, ol) {
+    padding-left: var(--space-6);
+}
+.prose li + li,
+.prose li > :is(ul, ol) {
+    margin-top: var(--space-1);
+}
+.prose li::marker {
+    color: var(--text-subtle);
+}
+
+.prose dl dt {
+    font-weight: var(--weight-semibold);
+}
+.prose dl dd {
+    margin-left: var(--space-6);
+}
+
+.prose blockquote:not(.callout) {
+    padding-left: var(--space-4);
+    border-left: 3px solid var(--border-strong);
+    color: var(--text-muted);
+}
+
+.prose hr {
+    margin-block: var(--space-8);
+}
+
+/* ---- Code -------------------------------------------------------------- */
+.prose :not(pre) > code {
+    padding: 0.1em 0.35em;
+    border: var(--border-width) solid var(--border);
+    border-radius: var(--radius-sm);
+    background: var(--surface);
+}
+.prose pre {
+    padding: var(--space-4) var(--space-5);
+    overflow-x: auto;
+    border: var(--border-width) solid var(--border);
+    border-radius: var(--radius-md);
+    background-color: var(--surface) !important;
+    font-size: var(--text-sm);
+    line-height: var(--leading-normal);
+}
+/* Shiki inlines the light token colours and exposes the dark ones as
+   --shiki-dark. Same conditions as the dark blocks in tokens.css. */
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme='light']) .prose pre.astro-code,
+    :root:not([data-theme='light']) .prose pre.astro-code span {
+        color: var(--shiki-dark) !important;
+    }
+}
+:root[data-theme='dark'] .prose pre.astro-code,
+:root[data-theme='dark'] .prose pre.astro-code span {
+    color: var(--shiki-dark) !important;
+}
+
+/* ---- Tables ------------------------------------------------------------ */
+.prose table {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    border-collapse: collapse;
+    font-size: var(--text-sm);
+}
+.prose :is(th, td) {
+    padding: var(--space-2) var(--space-3);
+    border: var(--border-width) solid var(--border);
+    text-align: start;
+    vertical-align: top;
+}
+.prose th {
+    font-family: var(--font-sans);
+    font-weight: var(--weight-semibold);
+    background: var(--surface-sunken);
+}
+
+/* ---- Math -------------------------------------------------------------- */
+/* Wide formulas (matrices, aligned derivations) scroll rather than spill. */
+.prose .katex-display {
+    margin-block: var(--space-4);
+    padding-block: var(--space-1);
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+.prose .katex {
+    font-size: 1.05em;
+}
+.prose .math-nowrap {
+    white-space: nowrap;
+}
+
+/* ---- Images and drawings ----------------------------------------------- */
+.prose img {
+    display: inline-block;
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--radius-sm);
+}
+.prose .drawing {
+    display: block;
+    margin-block: var(--space-4);
+}
+.prose .drawing img {
+    border-radius: 0;
+}
+/* Excalidraw exported a light and a dark copy of every drawing. */
+.prose .drawing__dark {
+    display: none !important;
+}
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme='light']) .prose .drawing__light {
+        display: none !important;
+    }
+    :root:not([data-theme='light']) .prose .drawing__dark {
+        display: inline-block !important;
+    }
+}
+:root[data-theme='dark'] .prose .drawing__light {
+    display: none !important;
+}
+:root[data-theme='dark'] .prose .drawing__dark {
+    display: inline-block !important;
+}
+
+/* ---- Callouts (`> [!type] Title`, from satteri-callouts) ---------------- */
+/* The obsidian theme supplies each type's colour as --rc-color-light/-dark
+   and the title layout; this sets the box. */
+.prose .callout {
+    --rc: var(--rc-color-light, var(--rc-color-default));
+    margin-block: var(--space-6);
+    padding: var(--space-4) var(--space-5);
+    border-left: 3px solid var(--rc);
+    border-radius: var(--radius-sm);
+    background-color: rgb(from var(--rc) r g b / 0.08);
+    mix-blend-mode: normal;
+    font-size: var(--text-base);
+    line-height: var(--leading-relaxed);
+}
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme='light']) .prose .callout {
+        --rc: var(--rc-color-dark, var(--rc-color-default));
+    }
+}
+:root[data-theme='dark'] .prose .callout {
+    --rc: var(--rc-color-dark, var(--rc-color-default));
+}
+.prose .callout-title {
+    color: var(--rc);
+    font-family: var(--font-sans);
+    align-items: center;
+    gap: var(--space-2);
+}
+.prose .callout-content > * + * {
+    margin-top: var(--space-3);
+}
+.prose .callout-content {
+    margin-top: var(--space-2);
+}
+.prose .callout-content:empty {
+    display: none;
+}
+
+/* ---- Footnotes --------------------------------------------------------- */
+.prose .footnotes {
+    margin-top: var(--space-12);
+    padding-top: var(--space-4);
+    border-top: var(--border-width) solid var(--border);
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+}

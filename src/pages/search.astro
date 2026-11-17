@@ -1,0 +1,64 @@
+---
+import BaseLayout from '../components/BaseLayout.astro';
+
+/**
+ * Search, by Pagefind. The index is built after `astro build` (see the build
+ * script), from each note's article (data-pagefind-body), so in `astro dev`
+ * there's nothing to search yet. `?q=` prefills the search.
+ */
+---
+
+<BaseLayout title='Search' description='Search every note.' width='prose'>
+    <h1 class='search__title'>Search the notes</h1>
+    <p class='search__hint'>Theorems, definitions, that one formula you half remember.</p>
+    <link rel='stylesheet' href='/pagefind/pagefind-ui.css' />
+    <div id='search' class='search'></div>
+    <p class='search__dev' hidden data-search-dev>
+        Search works after a build: run <code>npm run build</code> and <code>npm run preview</code>.
+    </p>
+</BaseLayout>
+
+<script>
+    type PagefindUI = new (options: Record<string, unknown>) => { triggerSearch: (query: string) => void };
+
+    const script = document.createElement('script');
+    script.src = '/pagefind/pagefind-ui.js';
+    script.onload = () => {
+        const UI = (window as unknown as { PagefindUI: PagefindUI }).PagefindUI;
+        const ui = new UI({ element: '#search', showSubResults: true, showImages: false, autofocus: true });
+        const query = new URLSearchParams(location.search).get('q');
+        if (query) ui.triggerSearch(query);
+    };
+    script.onerror = () => document.querySelector<HTMLElement>('[data-search-dev]')?.removeAttribute('hidden');
+    document.head.append(script);
+</script>
+
+<style>
+    .search__title {
+        font-size: var(--text-3xl);
+    }
+    .search__hint {
+        margin-top: var(--space-2);
+        margin-bottom: var(--space-8);
+        color: var(--text-muted);
+    }
+    .search__dev {
+        color: var(--text-muted);
+    }
+    /* Pagefind UI, in the site's palette. */
+    .search {
+        --pagefind-ui-scale: 0.9;
+        --pagefind-ui-primary: var(--accent);
+        --pagefind-ui-text: var(--text);
+        --pagefind-ui-background: var(--surface);
+        --pagefind-ui-border: var(--border-strong);
+        --pagefind-ui-tag: var(--surface-sunken);
+        --pagefind-ui-border-width: 1px;
+        --pagefind-ui-border-radius: 10px;
+        --pagefind-ui-font: var(--font-sans);
+    }
+    .search :global(mark) {
+        background: var(--highlight);
+        color: inherit;
+    }
+</style>

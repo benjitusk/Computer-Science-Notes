@@ -1,4 +1,3 @@
-// @ts-check
 // One-off migration: the Obsidian vault in docs/ → Astro content in src/content/.
 //
 //   node scripts/convert-obsidian.mjs

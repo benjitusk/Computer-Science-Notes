@@ -1,0 +1,5 @@
+# Commits that touched every note without changing what it says (the migration
+# from Obsidian). git blame skips them with --ignore-revs-file, GitHub does
+# automatically, and src/lib/note-dates.js leaves them out of "last updated".
+# Converted the Obsidian vault to Astro content
+1db1ca821dcb933730271866b82dd938cf7d4e91

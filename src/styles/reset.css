@@ -1,0 +1,75 @@
+/*
+ * A small, modern reset. Replaces Tailwind's preflight (which this project
+ * never actually imported). Only concerns itself with the box model, sane
+ * media defaults, and form-control inheritance — all visual/typographic
+ * decisions live in base.css and in components.
+ */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+body {
+    min-height: 100vh;
+}
+
+/* Media should be block-level and never overflow its container. */
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+    display: block;
+    max-width: 100%;
+}
+
+img,
+video {
+    height: auto;
+}
+
+/* Form controls should inherit typography rather than impose their own. */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+    color: inherit;
+}
+
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Lists are stripped by default; Prose re-adds markers for prose content. */
+ul,
+ol {
+    list-style: none;
+    padding: 0;
+}
+
+/* Avoid orphaned single words on headings where supported. */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-wrap: balance;
+}

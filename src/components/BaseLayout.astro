@@ -1,0 +1,72 @@
+---
+import type { ComponentProps } from 'astro/types';
+import BaseHead from './BaseHead.astro';
+import Header from './Header.astro';
+import Footer from './Footer.astro';
+
+/**
+ * BaseLayout — the single page shell (document, head, header, footer). Pages
+ * render into the default slot; `width` picks the column: 'prose' for
+ * reading, 'page' (default) for composed pages, 'note' for the three-column
+ * note layout, which lays itself out.
+ */
+interface Props {
+    title: string;
+    description: string;
+    article?: ComponentProps<typeof BaseHead>['article'];
+    noindex?: boolean;
+    width?: 'prose' | 'page' | 'note';
+}
+
+const { title, description, article, noindex, width = 'page' } = Astro.props;
+---
+
+<!doctype html>
+<html lang='en'>
+    <head>
+        <BaseHead title={title} description={description} article={article} noindex={noindex} />
+    </head>
+    <body>
+        <a class='skip-link' href='#main'>Skip to content</a>
+        <Header />
+        <main id='main' class='page' data-width={width}>
+            <slot />
+        </main>
+        <Footer />
+        <style>
+            body {
+                display: flex;
+                flex-direction: column;
+                min-height: 100vh;
+            }
+            .page {
+                flex: 1;
+                width: 100%;
+                margin-inline: auto;
+                padding: var(--space-10) var(--gutter) var(--space-16);
+            }
+            .page[data-width='prose'] {
+                max-width: calc(var(--measure-prose) + 2 * var(--gutter));
+            }
+            .page[data-width='page'] {
+                max-width: calc(var(--measure-page) + 2 * var(--gutter));
+            }
+            .page[data-width='note'] {
+                max-width: calc(var(--measure-note-page) + 2 * var(--gutter));
+            }
+            .skip-link {
+                position: absolute;
+                left: var(--space-4);
+                top: -100px;
+                z-index: calc(var(--z-header) + 1);
+                padding: var(--space-2) var(--space-4);
+                border-radius: var(--radius-sm);
+                background: var(--accent);
+                color: var(--on-accent);
+            }
+            .skip-link:focus {
+                top: var(--space-2);
+            }
+        </style>
+    </body>
+</html>

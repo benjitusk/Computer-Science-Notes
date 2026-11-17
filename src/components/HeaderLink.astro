@@ -1,0 +1,40 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+
+type Props = HTMLAttributes<'a'> & {
+    /** Override when the link covers more than its own path. */
+    active?: boolean;
+};
+
+const { href, class: className, active, ...props } = Astro.props;
+const path = Astro.url.pathname.replace(/\/$/, '') || '/';
+const target = String(href).replace(/\/$/, '') || '/';
+const isActive = active ?? (target === '/' ? path === '/' : path === target || path.startsWith(target + '/'));
+---
+
+<a
+    href={href}
+    class:list={['header-link', className, { active: isActive }]}
+    aria-current={isActive ? 'page' : undefined}
+    {...props}
+>
+    <slot />
+</a>
+
+<style>
+    .header-link {
+        color: var(--text-muted);
+        font-weight: var(--weight-medium);
+        text-decoration: none;
+    }
+    .header-link:hover,
+    .header-link.active {
+        color: var(--text);
+    }
+    .header-link.active {
+        text-decoration: underline;
+        text-decoration-color: var(--margin);
+        text-decoration-thickness: 2px;
+        text-underline-offset: 0.4em;
+    }
+</style>

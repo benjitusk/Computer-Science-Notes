@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../components/BaseLayout.astro';
+---
+
+<BaseLayout title='Page not found' description='This page isn’t in the notes.' width='prose'>
+    <p class='eyebrow'>404</p>
+    <h1 class='missing__title'>I must have skipped this lecture.</h1>
+    <p class='missing__lede'>
+        There's no note here. Try <a href='/search/'>searching</a>, or start from the <a href='/'>list of courses</a>.
+    </p>
+</BaseLayout>
+
+<style>
+    .missing__title {
+        margin-top: var(--space-2);
+        font-size: var(--text-3xl);
+    }
+    .missing__lede {
+        margin-top: var(--space-4);
+        color: var(--text-muted);
+        font-size: var(--text-lg);
+    }
+</style>

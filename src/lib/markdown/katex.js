@@ -84,7 +84,15 @@ export const satteriKatex = defineHastPlugin({
         filter: ['pre', 'code'],
         visit(node, ctx) {
             if (node.tagName === 'code' && hasClass(node.properties.className, 'math-inline')) {
-                return { type: 'raw', value: render(ctx.textContent(node), false, documentMacros(ctx)) };
+                const html = render(ctx.textContent(node), false, documentMacros(ctx));
+                // Punctuation right after a formula stays on its line: "… $P(A|B)$." would
+                // otherwise wrap the full stop alone onto the next line.
+                const index = ctx.indexOf(node);
+                const next = index === undefined ? undefined : ctx.parent(node).children[index + 1];
+                const punctuation = next?.type === 'text' ? /^[.,;:!?)\]’”]+/.exec(next.value)?.[0] : undefined;
+                if (!next || next.type !== 'text' || !punctuation) return { type: 'raw', value: html };
+                ctx.replaceNode(next, { ...next, value: next.value.slice(punctuation.length) });
+                return { type: 'raw', value: `<span class="math-nowrap">${html}${punctuation}</span>` };
             }
             if (node.tagName === 'pre') {
                 const code = node.children.find((child) => child.type === 'element');

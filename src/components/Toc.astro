@@ -1,0 +1,85 @@
+---
+import type { MarkdownHeading } from 'astro';
+
+/**
+ * Toc — "On this page": the note's top two heading levels. Notes start their
+ * outline at different levels (many at ####), so the levels are relative to
+ * the shallowest heading the note uses. The heading being read is marked as
+ * you scroll.
+ */
+interface Props {
+    headings: MarkdownHeading[];
+}
+
+const { headings } = Astro.props;
+const top = Math.min(...headings.map((heading) => heading.depth));
+const shown = headings.filter((heading) => heading.depth <= top + 1);
+---
+
+{
+    shown.length > 1 && (
+        <nav class='toc' aria-label='On this page' data-toc>
+            <p class='eyebrow'>On this page</p>
+            <ol class='toc__list'>
+                {shown.map((heading) => (
+                    <li class='toc__item' data-nested={heading.depth > top ? '' : undefined}>
+                        <a href={`#${heading.slug}`}>{heading.text}</a>
+                    </li>
+                ))}
+            </ol>
+        </nav>
+    )
+}
+
+<script>
+    const toc = document.querySelector('[data-toc]');
+    if (toc) {
+        const links = new Map(
+            [...toc.querySelectorAll<HTMLAnchorElement>('a')].map((link) => [
+                decodeURIComponent(link.hash.slice(1)),
+                link,
+            ])
+        );
+        const headings = [...links.keys()].map((id) => document.getElementById(id)).filter(Boolean) as HTMLElement[];
+        const mark = () => {
+            // The last heading above the top third of the screen is the one being read.
+            const line = window.innerHeight / 3;
+            let current = headings[0];
+            for (const heading of headings) if (heading.getBoundingClientRect().top < line) current = heading;
+            for (const [id, link] of links) link.toggleAttribute('aria-current', id === current?.id);
+        };
+        mark();
+        document.addEventListener('scroll', mark, { passive: true });
+    }
+</script>
+
+<style>
+    .toc {
+        font-size: var(--text-sm);
+    }
+    .toc__list {
+        display: grid;
+        gap: var(--space-1);
+        margin-top: var(--space-3);
+        padding: 0 0 0 var(--space-3);
+        border-left: var(--border-width) solid var(--border);
+        list-style: none;
+    }
+    .toc__item[data-nested] {
+        padding-left: var(--space-3);
+        font-size: var(--text-xs);
+    }
+    .toc a {
+        display: block;
+        color: var(--text-subtle);
+        line-height: var(--leading-snug);
+        text-decoration: none;
+    }
+    .toc a:hover,
+    .toc a[aria-current] {
+        color: var(--text);
+    }
+    .toc a[aria-current] {
+        color: var(--accent);
+    }
+</style>

@@ -1,0 +1,111 @@
+---
+import Branding from './Branding.astro';
+import HeaderLink from './HeaderLink.astro';
+
+// Every course and note page sits under "Courses"; only these pages don't.
+const OTHER_PAGES = ['/about', '/search', '/404'];
+const path = Astro.url.pathname.replace(/\/$/, '');
+const inCourses = !OTHER_PAGES.some((page) => path === page || path.startsWith(page + '/'));
+---
+
+<header class='site-header'>
+    <nav class='site-nav' aria-label='Primary'>
+        <Branding />
+        <div class='site-nav__links'>
+            <HeaderLink href='/' active={inCourses}>Courses</HeaderLink>
+            <HeaderLink href='/about/'>About</HeaderLink>
+            <a class='site-nav__search' href='/search/' aria-keyshortcuts='/'>
+                <svg viewBox='0 0 24 24' aria-hidden='true'
+                    ><circle cx='11' cy='11' r='7'></circle><path d='m20 20-3.5-3.5'></path></svg
+                >
+                <span>Search</span>
+                <kbd>/</kbd>
+            </a>
+        </div>
+    </nav>
+</header>
+
+<script>
+    // "/" anywhere (outside a text field) opens search.
+    document.addEventListener('keydown', (event) => {
+        if (event.key !== '/' || event.metaKey || event.ctrlKey || event.altKey) return;
+        const target = event.target as HTMLElement;
+        if (target.isContentEditable || ['INPUT', 'TEXTAREA', 'SELECT'].includes(target.tagName)) return;
+        event.preventDefault();
+        const input = document.querySelector<HTMLInputElement>('.pagefind-ui__search-input');
+        if (input) input.focus();
+        else location.href = '/search/';
+    });
+</script>
+
+<style>
+    .site-header {
+        position: sticky;
+        top: 0;
+        z-index: var(--z-header);
+        border-bottom: var(--border-width) solid var(--border);
+        background: color-mix(in srgb, var(--background) 88%, transparent);
+        backdrop-filter: blur(8px);
+    }
+    .site-nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: var(--space-6);
+        max-width: calc(var(--measure-page) + 2 * var(--gutter));
+        height: var(--header-height);
+        margin: 0 auto;
+        padding: 0 var(--gutter);
+    }
+    .site-nav__links {
+        display: flex;
+        align-items: center;
+        gap: var(--space-6);
+    }
+    .site-nav__search {
+        display: inline-flex;
+        align-items: center;
+        gap: var(--space-2);
+        padding: var(--space-1) var(--space-2) var(--space-1) var(--space-3);
+        border: var(--border-width) solid var(--border-strong);
+        border-radius: var(--radius-pill);
+        background: var(--surface);
+        color: var(--text-muted);
+        font-size: var(--text-sm);
+        text-decoration: none;
+    }
+    .site-nav__search:hover {
+        border-color: var(--accent);
+        color: var(--text);
+    }
+    .site-nav__search svg {
+        width: 1rem;
+        height: 1rem;
+        fill: none;
+        stroke: currentColor;
+        stroke-width: 2;
+        stroke-linecap: round;
+    }
+    .site-nav__search kbd {
+        min-width: 1.25rem;
+        padding: 0 var(--space-1);
+        border: var(--border-width) solid var(--border);
+        border-radius: var(--radius-sm);
+        font-size: var(--text-2xs);
+        text-align: center;
+        color: var(--text-subtle);
+    }
+
+    @media (max-width: 520px) {
+        .site-nav__links {
+            gap: var(--space-4);
+        }
+        .site-nav__search span,
+        .site-nav__search kbd {
+            display: none;
+        }
+        .site-nav__search {
+            padding: var(--space-2);
+        }
+    }
+</style>

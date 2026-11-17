@@ -1,0 +1,5 @@
+# Search index, built after `astro build` (npm run build).
+site: dist
+# Rendered math is MathML plus positioned spans, which reads as noise in results.
+exclude_selectors:
+    - '.katex'

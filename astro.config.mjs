@@ -10,7 +10,7 @@ import { existsSync } from 'node:fs';
 import { satteriDirAuto } from './src/lib/markdown/dir-auto.js';
 import { satteriImageWidth } from './src/lib/markdown/image-width.js';
 import { satteriKatex } from './src/lib/markdown/katex.js';
-import { satteriLineBreaks } from './src/lib/markdown/line-breaks.js';
+import { satteriCalloutLineBreaks, satteriLineBreaks } from './src/lib/markdown/line-breaks.js';
 
 // Dev-only live-preview editor at /__edit, from a sibling checkout of astro-mdx-editor. It isn't a
 // dependency: where that folder doesn't exist (CI, other machines), the site builds without it.
@@ -49,7 +49,13 @@ export default defineConfig({
                 smartPunctuation: true,
             },
             mdastPlugins: [satteriLineBreaks, satteriEmoji({ shortcodes: ['github', 'cldr'] })],
-            hastPlugins: [satteriKatex, satteriCallouts({ theme: 'obsidian' }), satteriImageWidth, satteriDirAuto],
+            hastPlugins: [
+                satteriKatex,
+                satteriCallouts({ theme: 'obsidian' }),
+                satteriCalloutLineBreaks,
+                satteriImageWidth,
+                satteriDirAuto,
+            ],
         }),
     },
 

@@ -1,0 +1,150 @@
+---
+import { bySection, courseUrl, noteUrl, type Course, type Note } from '../lib/courses';
+
+/**
+ * CourseSidebar — every note in the course, in order, with the current one
+ * marked. On narrow screens it folds into a "In this course" disclosure above
+ * the note.
+ */
+interface Props {
+    course: Course;
+    notes: Note[];
+    current: Note;
+}
+
+const { course, notes, current } = Astro.props;
+---
+
+<details class='course-nav' open data-course-nav>
+    <summary class='course-nav__summary'>
+        <span class='eyebrow'>In this course</span>
+        <span class='course-nav__count'>{notes.length} notes</span>
+    </summary>
+    <nav aria-label={`${course.data.title} notes`}>
+        <a class='course-nav__course' href={courseUrl(course)}>{course.data.title}</a>
+        {
+            bySection(notes).map(({ section, notes }) => (
+                <>
+                    {section && <p class='course-nav__section eyebrow'>{section}</p>}
+                    <ol class='course-nav__list'>
+                        {notes.map((note) => (
+                            <li>
+                                <a
+                                    href={noteUrl(note)}
+                                    aria-current={note.id === current.id ? 'page' : undefined}
+                                    class='course-nav__link'
+                                >
+                                    {note.data.order !== undefined && (
+                                        <span class='course-nav__number'>
+                                            {String(note.data.order).padStart(2, '0')}
+                                        </span>
+                                    )}
+                                    <span>{note.data.title}</span>
+                                </a>
+                            </li>
+                        ))}
+                    </ol>
+                </>
+            ))
+        }
+    </nav>
+</details>
+
+<script>
+    // Folded on small screens, where it sits above the note; always open beside it.
+    const nav = document.querySelector<HTMLDetailsElement>('[data-course-nav]');
+    const wide = matchMedia('(min-width: 900px)');
+    const sync = () => nav && (nav.open = wide.matches);
+    sync();
+    wide.addEventListener('change', sync);
+</script>
+
+<style>
+    .course-nav {
+        font-size: var(--text-sm);
+    }
+    .course-nav__summary {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: var(--space-3) var(--space-4);
+        border: var(--border-width) solid var(--border);
+        border-radius: var(--radius-md);
+        background: var(--surface);
+        cursor: pointer;
+        list-style: none;
+    }
+    .course-nav__summary::-webkit-details-marker {
+        display: none;
+    }
+    .course-nav__count {
+        color: var(--text-subtle);
+    }
+    .course-nav nav {
+        padding-top: var(--space-4);
+    }
+    .course-nav__course {
+        display: block;
+        margin-bottom: var(--space-3);
+        color: var(--text);
+        font-weight: var(--weight-semibold);
+        text-decoration: none;
+    }
+    .course-nav__course:hover {
+        color: var(--accent);
+    }
+    .course-nav__section {
+        margin: var(--space-5) 0 var(--space-2);
+    }
+    .course-nav__list {
+        display: grid;
+        gap: 2px;
+        padding: 0;
+        list-style: none;
+    }
+    .course-nav__link {
+        display: flex;
+        gap: var(--space-2);
+        padding: var(--space-1) var(--space-2);
+        border-radius: var(--radius-sm);
+        color: var(--text-muted);
+        line-height: var(--leading-snug);
+        text-decoration: none;
+    }
+    .course-nav__link:hover {
+        background: var(--surface-sunken);
+        color: var(--text);
+    }
+    .course-nav__link[aria-current='page'] {
+        background: var(--accent-subtle);
+        color: var(--text);
+        font-weight: var(--weight-medium);
+    }
+    .course-nav__number {
+        flex: none;
+        min-width: 1.5rem;
+        padding-top: 0.1em;
+        color: var(--text-subtle);
+        font-family: var(--font-mono);
+        font-size: var(--text-2xs);
+    }
+    .course-nav__link[aria-current='page'] .course-nav__number {
+        color: var(--accent);
+    }
+
+    /* Beside the note, it's a plain list, not a disclosure. */
+    @media (min-width: 900px) {
+        .course-nav__summary {
+            padding: 0 0 var(--space-2);
+            border: none;
+            background: none;
+            pointer-events: none;
+        }
+        .course-nav__count {
+            display: none;
+        }
+        .course-nav nav {
+            padding-top: var(--space-2);
+        }
+    }
+</style>

@@ -1,0 +1,130 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../components/BaseLayout.astro';
+import { bySection, noteUrl, notesOf, termLabel } from '../../lib/courses';
+
+export async function getStaticPaths() {
+    const courses = await getCollection('courses');
+    return courses.map((course) => ({ params: { course: course.id }, props: { course } }));
+}
+
+const { course } = Astro.props;
+const notes = await notesOf(course);
+const { Content } = await render(course);
+const term = termLabel(course);
+const hasIntro = Boolean(course.body?.trim());
+---
+
+<BaseLayout
+    title={course.data.title}
+    description={course.data.description ??
+        `${notes.length} notes from ${course.data.title}${term ? `, ${term}` : ''}.`}
+    noindex={course.data.unlisted}
+    width='prose'
+>
+    <header class='course__header'>
+        <p class='eyebrow'>{term ?? 'Outside the syllabus'}</p>
+        <h1 class='course__title'>{course.data.title}</h1>
+        {course.data.description && <p class='course__lede'>{course.data.description}</p>}
+        {
+            hasIntro && (
+                <div class='prose course__intro'>
+                    <Content />
+                </div>
+            )
+        }
+    </header>
+
+    {
+        bySection(notes).map(({ section, notes }) => (
+            <section class='course__section'>
+                {section && <h2 class='eyebrow course__section-title'>{section}</h2>}
+                <ol class='course__notes'>
+                    {notes.map((note) => (
+                        <li>
+                            <a class='course__note' href={noteUrl(note)}>
+                                <span class='course__number'>
+                                    {note.data.order !== undefined ? String(note.data.order).padStart(2, '0') : '··'}
+                                </span>
+                                <span class='course__note-title' dir='auto'>
+                                    {note.data.title}
+                                </span>
+                                <span class='course__arrow' aria-hidden='true'>
+                                    →
+                                </span>
+                            </a>
+                        </li>
+                    ))}
+                </ol>
+            </section>
+        ))
+    }
+</BaseLayout>
+
+<style>
+    .course__header {
+        margin-bottom: var(--space-10);
+    }
+    .course__title {
+        margin-top: var(--space-2);
+        font-size: var(--text-3xl);
+        line-height: var(--leading-tight);
+    }
+    .course__lede {
+        margin-top: var(--space-3);
+        color: var(--text-muted);
+        font-size: var(--text-lg);
+    }
+    .course__intro {
+        margin-top: var(--space-5);
+        padding-left: var(--space-4);
+        border-left: var(--margin-width) solid var(--margin);
+        color: var(--text-muted);
+        font-size: var(--text-base);
+        font-style: italic;
+    }
+    .course__section + .course__section {
+        margin-top: var(--space-10);
+    }
+    .course__section-title {
+        margin-bottom: var(--space-3);
+    }
+    .course__notes {
+        padding: 0;
+        list-style: none;
+        border-top: var(--border-width) solid var(--rule);
+    }
+    /* Each note sits on a ruled line. */
+    .course__note {
+        display: grid;
+        grid-template-columns: 2.5rem 1fr auto;
+        align-items: baseline;
+        gap: var(--space-3);
+        padding: var(--space-3) var(--space-2);
+        border-bottom: var(--border-width) solid var(--rule);
+        color: var(--text);
+        text-decoration: none;
+        transition: background var(--duration-fast) var(--ease);
+    }
+    .course__note:hover {
+        background: var(--surface-sunken);
+        color: var(--text);
+    }
+    .course__number {
+        color: var(--margin);
+        font-family: var(--font-mono);
+        font-size: var(--text-sm);
+    }
+    .course__note-title {
+        font-family: var(--font-serif);
+        font-size: var(--text-md);
+    }
+    .course__arrow {
+        color: var(--text-subtle);
+        transition: transform var(--duration-fast) var(--ease);
+    }
+    .course__note:hover .course__arrow {
+        color: var(--accent);
+        transform: translateX(3px);
+    }
+</style>

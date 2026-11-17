@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- A page of ruled notebook paper: blue lines, red margin. -->
+  <rect x="3" y="2" width="26" height="28" rx="4" fill="#fbfaf5" stroke="#1f2430" stroke-width="2"/>
+  <path d="M8 10h17M8 15h17M8 20h17M8 25h12" stroke="#2c56c9" stroke-width="2" stroke-linecap="round"/>
+  <path d="M11 3v26" stroke="#e08a80" stroke-width="2"/>
+</svg>

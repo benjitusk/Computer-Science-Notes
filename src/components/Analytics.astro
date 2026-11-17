@@ -1,0 +1,121 @@
+---
+/**
+ * Analytics — Umami page views, plus automatic analytics for every island.
+ *
+ * Components never call analytics themselves. Every hydrated component is
+ * rendered inside an <astro-island>, and the script below tracks those:
+ *
+ *   component-view      once per island per page load, when half of it
+ *                       (or half the viewport, for tall ones) is on screen
+ *   component-interact  once per island per page load, on the first click,
+ *                       key press, text input, or a mouse hover of 1s+
+ *
+ * Both events carry { component, page }.
+ *
+ * The Umami script is only rendered in production builds with
+ * PUBLIC_UMAMI_WEBSITE_ID set. In `astro dev`, events go to console.debug.
+ * PUBLIC_UMAMI_SCRIPT_URL points at a self-hosted Umami; it defaults to
+ * Umami Cloud.
+ */
+const websiteId = import.meta.env.PUBLIC_UMAMI_WEBSITE_ID;
+const scriptUrl = import.meta.env.PUBLIC_UMAMI_SCRIPT_URL || 'https://cloud.umami.is/script.js';
+const enabled = import.meta.env.PROD && Boolean(websiteId);
+---
+
+{enabled && <script is:inline id='umami-script' defer src={scriptUrl} data-website-id={websiteId} />}
+
+<script>
+    type EventData = Record<string, string>;
+    type Umami = { track: (event: string, data?: EventData) => void };
+
+    const HOVER_MS = 1000;
+    const umamiScript = document.getElementById('umami-script');
+    const umami = () => (window as Window & { umami?: Umami }).umami;
+    const queue: [string, EventData][] = [];
+
+    function send(event: string, data: EventData) {
+        if (import.meta.env.DEV) {
+            console.debug('[analytics]', event, data);
+        } else if (umami()) {
+            umami()!.track(event, data);
+        } else {
+            queue.push([event, data]);
+        }
+    }
+
+    umamiScript?.addEventListener('load', () => {
+        for (const [event, data] of queue.splice(0)) umami()?.track(event, data);
+    });
+
+    /** The component's name as Astro recorded it on the island. */
+    function componentName(island: Element): string {
+        try {
+            const { name } = JSON.parse(island.getAttribute('opts') ?? '{}');
+            if (name) return name;
+        } catch {
+            // fall through to the other attributes
+        }
+        const exported = island.getAttribute('component-export');
+        if (exported && exported !== 'default') return exported;
+        return (island.getAttribute('component-url') ?? '').split('/').pop()?.split('.')[0] || 'unknown';
+    }
+
+    function init() {
+        const islands = [...document.querySelectorAll('astro-island')];
+        if (islands.length === 0) return;
+
+        const page = location.pathname;
+        const owner = new WeakMap<Element, Element>();
+        const interacted = new WeakSet<Element>();
+
+        // Views. <astro-island> is display: contents and has no box of its own,
+        // so observe its first rendered element instead.
+        const observer = new IntersectionObserver(
+            (entries) => {
+                for (const entry of entries) {
+                    const halfShown =
+                        entry.intersectionRatio >= 0.5 || entry.intersectionRect.height >= window.innerHeight / 2;
+                    if (!entry.isIntersecting || !halfShown) continue;
+                    observer.unobserve(entry.target);
+                    send('component-view', { component: componentName(owner.get(entry.target)!), page });
+                }
+            },
+            { threshold: [0, 0.25, 0.5] }
+        );
+        for (const island of islands) {
+            const box = island.firstElementChild;
+            if (!box) continue;
+            owner.set(box, island);
+            observer.observe(box);
+        }
+
+        // Interactions, delegated so hydration and re-renders don't matter.
+        const markInteraction = (target: EventTarget | null) => {
+            const island = target instanceof Element ? target.closest('astro-island') : null;
+            if (!island || interacted.has(island)) return;
+            interacted.add(island);
+            send('component-interact', { component: componentName(island), page });
+        };
+        for (const type of ['pointerdown', 'keydown', 'input', 'change']) {
+            document.addEventListener(type, (event) => markInteraction(event.target), { capture: true, passive: true });
+        }
+
+        let hoverIsland: Element | null = null;
+        let hoverTimer: number | undefined;
+        document.addEventListener(
+            'pointerover',
+            (event) => {
+                const island = event.target instanceof Element ? event.target.closest('astro-island') : null;
+                if (island === hoverIsland) return;
+                hoverIsland = island;
+                window.clearTimeout(hoverTimer);
+                if (island && event.pointerType === 'mouse') {
+                    hoverTimer = window.setTimeout(() => markInteraction(island), HOVER_MS);
+                }
+            },
+            { passive: true }
+        );
+    }
+
+    if (umamiScript || import.meta.env.DEV) init();
+</script>

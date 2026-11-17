@@ -1,0 +1,169 @@
+---
+import BaseLayout from '../components/BaseLayout.astro';
+import { BRAND_HEBREW, SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+import { courseUrl, coursesByYear } from '../lib/courses';
+
+const years = await coursesByYear();
+const total = years.flatMap((year) => year.courses).reduce((sum, { notes }) => sum + notes.length, 0);
+
+/** "Semester I" → "Semester I", but the summer one reads as what it was. */
+const semesterName = (semester?: string) => (semester === 'Semester Elul' ? 'Elul (summer)' : semester);
+---
+
+<BaseLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+    <section class='hero'>
+        <p class='eyebrow'>
+            BSc Computer Science · Machon Lev <span class='hero__hebrew' lang='he'>{BRAND_HEBREW}</span>
+        </p>
+        <h1 class='hero__title'>My school notes, <span class='hero__scribble'>tidied up</span> for you.</h1>
+        <p class='hero__lede'>
+            {total} lecture notes from my degree: calculus, probability, computer architecture, networks and more. Typed mid-lecture,
+            polished the night before the exam, and shared because cramming is better together.
+        </p>
+        <p class='hero__aside'>
+            Found a mistake? Every note has a link to fix it. Some trail off where the semester did; that's the honest
+            kind of notes.
+        </p>
+    </section>
+
+    {
+        years.map(({ year, courses }) => (
+            <section class='year'>
+                <h2 class='year__title'>
+                    {year ? (
+                        <>
+                            <span class='year__number'>{year}</span> Year {year}
+                        </>
+                    ) : (
+                        'Everything else'
+                    )}
+                </h2>
+                <ul class='year__courses'>
+                    {courses.map(({ course, notes }) => (
+                        <li>
+                            <a class='course-card' href={courseUrl(course)}>
+                                <span class='eyebrow'>{semesterName(course.data.semester) ?? 'Extra'}</span>
+                                <span class='course-card__title'>{course.data.title}</span>
+                                <span class='course-card__count'>
+                                    {notes.length} {notes.length === 1 ? 'note' : 'notes'}
+                                </span>
+                            </a>
+                        </li>
+                    ))}
+                </ul>
+            </section>
+        ))
+    }
+</BaseLayout>
+
+<style>
+    /* The hero is a page of ruled paper, red margin and all. */
+    .hero {
+        position: relative;
+        margin-bottom: var(--space-16);
+        padding: var(--space-8) 0 var(--space-10) var(--space-10);
+        border-left: var(--margin-width) solid var(--margin);
+        background-image: repeating-linear-gradient(
+            to bottom,
+            transparent 0,
+            transparent calc(var(--rule-gap) - 1px),
+            var(--rule) calc(var(--rule-gap) - 1px),
+            var(--rule) var(--rule-gap)
+        );
+    }
+    .hero__hebrew {
+        margin-inline-start: var(--space-2);
+        font-size: var(--text-sm);
+        letter-spacing: 0;
+        color: var(--margin);
+    }
+    .hero__title {
+        max-width: 16ch;
+        margin-top: var(--space-4);
+        font-size: var(--text-display);
+        line-height: var(--leading-tight);
+    }
+    .hero__scribble {
+        background: linear-gradient(transparent 62%, var(--highlight) 62%, var(--highlight) 92%, transparent 92%);
+        padding-inline: 0.05em;
+    }
+    .hero__lede {
+        max-width: 38rem;
+        margin-top: var(--space-6);
+        color: var(--text-muted);
+        font-family: var(--font-serif);
+        font-size: var(--text-lg);
+        line-height: var(--leading-relaxed);
+    }
+    .hero__aside {
+        max-width: 38rem;
+        margin-top: var(--space-4);
+        color: var(--text-subtle);
+        font-size: var(--text-sm);
+    }
+    @media (max-width: 520px) {
+        .hero {
+            padding-left: var(--space-5);
+        }
+    }
+
+    .year + .year {
+        margin-top: var(--space-12);
+    }
+    .year__title {
+        display: flex;
+        align-items: center;
+        gap: var(--space-3);
+        margin-bottom: var(--space-5);
+        font-size: var(--text-xl);
+    }
+    .year__number {
+        display: inline-grid;
+        place-items: center;
+        width: 2rem;
+        height: 2rem;
+        border-radius: var(--radius-pill);
+        background: var(--accent);
+        color: var(--on-accent);
+        font-size: var(--text-sm);
+    }
+    .year__courses {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+        gap: var(--space-4);
+        padding: 0;
+        list-style: none;
+    }
+    .course-card {
+        display: grid;
+        gap: var(--space-2);
+        height: 100%;
+        padding: var(--space-5);
+        border: var(--border-width) solid var(--border);
+        border-left: var(--margin-width) solid var(--margin);
+        border-radius: var(--radius-md);
+        background: var(--surface);
+        color: var(--text);
+        text-decoration: none;
+        transition:
+            border-color var(--duration-fast) var(--ease),
+            box-shadow var(--duration) var(--ease),
+            transform var(--duration) var(--ease);
+    }
+    .course-card:hover {
+        border-color: var(--accent);
+        border-left-color: var(--margin);
+        box-shadow: var(--shadow-lift);
+        color: var(--text);
+        transform: translateY(-2px);
+    }
+    .course-card__title {
+        font-size: var(--text-lg);
+        font-weight: var(--weight-semibold);
+        line-height: var(--leading-snug);
+    }
+    .course-card__count {
+        color: var(--text-subtle);
+        font-size: var(--text-sm);
+    }
+</style>

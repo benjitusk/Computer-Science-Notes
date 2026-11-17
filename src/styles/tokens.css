@@ -1,0 +1,171 @@
+/*
+ * Design tokens — the single source of truth for the whole site.
+ *
+ * Nothing outside this file should contain a raw hex colour, a raw px length,
+ * or a magic number. Everything references a token below. See
+ * docs/STYLEGUIDE.md for how they're meant to be used.
+ *
+ * Two rooms of one school: by day, a page of ruled notebook paper (blue lines,
+ * a red margin, ballpoint-blue ink for links); by night, the chalkboard
+ * (green-black slate, chalk-white text, yellow chalk for links). Every colour
+ * is defined twice: here, and in the dark blocks at the bottom.
+ */
+
+:root {
+    color-scheme: light;
+
+    /* ---- Palette: paper ------------------------------------------------ */
+    --background: #fbfaf5; /* the page                                      */
+    --surface: #ffffff; /* cards, the search box, code                      */
+    --surface-sunken: #f3f1e8; /* hover rows, the sidebar's current note    */
+
+    /* ---- Palette: ink -------------------------------------------------- */
+    --text: #1f2430; /* headings, note body                                */
+    --text-muted: #535a6b; /* ledes, secondary copy                        */
+    --text-subtle: #737a8c; /* metadata, labels — 4.3:1, UI text only       */
+
+    /* ---- Palette: structure ------------------------------------------- */
+    --border: #e6e3d8;
+    --border-strong: #d4d0c2;
+    /* The page's ruled lines and its red margin line. Decoration only.      */
+    --rule: #dbe4f3;
+    --margin: #e08a80;
+
+    /* ---- Palette: accent (ballpoint blue) ----------------------------- */
+    /* Meaning: links, the current place (nav, sidebar), focus.            */
+    --accent: #2c56c9; /* 5.9:1 on --background                           */
+    --accent-hover: #1f42a3;
+    --accent-subtle: #e6ecfa;
+    --on-accent: #ffffff;
+
+    /* ---- Palette: highlighter ----------------------------------------- */
+    /* Meaning: ==highlighted== text in a note, and search matches. ONLY.   */
+    --highlight: #fff0a3;
+
+    /* ---- Typography: families ----------------------------------------- */
+    --font-serif: var(--font-source-serif), var(--font-frank-ruhl), Georgia, serif;
+    --font-sans: var(--font-instrument), var(--font-frank-ruhl), system-ui, sans-serif;
+    --font-mono: var(--font-jetbrains), ui-monospace, 'SF Mono', Menlo, monospace;
+    --font-hebrew: var(--font-frank-ruhl), serif;
+
+    /* ---- Typography: scale -------------------------------------------- */
+    --text-2xs: 0.75rem; /* 12 */
+    --text-xs: 0.8125rem; /* 13 */
+    --text-sm: 0.9375rem; /* 15 */
+    --text-base: 1rem; /* 16 */
+    --text-md: 1.125rem; /* 18 — note body */
+    --text-lg: 1.3125rem; /* 21 — lede */
+    --text-xl: 1.5rem; /* 24 */
+    --text-2xl: 1.875rem; /* 30 */
+    --text-3xl: clamp(2rem, 4vw, 2.625rem); /* 32 → 42 */
+    --text-display: clamp(2.5rem, 7vw, 4.25rem); /* 40 → 68 */
+
+    --weight-regular: 400;
+    --weight-medium: 500;
+    --weight-semibold: 600;
+    --weight-bold: 700;
+
+    --leading-none: 1;
+    --leading-tight: 1.05;
+    --leading-snug: 1.25;
+    --leading-normal: 1.5;
+    --leading-relaxed: 1.7;
+
+    --tracking-tight: -0.02em;
+    --tracking-normal: 0;
+    --tracking-wide: 0.06em;
+
+    /* ---- Spacing (4px base) ------------------------------------------- */
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-5: 1.25rem;
+    --space-6: 1.5rem;
+    --space-8: 2rem;
+    --space-10: 2.5rem;
+    --space-12: 3rem;
+    --space-16: 4rem;
+    --space-24: 6rem;
+
+    /* ---- Layout ------------------------------------------------------- */
+    --measure-prose: 44rem; /* 704 — the note column; wide enough for matrices */
+    --measure-sidebar: 15rem; /* 240 — the course's notes                    */
+    --measure-toc: 13rem; /* 208 — "On this page"                            */
+    --measure-page: 72rem; /* 1152 — home, course pages                      */
+    --measure-note-page: 80rem; /* 1280 — sidebar + note + contents          */
+    --gutter: var(--space-6);
+    --header-height: 4rem;
+    /* Distance between ruled lines in the background. */
+    --rule-gap: 2rem;
+
+    /* ---- Shape -------------------------------------------------------- */
+    --border-width: 1px;
+    --margin-width: 2px;
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 14px;
+    --radius-pill: 999px;
+
+    --shadow-lift: 0 10px 24px -14px rgb(30 40 70 / 0.35);
+
+    /* ---- Motion ------------------------------------------------------- */
+    --duration-fast: 120ms;
+    --duration: 200ms;
+    --ease: cubic-bezier(0.2, 0, 0, 1);
+
+    --z-header: 10;
+}
+
+@media (max-width: 520px) {
+    :root {
+        --gutter: var(--space-4);
+        --text-md: 1.0625rem; /* 17 */
+    }
+}
+
+/*
+ * Dark palette: the chalkboard. Applies when the OS asks for it, unless the
+ * page opts out with <html data-theme="light">; <html data-theme="dark">
+ * forces it.
+ */
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme='light']) {
+        color-scheme: dark;
+        --background: #17201d;
+        --surface: #1e2925;
+        --surface-sunken: #222e2a;
+        --text: #e8ece6;
+        --text-muted: #aab4ad;
+        --text-subtle: #8b968f;
+        --border: #2c3a35;
+        --border-strong: #3a4a44;
+        --rule: #1d2824;
+        --margin: #a8605a;
+        --accent: #f1cf6b;
+        --accent-hover: #f7df9c;
+        --accent-subtle: #2e3527;
+        --on-accent: #17201d;
+        --highlight: #4f4720;
+        --shadow-lift: 0 10px 24px -14px rgb(0 0 0 / 0.6);
+    }
+}
+:root[data-theme='dark'] {
+    color-scheme: dark;
+    --background: #17201d;
+    --surface: #1e2925;
+    --surface-sunken: #222e2a;
+    --text: #e8ece6;
+    --text-muted: #aab4ad;
+    --text-subtle: #8b968f;
+    --border: #2c3a35;
+    --border-strong: #3a4a44;
+    --rule: #1d2824;
+    --margin: #a8605a;
+    --accent: #f1cf6b;
+    --accent-hover: #f7df9c;
+    --accent-subtle: #2e3527;
+    --on-accent: #17201d;
+    --highlight: #4f4720;
+    --shadow-lift: 0 10px 24px -14px rgb(0 0 0 / 0.6);
+}

@@ -1,0 +1,69 @@
+---
+// Import the global stylesheet here so it's on every page through <BaseHead />.
+import '../styles/global.css';
+import { SITE_TITLE } from '../consts';
+import { Font } from 'astro:assets';
+import Analytics from './Analytics.astro';
+
+interface Props {
+    title: string;
+    description: string;
+    /** Set on notes: switches og:type to article. */
+    article?: { modifiedTime?: Date };
+    noindex?: boolean;
+}
+
+const { title, description, article, noindex = false } = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+
+// Generated card for this page (see src/pages/og/[...route].ts). In `astro dev`
+// it points at the dev server, so the astro-og toolbar app can preview cards.
+const ogKey = Astro.url.pathname.replace(/^\/|\/$/g, '').replace(/\.html$/, '') || 'index';
+const ogImage = new URL(`/og/${ogKey}.png`, import.meta.env.DEV ? Astro.url.origin : Astro.site);
+const ogImageAlt = title.includes(SITE_TITLE) ? title : `${title} — ${SITE_TITLE}`;
+---
+
+<!-- Global Metadata -->
+<meta charset='utf-8' />
+<meta name='viewport' content='width=device-width,initial-scale=1' />
+<link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+<link rel='sitemap' href='/sitemap-index.xml' />
+<meta name='generator' content={Astro.generator} />
+
+<Font cssVariable='--font-source-serif' preload />
+<Font cssVariable='--font-instrument' preload />
+<Font cssVariable='--font-jetbrains' />
+<Font cssVariable='--font-frank-ruhl' />
+
+<!-- Canonical URL -->
+<link rel='canonical' href={canonicalURL} />
+
+<!-- Primary Meta Tags -->
+<title>{title}</title>
+<meta name='description' content={description} />
+{noindex && <meta name='robots' content='noindex' />}
+
+<!-- Open Graph -->
+<meta property='og:type' content={article ? 'article' : 'website'} />
+<meta property='og:site_name' content={SITE_TITLE} />
+<meta property='og:locale' content='en_US' />
+<meta property='og:url' content={canonicalURL} />
+<meta property='og:title' content={title} />
+<meta property='og:description' content={description} />
+<meta property='og:image' content={ogImage} />
+<meta property='og:image:type' content='image/png' />
+<meta property='og:image:width' content='1200' />
+<meta property='og:image:height' content='630' />
+<meta property='og:image:alt' content={ogImageAlt} />
+{article?.modifiedTime && <meta property='article:modified_time' content={article.modifiedTime.toISOString()} />}
+
+<!-- Twitter / X -->
+<meta name='twitter:card' content='summary_large_image' />
+<meta name='twitter:title' content={title} />
+<meta name='twitter:description' content={description} />
+<meta name='twitter:image' content={ogImage} />
+<meta name='twitter:image:alt' content={ogImageAlt} />
+
+<!-- Analytics (production only; see Analytics.astro) -->
+<Analytics />

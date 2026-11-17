@@ -1,0 +1,90 @@
+---
+import { AUTHOR_NAME, BRAND_NAME } from '../consts';
+
+/**
+ * Branding — the top-left identity: a little ruled page (the favicon), the
+ * wordmark, and the author's name. It is itself the home link, so it must
+ * not be wrapped in another <a>.
+ *
+ * Hover: the page's lines get written in, one after another.
+ */
+---
+
+<a class='branding' href='/' aria-label={`${BRAND_NAME} by ${AUTHOR_NAME} — home`}>
+    <svg class='branding__page' viewBox='0 0 32 32' aria-hidden='true'>
+        <rect x='3' y='2' width='26' height='28' rx='4'></rect>
+        <path class='branding__line' d='M14 10h11'></path>
+        <path class='branding__line' d='M14 15h11'></path>
+        <path class='branding__line' d='M14 20h11'></path>
+        <path class='branding__line' d='M14 25h7'></path>
+        <path class='branding__margin' d='M10 3v26'></path>
+    </svg>
+    <span class='branding__name'>{BRAND_NAME}</span>
+    <span class='branding__author'>· {AUTHOR_NAME}</span>
+</a>
+
+<style>
+    .branding {
+        display: inline-flex;
+        align-items: center;
+        gap: var(--space-2);
+        color: var(--text);
+        text-decoration: none;
+        line-height: var(--leading-none);
+    }
+    .branding:hover {
+        color: var(--text);
+    }
+    .branding__page {
+        width: 1.75rem;
+        height: 1.75rem;
+        flex: none;
+    }
+    .branding__page rect {
+        fill: var(--surface);
+        stroke: var(--text);
+        stroke-width: 2;
+    }
+    .branding__line {
+        stroke: var(--accent);
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-dasharray: 12;
+        stroke-dashoffset: 0;
+    }
+    .branding__margin {
+        stroke: var(--margin);
+        stroke-width: 2;
+    }
+    .branding:hover .branding__line {
+        animation: write 480ms var(--ease) both;
+    }
+    .branding:hover .branding__line:nth-of-type(2) {
+        animation-delay: 80ms;
+    }
+    .branding:hover .branding__line:nth-of-type(3) {
+        animation-delay: 160ms;
+    }
+    .branding:hover .branding__line:nth-of-type(4) {
+        animation-delay: 240ms;
+    }
+    @keyframes write {
+        from {
+            stroke-dashoffset: 12;
+        }
+    }
+    .branding__name {
+        font-size: var(--text-lg);
+        font-weight: var(--weight-bold);
+        letter-spacing: var(--tracking-tight);
+    }
+    .branding__author {
+        color: var(--text-subtle);
+        font-size: var(--text-sm);
+    }
+    @media (max-width: 520px) {
+        .branding__author {
+            display: none;
+        }
+    }
+</style>

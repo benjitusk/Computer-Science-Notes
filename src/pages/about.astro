@@ -1,0 +1,44 @@
+---
+import BaseLayout from '../components/BaseLayout.astro';
+import { HOME_URL, NOTEBOOK_URL, REPO_URL, THOUGHTS_URL } from '../consts';
+---
+
+<BaseLayout title='About' description='About Benji Tusk and these notes.' width='prose'>
+    <p class='eyebrow'>About</p>
+    <h1 class='about__title'>Hi, I'm Benji 👋</h1>
+    <div class='prose about'>
+        <p>
+            I studied Computer Science at Machon Lev, part of the Jerusalem College of Technology, and finished in
+            August 2026. Somewhere in the first semester I started typing up every lecture, first for me and then for
+            anyone in the class who missed one (or was there, but only technically).
+        </p>
+        <p>
+            These are those notes. They follow the lectures, so they're as good as my attention span that day: some are
+            polished to a shine, and some stop mid-thought where the semester ran out. The math notes mostly follow Moti
+            Novick's classes and slides. The math is his; the typos are mine.
+        </p>
+        <h2>Found a mistake?</h2>
+        <p>
+            Every note ends with a link to fix it on GitHub, or to tell me about it instead. The whole site is
+            <a href={REPO_URL}>open source</a>, so a pull request is the nicest thank-you note I know.
+        </p>
+        <h2>How it's made</h2>
+        <p>
+            I wrote the notes in Obsidian, with a lot of LaTeX and the occasional Excalidraw sketch. They used to be
+            published with mkdocs; now they're plain Markdown in an Astro site, and the math is rendered with KaTeX
+            before it ever reaches your browser.
+        </p>
+        <p>
+            More of me: my <a href={HOME_URL}>homepage</a>, essays at <a href={THOUGHTS_URL}>Thoughts</a>, and side
+            projects in the <a href={NOTEBOOK_URL}>engineering notebook</a>.
+        </p>
+    </div>
+</BaseLayout>
+
+<style>
+    .about__title {
+        margin-top: var(--space-2);
+        margin-bottom: var(--space-8);
+        font-size: var(--text-3xl);
+    }
+</style>
