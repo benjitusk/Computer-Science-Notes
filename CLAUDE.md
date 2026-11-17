@@ -8,8 +8,11 @@ astro dev --background
 
 Manage the background server with `astro dev stop`, `astro dev status`, and `astro dev logs`.
 
-Astro caches rendered Markdown by file content, not by plugin. After changing anything in `src/lib/markdown/`,
-delete `.astro/` and `node_modules/.astro/` before building, or notes keep their old HTML.
+Astro caches each note's rendered HTML until the note changes. Changes in `src/lib/markdown/` (and updates to the
+Markdown packages) clear that cache by themselves (`src/lib/markdown/cache-key.js`), so don't delete `.astro/` by
+hand. Never delete it while a dev server is running: the server re-renders every note without the Markdown plugins
+and saves that. If notes ever show raw `$math$` or `[!callout]` text locally, stop the dev server, delete `.astro/`,
+and start it again.
 
 ## Writing notes
 

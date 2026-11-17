@@ -8,6 +8,7 @@ import satteriCallouts from 'satteri-callouts';
 import { satteriEmoji } from 'satteri-emoji';
 import og from 'astro-og';
 import { existsSync } from 'node:fs';
+import { withCacheKey } from './src/lib/markdown/cache-key.js';
 import { satteriDirAuto } from './src/lib/markdown/dir-auto.js';
 import { satteriImageWidth } from './src/lib/markdown/image-width.js';
 import { satteriKatex } from './src/lib/markdown/katex.js';
@@ -53,7 +54,8 @@ export default defineConfig({
             },
             mdastPlugins: [satteriLineBreaks, satteriEmoji({ shortcodes: ['github', 'cldr'] })],
             hastPlugins: [
-                satteriKatex,
+                // Stamped so that changing any plugin re-renders every note (see cache-key.js).
+                withCacheKey(satteriKatex),
                 satteriCallouts({ theme: 'obsidian' }),
                 satteriCalloutLineBreaks,
                 satteriImageWidth,
