@@ -30,7 +30,7 @@ section: "Homework"
 > Benji Tusk and Eyal Schachter, dreamers of dreams.
 > 
 > ---
-> Eyal Schachter (209792266) and Benji Tusk (650282680)
+> Eyal Schachter and Benji Tusk
 
 ## Question One
 

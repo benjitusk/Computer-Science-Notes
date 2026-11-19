@@ -25,7 +25,7 @@ section: "Homework"
 > Eyal Schachter and Benji Tusk, our names declare, In the land of disjoint sets, we venture and dare!
 > 
 > ---
-> Eyal Schachter (209792266) and Benji Tusk (650282680)
+> Eyal Schachter and Benji Tusk
 
 ### Question 1
 #### Answer 1

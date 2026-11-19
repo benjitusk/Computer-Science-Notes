@@ -34,8 +34,8 @@ title: "Data Structures Homework III - Revenge of the Bits"
 > Benji and Eyal are here, to help you with it all!*
 >
 > ---
-> **Benji Tusk:** *650282680*
-> **Eyal Schachter:** *209792266*
+> **Benji Tusk**
+> **Eyal Schachter**
 
 > [!todo] Answer 1
 > ```python

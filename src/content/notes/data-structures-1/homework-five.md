@@ -4,8 +4,8 @@ title: "Homework Five"
 
 > [!check] Attributions
 >This homework was written by:
-> **Eyal Schachter**: 209792266
-> **Benji Tusk**: 650282680
+> **Eyal Schachter**
+> **Benji Tusk**
 
 
 > [!note] Question No. 1

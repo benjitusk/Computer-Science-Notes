@@ -5,7 +5,7 @@ title: "Data Structures HW II"
 Dear Grader,
 	We hope this submission finds you well. Contained within, you will find the secrets and untold wonders of the universe, carefully disguised as our homework assignment. We've poured countless hours, gallons of coffee, and a few tears into crafting this masterpiece, all with the hopes of impressing you, our esteemed grader. Please accept it with the same enthusiasm with which it was created, and know that we appreciate your time and effort in evaluating our work. Thank you for being the superhero of this academic adventure, and for wielding the power of the almighty red pen with great responsibility. We eagerly await your feedback, and in the meantime, we'll be practicing our interpretive dance routine to celebrate our inevitable A+.
 	
-Sincerely, **Benji Tusk: 650282680** and **Eyal Schachter: 209792266**
+Sincerely, **Benji Tusk** and **Eyal Schachter**
 
 > [!todo] Answer 1
 > ```python

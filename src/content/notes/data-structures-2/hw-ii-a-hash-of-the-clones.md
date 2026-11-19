@@ -36,7 +36,7 @@ section: "Homework"
 > May Hash Tables guide you, like stars that entwine.
 > 
 > ---
-> Eyal Schachter (209792266) and Benji Tusk (650282680)
+> Eyal Schachter and Benji Tusk
 
 ### Question 1
 #### Part A
