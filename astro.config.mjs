@@ -7,7 +7,7 @@ import { defineConfig, fontProviders } from 'astro/config';
 import satteriCallouts from 'satteri-callouts';
 import { satteriEmoji } from 'satteri-emoji';
 import og from 'astro-og';
-import { existsSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 import { withCacheKey } from './src/lib/markdown/cache-key.js';
 import { satteriDirAuto } from './src/lib/markdown/dir-auto.js';
 import { satteriImageWidth } from './src/lib/markdown/image-width.js';
@@ -19,6 +19,16 @@ import { satteriCalloutLineBreaks, satteriLineBreaks } from './src/lib/markdown/
 const editorEntry = new URL('../astro-mdx-editor/src/index.ts', import.meta.url);
 const mdxEditor = existsSync(editorEntry) ? (await import(editorEntry.href)).default : null;
 
+// The sitemap goes by what each built page says about itself (it's written after every page):
+// pages tagged noindex (unlisted courses, search) are left out, and a note's <lastmod> is its
+// article:modified_time, so the sitemap and the page never disagree.
+const outDir = new URL('./dist/', import.meta.url);
+/** The built HTML of a sitemap URL, or '' if there's no file for it. @param {string} url */
+function builtPage(url) {
+    const file = new URL(`.${new URL(url).pathname}index.html`, outDir);
+    return existsSync(file) ? readFileSync(file, 'utf8') : '';
+}
+
 // https://astro.build/config
 export default defineConfig({
     site: 'https://school.benjitusk.com',
@@ -26,7 +36,13 @@ export default defineConfig({
     // mdx: notes are plain .md, but the editor needs it to preview the raw HTML in them (drawings, <u>, <mark>).
     integrations: [
         mdx(),
-        sitemap(),
+        sitemap({
+            filter: (page) => !/<meta name="robots" content="noindex"/.test(builtPage(page)),
+            serialize(item) {
+                const date = /property="article:modified_time" content="([^"]+)"/.exec(builtPage(item.url))?.[1];
+                return date ? { ...item, lastmod: date } : item;
+            },
+        }),
         og(),
         mdxEditor?.({
             collections: {

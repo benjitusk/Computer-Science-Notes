@@ -1,7 +1,7 @@
 ---
 // Import the global stylesheet here so it's on every page through <BaseHead />.
 import '../styles/global.css';
-import { SITE_TITLE } from '../consts';
+import { AUTHOR_NAME, HOME_URL, SITE_TITLE } from '../consts';
 import { Font } from 'astro:assets';
 import Analytics from './Analytics.astro';
 
@@ -22,6 +22,34 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const ogKey = Astro.url.pathname.replace(/^\/|\/$/g, '').replace(/\.html$/, '') || 'index';
 const ogImage = new URL(`/og/${ogKey}.png`, import.meta.env.DEV ? Astro.url.origin : Astro.site);
 const ogImageAlt = title.includes(SITE_TITLE) ? title : `${title} — ${SITE_TITLE}`;
+
+// Structured data: notes are Articles, and the home page names the site. Both credit
+// benjitusk.com as the author, which tells search engines all four sites are one person's.
+const author = { '@type': 'Person', 'name': AUTHOR_NAME, 'url': HOME_URL };
+const jsonLd = article
+    ? {
+          '@context': 'https://schema.org',
+          '@type': 'Article',
+          'headline': title,
+          description,
+          'url': canonicalURL.href,
+          'mainEntityOfPage': canonicalURL.href,
+          'image': ogImage.href,
+          'dateModified': article.modifiedTime?.toISOString(),
+          'inLanguage': 'en',
+          author,
+      }
+    : Astro.url.pathname === '/'
+      ? {
+            '@context': 'https://schema.org',
+            '@type': 'WebSite',
+            'name': SITE_TITLE,
+            'url': canonicalURL.href,
+            description,
+            'inLanguage': 'en',
+            author,
+        }
+      : undefined;
 ---
 
 <!-- Global Metadata -->
@@ -64,6 +92,9 @@ const ogImageAlt = title.includes(SITE_TITLE) ? title : `${title} — ${SITE_TIT
 <meta name='twitter:description' content={description} />
 <meta name='twitter:image' content={ogImage} />
 <meta name='twitter:image:alt' content={ogImageAlt} />
+
+<!-- Structured data -->
+{jsonLd && <script type='application/ld+json' set:html={JSON.stringify(jsonLd)} />}
 
 <!-- Analytics (production only; see Analytics.astro) -->
 <Analytics />
